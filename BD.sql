@@ -11,7 +11,7 @@ create table if not exists utilisateur (
 	emailutil varchar(50) not null,
 	passwordutil varchar(50) not null,
 	primary key(idutil)
-)engine=innodb;
+);
 
 create table if not exists lieu (
 	idlieu smallint not null,
@@ -22,14 +22,14 @@ create table if not exists lieu (
 	villelieu varchar(50) not null,
 	descriptionlieu varchar(200) not null,
 	primary key(idlieu)
-)engine=innodb;
+);
 
 create table if not exists avis (
 	idavis smallint not null,
 	noteavis int not null,
 	commentaire varchar(200) not null,
 	primary key(idavis)
-)engine=innodb;
+);
 
 create table if not exists adresse (
 	ville varchar(50) not null,
@@ -37,21 +37,33 @@ create table if not exists adresse (
 	num int not null,
 	codepost int not null,
 	idlieu smallint not null,
-	primary key(ville,rue,idacti),
+	primary key(ville,rue,idlieu),
 	key(idlieu)
-)engine=innodb;
+);
 
 create table if not exists favoris(
 	idutil smallint not null,
 	idlieu smallint not null,
-	primary key(idutil, idlieu)
-)engine=innodb;
+	primary key(idutil, idlieu),
+	key(idutil),
+	key(idlieu)
+);
 
 create table if not exists avisposte(
 	idutil smallint not null,
 	idlieu smallint not null,
 	idavis smallint not null,
 	primary key(idutil, idlieu, idavis)
-)engine=innodb;
+	key(idutil),
+	key(idlieu),
+	key(idavis)
+);
 
-ALTER table adresse add constraint fkadressealieu FOREIGN key (idalieu) REFERENCES lieu(idlieu);
+ALTER table adresse add constraint fkadressealieu FOREIGN key (idlieu) REFERENCES lieu(idlieu);
+
+ALTER table favoris add constraint fkfavorisutil FOREIGN key (idutil) REFERENCES utilisateur(idutil);
+ALTER table favoris add constraint fkfavorislieu FOREIGN key (idlieu) REFERENCES lieu(idlieu);
+
+ALTER table avisposte add constraint fkavisposteutil FOREIGN key (idutil) REFERENCES utilisateur(idutil);
+ALTER table avisposte add constraint fkavispostelieu FOREIGN key (idlieu) REFERENCES lieu(idlieu);
+ALTER table avisposte add constraint fkavisposteavis FOREIGN key (idavis) REFERENCES avis(idavis);
