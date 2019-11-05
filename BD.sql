@@ -3,67 +3,64 @@ Create DATABASE if not Exists cou_project character set = 'utf8';
 use cou_project;
 
 create table if not exists utilisateur (
-	idutil smallint not null,
-	nomutil varchar(20) not null,
-	prenomutil varchar(20) not null,
-	pseudoutil varchar(20) not null,
-	adminutil boolean not null,
-	emailutil varchar(50) not null,
-	passwordutil varchar(50) not null,
-	primary key(idutil)
-);
+	id smallint not null auto_increment,
+	nom varchar(20) not null,
+	prenom varchar(20) not null,
+	pseudo varchar(20) not null,
+	type varchar(1) not null default 'U',
+	email varchar(50) not null,
+	hashpwd password not null,
+	idadr smallint not null,
+	primary key(id),
+	key(idadr)
+)engine=innodb;
 
 create table if not exists lieu (
-	idlieu smallint not null,
-	nomlieu varchar(50) not null,
-	typelieu varchar(50) not null,
-	ruelieu varchar(50) not null,
-	numerolieu int not null,
-	villelieu varchar(50) not null,
-	descriptionlieu varchar(200) not null,
-	primary key(idlieu)
-);
+	id smallint not null auto_increment,
+	nom varchar(50) not null,
+	type varchar(50) not null,
+	description varchar(MAX) not null,
+	idadr smallint not null,
+	primary key(id),
+	key(idadr)
+)engine=innodb;
 
-create table if not exists avis (
-	idavis smallint not null,
-	noteavis int not null,
-	commentaire varchar(200) not null,
-	primary key(idavis)
-);
 
 create table if not exists adresse (
+	id smallint not null auto_increment,
 	ville varchar(50) not null,
 	rue varchar(50) not null,
 	num int not null,
-	codepost int not null,
-	idlieu smallint not null,
-	primary key(ville,rue,idlieu),
-	key(idlieu)
-);
+	cp int not null,
+	primary key(id),
+)engine=innodb;
 
 create table if not exists favoris(
 	idutil smallint not null,
 	idlieu smallint not null,
 	primary key(idutil, idlieu),
-	key(idutil),
 	key(idlieu)
-);
+)engine=innodb;
 
-create table if not exists avisposte(
+create table if not exists avis(
+	id smallint not null auto_increment,
+	note float not null,
+	commentaire varchar(MAX),
+	valider boolean not null,
 	idutil smallint not null,
 	idlieu smallint not null,
-	idavis smallint not null,
-	primary key(idutil, idlieu, idavis)
+	primary key(id),
 	key(idutil),
-	key(idlieu),
-	key(idavis)
-);
+	key(idlieu)
+)engine=innodb;
 
-ALTER table adresse add constraint fkadressealieu FOREIGN key (idlieu) REFERENCES lieu(idlieu);
 
-ALTER table favoris add constraint fkfavorisutil FOREIGN key (idutil) REFERENCES utilisateur(idutil);
-ALTER table favoris add constraint fkfavorislieu FOREIGN key (idlieu) REFERENCES lieu(idlieu);
+ALTER table favoris add constraint fkfavorisutil FOREIGN key (idutil) REFERENCES utilisateur(id);
+ALTER table favoris add constraint fkfavorislieu FOREIGN key (idlieu) REFERENCES lieu(id);
 
-ALTER table avisposte add constraint fkavisposteutil FOREIGN key (idutil) REFERENCES utilisateur(idutil);
-ALTER table avisposte add constraint fkavispostelieu FOREIGN key (idlieu) REFERENCES lieu(idlieu);
-ALTER table avisposte add constraint fkavisposteavis FOREIGN key (idavis) REFERENCES avis(idavis);
+ALTER table avis add constraint fkavisposteutil FOREIGN key (idutil) REFERENCES utilisateur(id);
+ALTER table avis add constraint fkavispostelieu FOREIGN key (idlieu) REFERENCES lieu(id);
+
+ALTER TABLE utilisateur add constraint fkutilisateuradresse FOREIGN KEY (idadr) REFERENCES adresse(id);
+
+ALTER TABLE lieu add constraint fklieuutilisateur FOREIGN KEY (idadr) REFERENCES adresse(id);
