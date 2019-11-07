@@ -40,6 +40,8 @@ namespace Cou_project.Controllers
         
         //Favoris se trouve dans Utilisateur car les favoris sont plus lié à l'utilisateur que l'inverse --> Plus opti
         //FAVORIS
+        
+        //Le template est à ajouter dans l'url pour distinguer les requêtes'
         [HttpGet("Favoris")]
         public ActionResult<IEnumerable<Favoris>> queryFavoris()
         {
