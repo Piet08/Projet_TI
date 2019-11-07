@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\user\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\user\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Cou_project.2058640222.00" t="ExcludeRecursive" />
+    <e p="C:\Users\user\RiderProjects\Cou_project" t="IncludeFlat">
+      <e p="Cou_project" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="AdresseController.cs" t="Include" />
+          <e p="AvisController.cs" t="Include" />
+          <e p="LieuController.cs" t="Include" />
+          <e p="UtilisateurController.cs" t="Include" />
+          <e p="WeatherForecastController.cs" t="Include" />
+        </e>
+        <e p="Cou_project.csproj" t="IncludeRecursive" />
+        <e p="DAO" t="Include">
+          <e p="AdresseDAO.cs" t="Include" />
+          <e p="AvisDAO.cs" t="Include" />
+          <e p="LieuDAO.cs" t="Include" />
+          <e p="UtilisateurDAO.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Adresse.cs" t="Include" />
+          <e p="Avis.cs" t="Include" />
+          <e p="Database.cs" t="Include" />
+          <e p="Favoris.cs" t="Include" />
+          <e p="Lieu.cs" t="Include" />
+          <e p="Utilisateur.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="Cou_project.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="WeatherForecast.cs" t="Include" />
+      </e>
+      <e p="Cou_project.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
