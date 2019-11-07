@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\user\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\user\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Cou_project.2058640222.00" t="ExcludeRecursive" />
-    <e p="C:\Users\user\RiderProjects\Cou_project" t="IncludeFlat">
+    <e p="C:\Users\user\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Cou_project.588546451.00" t="ExcludeRecursive" />
+    <e p="C:\Users\user\Documents\GitHub\Projet_TI\Cou_project" t="IncludeFlat">
       <e p="Cou_project" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
