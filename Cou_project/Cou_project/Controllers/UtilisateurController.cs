@@ -1,36 +1,71 @@
 ﻿using System.Collections.Generic;
 using Cou_project.DAO;
 using Cou_project.Models;
+using Cou_project.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cou_project.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("/api/[controller]")]
     public class UtilisateurController : ControllerBase
     {
+        
+        //AUTHENTIFICATION WITH JWT
+        private IUtilisateurService _utilisateurService;
+        
+        
+        public UtilisateurController(IUtilisateurService userService)
+        {
+            _utilisateurService = userService;
+        }
+        
+        [AllowAnonymous]
+        [HttpPost("authenticate")]
+        public IActionResult Authenticate([FromBody]AuthenticateModel model)
+        {
+            var user = _utilisateurService.Authenticate(model.Username, model.Password);
+
+            if (user == null)
+                return BadRequest(new { message = "Username or password is incorrect" });
+
+            return Ok(user);
+        }
+        [HttpGet("authenticate")]
+        public IActionResult GetAll()
+        {
+            var users = _utilisateurService.GetAll();
+            return Ok(users);
+        }
         //UTILISATEUR
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult<IEnumerable<Utilisateur>> query()
         {
             return Ok(UtilisateurDAO.Query());
         }
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult<Utilisateur> Post([FromBody] Utilisateur util)
         {
             return Ok(UtilisateurDAO.Create(util));
         }
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public ActionResult<Utilisateur> Get(int id)
         {
             Utilisateur util = UtilisateurDAO.Get(id);
             return util != null ? (ActionResult<Utilisateur>) Ok(util) : NotFound("This user does not exists!");
         }
+        [AllowAnonymous]
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
             return UtilisateurDAO.Delete(id) ? (ActionResult) Ok() : NotFound();
         }
+        [AllowAnonymous]
         [HttpPut]
         public ActionResult<Utilisateur> Update([FromBody] Utilisateur util)
         {
@@ -42,16 +77,19 @@ namespace Cou_project.Controllers
         //FAVORIS
         
         //Le template est à ajouter dans l'url pour distinguer les requêtes'
+        [AllowAnonymous]
         [HttpGet("Favoris")]
         public ActionResult<IEnumerable<Favoris>> queryFavoris()
         {
             return Ok(UtilisateurDAO.QueryFavoris());
         }
+        [AllowAnonymous]
         [HttpPost("Favoris")]
         public ActionResult<Favoris> PostFavoris([FromBody] Favoris favoris)
         {
             return Ok(UtilisateurDAO.CreateFavoris(favoris));
         }
+        [AllowAnonymous]
         [HttpDelete("Favoris")]
         public ActionResult DeleteFavoris([FromBody] Favoris favoris)
         {

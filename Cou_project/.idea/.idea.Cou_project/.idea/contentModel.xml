@@ -22,8 +22,13 @@
           <e p="LieuDAO.cs" t="Include" />
           <e p="UtilisateurDAO.cs" t="Include" />
         </e>
+        <e p="Helpers" t="Include">
+          <e p="AppSettings.cs" t="Include" />
+          <e p="ExtensionMethods.cs" t="Include" />
+        </e>
         <e p="Models" t="Include">
           <e p="Adresse.cs" t="Include" />
+          <e p="AuthenticateModel.cs" t="Include" />
           <e p="Avis.cs" t="Include" />
           <e p="Database.cs" t="Include" />
           <e p="Favoris.cs" t="Include" />
@@ -40,6 +45,9 @@
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="UtilisateurService.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="WeatherForecast.cs" t="Include" />

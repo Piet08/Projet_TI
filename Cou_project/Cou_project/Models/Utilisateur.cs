@@ -15,6 +15,8 @@ namespace Cou_project.Models
         public string Email { get; set; }
         public string Hashpwd { get; set; }
         public int Idadr { get; set; }
+        
+        public string Token { get; set; }
 
         public Utilisateur()
         {
@@ -30,6 +32,19 @@ namespace Cou_project.Models
             Email = email;
             Hashpwd = hashpwd;
             Idadr = idadr;
+        }
+        
+        public Utilisateur(int id, string nom, string prenom, string pseudo, string type, string email, string hashpwd, int idadr, string token)
+        {
+            Id = id;
+            Nom = nom;
+            Prenom = prenom;
+            Pseudo = pseudo;
+            Type = type;
+            Email = email;
+            Hashpwd = hashpwd;
+            Idadr = idadr;
+            Token = token;
         }
         
         public Utilisateur(SqlDataReader reader)
