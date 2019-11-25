@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8cd2ff54-49aa-4a00-aca2-ac5a87e28ec5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/browserslist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tslint.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CouProject_API/.idea/.idea.Cou_project/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/.idea/.idea.Cou_project/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/.idea/.idea.Cou_project/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/.idea/.idea.Cou_project/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/.idea/.idea.Cou_project/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/.idea/.idea.Cou_project/.idea/projectSettingsUpdater.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/.idea/.idea.Cou_project/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/.idea/.idea.Cou_project/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Controllers/AdresseController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Controllers/AvisController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Controllers/LieuController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Controllers/UtilisateurController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Cou_project.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/DAO/AdresseDAO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/DAO/AvisDAO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/DAO/LieuDAO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/DAO/UtilisateurDAO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Helpers/AppSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Helpers/ExtensionMethods.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Models/Adresse.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Models/AuthenticateModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Models/Avis.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Models/Database.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Models/Favoris.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Models/Lieu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Models/Utilisateur.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Properties/launchSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Services/UtilisateurService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/Startup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cou_project/Cou_project/appsettings.json" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1U7dGoA3U0qMNoC6wUQe2qw8KgI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Repository\Projet_TI\CouProjectAngular\node_modules\typescript\lib" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Tests (CouProjectAngular)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests (CouProjectAngular)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8cd2ff54-49aa-4a00-aca2-ac5a87e28ec5" name="Default Changelist" comment="" />
+      <created>1574711475003</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574711475003</updated>
+      <workItem from="1574711477646" duration="5631000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
