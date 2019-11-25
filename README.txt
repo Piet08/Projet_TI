@@ -11,4 +11,4 @@ Dans le fichier "Database.cs" -> Créé une variable
 				Avec le nom de votre PC ! 
 				
 				
-ATTENTION LE FICHIER " .IDEA " DOIT SE TROUVER DANS LE DOSSIER "CouProjectAngular" + AJOUTER NODES_MODULES
+ATTENTION LE FICHIER " .IDEA " et " NODES_MODULES " (lol) DOIT SE TROUVER DANS LE DOSSIER "CouProjectAngular" 
