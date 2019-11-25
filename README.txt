@@ -9,3 +9,6 @@ De plus, dans Rider -> fichier de l'api "laubchSettings.json" -> Bien vérfifié
 Dans le fichier "Database.cs" -> Créé une variable 
 					public static readonly string SERVER = "DESKTOP-N27P2MS";
 				Avec le nom de votre PC ! 
+				
+				
+ATTENTION LE FICHIER " .IDEA " DOIT SE TROUVER DANS LE DOSSIER "CouProjectAngular" + AJOUTER NODES_MODULES
