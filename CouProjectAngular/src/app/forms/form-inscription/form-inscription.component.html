@@ -22,7 +22,7 @@
   <div>
     <label for="verifMotDePasse">Vérification mot de passe : </label>
     <input type="password" formControlName="verifMotDePasse" id="verifMotDePasse">
-    <span *ngIf="verifMDP()"></span>
+    <span *ngIf="!verificationMotDePasse()">Erreur, mauvais mot de passe</span>
   </div>
 
   <div>
@@ -47,9 +47,7 @@
       </datalist>
     </div>
     <div>
-      <input type="submit" value="S'inscrire" id="btnInscription"/>
+      <input type="submit" value="S'inscrire" id="btnInscription" [disabled]="verificationFormulaire()"/>
     </div>
   </div>
-
-
 </form>

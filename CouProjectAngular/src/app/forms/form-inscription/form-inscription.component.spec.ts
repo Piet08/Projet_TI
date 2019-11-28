@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+
+
 import { FormInscriptionComponent } from './form-inscription.component';
 
 describe('FormInscriptionComponent', () => {

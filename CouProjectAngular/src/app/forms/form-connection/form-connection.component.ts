@@ -21,4 +21,15 @@ export class FormConnectionComponent implements OnInit {
   alertME() {
     console.log(this.formulaireConnexion.controls.emailConnexion.value);
   }
+
+  verificationEmail(){
+    var regex = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
+    if(this.formulaireConnexion.controls.emailConnexion.value.match(regex) !== null) return true;
+    return false;
+  }
+
+  verificationFormulaire(){
+    if(this.verificationEmail() && this.formulaireConnexion.valid) return false;
+    return true;
+  }
 }
