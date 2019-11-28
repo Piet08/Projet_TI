@@ -33,6 +33,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div style=\"background-color:red;\">\r\n      <h1>Cou</h1>\r\n  </div>\r\n</div>\r\n\r\n<ngb-tabset type=\"pills\" [justify]=\"currentJustify\">\r\n  <ngb-tab title=\"Accueil\">\r\n    <ng-template ngbTabContent >\r\n      <!--COMPONENT-->\r\n    </ng-template>\r\n  </ngb-tab>\r\n  <ngb-tab title=\"Carte\">\r\n    <ng-template ngbTabContent >\r\n      <!--COMPONENT-->\r\n    </ng-template>\r\n  </ngb-tab>\r\n  <ngb-tab title=\"Ajout Lieu\">\r\n    <ng-template ngbTabContent >\r\n      <!--COMPONENT-->\r\n    </ng-template>\r\n  </ngb-tab>\r\n  <ngb-tab title=\"Lieux\">\r\n    <ng-template ngbTabContent >\r\n      <!--COMPONENT-->\r\n    </ng-template>\r\n  </ngb-tab>\r\n  <ngb-tab title=\"Connexion\">\r\n    <ng-template ngbTabContent >\r\n      <!--COMPONENT-->\r\n    </ng-template>\r\n  </ngb-tab>\r\n</ngb-tabset>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>PIERRE</p>\r\n");
 
 /***/ }),
 

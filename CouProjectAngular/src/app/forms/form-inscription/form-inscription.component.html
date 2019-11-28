@@ -1,0 +1,53 @@
+<form [formGroup] = "formulaireInscription" (ngSubmit)="alertME()">
+  <div>
+    <label for="emailInscription">Email : </label>
+    <input type="text" formControlName="emailInscription" id="emailInscription">
+  </div>
+
+  <div>
+    <label for="nom">Nom : </label>
+    <input type="nom" formControlName="nom" id="nom">
+  </div>
+
+  <div>
+    <label for="prenom">Prénom : </label>
+    <input type="text" formControlName="prenom" id="prenom">
+  </div>
+
+  <div>
+    <label for="motDePasseInscription">Mot de passe : </label>
+    <input type="password" formControlName="motDePasse" id="motDePasseInscription">
+  </div>
+
+  <div>
+    <label for="verifMotDePasse">Vérification mot de passe : </label>
+    <input type="password" formControlName="verifMotDePasse" id="verifMotDePasse">
+    <span *ngIf="!verificationMotDePasse()">Erreur, mauvais mot de passe</span>
+  </div>
+
+  <div>
+    <label>Adresse : </label>
+    <div>
+      <label for="numero">Numéro : </label>
+      <input type="text" formControlName="numero" id="numero">
+    </div>
+    <div>
+      <label for="rue">Rue : </label>
+      <input type="text" formControlName="rue" id="rue">
+    </div>
+    <div>
+      <label for="codePostal">Code postal : </label>
+      <input type="number" formControlName="codePostal" id="codePostal" min="4000" max="8000">
+    </div>
+    <div>
+      <label for="ville">Ville : </label>
+      <input list="listeVille" formControlName="ville" id="ville">
+      <datalist id="listeVille">
+        <option>Test</option>
+      </datalist>
+    </div>
+    <div>
+      <input type="submit" value="S'inscrire" id="btnInscription" [disabled]="verificationFormulaire()"/>
+    </div>
+  </div>
+</form>
