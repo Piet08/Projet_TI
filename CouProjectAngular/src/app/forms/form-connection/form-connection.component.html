@@ -1,0 +1,18 @@
+<form [formGroup]="formulaireConnexion" (ngSubmit)="alertME()">
+  <div>
+    <label for="emailConnexion">Email : </label>
+    <input type="text" formControlName="emailConnexion" id="emailConnexion">
+  </div>
+  <div>
+    <label for = "motDePasseConnexion">Mot de passe : </label>
+    <input type = "password" formControlName="motDePasseConnexion" id="motDePasseConnexion">
+  </div>
+  <div>
+    <label for="resterConnecter"><b>Rester connecté?</b></label>
+    <input type="checkbox" formControlName="resterConnecte" id="resterConnecter">
+  </div>
+  <div>
+
+    <input type="submit" value="Se connecter" [disabled]="!formulaireConnexion.valid"/>
+  </div>
+</form>
