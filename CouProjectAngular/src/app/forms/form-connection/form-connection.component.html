@@ -1,18 +1,24 @@
-<form [formGroup]="formulaireConnexion" (ngSubmit)="alertME()">
-  <div>
-    <label for="emailConnexion">Email : </label>
-    <input type="text" formControlName="emailConnexion" id="emailConnexion">
-  </div>
-  <div>
-    <label for = "motDePasseConnexion">Mot de passe : </label>
-    <input type = "password" formControlName="motDePasseConnexion" id="motDePasseConnexion">
-  </div>
-  <div>
-    <label for="resterConnecter"><b>Rester connecté?</b></label>
-    <input type="checkbox" formControlName="resterConnecte" id="resterConnecter">
-  </div>
-  <div>
+<div align="center">
+  <h1>Formulaire Connexion</h1>
+  <form class="form-horizontal" [formGroup]="formulaireConnexion" (ngSubmit)="alertME()" role="form">
+    <div class="form-group">
+      <label for="emailConnexion" class="col-sm-3 control-label">Email</label>
+      <div class="col-sm-6">
+        <input class="form-control" type="text" formControlName="emailConnexion" id="emailConnexion"/>
+      </div>
+    </div>
 
-    <input type="submit" value="Se connecter" [disabled]="verificationFormulaire()"/>
-  </div>
-</form>
+      <div class="form-group">
+        <label for="motDePasseConnexion" class="col-sm-3 control-label">Mot de passe</label>
+        <div class="col-sm-6">
+          <input class="form-control" type = "password" formControlName="motDePasseConnexion" id="motDePasseConnexion"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="resterConnecter" class="col-sm-3 control-label"><b>Rester connecté?</b></label>
+        <input  type="checkbox" formControlName="resterConnecter" id="resterConnecter"/>
+      </div>
+
+    <input type="submit" value="Se connecter" class="btn btn-primary col-sm-offset-3" [disabled]="verificationFormulaire()"/>
+  </form>
+</div>

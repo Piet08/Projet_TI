@@ -1,53 +1,68 @@
-<form [formGroup] = "formulaireInscription" (ngSubmit)="alertME()">
-  <div>
-    <label for="emailInscription">Email : </label>
-    <input type="text" formControlName="emailInscription" id="emailInscription">
-  </div>
-
-  <div>
-    <label for="nom">Nom : </label>
-    <input type="nom" formControlName="nom" id="nom">
-  </div>
-
-  <div>
-    <label for="prenom">Prénom : </label>
-    <input type="text" formControlName="prenom" id="prenom">
-  </div>
-
-  <div>
-    <label for="motDePasseInscription">Mot de passe : </label>
-    <input type="password" formControlName="motDePasse" id="motDePasseInscription">
-  </div>
-
-  <div>
-    <label for="verifMotDePasse">Vérification mot de passe : </label>
-    <input type="password" formControlName="verifMotDePasse" id="verifMotDePasse">
-    <span *ngIf="!verificationMotDePasse()">Erreur, mauvais mot de passe</span>
-  </div>
-
-  <div>
-    <label>Adresse : </label>
-    <div>
-      <label for="numero">Numéro : </label>
-      <input type="text" formControlName="numero" id="numero">
+<div align="center">
+  <h1>Formulaire inscription</h1>
+  <form class="form-horizontal" [formGroup] = "formulaireInscription" (ngSubmit)="alertME()" role="form">
+    <div class="form-group">
+      <label for="emailInscription" class="col-sm-3 control-label">Email</label>
+      <div class="col-sm-6">
+        <input class="form-control" type="text" formControlName="emailInscription" id="emailInscription"/>
+      </div>
     </div>
-    <div>
-      <label for="rue">Rue : </label>
-      <input type="text" formControlName="rue" id="rue">
+    <div class="form-group">
+      <label for="nom" class="col-sm-3 control-label">Nom</label>
+      <div class="col-sm-6">
+        <input class="form-control" type ="text" formControlName="nom" id="nom"/>
+      </div>
     </div>
-    <div>
-      <label for="codePostal">Code postal : </label>
-      <input type="number" formControlName="codePostal" id="codePostal" min="4000" max="8000">
+    <div class="form-group">
+      <label for="prenom" class="col-sm-3 control-label">Prenom</label>
+      <div class="col-sm-6">
+        <input class="form-control" type ="text" formControlName="prenom" id="prenom"/>
+      </div>
     </div>
-    <div>
-      <label for="ville">Ville : </label>
-      <input list="listeVille" formControlName="ville" id="ville">
-      <datalist id="listeVille">
-        <option>Test</option>
-      </datalist>
+    <div class="form-group">
+      <label for="motDePasseInscription" class="col-sm-3 control-label">Mot de passe</label>
+      <div class="col-sm-6">
+        <input class="form-control" type ="password" formControlName="motDePasse" id="motDePasseInscription"/>
+      </div>
     </div>
-    <div>
-      <input type="submit" value="S'inscrire" id="btnInscription" [disabled]="verificationFormulaire()"/>
+    <div class="form-group">
+      <label for="verifMotDePasse" class="col-sm-3 control-label">Vérification mot de passe</label>
+      <div class="col-sm-6">
+        <input class="form-control" type ="password" formControlName="verfiMotDePasse" id="verifMotDePasse"/>
+        <span *ngIf="!verificationMotDePasse()">Erreur, mauvais mot de passe</span>
+      </div>
     </div>
-  </div>
-</form>
+    <div class="form-group">
+      <label for="numero" class="col-sm-3 control-label">Numéro</label>
+      <div class="col-sm-6">
+        <input class="form-control" type ="text" formControlName="numero" id="numero"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="rue" class="col-sm-3 control-label">Rue</label>
+      <div class="col-sm-6">
+        <input class="form-control" type ="text" formControlName="rue" id="rue"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="codePostal" class="col-sm-3 control-label">Code Postal</label>
+      <div class="col-sm-6">
+        <input class="form-control" type ="number" formControlName="codePostal" id="codePostal" min="4000" max="8000"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="ville" class="col-sm-3 control-label">Ville</label>
+      <div class="col-sm-6">
+        <input class="form-control" list="listVille" formControlName="ville" id="ville" />
+        <datalist id="listeVille">
+          <option>Test</option>
+        </datalist>
+      </div>
+    </div>
+
+
+    <input class="btn btn-primary col-sm-offset-3" type="submit" value="S'inscrire" id="btnInscription" [disabled]="verificationFormulaire()"/>
+  </form>
+</div>
