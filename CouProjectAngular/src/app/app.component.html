@@ -4,35 +4,25 @@
   </div>
 </div>
 
-<ngb-tabset type="pills" [justify]="currentJustify">
-  <ngb-tab title="Accueil">
-    <ng-template ngbTabContent >
-      <!--COMPONENT-->
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab title="Carte">
-    <ng-template ngbTabContent >
-      <!--COMPONENT-->
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab title="Ajout Lieu">
-    <ng-template ngbTabContent >
-      <!--COMPONENT-->
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab title="Lieux">
-    <ng-template ngbTabContent >
-      <!--COMPONENT-->
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab title="Connexion">
-    <ng-template ngbTabContent>
-		<app-form-connection></app-form-connection>
-		<app-form-inscription></app-form-inscription>
-    </ng-template>
-  </ngb-tab>
-</ngb-tabset>
+<nav class="nnavbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Menu</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans "app.module.ts-->
+      <li><a routerLink="authenticate">Connexion</a></li>
+      <li><a routerLink="Utilisateur">Inscription</a></li>
+    </ul>
+  </div>
+</nav>
 
-
-
+<!--Permet l'affichage des component-->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
 

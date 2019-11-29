@@ -8,6 +8,15 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormConnectionComponent } from './forms/form-connection/form-connection.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FormInscriptionComponent } from './forms/form-inscription/form-inscription.component';
+import {RouterModule, Routes} from "@angular/router";
+
+// path = le nom du controller de l'api en fonction de ce que l'on veut faire
+// component : celui que l'on souhaite afficher
+// Les imports sont déja fait
+const routes: Routes = [
+  {path: 'authenticate', component:FormConnectionComponent},
+  {path: 'Utilisateur', component:FormInscriptionComponent}
+];
 
 @NgModule({
   declarations: [
@@ -21,7 +30,8 @@ import { FormInscriptionComponent } from './forms/form-inscription/form-inscript
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
