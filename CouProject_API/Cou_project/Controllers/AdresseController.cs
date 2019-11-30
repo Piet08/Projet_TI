@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Cou_project.Controllers
 {
     [ApiController]
-    [Route("/api/[controller]")]
+    [Route("api/[controller]")]
     public class AdresseController : ControllerBase
     {
         [HttpGet]

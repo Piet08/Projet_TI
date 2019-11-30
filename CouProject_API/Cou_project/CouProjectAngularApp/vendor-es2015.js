@@ -118,7 +118,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Location", function() { return Location; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /**
- * @license Angular v8.2.14
+ * @license Angular v8.2.8
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -7674,7 +7674,7 @@ DeprecatedI18NPipesModule.decorators = [
  * A DI Token representing the main rendering context. In a browser this is the DOM Document.
  *
  * Note: Document might not be available in the Application Context when Application and Rendering
- * Contexts are not the same (e.g. when running the application in a Web Worker).
+ * Contexts are not the same (e.g. when running the application into a Web Worker).
  *
  * \@publicApi
  * @type {?}
@@ -7745,7 +7745,7 @@ function isPlatformWorkerUi(platformId) {
  * \@publicApi
  * @type {?}
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('8.2.14');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('8.2.8');
 
 /**
  * @fileoverview added by tsickle
@@ -8018,7 +8018,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /**
- * @license Angular v8.2.14
+ * @license Angular v8.2.8
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -8088,8 +8088,8 @@ function Update() { }
 if (false) {}
 /**
  * Represents the header configuration options for an HTTP request.
- * Instances are immutable. Modifying methods return a cloned
- * instance with the change. The original object is never changed.
+ *
+ * Instances should be assumed immutable with lazy parsing.
  *
  * \@publicApi
  */
@@ -8169,22 +8169,22 @@ class HttpHeaders {
         }
     }
     /**
-     * Checks for existence of a given header.
+     * Checks for existence of a header by a given name.
      *
      * @param {?} name The header name to check for existence.
      *
-     * @return {?} True if the header exists, false otherwise.
+     * @return {?} Whether the header exits.
      */
     has(name) {
         this.init();
         return this.headers.has(name.toLowerCase());
     }
     /**
-     * Retrieves the first value of a given header.
+     * Retrieves the first header value that matches a given name.
      *
-     * @param {?} name The header name.
+     * @param {?} name The header name to retrieve.
      *
-     * @return {?} The value string if the header exists, null otherwise
+     * @return {?} A string if the header exists, null otherwise
      */
     get(name) {
         this.init();
@@ -8202,9 +8202,9 @@ class HttpHeaders {
         return Array.from(this.normalizedNames.values());
     }
     /**
-     * Retrieves a list of values for a given header.
+     * Retrieves a list of header values for a given header name.
      *
-     * @param {?} name The header name from which to retrieve values.
+     * @param {?} name The header name from which to retrieve the values.
      *
      * @return {?} A string of values if the header exists, null otherwise.
      */
@@ -8213,37 +8213,36 @@ class HttpHeaders {
         return this.headers.get(name.toLowerCase()) || null;
     }
     /**
-     * Appends a new value to the existing set of values for a header
-     * and returns them in a clone of the original instance.
+     * Appends a new header value to the existing set of
+     * header values.
      *
-     * @param {?} name The header name for which to append the value or values.
-     * @param {?} value The new value or array of values.
+     * @param {?} name The header name for which to append the values.
      *
-     * @return {?} A clone of the HTTP headers object with the value appended to the given header.
+     * @param {?} value
+     * @return {?} A clone of the HTTP header object with the value appended.
      */
     append(name, value) {
         return this.clone({ name, value, op: 'a' });
     }
     /**
-     * Sets or modifies a value for a given header in a clone of the original instance.
-     * If the header already exists, its value is replaced with the given value
-     * in the returned object.
+     * Sets a header value for a given name. If the header name already exists,
+     * its value is replaced with the given value.
      *
      * @param {?} name The header name.
-     * @param {?} value The value or values to set or overide for the given header.
+     * @param {?} value The value to set or overide for a given name.
      *
-     * @return {?} A clone of the HTTP headers object with the newly set header value.
+     * @return {?} A clone of the HTTP header object with the newly set header value.
      */
     set(name, value) {
         return this.clone({ name, value, op: 's' });
     }
     /**
-     * Deletes values for a given header in a clone of the original instance.
+     * Deletes all header values for a given name.
      *
      * @param {?} name The header name.
-     * @param {?=} value The value or values to delete for the given header.
+     * @param {?=} value The header values to delete for a given name.
      *
-     * @return {?} A clone of the HTTP headers object with the given value deleted.
+     * @return {?} A clone of the HTTP header object.
      */
     delete(name, value) {
         return this.clone({ name, value, op: 'd' });
@@ -9234,12 +9233,6 @@ if (false) {}
 /**
  * Constructs an instance of `HttpRequestOptions<T>` from a source `HttpMethodOptions` and
  * the given `body`. This function clones the object and adds the body.
- *
- * Note that the `responseType` *options* value is a String that identifies the
- * single data type of the response.
- * A single overload version of the method handles each response type.
- * The value of `responseType` cannot be a union, as the combined signature could imply.
- *
  * @template T
  * @param {?} options
  * @param {?} body
@@ -9258,14 +9251,10 @@ function addBody(options, body) {
 }
 /**
  * Performs HTTP requests.
+ *
  * This service is available as an injectable class, with methods to perform HTTP requests.
  * Each request method has multiple signatures, and the return type varies based on
  * the signature that is called (mainly the values of `observe` and `responseType`).
- *
- * Note that the `responseType` *options* value is a String that identifies the
- * single data type of the response.
- * A single overload version of the method handles each response type.
- * The value of `responseType` cannot be a union, as the combined signature could imply.
  *
  * \@usageNotes
  * Sample HTTP requests for the [Tour of Heroes](/tutorial/toh-pt0) application.
@@ -10920,7 +10909,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "R3TargetBinder", function() { return R3TargetBinder; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "R3BoundTarget", function() { return R3BoundTarget; });
 /**
- * @license Angular v8.2.14
+ * @license Angular v8.2.8
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -28506,7 +28495,7 @@ function publishFacade(global) {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-const VERSION$1 = new Version('8.2.14');
+const VERSION$1 = new Version('8.2.8');
 
 /**
  * @license
@@ -29367,7 +29356,6 @@ const _MARKER_TAG = 'mrk';
 const _FILE_TAG = 'file';
 const _SOURCE_TAG$1 = 'source';
 const _SEGMENT_SOURCE_TAG = 'seg-source';
-const _ALT_TRANS_TAG = 'alt-trans';
 const _TARGET_TAG = 'target';
 const _UNIT_TAG = 'trans-unit';
 const _CONTEXT_GROUP_TAG = 'context-group';
@@ -29507,7 +29495,6 @@ class XliffParser {
             // ignore those tags
             case _SOURCE_TAG$1:
             case _SEGMENT_SOURCE_TAG:
-            case _ALT_TRANS_TAG:
                 break;
             case _TARGET_TAG:
                 const innerTextStart = element.startSourceSpan.end.offset;
@@ -38232,7 +38219,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /**
- * @license Angular v8.2.14
+ * @license Angular v8.2.8
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -43701,7 +43688,6 @@ function bypassSanitizationTrustResourceUrl(trustedResourceUrl) {
  * @return {?}
  */
 function bypassSanitizationTrustString(trustedString, mode) {
-    // tslint:disable-next-line
     /** @type {?} */
     const trusted = (/** @type {?} */ (new String(trustedString)));
     trusted[BRAND] = mode;
@@ -62003,7 +61989,7 @@ if (false) {}
  * \@publicApi
  * @type {?}
  */
-const VERSION = new Version('8.2.14');
+const VERSION = new Version('8.2.8');
 
 /**
  * @fileoverview added by tsickle
@@ -79398,7 +79384,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /**
- * @license Angular v8.2.14
+ * @license Angular v8.2.8
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -80022,7 +80008,7 @@ if (false) {}
  * \@publicApi
  * @type {?}
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('8.2.14');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('8.2.8');
 
 /**
  * @fileoverview added by tsickle
@@ -80124,7 +80110,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /**
- * @license Angular v8.2.14
+ * @license Angular v8.2.8
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -84096,7 +84082,7 @@ class By {
  * \@publicApi
  * @type {?}
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('8.2.14');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('8.2.8');
 
 /**
  * @fileoverview added by tsickle
@@ -84203,7 +84189,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /**
- * @license Angular v8.2.14
+ * @license Angular v8.2.8
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -85002,7 +84988,7 @@ function defaultUrlMatcher(segments, segmentGroup, route) {
  * the router would apply the redirect even when navigating to the redirect destination,
  * creating an endless loop.
  *
- * In the following example, supplying the 'full' `pathMatch` strategy ensures
+ * In the following example, supplying the 'full' `patchMatch` strategy ensures
  * that the router applies the redirect if and only if navigating to '/'.
  *
  * ```
@@ -85062,14 +85048,17 @@ function defaultUrlMatcher(segments, segmentGroup, route) {
  * into multiple bundles and loading them on demand.
  * To use lazy loading, provide the `loadChildren` property  instead of the `children` property.
  *
- * Given the following example route, the router will lazy load
- * the associated module on demand using the browser native import system.
+ * Given the following example route, the router uses the registered
+ * `NgModuleFactoryLoader` to fetch an NgModule associated with 'team'.
+ * It then extracts the set of routes defined in that NgModule,
+ * and transparently adds those routes to the main configuration.
  *
  * ```
  * [{
- *   path: 'lazy',
- *   loadChildren: () => import('./lazy-route/lazy.module').then(mod => mod.LazyModule),
- * }];
+ *   path: 'team/:id',
+ *   component: Team,
+ *   loadChildren: 'team'
+ * }]
  * ```
  *
  * \@publicApi
@@ -90059,7 +90048,7 @@ class Router {
         this.paramsInheritanceStrategy = 'emptyOnly';
         /**
          * Determines when the router updates the browser URL.
-         * By default (`"deferred"`), updates the browser URL after navigation has finished.
+         * By default (`"deferred"`), udates the browser URL after navigation has finished.
          * Set to `'eager'` to update the browser URL at the beginning of navigation.
          * You can choose to update early so that, if navigation fails,
          * you can show an error message with the URL that failed.
@@ -91583,17 +91572,14 @@ if (false) {}
  *
  * Acts as a placeholder that Angular dynamically fills based on the current router state.
  *
- * Each outlet can have a unique name, determined by the optional `name` attribute.
- * The name cannot be set or changed dynamically. If not set, default value is "primary".
- *
  * ```
  * <router-outlet></router-outlet>
  * <router-outlet name='left'></router-outlet>
  * <router-outlet name='right'></router-outlet>
  * ```
  *
- * A router outlet emits an activate event when a new component is instantiated,
- * and a deactivate event when a component is destroyed.
+ * A router outlet will emit an activate event any time a new component is being instantiated,
+ * and a deactivate event when it is being destroyed.
  *
  * ```
  * <router-outlet
@@ -92570,7 +92556,7 @@ function provideRouterInitializer() {
  * \@publicApi
  * @type {?}
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('8.2.14');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('8.2.8');
 
 /**
  * @fileoverview added by tsickle
