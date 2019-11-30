@@ -17,26 +17,16 @@
         <e p="CouProjectAngularApp" t="Include">
           <e p="favicon.ico" t="Include" />
           <e p="index.html" t="Include" />
-          <e p="main-es2015.js" t="Include" />
-          <e p="main-es2015.js.map" t="Include" />
-          <e p="main-es5.js" t="Include" />
-          <e p="main-es5.js.map" t="Include" />
-          <e p="polyfills-es2015.js" t="Include" />
-          <e p="polyfills-es2015.js.map" t="Include" />
-          <e p="polyfills-es5.js" t="Include" />
-          <e p="polyfills-es5.js.map" t="Include" />
-          <e p="runtime-es2015.js" t="Include" />
-          <e p="runtime-es2015.js.map" t="Include" />
-          <e p="runtime-es5.js" t="Include" />
-          <e p="runtime-es5.js.map" t="Include" />
-          <e p="styles-es2015.js" t="Include" />
-          <e p="styles-es2015.js.map" t="Include" />
-          <e p="styles-es5.js" t="Include" />
-          <e p="styles-es5.js.map" t="Include" />
-          <e p="vendor-es2015.js" t="Include" />
-          <e p="vendor-es2015.js.map" t="Include" />
-          <e p="vendor-es5.js" t="Include" />
-          <e p="vendor-es5.js.map" t="Include" />
+          <e p="main.js" t="Include" />
+          <e p="main.js.map" t="Include" />
+          <e p="polyfills.js" t="Include" />
+          <e p="polyfills.js.map" t="Include" />
+          <e p="runtime.js" t="Include" />
+          <e p="runtime.js.map" t="Include" />
+          <e p="styles.js" t="Include" />
+          <e p="styles.js.map" t="Include" />
+          <e p="vendor.js" t="Include" />
+          <e p="vendor.js.map" t="Include" />
         </e>
         <e p="DAO" t="Include">
           <e p="AdresseDAO.cs" t="Include" />
@@ -77,7 +67,7 @@
       <e p="Cou_project.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
     </e>
-    <e p="C:\Users\eliot\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\eliot\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Cou_project.543492269.00" t="ExcludeRecursive" />
+    <e p="C:\Users\user\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\user\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Cou_project.543492269.00" t="ExcludeRecursive" />
   </component>
 </project>

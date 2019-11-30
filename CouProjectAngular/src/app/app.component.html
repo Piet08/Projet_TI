@@ -1,2 +1,27 @@
-<p>PIERREot</p>
+<div class="title">
+  <div style="background-color:red;">
+      <h1>Cou</h1>
+  </div>
+</div>
 
+<nav class="nnavbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Menu</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans "app.module.ts-->
+      <li><a routerLink="authenticate">Connexion</a></li>
+      <li><a routerLink="Utilisateur">Inscription</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!--Permet l'affichage des component-->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
