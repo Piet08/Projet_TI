@@ -1,28 +1,47 @@
 <div class="title">
-  <div style="background-color:red;">
-      <h1>Cou</h1>
+  <div>
+      <h1>{{title}}</h1>
   </div>
 </div>
 
-<nav class="nnavbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand">Menu</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans "app.module.ts-->
-      <li><a routerLink="authenticate">Connexion</a></li>
-      <li><a routerLink="Utilisateur">Inscription</a></li>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="navbar-header">
+    <a class="navbar-brand">Menu</a>
+  </div>
+  <div class="collapse navbar-collapse" id="AngularNav" [ngbCollapse]="isCollapsed">
+    <ul class="navbar-nav" >
+      <li class="nav-item active col-sm-4 text-center">
+        <a routerLink="app-home" class="nav-link">Accueil</a>
+      </li>
+      <li class="nav-item col-sm-5 text-center">
+        <a routerLink="authenticate" class="nav-link">Connexion</a>
+      </li>
+      <li class="nav-item col-sm-5 text-center">
+        <a routerLink="Utilisateur" class="nav-link">Inscription</a>
+      </li>
+      <li class="nav-item col-sm-5 text-center">
+        <a routerLink="" class="nav-link">Cartes</a>
+      </li>
+      <li class="nav-item col-sm-5 text-center">
+        <a routerLink="" class="nav-link">Ajout lieu</a>
+      </li>
+      <li class="nav-item col-sm-5 text-center">
+        <a routerLink="" class="nav-link">Lieux</a>
+      </li>
     </ul>
   </div>
 </nav>
 
+
 <!--Permet l'affichage des component-->
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
+<div class="row">
+  <div class="col-sm-8" style="background-color:lavender;">
       <router-outlet></router-outlet>
-    </div>
+  </div>
+  <div class="col-sm-4">
+    <!--Pourquoi pas metter les Lieux les plus notés ??-->
   </div>
 </div>
+
 

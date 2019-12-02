@@ -1,4 +1,19 @@
 .title{
   font-size: 45px;
   text-align: center;
+  border: black;
+  border-style: groove;
+  background-color: #99541f;
+}
+.navbar{
+  height: 60px;
+  font-size : 18px;
+}
+.nabar-nav{
+  width : 300px;
+}
+.contact{
+  height: 100px;
+  background-color: dimgray;
+  font-size: 35px;
 }

@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div style=\"background-color:red;\">\r\n      <h1>Cou</h1>\r\n  </div>\r\n</div>\r\n\r\n<ngb-tabset type=\"pills\" [justify]=\"currentJustify\">\r\n  <ngb-tab title=\"Accueil\">\r\n    <ng-template ngbTabContent >\r\n      <!--COMPONENT-->\r\n    </ng-template>\r\n  </ngb-tab>\r\n  <ngb-tab title=\"Carte\">\r\n    <ng-template ngbTabContent >\r\n      <!--COMPONENT-->\r\n    </ng-template>\r\n  </ngb-tab>\r\n  <ngb-tab title=\"Ajout Lieu\">\r\n    <ng-template ngbTabContent >\r\n      <!--COMPONENT-->\r\n    </ng-template>\r\n  </ngb-tab>\r\n  <ngb-tab title=\"Lieux\">\r\n    <ng-template ngbTabContent >\r\n      <!--COMPONENT-->\r\n    </ng-template>\r\n  </ngb-tab>\r\n  <ngb-tab title=\"Connexion\">\r\n    <ng-template ngbTabContent>\r\n\t\t<app-form-connection></app-form-connection>\r\n\t\t<app-form-inscription></app-form-inscription>\r\n    </ng-template>\r\n  </ngb-tab>\r\n</ngb-tabset>\r\n\r\n\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div style=\"background-color:red;\">\r\n      <h1>Cou</h1>\r\n  </div>\r\n</div>\r\n\r\n<nav class=\"nnavbar navbar-expand-lg navbar-light bg-light\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\">Menu</a>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n      <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans \"app.module.ts-->\r\n      <li><a routerLink=\"authenticate\">Connexion</a></li>\r\n      <li><a routerLink=\"Utilisateur\">Inscription</a></li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n");
 
 /***/ }),
 
@@ -386,6 +386,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./forms/form-connection/form-connection.component */ "./src/app/forms/form-connection/form-connection.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/form-inscription/form-inscription.component */ "./src/app/forms/form-inscription/form-inscription.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 
 
 
@@ -396,6 +397,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+// path = le nom du controller de l'api en fonction de ce que l'on veut faire
+// component : celui que l'on souhaite afficher
+// Les imports sont déja fait
+const routes = [
+    { path: 'authenticate', component: _forms_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__["FormConnectionComponent"] },
+    { path: 'Utilisateur', component: _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"] }
+];
 let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -411,7 +420,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
             _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"]
+            _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"].forRoot(routes)
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]

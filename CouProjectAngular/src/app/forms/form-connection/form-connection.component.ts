@@ -7,6 +7,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./form-connection.component.css']
 })
 export class FormConnectionComponent implements OnInit {
+
   formulaireConnexion: FormGroup = this.fb.group({
     emailConnexion : this.fb.control("",Validators.required),
     motDePasseConnexion : this.fb.control("",Validators.required),
