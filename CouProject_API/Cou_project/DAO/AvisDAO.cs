@@ -26,6 +26,8 @@ namespace Cou_project.DAO
 
         private static readonly string REQ_GET = REQ_QUERY + $" Where {FIELD_ID} = @{FIELD_ID}";
 
+        private static readonly string REQ_GET_BY_LIEU = REQ_QUERY + $" where {FIELD_IDLIEU} = @{FIELD_IDLIEU}";
+            
         private static readonly string REQ_DELETE = $"DELETE FROM {TABLE_NAME} WHERE {FIELD_ID} = @{FIELD_ID}";
 
         private static readonly string REQ_UPDATE = String.Format(
@@ -48,6 +50,27 @@ namespace Cou_project.DAO
             }
             return listAvis;
         }
+
+        public static IEnumerable<Avis> GetAvisByLieu(int id)
+        {
+            List<Avis> listAvis = new List<Avis>();
+            using (var connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_GET_BY_LIEU;
+                command.Parameters.AddWithValue($"@{FIELD_IDLIEU}", id);
+                
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    listAvis.Add(new Avis(reader));
+                }
+            }
+            return listAvis;
+        }
+
+
         //Attention l'IDUTIL + IDLIEU doit se trouver dans la BD pour que ca fonctionne ! a gérer au moment des connexions ;)
         [HttpPost]
         public static Avis Create(Avis avis)
