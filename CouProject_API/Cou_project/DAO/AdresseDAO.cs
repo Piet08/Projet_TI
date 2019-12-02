@@ -14,21 +14,22 @@ namespace Cou_project.DAO
         public static readonly string FIELD_RUE = "rue";
         public static readonly string FIELD_NUM = "num";
         public static readonly string FIELD_CP = "cp";
+        public static readonly string FIELD_DATE = "date";
         
         //J'ai fais toutes les requêtes, quitte à en supp quelques une qui ne nous seront pas utiles, à voir plus tard ! 
         
         private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME}";
         
         private static readonly string RED_POST = String.Format(
-            "INSERT INTO {0}({1}, {2}, {3}, {4}) OUTPUT Inserted.{5} VALUES (@{1}, @{2}, @{3}, @{4})",
-            TABLE_NAME, FIELD_VILLE, FIELD_RUE, FIELD_NUM, FIELD_CP, FIELD_ID);
+            "INSERT INTO {0}({1}, {2}, {3}, {4}) OUTPUT Inserted.{5} VALUES (@{1}, @{2}, @{3}, @{4},@{5})",
+            TABLE_NAME, FIELD_VILLE, FIELD_RUE, FIELD_NUM, FIELD_CP, FIELD_ID,FIELD_DATE);
         
         private static readonly string REQ_GET = REQ_QUERY + $" Where {FIELD_ID} = @{FIELD_ID}";
         
         private static readonly string REQ_DELETE = $"DELETE FROM {TABLE_NAME} WHERE {FIELD_ID} = @{FIELD_ID}";
         
-        private static readonly string REQ_UPDATE = String.Format("UPDATE {0} SET {1} = @{1}, {2} = @{2}, {3} = @{3}, {4} = @{4} WHERE {5} = @{5}",
-            TABLE_NAME, FIELD_VILLE, FIELD_RUE, FIELD_NUM, FIELD_CP, FIELD_ID);
+        private static readonly string REQ_UPDATE = String.Format("UPDATE {0} SET {1} = @{1}, {2} = @{2}, {3} = @{3}, {4} = @{4}, {6} = @{6} WHERE {5} = @{5}",
+            TABLE_NAME, FIELD_VILLE, FIELD_RUE, FIELD_NUM, FIELD_CP, FIELD_ID,FIELD_DATE);
         
         
         public static IEnumerable<Adresse> Query()
@@ -61,6 +62,7 @@ namespace Cou_project.DAO
                 command.Parameters.AddWithValue($"@{FIELD_RUE}", adr.Rue);
                 command.Parameters.AddWithValue($"@{FIELD_NUM}", adr.Num);
                 command.Parameters.AddWithValue($"@{FIELD_CP}", adr.Cp);
+                command.Parameters.AddWithValue($"@{FIELD_DATE}", adr.Date);
 
                 adr.Id = (int) command.ExecuteScalar();
             }
@@ -109,6 +111,7 @@ namespace Cou_project.DAO
                 command.Parameters.AddWithValue($"@{FIELD_NUM}", adr.Num);
                 command.Parameters.AddWithValue($"@{FIELD_CP}", adr.Cp);
                 command.Parameters.AddWithValue($"@{FIELD_ID}", adr.Id);
+                command.Parameters.AddWithValue($"@{FIELD_DATE}", adr.Date);
 
                 return command.ExecuteNonQuery() == 1;
             }

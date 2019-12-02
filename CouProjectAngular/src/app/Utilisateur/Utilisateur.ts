@@ -1,5 +1,5 @@
 import {UtilisateurDto} from './Utilisateur-dto';
-import {LieuDto} from '../Lieu/Lieu-dto';
+import {LieuDto} from '../views/lieu/Lieu-dto';
 
 export declare type UtilisateurList = Utilisateur[];
 
@@ -14,7 +14,7 @@ export class Utilisateur {
   private _idadr: number;
   private _token: string;
 
-  constructor(id: number, nom: string, prenom: string, pseudo: string, type: string, email: string, hashpwd: string, idadr: number, token: string) {
+  constructor(id: number = -1, nom: string = '', prenom: string='', pseudo: string='', type: string='', email: string='', hashpwd: string='', idadr: number=-1, token: string='') {
     this._id = id;
     this._nom = nom;
     this._prenom = prenom;
