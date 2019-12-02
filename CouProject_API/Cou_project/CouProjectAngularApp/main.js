@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div style=\"background-color:red;\">\r\n      <h1>Cou</h1>\r\n  </div>\r\n</div>\r\n\r\n<nav class=\"nnavbar navbar-expand-lg navbar-light bg-light\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\">Menu</a>\r\n    </div>\r\n    <div class=\"navbar-collapse\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans \"app.module.ts-->\r\n        <li routerLinkActive=\"active\"><a routerLink=\"lieux\">Lieux</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"forms/lieux\">Ajouter Lieu</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"authenticate\">Connexion</a></li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"Utilisateur\">Inscription</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div style=\"background-color:red;\">\r\n      <h1>Cou</h1>\r\n  </div>\r\n</div>\r\n\r\n<nav class=\"nnavbar navbar-expand-lg navbar-light bg-light\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\">Menu</a>\r\n    </div>\r\n    <div class=\"navbar-collapse\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans \"app.module.ts-->\r\n        <li routerLinkActive=\"active\"><a routerLink=\"lieux\">Lieux</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"forms/lieux\">Ajouter Place</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"authenticate\">Connexion</a></li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"User\">Inscription</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container col-12\">\r\n    <div class=\"float-left col-10\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -62,81 +62,94 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-lieu/form-lieu.component.html":
-/*!************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-lieu/form-lieu.component.html ***!
-  \************************************************************************************************/
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-place/form-place.component.html":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-place/form-place.component.html ***!
+  \**************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"alertMe()\">\n  <div class=\"form-group form-inline raw\">\n    <label for=\"nom\" class=\"col-6 \">Nom :</label>\n    <input type=\"text\" class=\"form-control col-6\" id=\"nom\" name=\"nom\" formControlName=\"nom\">\n  </div>\n  <div class=\"form-group form-inline raw\">\n    <label for=\"type\" class=\"col-6 \">Type :</label>\n    <input type=\"text\" class=\"form-control col-6\" id=\"type\" name=\"type\" formControlName=\"type\">\n  </div>\n  <div class=\"form-group form-inline raw\">\n    <label for=\"description\" class=\"col-6 \">Description :</label>\n    <input type=\"text\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\n  </div>\n\n  <div formGroupName=\"adresse\">\n    <div class=\"form-group form-inline raw\">\n      <label for=\"rue\" class=\"col-6 \">Rue :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"rue\" name=\"rue\" formControlName=\"rue\">\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"num\" class=\"col-6 \">Numéro :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"cp\" class=\"col-6 \">Code Postal :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"cp\" name=\"cp\" formControlName=\"cp\">\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"ville\" class=\"col-6 \">Ville :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"ville\" name=\"ville\" formControlName=\"ville\">\n    </div>\n  </div>\n  <input type=\"submit\">\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"col-12\">\n  <form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\n    <div class=\"form-group form-inline raw\">\n      <label for=\"nom\" class=\"col-6 \">Nom :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"nom\" name=\"nom\" formControlName=\"nom\">\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"type\" class=\"col-6 \">Type :</label>\n      <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control col-6\">\n        <option class=\"form-control\" *ngFor=\"let type of typeLieu\" value=\"{{type}}\">{{type}}</option>\n      </select>\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"description\" class=\"col-6 \">Description :</label>\n      <textarea rows=\"5\" cols=\"30\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\n\n      </textarea>\n    </div>\n\n    <div formGroupName=\"address\">\n      <div class=\"form-group form-inline raw\">\n        <label for=\"rue\" class=\"col-6 \">Rue :</label>\n        <input type=\"text\" class=\"form-control col-6\" id=\"rue\" name=\"rue\" formControlName=\"rue\">\n      </div>\n      <div class=\"form-group form-inline raw\">\n        <label for=\"num\" class=\"col-6 \">Numéro :</label>\n        <input type=\"number\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\n      </div>\n      <div class=\"form-group form-inline raw\">\n        <label for=\"cp\" class=\"col-6 \">Code Postal :</label>\n        <input type=\"number\" class=\"form-control col-6\" id=\"cp\" name=\"cp\" formControlName=\"cp\">\n      </div>\n      <div class=\"form-group form-inline raw\">\n        <label for=\"ville\" class=\"col-6 \">Ville :</label>\n        <input type=\"text\" class=\"form-control col-6\" id=\"ville\" name=\"ville\" formControlName=\"ville\">\n      </div>\n    </div>\n    <div class=\"text-right\">\n      <input type=\"submit\" class=\"btn btn-primary btn-success\" [disabled]=\"!formLieu.valid\">\n    </div>\n  </form>\n</div>\n");
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/detail-comment/detail-comment.component.html":
-/*!******************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/detail-comment/detail-comment.component.html ***!
-  \******************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\n  <div class=\"card-header\">\n    <p class=\"text-left\">\n      {{utilisateur.nom}} {{utilisateur.prenom}}\n      <span class=\"float-right\">{{avis.note}}/5</span>\n    </p>\n  </div>\n\n  <div class=\"card-body\">\n    <blockquote class=\"blockquote mb-0\">\n      <p>{{avis.commentaire}}</p>\n      <footer class=\"blockquote-footer\"> {{avis.date}} </footer>\n    </blockquote>\n  </div>\n</div>\n");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/list-comment/list-comment.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/smart-form-place/smart-form-place.component.html":
 /*!**************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/list-comment/list-comment.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/forms/smart-form-place/smart-form-place.component.html ***!
   \**************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul *ngFor=\"let avis of listAvis\">\n  <li>\n    <app-detail-comment [avis]=\"avis\"></app-detail-comment>\n  </li>\n</ul>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-from-lieu (placeCreated)=\"createPlace($event)\"></app-from-lieu>\n");
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/detail-lieu/detail-lieu.component.html":
-/*!*********************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/detail-lieu/detail-lieu.component.html ***!
-  \*********************************************************************************************************/
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/detail-review/detail-review.component.html":
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/detail-review/detail-review.component.html ***!
+  \****************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <app-single-lieu [lieu]=\"lieu\"></app-single-lieu>\n</div>\n\n<div>\n  <app-list-comment [id]=\"id\"></app-list-comment>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\n  <div class=\"card-header\">\n    <p class=\"text-left\">\n      {{utilisateur.name}} {{utilisateur.surname}}\n      <span class=\"float-right\">{{avis.star}}/5</span>\n    </p>\n  </div>\n\n  <div class=\"card-body\">\n    <blockquote class=\"blockquote mb-0\">\n      <p>{{avis.comment}}</p>\n      <footer class=\"blockquote-footer\"> {{avis.date}} </footer>\n    </blockquote>\n  </div>\n</div>\n");
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/list-lieu/list-lieu.component.html":
-/*!*****************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/list-lieu/list-lieu.component.html ***!
-  \*****************************************************************************************************/
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/list-review/list-review.component.html":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/list-review/list-review.component.html ***!
+  \************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul>\n  <li *ngFor=\"let lieu of lieux\">\n    <app-single-lieu [lieu]=\"lieu\"></app-single-lieu>\n  </li>\n</ul>\n\n<div class=\"text-center\">\n  <button class=\"btn btn-info\">Ajouter lieu</button>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ul style=\"list-style: none;\" *ngFor=\"let avis of listAvis\">\n  <li>\n    <app-detail-comment [avis]=\"avis\"></app-detail-comment>\n  </li>\n</ul>\n");
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/single-lieu/single-lieu.component.html":
-/*!*********************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/single-lieu/single-lieu.component.html ***!
-  \*********************************************************************************************************/
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/detail-place/detail-place.component.html":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/detail-place/detail-place.component.html ***!
+  \***********************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\n  <div class=\"col-12\">\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\n      <div class=\"card-header bg-dark text-center text-light\">\n        <h5>{{lieu.nom}}</h5>\n      </div>\n\n      <div class=\"py-2 px-3\">\n        <div class=\"d-block\">\n          <hr>\n          <span class=\"d-inline\">{{lieu.id}} : </span>\n          <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{lieu.type}}</h6>\n          <hr>\n        </div>\n        <p class=\"card-text\"a>{{lieu.description}}</p>\n      </div>\n\n      <div class=\"card-footer\">\n        <div>\n          {{adresse.cp}} {{adresse.ville}}\n          <br>\n          {{adresse.rue}}, {{adresse.num}}\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <app-single-place [place]=\"place\"></app-single-place>\n</div>\n\n<div>\n  <app-list-review [id]=\"id\"></app-list-review>\n</div>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/list-place/list-place.component.html":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/list-place/list-place.component.html ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"offset-3 col-8\">\n  <ul style=\"list-style: none;\">\n    <li *ngFor=\"let place of places\">\n      <app-single-place [place]=\"place\"></app-single-place>\n    </li>\n  </ul>\n\n  <div class=\"text-center\">\n    <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\n  </div>\n</div>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/single-place/single-place.component.html":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/single-place/single-place.component.html ***!
+  \***********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\n  <div class=\"col-12\">\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\n      <div class=\"card-header bg-dark text-center text-light\">\n        <h5>{{place.name}}</h5>\n      </div>\n\n      <div class=\"py-2 px-3\">\n        <div class=\"d-block\">\n          <hr>\n          <span class=\"d-inline\">{{place.id}} : </span>\n          <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{place.type}}</h6>\n          <hr>\n        </div>\n        <p class=\"card-text\"a>{{place.description}}</p>\n      </div>\n\n      <div class=\"card-footer\">\n        <div>\n          {{address.postalCode}} {{address.city}}\n          <br>\n          {{address.straat}}, {{address.num}}\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -369,100 +382,24 @@ function __importDefault(mod) {
 
 /***/ }),
 
-/***/ "./src/app/Adresse/Adresse.ts":
-/*!************************************!*\
-  !*** ./src/app/Adresse/Adresse.ts ***!
-  \************************************/
-/*! exports provided: Adresse */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Adresse", function() { return Adresse; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-class Adresse {
-    constructor(id = -1, ville = '', rue = '', num = -1, cp = -1) {
-        this._id = id;
-        this._ville = ville;
-        this._rue = rue;
-        this._num = num;
-        this._cp = cp;
-    }
-    get cp() {
-        return this._cp;
-    }
-    set cp(value) {
-        this._cp = value;
-    }
-    get num() {
-        return this._num;
-    }
-    set num(value) {
-        this._num = value;
-    }
-    get id() {
-        return this._id;
-    }
-    set id(value) {
-        this._id = value;
-    }
-    get rue() {
-        return this._rue;
-    }
-    set rue(value) {
-        this._rue = value;
-    }
-    get ville() {
-        return this._ville;
-    }
-    set ville(value) {
-        this._ville = value;
-    }
-    //Object provenant de la db donc type Object !! -> Function to set Type (Adresse)
-    fromAdresseDto(dto) {
-        Object.assign(this, dto);
-        return this;
-    }
-    //Inverse de la méthode du dessus !
-    toAdresseDto() {
-        return {
-            id: this._id,
-            ville: this._ville,
-            rue: this._rue,
-            num: this._num,
-            cp: this._cp
-        };
-    }
-    equals(obj) {
-        if (obj instanceof Adresse) {
-            return this.id == obj.id;
-        }
-        return false;
-    }
-}
-
-
-/***/ }),
-
-/***/ "./src/app/Adresse/adresse.service.ts":
+/***/ "./src/app/Adresse/address.service.ts":
 /*!********************************************!*\
-  !*** ./src/app/Adresse/adresse.service.ts ***!
+  !*** ./src/app/Adresse/address.service.ts ***!
   \********************************************/
-/*! exports provided: AdresseService */
+/*! exports provided: AddressService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdresseService", function() { return AdresseService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddressService", function() { return AddressService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 
 
 
-const URL_API = "/api/Adresse";
-let AdresseService = class AdresseService {
+const URL_API = "/api/Address";
+let AddressService = class AddressService {
     constructor(http) {
         this.http = http;
     }
@@ -482,36 +419,211 @@ let AdresseService = class AdresseService {
         return this.http.put(URL_API, adresse);
     }
 };
-AdresseService.ctorParameters = () => [
+AddressService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-AdresseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+AddressService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     })
-], AdresseService);
+], AddressService);
 
 
 
 /***/ }),
 
-/***/ "./src/app/Utilisateur/Utilisateur.ts":
-/*!********************************************!*\
-  !*** ./src/app/Utilisateur/Utilisateur.ts ***!
-  \********************************************/
-/*! exports provided: Utilisateur */
+/***/ "./src/app/Adresse/address.ts":
+/*!************************************!*\
+  !*** ./src/app/Adresse/address.ts ***!
+  \************************************/
+/*! exports provided: Address */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Utilisateur", function() { return Utilisateur; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Address", function() { return Address; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
-class Utilisateur {
+class Address {
+    constructor(id = -1, ville = '', rue = '', num = -1, cp = -1) {
+        this._id = id;
+        this._city = ville;
+        this._straat = rue;
+        this._num = num;
+        this._postalCode = cp;
+    }
+    get postalCode() {
+        return this._postalCode;
+    }
+    set postalCode(value) {
+        this._postalCode = value;
+    }
+    get num() {
+        return this._num;
+    }
+    set num(value) {
+        this._num = value;
+    }
+    get id() {
+        return this._id;
+    }
+    set id(value) {
+        this._id = value;
+    }
+    get straat() {
+        return this._straat;
+    }
+    set straat(value) {
+        this._straat = value;
+    }
+    get city() {
+        return this._city;
+    }
+    set city(value) {
+        this._city = value;
+    }
+    //Object provenant de la db donc type Object !! -> Function to set Type (Address)
+    fromAdresseDto(dto) {
+        Object.assign(this, dto);
+        return this;
+    }
+    //Inverse de la méthode du dessus !
+    toAdresseDto() {
+        return {
+            id: this._id,
+            city: this._city,
+            straat: this._straat,
+            num: this._num,
+            postalCode: this._postalCode
+        };
+    }
+    equals(obj) {
+        if (obj instanceof Address) {
+            return this.id == obj.id;
+        }
+        return false;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/EnumTypeLieu.ts":
+/*!*********************************!*\
+  !*** ./src/app/EnumTypeLieu.ts ***!
+  \*********************************/
+/*! exports provided: EnumTypeLieu, TypeLieux */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EnumTypeLieu", function() { return EnumTypeLieu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TypeLieux", function() { return TypeLieux; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var EnumTypeLieu;
+(function (EnumTypeLieu) {
+    EnumTypeLieu["RESTAURANT"] = "Restaurant";
+    EnumTypeLieu["FAST_FOOD"] = "Fast-Food";
+    EnumTypeLieu["MUSEE"] = "Mus\u00E9e";
+    EnumTypeLieu["MAGASIN"] = "Magasin";
+    EnumTypeLieu["BAR"] = "Bar";
+    EnumTypeLieu["BRASSERIE"] = "Brasserie";
+    EnumTypeLieu["DIVERTISSEMENT"] = "Divertissement";
+})(EnumTypeLieu || (EnumTypeLieu = {}));
+const TypeLieux = [EnumTypeLieu.RESTAURANT, EnumTypeLieu.BAR, EnumTypeLieu.MAGASIN, EnumTypeLieu.MUSEE, EnumTypeLieu.FAST_FOOD,
+    EnumTypeLieu.BRASSERIE, EnumTypeLieu.DIVERTISSEMENT];
+
+
+/***/ }),
+
+/***/ "./src/app/User/user.service.ts":
+/*!**************************************!*\
+  !*** ./src/app/User/user.service.ts ***!
+  \**************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+const URL_API_UTIL = "/api/User";
+const URL_API_AUTH = "/api/authenticate";
+const URL_API_FAV = "/api/Favorites";
+let UserService = class UserService {
+    constructor(http) {
+        this.http = http;
+    }
+    //AUTHENTICATE
+    /*  queryAuth():Observable<UserDto[]>{
+        return this.http.get<UserDto[]>(URL_API_AUTH);
+      }
+      postAuth(utilisateur : UserDto): Observable<UserDto>{
+        return this.http.post<UserDto>(URL_API_AUTH, utilisateur);
+      }*/
+    //UTILISATEUR
+    query() {
+        return this.http.get(URL_API_UTIL);
+    }
+    get(id) {
+        return this.http.get(URL_API_UTIL + '/' + id);
+    }
+    post(utilisateur) {
+        return this.http.post(URL_API_UTIL, utilisateur);
+    }
+    delete(id) {
+        return this.http.delete(URL_API_UTIL + '/' + id);
+    }
+    put(utilisateur) {
+        return this.http.put(URL_API_UTIL, utilisateur);
+    }
+    //FAVORIS
+    queryFavoris() {
+        return this.http.get(URL_API_FAV);
+    }
+    postFavoris(favoris) {
+        return this.http.post(URL_API_FAV, favoris);
+    }
+    deleteFavoris(id) {
+        return this.http.delete(URL_API_FAV + '/' + id);
+    }
+};
+UserService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], UserService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/User/user.ts":
+/*!******************************!*\
+  !*** ./src/app/User/user.ts ***!
+  \******************************/
+/*! exports provided: User */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class User {
     constructor(id = -1, nom = '', prenom = '', pseudo = '', type = '', email = '', hashpwd = '', idadr = -1, token = '') {
         this._id = id;
-        this._nom = nom;
-        this._prenom = prenom;
+        this._name = nom;
+        this._surname = prenom;
         this._pseudo = pseudo;
         this._type = type;
         this._email = email;
@@ -526,11 +638,11 @@ class Utilisateur {
     set id(value) {
         this._id = value;
     }
-    get nom() {
-        return this._nom;
+    get name() {
+        return this._name;
     }
-    set nom(value) {
-        this._nom = value;
+    set name(value) {
+        this._name = value;
     }
     get token() {
         return this._token;
@@ -568,13 +680,13 @@ class Utilisateur {
     set pseudo(value) {
         this._pseudo = value;
     }
-    get prenom() {
-        return this._prenom;
+    get surname() {
+        return this._surname;
     }
-    set prenom(value) {
-        this._prenom = value;
+    set surname(value) {
+        this._surname = value;
     }
-    //Object provenant de la db donc type Object !! -> Function to set Type (Utilisateur)
+    //Object provenant de la db donc type Object !! -> Function to set Type (User)
     fromUtilisateurDto(dto) {
         Object.assign(this, dto);
         return this;
@@ -583,8 +695,8 @@ class Utilisateur {
     toUtilisateurDto() {
         return {
             id: this._id,
-            nom: this._nom,
-            prenom: this._prenom,
+            name: this._name,
+            surname: this._surname,
             pseudo: this._pseudo,
             type: this._type,
             email: this._email,
@@ -594,82 +706,12 @@ class Utilisateur {
         };
     }
     equals(obj) {
-        if (obj instanceof Utilisateur) {
+        if (obj instanceof User) {
             return this.id == obj.id;
         }
         return false;
     }
 }
-
-
-/***/ }),
-
-/***/ "./src/app/Utilisateur/utilisateur.service.ts":
-/*!****************************************************!*\
-  !*** ./src/app/Utilisateur/utilisateur.service.ts ***!
-  \****************************************************/
-/*! exports provided: UtilisateurService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UtilisateurService", function() { return UtilisateurService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-
-
-
-const URL_API_UTIL = "/api/Utilisateur";
-const URL_API_AUTH = "/api/authenticate";
-const URL_API_FAV = "/api/Favoris";
-let UtilisateurService = class UtilisateurService {
-    constructor(http) {
-        this.http = http;
-    }
-    //AUTHENTICATE
-    /*  queryAuth():Observable<UtilisateurDto[]>{
-        return this.http.get<UtilisateurDto[]>(URL_API_AUTH);
-      }
-      postAuth(utilisateur : UtilisateurDto): Observable<UtilisateurDto>{
-        return this.http.post<UtilisateurDto>(URL_API_AUTH, utilisateur);
-      }*/
-    //UTILISATEUR
-    query() {
-        return this.http.get(URL_API_UTIL);
-    }
-    get(id) {
-        return this.http.get(URL_API_UTIL + '/' + id);
-    }
-    post(utilisateur) {
-        return this.http.post(URL_API_UTIL, utilisateur);
-    }
-    delete(id) {
-        return this.http.delete(URL_API_UTIL + '/' + id);
-    }
-    put(utilisateur) {
-        return this.http.put(URL_API_UTIL, utilisateur);
-    }
-    //FAVORIS
-    queryFavoris() {
-        return this.http.get(URL_API_FAV);
-    }
-    postFavoris(favoris) {
-        return this.http.post(URL_API_FAV, favoris);
-    }
-    deleteFavoris(id) {
-        return this.http.delete(URL_API_FAV + '/' + id);
-    }
-};
-UtilisateurService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-];
-UtilisateurService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    })
-], UtilisateurService);
-
 
 
 /***/ }),
@@ -770,12 +812,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/form-inscription/form-inscription.component */ "./src/app/forms/form-inscription/form-inscription.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _views_lieu_list_lieu_list_lieu_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/lieu/list-lieu/list-lieu.component */ "./src/app/views/lieu/list-lieu/list-lieu.component.ts");
-/* harmony import */ var _views_lieu_single_lieu_single_lieu_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/lieu/single-lieu/single-lieu.component */ "./src/app/views/lieu/single-lieu/single-lieu.component.ts");
-/* harmony import */ var _views_lieu_detail_lieu_detail_lieu_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/lieu/detail-lieu/detail-lieu.component */ "./src/app/views/lieu/detail-lieu/detail-lieu.component.ts");
-/* harmony import */ var _views_comment_list_comment_list_comment_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/comment/list-comment/list-comment.component */ "./src/app/views/comment/list-comment/list-comment.component.ts");
-/* harmony import */ var _views_comment_detail_comment_detail_comment_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/comment/detail-comment/detail-comment.component */ "./src/app/views/comment/detail-comment/detail-comment.component.ts");
-/* harmony import */ var _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/form-lieu/form-lieu.component */ "./src/app/forms/form-lieu/form-lieu.component.ts");
+/* harmony import */ var _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/lieu/list-place/list-place.component */ "./src/app/views/lieu/list-place/list-place.component.ts");
+/* harmony import */ var _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/lieu/single-place/single-place.component */ "./src/app/views/lieu/single-place/single-place.component.ts");
+/* harmony import */ var _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/lieu/detail-place/detail-place.component */ "./src/app/views/lieu/detail-place/detail-place.component.ts");
+/* harmony import */ var _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/comment/list-review/list-review.component */ "./src/app/views/comment/list-review/list-review.component.ts");
+/* harmony import */ var _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/comment/detail-review/detail-review.component */ "./src/app/views/comment/detail-review/detail-review.component.ts");
+/* harmony import */ var _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/form-place/form-place.component */ "./src/app/forms/form-place/form-place.component.ts");
+/* harmony import */ var _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./forms/smart-form-place/smart-form-place.component */ "./src/app/forms/smart-form-place/smart-form-place.component.ts");
+
 
 
 
@@ -798,11 +842,11 @@ __webpack_require__.r(__webpack_exports__);
 // Les imports sont déja fait
 const routes = [
     { path: 'authenticate', component: _forms_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__["FormConnectionComponent"] },
-    { path: 'Utilisateur', component: _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"] },
-    { path: 'lieux', component: _views_lieu_list_lieu_list_lieu_component__WEBPACK_IMPORTED_MODULE_11__["ListLieuComponent"] },
-    { path: 'lieux/:id', component: _views_lieu_detail_lieu_detail_lieu_component__WEBPACK_IMPORTED_MODULE_13__["DetailLieuComponent"] },
-    { path: 'forms/lieux', component: _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__["FormLieuComponent"] },
-    { path: '', component: _views_lieu_list_lieu_list_lieu_component__WEBPACK_IMPORTED_MODULE_11__["ListLieuComponent"] }
+    { path: 'User', component: _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"] },
+    { path: 'lieux', component: _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_11__["ListPlaceComponent"] },
+    { path: 'lieux/:id', component: _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_13__["DetailPlaceComponent"] },
+    { path: 'forms/lieux', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_17__["SmartFormPlaceComponent"] },
+    { path: '', component: _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_11__["ListPlaceComponent"] }
 ];
 let AppModule = class AppModule {
 };
@@ -812,12 +856,13 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
             _forms_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__["FormConnectionComponent"],
             _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"],
-            _views_lieu_list_lieu_list_lieu_component__WEBPACK_IMPORTED_MODULE_11__["ListLieuComponent"],
-            _views_lieu_single_lieu_single_lieu_component__WEBPACK_IMPORTED_MODULE_12__["SingleLieuComponent"],
-            _views_lieu_detail_lieu_detail_lieu_component__WEBPACK_IMPORTED_MODULE_13__["DetailLieuComponent"],
-            _views_comment_list_comment_list_comment_component__WEBPACK_IMPORTED_MODULE_14__["ListCommentComponent"],
-            _views_comment_detail_comment_detail_comment_component__WEBPACK_IMPORTED_MODULE_15__["DetailCommentComponent"],
-            _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__["FormLieuComponent"]
+            _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_11__["ListPlaceComponent"],
+            _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_12__["SinglePlaceComponent"],
+            _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_13__["DetailPlaceComponent"],
+            _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_14__["ListReviewComponent"],
+            _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_15__["DetailReviewComponent"],
+            _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_16__["FormPlaceComponent"],
+            _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_17__["SmartFormPlaceComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -995,251 +1040,216 @@ FormInscriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/forms/form-lieu/form-lieu.component.css":
-/*!*********************************************************!*\
-  !*** ./src/app/forms/form-lieu/form-lieu.component.css ***!
-  \*********************************************************/
+/***/ "./src/app/forms/form-place/form-place.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/forms/form-place/form-place.component.css ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0tbGlldS9mb3JtLWxpZXUuY29tcG9uZW50LmNzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0tcGxhY2UvZm9ybS1wbGFjZS5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
-/***/ "./src/app/forms/form-lieu/form-lieu.component.ts":
-/*!********************************************************!*\
-  !*** ./src/app/forms/form-lieu/form-lieu.component.ts ***!
-  \********************************************************/
-/*! exports provided: FormLieuComponent */
+/***/ "./src/app/forms/form-place/form-place.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/forms/form-place/form-place.component.ts ***!
+  \**********************************************************/
+/*! exports provided: FormPlaceComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormLieuComponent", function() { return FormLieuComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormPlaceComponent", function() { return FormPlaceComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../EnumTypeLieu */ "./src/app/EnumTypeLieu.ts");
+/* harmony import */ var _views_lieu_place__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../views/lieu/place */ "./src/app/views/lieu/place.ts");
+/* harmony import */ var _Adresse_address__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Adresse/address */ "./src/app/Adresse/address.ts");
 
 
 
-let FormLieuComponent = class FormLieuComponent {
+
+
+
+let FormPlaceComponent = class FormPlaceComponent {
     constructor(fb) {
         this.fb = fb;
+        this.lieuCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.adresseCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.placeCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.typeLieu = [_EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].FAST_FOOD, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].MUSEE, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].MAGASIN,
+            _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].BAR, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].BRASSERIE, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].DIVERTISSEMENT, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].RESTAURANT];
         this.formLieu = this.fb.group({
             nom: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             type: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             description: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            adresse: this.fb.group({
+            address: this.fb.group({
                 rue: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
                 cp: this.fb.control('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^\d{4}$/)]),
                 ville: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
                 num: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
             })
         });
+        this.subscriptions = [];
     }
     ngOnInit() {
     }
     alertMe() {
         alert(JSON.stringify(this.formLieu.getRawValue()));
     }
+    buildPlaceAndAddressDto() {
+        const place = {
+            place: this.buildLieu().toLieuDto(),
+            address: this.buildAdresse().toAdresseDto()
+        };
+        return place;
+    }
+    buildLieu() {
+        const lieu = new _views_lieu_place__WEBPACK_IMPORTED_MODULE_4__["Place"]();
+        lieu.name = this.formLieu.get("nom").value;
+        lieu.type = this.formLieu.get("type").value;
+        lieu.description = this.formLieu.get("description").value;
+        return lieu;
+    }
+    buildAdresse() {
+        const address = new _Adresse_address__WEBPACK_IMPORTED_MODULE_5__["Address"]();
+        address.city = this.formLieu.get("address.ville").value;
+        address.straat = this.formLieu.get("address.rue").value;
+        address.num = this.formLieu.get("address.num").value;
+        address.postalCode = this.formLieu.get("address.cp").value;
+        return address;
+    }
+    emitNewLieu() {
+        this.placeCreated.next(this.buildPlaceAndAddressDto());
+        //this.adresseCreated.next(this.buildAdresse());
+        //this.lieuCreated.next(this.buildLieu());
+    }
 };
-FormLieuComponent.ctorParameters = () => [
+FormPlaceComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
 ];
-FormLieuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], FormPlaceComponent.prototype, "lieuCreated", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], FormPlaceComponent.prototype, "adresseCreated", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], FormPlaceComponent.prototype, "placeCreated", void 0);
+FormPlaceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-from-lieu',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./form-lieu.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-lieu/form-lieu.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./form-lieu.component.css */ "./src/app/forms/form-lieu/form-lieu.component.css")).default]
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./form-place.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-place/form-place.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./form-place.component.css */ "./src/app/forms/form-place/form-place.component.css")).default]
     })
-], FormLieuComponent);
+], FormPlaceComponent);
 
 
 
 /***/ }),
 
-/***/ "./src/app/views/comment/Avis.ts":
-/*!***************************************!*\
-  !*** ./src/app/views/comment/Avis.ts ***!
-  \***************************************/
-/*! exports provided: Avis */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Avis", function() { return Avis; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-class Avis {
-    constructor(id = -1, note = -1, commentaire = '', valider = -1, idutil = -1, idlieu = -1, date = '') {
-        this._id = id;
-        this._note = note;
-        this._commentaire = commentaire;
-        this._valider = valider;
-        this._idutil = idutil;
-        this._idlieu = idlieu;
-        this._date = date;
-    }
-    get date() {
-        return this._date;
-    }
-    set date(value) {
-        this._date = value;
-    }
-    get idlieu() {
-        return this._idlieu;
-    }
-    set idlieu(value) {
-        this._idlieu = value;
-    }
-    get idutil() {
-        return this._idutil;
-    }
-    set idutil(value) {
-        this._idutil = value;
-    }
-    get valider() {
-        return this._valider;
-    }
-    set valider(value) {
-        this._valider = value;
-    }
-    get id() {
-        return this._id;
-    }
-    set id(value) {
-        this._id = value;
-    }
-    get note() {
-        return this._note;
-    }
-    set note(value) {
-        this._note = value;
-    }
-    get commentaire() {
-        return this._commentaire;
-    }
-    set commentaire(value) {
-        this._commentaire = value;
-    }
-    //Object provenant de la db donc type Object !! -> Function to set Type (Avis)
-    fromAvisDto(dto) {
-        Object.assign(this, dto);
-        return this;
-    }
-    //Inverse de la méthode du dessus !
-    toAvisDto() {
-        return {
-            id: this._id,
-            note: this._note,
-            commentaire: this._commentaire,
-            valider: this._valider,
-            idutil: this._idutil,
-            idlieu: this._idlieu,
-            date: this._date
-        };
-    }
-    equals(obj) {
-        if (obj instanceof Avis) {
-            return this.id == obj.id;
-        }
-        return false;
-    }
-}
-
-
-/***/ }),
-
-/***/ "./src/app/views/comment/avis.service.ts":
-/*!***********************************************!*\
-  !*** ./src/app/views/comment/avis.service.ts ***!
-  \***********************************************/
-/*! exports provided: AvisService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AvisService", function() { return AvisService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-
-
-
-const URL_API = "/api/Avis";
-let AvisService = class AvisService {
-    constructor(http) {
-        this.http = http;
-    }
-    query() {
-        return this.http.get(URL_API);
-    }
-    // get(id:number): Observable<AvisDto>{
-    //   return this.http.get<AvisDto>(URL_API+'/'+id);
-    // }
-    getAvisFromAnUser(idLieu) {
-        return this.http.get(URL_API + '/' + idLieu);
-    }
-    post(avis) {
-        return this.http.post(URL_API, avis);
-    }
-    delete(id) {
-        return this.http.delete(URL_API + '/' + id);
-    }
-    put(avis) {
-        return this.http.put(URL_API, avis);
-    }
-};
-AvisService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-];
-AvisService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    })
-], AvisService);
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/comment/detail-comment/detail-comment.component.css":
-/*!***************************************************************************!*\
-  !*** ./src/app/views/comment/detail-comment/detail-comment.component.css ***!
-  \***************************************************************************/
+/***/ "./src/app/forms/smart-form-place/smart-form-place.component.css":
+/*!***********************************************************************!*\
+  !*** ./src/app/forms/smart-form-place/smart-form-place.component.css ***!
+  \***********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2NvbW1lbnQvZGV0YWlsLWNvbW1lbnQvZGV0YWlsLWNvbW1lbnQuY29tcG9uZW50LmNzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL3NtYXJ0LWZvcm0tcGxhY2Uvc21hcnQtZm9ybS1wbGFjZS5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
-/***/ "./src/app/views/comment/detail-comment/detail-comment.component.ts":
-/*!**************************************************************************!*\
-  !*** ./src/app/views/comment/detail-comment/detail-comment.component.ts ***!
-  \**************************************************************************/
-/*! exports provided: DetailCommentComponent */
+/***/ "./src/app/forms/smart-form-place/smart-form-place.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/forms/smart-form-place/smart-form-place.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: SmartFormPlaceComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailCommentComponent", function() { return DetailCommentComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SmartFormPlaceComponent", function() { return SmartFormPlaceComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _Utilisateur_Utilisateur__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Utilisateur/Utilisateur */ "./src/app/Utilisateur/Utilisateur.ts");
-/* harmony import */ var _Utilisateur_utilisateur_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Utilisateur/utilisateur.service */ "./src/app/Utilisateur/utilisateur.service.ts");
+/* harmony import */ var _Adresse_address__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Adresse/address */ "./src/app/Adresse/address.ts");
+/* harmony import */ var _Adresse_address_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Adresse/address.service */ "./src/app/Adresse/address.service.ts");
+/* harmony import */ var _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../views/lieu/place.service */ "./src/app/views/lieu/place.service.ts");
 
 
 
 
-let DetailCommentComponent = class DetailCommentComponent {
+
+let SmartFormPlaceComponent = class SmartFormPlaceComponent {
+    constructor(adrService, lieuService) {
+        this.adrService = adrService;
+        this.lieuService = lieuService;
+        this._adr = new _Adresse_address__WEBPACK_IMPORTED_MODULE_2__["Address"]();
+        this.subscriptions = [];
+    }
+    ngOnInit() {
+    }
+    createPlace($event) {
+        this.subscriptions.push(this.lieuService.post($event).subscribe());
+    }
+};
+SmartFormPlaceComponent.ctorParameters = () => [
+    { type: _Adresse_address_service__WEBPACK_IMPORTED_MODULE_3__["AddressService"] },
+    { type: _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_4__["PlaceService"] }
+];
+SmartFormPlaceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-smart-form-lieu',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./smart-form-place.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/smart-form-place/smart-form-place.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./smart-form-place.component.css */ "./src/app/forms/smart-form-place/smart-form-place.component.css")).default]
+    })
+], SmartFormPlaceComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/comment/detail-review/detail-review.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/views/comment/detail-review/detail-review.component.css ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2NvbW1lbnQvZGV0YWlsLXJldmlldy9kZXRhaWwtcmV2aWV3LmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/views/comment/detail-review/detail-review.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/views/comment/detail-review/detail-review.component.ts ***!
+  \************************************************************************/
+/*! exports provided: DetailReviewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailReviewComponent", function() { return DetailReviewComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _User_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../User/user */ "./src/app/User/user.ts");
+/* harmony import */ var _User_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../User/user.service */ "./src/app/User/user.service.ts");
+
+
+
+
+let DetailReviewComponent = class DetailReviewComponent {
     constructor(utilService) {
         this.utilService = utilService;
-        this._utilisateur = new _Utilisateur_Utilisateur__WEBPACK_IMPORTED_MODULE_2__["Utilisateur"]();
+        this._utilisateur = new _User_user__WEBPACK_IMPORTED_MODULE_2__["User"]();
         this.subscriptions = [];
     }
     ngOnInit() {
@@ -1249,7 +1259,7 @@ let DetailCommentComponent = class DetailCommentComponent {
     }
     set avis(value) {
         this._avis = value;
-        this.updateUtilisateur(this._avis.idutil);
+        this.updateUtilisateur(this._avis.idUser);
     }
     get utilisateur() {
         return this._utilisateur;
@@ -1258,58 +1268,58 @@ let DetailCommentComponent = class DetailCommentComponent {
         this._utilisateur = value;
     }
     updateUtilisateur(idutil) {
-        const sub = this.utilService.get(idutil).subscribe(user => this._utilisateur = new _Utilisateur_Utilisateur__WEBPACK_IMPORTED_MODULE_2__["Utilisateur"]().fromUtilisateurDto(user));
+        const sub = this.utilService.get(idutil).subscribe(user => this._utilisateur = new _User_user__WEBPACK_IMPORTED_MODULE_2__["User"]().fromUtilisateurDto(user));
         this.subscriptions.push(sub);
     }
 };
-DetailCommentComponent.ctorParameters = () => [
-    { type: _Utilisateur_utilisateur_service__WEBPACK_IMPORTED_MODULE_3__["UtilisateurService"] }
+DetailReviewComponent.ctorParameters = () => [
+    { type: _User_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], DetailCommentComponent.prototype, "avis", null);
-DetailCommentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+], DetailReviewComponent.prototype, "avis", null);
+DetailReviewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-detail-comment',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./detail-comment.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/detail-comment/detail-comment.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./detail-comment.component.css */ "./src/app/views/comment/detail-comment/detail-comment.component.css")).default]
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./detail-review.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/detail-review/detail-review.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./detail-review.component.css */ "./src/app/views/comment/detail-review/detail-review.component.css")).default]
     })
-], DetailCommentComponent);
+], DetailReviewComponent);
 
 
 
 /***/ }),
 
-/***/ "./src/app/views/comment/list-comment/list-comment.component.css":
-/*!***********************************************************************!*\
-  !*** ./src/app/views/comment/list-comment/list-comment.component.css ***!
-  \***********************************************************************/
+/***/ "./src/app/views/comment/list-review/list-review.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/views/comment/list-review/list-review.component.css ***!
+  \*********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2NvbW1lbnQvbGlzdC1jb21tZW50L2xpc3QtY29tbWVudC5jb21wb25lbnQuY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2NvbW1lbnQvbGlzdC1yZXZpZXcvbGlzdC1yZXZpZXcuY29tcG9uZW50LmNzcyJ9 */");
 
 /***/ }),
 
-/***/ "./src/app/views/comment/list-comment/list-comment.component.ts":
-/*!**********************************************************************!*\
-  !*** ./src/app/views/comment/list-comment/list-comment.component.ts ***!
-  \**********************************************************************/
-/*! exports provided: ListCommentComponent */
+/***/ "./src/app/views/comment/list-review/list-review.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/views/comment/list-review/list-review.component.ts ***!
+  \********************************************************************/
+/*! exports provided: ListReviewComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListCommentComponent", function() { return ListCommentComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListReviewComponent", function() { return ListReviewComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _Avis__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Avis */ "./src/app/views/comment/Avis.ts");
-/* harmony import */ var _avis_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../avis.service */ "./src/app/views/comment/avis.service.ts");
-/* harmony import */ var _lieu_Lieu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lieu/Lieu */ "./src/app/views/lieu/Lieu.ts");
+/* harmony import */ var _review__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../review */ "./src/app/views/comment/review.ts");
+/* harmony import */ var _review_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../review.service */ "./src/app/views/comment/review.service.ts");
+/* harmony import */ var _lieu_place__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lieu/place */ "./src/app/views/lieu/place.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _lieu_lieu_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../lieu/lieu.service */ "./src/app/views/lieu/lieu.service.ts");
+/* harmony import */ var _lieu_place_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../lieu/place.service */ "./src/app/views/lieu/place.service.ts");
 
 
 
@@ -1317,12 +1327,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let ListCommentComponent = class ListCommentComponent {
+let ListReviewComponent = class ListReviewComponent {
     constructor(avisService, route, lieuService) {
         this.avisService = avisService;
         this.route = route;
         this.lieuService = lieuService;
-        this._lieu = new _lieu_Lieu__WEBPACK_IMPORTED_MODULE_4__["Lieu"]();
+        this._lieu = new _lieu_place__WEBPACK_IMPORTED_MODULE_4__["Place"]();
         this._listAvis = [];
         this._id = -1;
         this.subscriptions = [];
@@ -1351,60 +1361,411 @@ let ListCommentComponent = class ListCommentComponent {
         this._listAvis = value;
     }
     loadAvisList(id) {
-        const sub = this.avisService.getAvisFromAnUser(id).subscribe(listA => this._listAvis = listA.map(a => new _Avis__WEBPACK_IMPORTED_MODULE_2__["Avis"]().fromAvisDto(a)));
+        const sub = this.avisService.getAvisFromAnUser(id).subscribe(listA => this._listAvis = listA.map(a => new _review__WEBPACK_IMPORTED_MODULE_2__["Review"]().fromAvisDto(a)));
     }
     loadLieu(id) {
-        const sub = this.lieuService.get(id).subscribe(lieu => this._lieu = new _lieu_Lieu__WEBPACK_IMPORTED_MODULE_4__["Lieu"]().fromLieuDto(lieu));
+        const sub = this.lieuService.get(id).subscribe(lieu => this._lieu = new _lieu_place__WEBPACK_IMPORTED_MODULE_4__["Place"]().fromLieuDto(lieu));
     }
 };
-ListCommentComponent.ctorParameters = () => [
-    { type: _avis_service__WEBPACK_IMPORTED_MODULE_3__["AvisService"] },
+ListReviewComponent.ctorParameters = () => [
+    { type: _review_service__WEBPACK_IMPORTED_MODULE_3__["ReviewService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] },
-    { type: _lieu_lieu_service__WEBPACK_IMPORTED_MODULE_6__["LieuService"] }
+    { type: _lieu_place_service__WEBPACK_IMPORTED_MODULE_6__["PlaceService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], ListCommentComponent.prototype, "id", null);
+], ListReviewComponent.prototype, "id", null);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], ListCommentComponent.prototype, "lieu", null);
-ListCommentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+], ListReviewComponent.prototype, "lieu", null);
+ListReviewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-list-comment',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./list-comment.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/list-comment/list-comment.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./list-comment.component.css */ "./src/app/views/comment/list-comment/list-comment.component.css")).default]
+        selector: 'app-list-review',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./list-review.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/list-review/list-review.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./list-review.component.css */ "./src/app/views/comment/list-review/list-review.component.css")).default]
     })
-], ListCommentComponent);
+], ListReviewComponent);
 
 
 
 /***/ }),
 
-/***/ "./src/app/views/lieu/Lieu.ts":
-/*!************************************!*\
-  !*** ./src/app/views/lieu/Lieu.ts ***!
-  \************************************/
-/*! exports provided: Lieu */
+/***/ "./src/app/views/comment/review.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/views/comment/review.service.ts ***!
+  \*************************************************/
+/*! exports provided: ReviewService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Lieu", function() { return Lieu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewService", function() { return ReviewService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+const URL_API = "/api/Review";
+let ReviewService = class ReviewService {
+    constructor(http) {
+        this.http = http;
+    }
+    query() {
+        return this.http.get(URL_API);
+    }
+    // get(id:number): Observable<ReviewDto>{
+    //   return this.http.get<ReviewDto>(URL_API+'/'+id);
+    // }
+    getAvisFromAnUser(idLieu) {
+        return this.http.get(URL_API + '/' + idLieu);
+    }
+    post(avis) {
+        return this.http.post(URL_API, avis);
+    }
+    delete(id) {
+        return this.http.delete(URL_API + '/' + id);
+    }
+    put(avis) {
+        return this.http.put(URL_API, avis);
+    }
+};
+ReviewService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+ReviewService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], ReviewService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/comment/review.ts":
+/*!*****************************************!*\
+  !*** ./src/app/views/comment/review.ts ***!
+  \*****************************************/
+/*! exports provided: Review */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Review", function() { return Review; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
-class Lieu {
+class Review {
+    constructor(id = -1, note = -1, commentaire = '', valider = -1, idutil = -1, idlieu = -1, date = '') {
+        this._id = id;
+        this._star = note;
+        this._comment = commentaire;
+        this._isValid = valider;
+        this._idUser = idutil;
+        this._idPlace = idlieu;
+        this._date = date;
+    }
+    get date() {
+        return this._date;
+    }
+    set date(value) {
+        this._date = value;
+    }
+    get idPlace() {
+        return this._idPlace;
+    }
+    set idPlace(value) {
+        this._idPlace = value;
+    }
+    get idUser() {
+        return this._idUser;
+    }
+    set idUser(value) {
+        this._idUser = value;
+    }
+    get isValid() {
+        return this._isValid;
+    }
+    set isValid(value) {
+        this._isValid = value;
+    }
+    get id() {
+        return this._id;
+    }
+    set id(value) {
+        this._id = value;
+    }
+    get star() {
+        return this._star;
+    }
+    set star(value) {
+        this._star = value;
+    }
+    get comment() {
+        return this._comment;
+    }
+    set comment(value) {
+        this._comment = value;
+    }
+    //Object provenant de la db donc type Object !! -> Function to set Type (Review)
+    fromAvisDto(dto) {
+        Object.assign(this, dto);
+        return this;
+    }
+    //Inverse de la méthode du dessus !
+    toAvisDto() {
+        return {
+            id: this._id,
+            star: this._star,
+            comment: this._comment,
+            isValid: this._isValid,
+            idUser: this._idUser,
+            idPlace: this._idPlace,
+            date: this._date
+        };
+    }
+    equals(obj) {
+        if (obj instanceof Review) {
+            return this.id == obj.id;
+        }
+        return false;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/views/lieu/detail-place/detail-place.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/views/lieu/detail-place/detail-place.component.css ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2xpZXUvZGV0YWlsLXBsYWNlL2RldGFpbC1wbGFjZS5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/views/lieu/detail-place/detail-place.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/views/lieu/detail-place/detail-place.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: DetailPlaceComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailPlaceComponent", function() { return DetailPlaceComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _place__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../place */ "./src/app/views/lieu/place.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _place_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../place.service */ "./src/app/views/lieu/place.service.ts");
+
+
+
+
+
+let DetailPlaceComponent = class DetailPlaceComponent {
+    constructor(route, lieuService) {
+        this.route = route;
+        this.lieuService = lieuService;
+    }
+    ngOnInit() {
+        this._id = this.route.snapshot.params['id'];
+        this.loadPlace(this._id);
+    }
+    get id() {
+        return this._id;
+    }
+    set id(value) {
+        this._id = value;
+    }
+    get place() {
+        return this._place;
+    }
+    set place(value) {
+        this._place = value;
+    }
+    loadPlace(id) {
+        const sub = this.lieuService.get(id).subscribe(lieu => this._place = new _place__WEBPACK_IMPORTED_MODULE_2__["Place"]().fromLieuDto(lieu));
+    }
+};
+DetailPlaceComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: _place_service__WEBPACK_IMPORTED_MODULE_4__["PlaceService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], DetailPlaceComponent.prototype, "place", null);
+DetailPlaceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-detai-lieu',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./detail-place.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/detail-place/detail-place.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./detail-place.component.css */ "./src/app/views/lieu/detail-place/detail-place.component.css")).default]
+    })
+], DetailPlaceComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/lieu/list-place/list-place.component.css":
+/*!****************************************************************!*\
+  !*** ./src/app/views/lieu/list-place/list-place.component.css ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2xpZXUvbGlzdC1wbGFjZS9saXN0LXBsYWNlLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/views/lieu/list-place/list-place.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/views/lieu/list-place/list-place.component.ts ***!
+  \***************************************************************/
+/*! exports provided: ListPlaceComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListPlaceComponent", function() { return ListPlaceComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _place__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../place */ "./src/app/views/lieu/place.ts");
+/* harmony import */ var _place_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../place.service */ "./src/app/views/lieu/place.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+let ListPlaceComponent = class ListPlaceComponent {
+    constructor(lieuService, router) {
+        this.lieuService = lieuService;
+        this.router = router;
+        this._places = [];
+        this.subscriptions = [];
+    }
+    ngOnInit() {
+        this.loadLieux();
+    }
+    get places() {
+        return this._places;
+    }
+    set places(value) {
+        this._places = value;
+    }
+    loadLieux() {
+        const sub = this.lieuService.query().subscribe(lieux => this._places = lieux.map(lieu => new _place__WEBPACK_IMPORTED_MODULE_2__["Place"]().fromLieuDto(lieu)));
+        this.subscriptions.push(sub);
+    }
+    navigateToFormAddLieu() {
+        this.router.navigate(['forms/lieux']);
+    }
+};
+ListPlaceComponent.ctorParameters = () => [
+    { type: _place_service__WEBPACK_IMPORTED_MODULE_3__["PlaceService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ListPlaceComponent.prototype, "places", null);
+ListPlaceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-list-lieu',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./list-place.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/list-place/list-place.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./list-place.component.css */ "./src/app/views/lieu/list-place/list-place.component.css")).default]
+    })
+], ListPlaceComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/lieu/place.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/views/lieu/place.service.ts ***!
+  \*********************************************/
+/*! exports provided: PlaceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlaceService", function() { return PlaceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+const URL_API = "/api/Place";
+let PlaceService = class PlaceService {
+    constructor(http) {
+        this.http = http;
+    }
+    query() {
+        return this.http.get(URL_API);
+    }
+    get(id) {
+        return this.http.get(URL_API + '/' + id);
+    }
+    // post(lieu : LieuDto): Observable<LieuDto>{
+    //   return this.http.post<LieuDto>(URL_API, lieu);
+    // }
+    post(place) {
+        return this.http.post(URL_API, place);
+    }
+    delete(id) {
+        return this.http.delete(URL_API + '/' + id);
+    }
+    put(lieu) {
+        return this.http.put(URL_API, lieu);
+    }
+};
+PlaceService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+PlaceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], PlaceService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/lieu/place.ts":
+/*!*************************************!*\
+  !*** ./src/app/views/lieu/place.ts ***!
+  \*************************************/
+/*! exports provided: Place */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Place", function() { return Place; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Place {
     constructor(id = -1, nom = '', type = '', description = '', idadr = -1) {
         this._id = id;
-        this._nom = nom;
+        this._name = nom;
         this._type = type;
         this._description = description;
-        this._idadr = idadr;
+        this._idAdr = idadr;
     }
-    get idadr() {
-        return this._idadr;
+    get idAdr() {
+        return this._idAdr;
     }
-    set idadr(value) {
-        this._idadr = value;
+    set idAdr(value) {
+        this._idAdr = value;
     }
     get description() {
         return this._description;
@@ -1418,11 +1779,11 @@ class Lieu {
     set type(value) {
         this._type = value;
     }
-    get nom() {
-        return this._nom;
+    get name() {
+        return this._name;
     }
-    set nom(value) {
-        this._nom = value;
+    set name(value) {
+        this._name = value;
     }
     get id() {
         return this._id;
@@ -1430,7 +1791,7 @@ class Lieu {
     set id(value) {
         this._id = value;
     }
-    //Object provenant de la db donc type Object !! -> Function to set Type (Lieu)
+    //Object provenant de la db donc type Object !! -> Function to set Type (Place)
     fromLieuDto(dto) {
         Object.assign(this, dto);
         return this;
@@ -1439,14 +1800,14 @@ class Lieu {
     toLieuDto() {
         return {
             id: this._id,
-            nom: this._nom,
+            name: this._name,
             type: this._type,
             description: this._description,
-            idadr: this._idadr
+            idAdr: this._idAdr
         };
     }
     equals(obj) {
-        if (obj instanceof Lieu) {
+        if (obj instanceof Place) {
             return this.id == obj.id;
         }
         return false;
@@ -1456,282 +1817,92 @@ class Lieu {
 
 /***/ }),
 
-/***/ "./src/app/views/lieu/detail-lieu/detail-lieu.component.css":
-/*!******************************************************************!*\
-  !*** ./src/app/views/lieu/detail-lieu/detail-lieu.component.css ***!
-  \******************************************************************/
+/***/ "./src/app/views/lieu/single-place/single-place.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/views/lieu/single-place/single-place.component.css ***!
+  \********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2xpZXUvZGV0YWlsLWxpZXUvZGV0YWlsLWxpZXUuY29tcG9uZW50LmNzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2xpZXUvc2luZ2xlLXBsYWNlL3NpbmdsZS1wbGFjZS5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
-/***/ "./src/app/views/lieu/detail-lieu/detail-lieu.component.ts":
-/*!*****************************************************************!*\
-  !*** ./src/app/views/lieu/detail-lieu/detail-lieu.component.ts ***!
-  \*****************************************************************/
-/*! exports provided: DetailLieuComponent */
+/***/ "./src/app/views/lieu/single-place/single-place.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/views/lieu/single-place/single-place.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: SinglePlaceComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailLieuComponent", function() { return DetailLieuComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SinglePlaceComponent", function() { return SinglePlaceComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _Lieu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Lieu */ "./src/app/views/lieu/Lieu.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _lieu_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lieu.service */ "./src/app/views/lieu/lieu.service.ts");
+/* harmony import */ var _place__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../place */ "./src/app/views/lieu/place.ts");
+/* harmony import */ var _Adresse_address__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Adresse/address */ "./src/app/Adresse/address.ts");
+/* harmony import */ var _Adresse_address_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Adresse/address.service */ "./src/app/Adresse/address.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 
 
 
 
 
-let DetailLieuComponent = class DetailLieuComponent {
-    constructor(route, lieuService) {
-        this.route = route;
-        this.lieuService = lieuService;
-    }
-    ngOnInit() {
-        this._id = this.route.snapshot.params['id'];
-        this.loadLieu(this._id);
-    }
-    get id() {
-        return this._id;
-    }
-    set id(value) {
-        this._id = value;
-    }
-    get lieu() {
-        return this._lieu;
-    }
-    set lieu(value) {
-        this._lieu = value;
-    }
-    loadLieu(id) {
-        const sub = this.lieuService.get(id).subscribe(lieu => this._lieu = new _Lieu__WEBPACK_IMPORTED_MODULE_2__["Lieu"]().fromLieuDto(lieu));
-    }
-};
-DetailLieuComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
-    { type: _lieu_service__WEBPACK_IMPORTED_MODULE_4__["LieuService"] }
-];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], DetailLieuComponent.prototype, "lieu", null);
-DetailLieuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-detai-lieu',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./detail-lieu.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/detail-lieu/detail-lieu.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./detail-lieu.component.css */ "./src/app/views/lieu/detail-lieu/detail-lieu.component.css")).default]
-    })
-], DetailLieuComponent);
 
-
-
-/***/ }),
-
-/***/ "./src/app/views/lieu/lieu.service.ts":
-/*!********************************************!*\
-  !*** ./src/app/views/lieu/lieu.service.ts ***!
-  \********************************************/
-/*! exports provided: LieuService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LieuService", function() { return LieuService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-
-
-
-const URL_API = "/api/Lieu";
-let LieuService = class LieuService {
-    constructor(http) {
-        this.http = http;
-    }
-    query() {
-        return this.http.get(URL_API);
-    }
-    get(id) {
-        return this.http.get(URL_API + '/' + id);
-    }
-    post(lieu) {
-        return this.http.post(URL_API, lieu);
-    }
-    delete(id) {
-        return this.http.delete(URL_API + '/' + id);
-    }
-    put(lieu) {
-        return this.http.put(URL_API, lieu);
-    }
-};
-LieuService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-];
-LieuService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    })
-], LieuService);
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/lieu/list-lieu/list-lieu.component.css":
-/*!**************************************************************!*\
-  !*** ./src/app/views/lieu/list-lieu/list-lieu.component.css ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2xpZXUvbGlzdC1saWV1L2xpc3QtbGlldS5jb21wb25lbnQuY3NzIn0= */");
-
-/***/ }),
-
-/***/ "./src/app/views/lieu/list-lieu/list-lieu.component.ts":
-/*!*************************************************************!*\
-  !*** ./src/app/views/lieu/list-lieu/list-lieu.component.ts ***!
-  \*************************************************************/
-/*! exports provided: ListLieuComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListLieuComponent", function() { return ListLieuComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _Lieu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Lieu */ "./src/app/views/lieu/Lieu.ts");
-/* harmony import */ var _lieu_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lieu.service */ "./src/app/views/lieu/lieu.service.ts");
-
-
-
-
-let ListLieuComponent = class ListLieuComponent {
-    constructor(lieuService) {
-        this.lieuService = lieuService;
-        this._lieux = [];
-        this.subscriptions = [];
-    }
-    ngOnInit() {
-        this.loadLieux();
-    }
-    get lieux() {
-        return this._lieux;
-    }
-    set lieux(value) {
-        this._lieux = value;
-    }
-    loadLieux() {
-        const sub = this.lieuService.query().subscribe(lieux => this._lieux = lieux.map(lieu => new _Lieu__WEBPACK_IMPORTED_MODULE_2__["Lieu"]().fromLieuDto(lieu)));
-        this.subscriptions.push(sub);
-    }
-};
-ListLieuComponent.ctorParameters = () => [
-    { type: _lieu_service__WEBPACK_IMPORTED_MODULE_3__["LieuService"] }
-];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], ListLieuComponent.prototype, "lieux", null);
-ListLieuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-list-lieu',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./list-lieu.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/list-lieu/list-lieu.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./list-lieu.component.css */ "./src/app/views/lieu/list-lieu/list-lieu.component.css")).default]
-    })
-], ListLieuComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/views/lieu/single-lieu/single-lieu.component.css":
-/*!******************************************************************!*\
-  !*** ./src/app/views/lieu/single-lieu/single-lieu.component.css ***!
-  \******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2xpZXUvc2luZ2xlLWxpZXUvc2luZ2xlLWxpZXUuY29tcG9uZW50LmNzcyJ9 */");
-
-/***/ }),
-
-/***/ "./src/app/views/lieu/single-lieu/single-lieu.component.ts":
-/*!*****************************************************************!*\
-  !*** ./src/app/views/lieu/single-lieu/single-lieu.component.ts ***!
-  \*****************************************************************/
-/*! exports provided: SingleLieuComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SingleLieuComponent", function() { return SingleLieuComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Adresse/Adresse */ "./src/app/Adresse/Adresse.ts");
-/* harmony import */ var _Adresse_adresse_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Adresse/adresse.service */ "./src/app/Adresse/adresse.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-
-
-
-
-
-let SingleLieuComponent = class SingleLieuComponent {
+let SinglePlaceComponent = class SinglePlaceComponent {
     constructor(adrService, router) {
         this.adrService = adrService;
         this.router = router;
-        this._adresse = new _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_2__["Adresse"]();
+        this._place = new _place__WEBPACK_IMPORTED_MODULE_2__["Place"]();
+        this._address = new _Adresse_address__WEBPACK_IMPORTED_MODULE_3__["Address"]();
         this._subscriptions = [];
     }
     ngOnInit() {
     }
-    get lieu() {
-        return this._lieu;
+    get place() {
+        return this._place;
     }
-    set lieu(value) {
-        this._lieu = value;
-        this.updateAdresse(this._lieu.idadr);
+    set place(value) {
+        console.log(JSON.stringify(value));
+        if (value) {
+            this._place = value;
+            this.updateAdresse(this._place.idAdr);
+        }
     }
-    get adresse() {
-        return this._adresse;
+    get address() {
+        return this._address;
     }
-    set adresse(value) {
-        this._adresse = value;
+    set address(value) {
+        this._address = value;
     }
     updateAdresse(id) {
-        const sub = this.adrService.get(id).subscribe(adr => this._adresse = new _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_2__["Adresse"]().fromAdresseDto(adr));
+        const sub = this.adrService.get(id).subscribe(adr => this._address = new _Adresse_address__WEBPACK_IMPORTED_MODULE_3__["Address"]().fromAdresseDto(adr));
         this._subscriptions.push(sub);
     }
     onSingleLieuClick() {
         prompt("message");
     }
     navigateToDetailLieu() {
-        this.router.navigate(['lieux/' + this.lieu.id]);
+        this.router.navigate(['lieux/' + this.place.id]);
     }
 };
-SingleLieuComponent.ctorParameters = () => [
-    { type: _Adresse_adresse_service__WEBPACK_IMPORTED_MODULE_3__["AdresseService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+SinglePlaceComponent.ctorParameters = () => [
+    { type: _Adresse_address_service__WEBPACK_IMPORTED_MODULE_4__["AddressService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], SingleLieuComponent.prototype, "lieu", null);
-SingleLieuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+], SinglePlaceComponent.prototype, "place", null);
+SinglePlaceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-single-lieu',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./single-lieu.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/single-lieu/single-lieu.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./single-lieu.component.css */ "./src/app/views/lieu/single-lieu/single-lieu.component.css")).default]
+        selector: 'app-single-place',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./single-place.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/single-place/single-place.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./single-place.component.css */ "./src/app/views/lieu/single-place/single-place.component.css")).default]
     })
-], SingleLieuComponent);
+], SinglePlaceComponent);
 
 
 

@@ -13,19 +13,17 @@
       <ul class="nav navbar-nav">
         <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans "app.module.ts-->
         <li routerLinkActive="active"><a routerLink="lieux">Lieux</a> </li>
-        <li routerLinkActive="active"><a routerLink="forms/lieux">Ajouter Lieu</a> </li>
+        <li routerLinkActive="active"><a routerLink="forms/lieux">Ajouter Place</a> </li>
         <li routerLinkActive="active"><a routerLink="authenticate">Connexion</a></li>
-        <li routerLinkActive="active"><a routerLink="Utilisateur">Inscription</a></li>
+        <li routerLinkActive="active"><a routerLink="User">Inscription</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <!--Permet l'affichage des component-->
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
+<div class="container col-12">
+    <div class="float-left col-10">
       <router-outlet></router-outlet>
     </div>
-  </div>
 </div>
