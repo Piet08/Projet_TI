@@ -67,7 +67,7 @@
       <e p="Cou_project.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
     </e>
-    <e p="C:\Users\user\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\user\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Cou_project.543492269.00" t="ExcludeRecursive" />
+    <e p="C:\Users\eliot\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\eliot\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Cou_project.543492269.00" t="ExcludeRecursive" />
   </component>
 </project>

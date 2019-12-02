@@ -1,5 +1,4 @@
 import {FavorisDto} from './Favoris-dto';
-import {LieuDto} from '../Lieu/Lieu-dto';
 
 export declare type FavorisList = Favoris[];
 

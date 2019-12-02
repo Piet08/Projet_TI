@@ -1,0 +1,27 @@
+<div class="row" >
+  <div class="col-12">
+    <div class="card m-3" (click)="navigateToDetailLieu()">
+      <div class="card-header bg-dark text-center text-light">
+        <h5>{{lieu.nom}}</h5>
+      </div>
+
+      <div class="py-2 px-3">
+        <div class="d-block">
+          <hr>
+          <span class="d-inline">{{lieu.id}} : </span>
+          <h6 class="card-subtitle d-inline mb-2 text-muted">{{lieu.type}}</h6>
+          <hr>
+        </div>
+        <p class="card-text"a>{{lieu.description}}</p>
+      </div>
+
+      <div class="card-footer">
+        <div>
+          {{adresse.cp}} {{adresse.ville}}
+          <br>
+          {{adresse.rue}}, {{adresse.num}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

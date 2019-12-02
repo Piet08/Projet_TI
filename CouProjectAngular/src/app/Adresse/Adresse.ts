@@ -9,7 +9,7 @@ export class Adresse {
   private _num: number;
   private _cp: number;
 
-  constructor(id: number, ville: string, rue: string, num: number, cp: number) {
+  constructor(id: number = -1, ville: string = '', rue: string = '', num: number = -1, cp: number = -1) {
     this._id = id;
     this._ville = ville;
     this._rue = rue;
