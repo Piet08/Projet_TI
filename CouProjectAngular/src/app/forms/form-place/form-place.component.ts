@@ -16,23 +16,19 @@ import {PlaceAndAddressDto} from '../../views/lieu/place-dto';
 export class FormPlaceComponent implements OnInit {
 
   @Output()
-  lieuCreated: EventEmitter<Place> = new EventEmitter<Place>();
-  @Output()
-  adresseCreated: EventEmitter<Address> = new EventEmitter<Address>();
-  @Output()
   placeCreated: EventEmitter<PlaceAndAddressDto> = new EventEmitter<PlaceAndAddressDto>();
 
   typeLieu:EnumTypeLieu[] = [EnumTypeLieu.FAST_FOOD,EnumTypeLieu.MUSEE,EnumTypeLieu.MAGASIN
   ,EnumTypeLieu.BAR,EnumTypeLieu.BRASSERIE,EnumTypeLieu.DIVERTISSEMENT,EnumTypeLieu.RESTAURANT];
 
   formLieu:FormGroup = this.fb.group({
-    nom : this.fb.control('',Validators.required),
+    name : this.fb.control('',Validators.required),
     type : this.fb.control('',Validators.required),
     description : this.fb.control('',Validators.required),
     address:this.fb.group({
-      rue : this.fb.control('',Validators.required),
-      cp : this.fb.control('',[Validators.required,Validators.pattern(/^\d{4}$/)]),
-      ville : this.fb.control('',Validators.required),
+      straat : this.fb.control('',Validators.required),
+      postalCode : this.fb.control('',[Validators.required,Validators.pattern(/^\d{4}$/)]),
+      city : this.fb.control('',Validators.required),
       num : this.fb.control('',Validators.required)
     })
   })
@@ -41,10 +37,6 @@ export class FormPlaceComponent implements OnInit {
   constructor(public fb:FormBuilder) { }
 
   ngOnInit() {
-  }
-
-  alertMe() {
-    alert(JSON.stringify(this.formLieu.getRawValue()));
   }
 
   buildPlaceAndAddressDto(){
@@ -57,7 +49,7 @@ export class FormPlaceComponent implements OnInit {
 
   buildLieu(){
     const lieu = new Place();
-    lieu.name = this.formLieu.get("nom").value;
+    lieu.name = this.formLieu.get("name").value;
     lieu.type = this.formLieu.get("type").value;
     lieu.description = this.formLieu.get("description").value;
     return lieu;
@@ -65,28 +57,15 @@ export class FormPlaceComponent implements OnInit {
 
   buildAdresse(){
     const address = new Address();
-    address.city = this.formLieu.get("address.ville").value;
-    address.straat = this.formLieu.get("address.rue").value;
+    address.city = this.formLieu.get("address.city").value;
+    address.straat = this.formLieu.get("address.straat").value;
     address.num = this.formLieu.get("address.num").value;
-    address.postalCode = this.formLieu.get("address.cp").value;
+    address.postalCode = this.formLieu.get("address.postalCode").value;
     return address;
   }
 
   emitNewLieu(){
     this.placeCreated.next(this.buildPlaceAndAddressDto());
-    //this.adresseCreated.next(this.buildAdresse());
-    //this.lieuCreated.next(this.buildLieu());
   }
 
-  // createAdresse(){
-  //   let adr = new Address();
-  //   const sub = this.adresseService.post(this.buildAdresse().toAdresseDto()).subscribe(adresse => adr = new Address().fromAdresseDto(adresse));
-  //   this.subscriptions.push(sub);
-  //   return adr.id;
-  // }
-  //
-  // createLieu() {
-  //   const sub = this.lieuService.post(this.buildLieu(this.createAdresse()).toLieuDto()).subscribe();
-  //   this.subscriptions.push(sub);
-  // }
 }

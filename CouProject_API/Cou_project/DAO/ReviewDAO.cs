@@ -15,6 +15,7 @@ namespace Cou_project.DAO
         public static readonly string FIELD_ISVALID = "valider";
         public static readonly string FIELD_IDUSER = "idutil";
         public static readonly string FIELD_IDPLACE = "idlieu";
+        public static readonly string FIELD_DATE = "date";
         
         //J'ai fais toutes les requêtes, quitte à en supp quelques une qui ne nous seront pas utiles, à voir plus tard ! 
         
@@ -33,6 +34,7 @@ namespace Cou_project.DAO
         private static readonly string REQ_UPDATE = String.Format(
             "UPDATE {0} SET {1} = @{1}, {2} = @{2}, {3} = @{3}, {4} = @{4} WHERE {5} = @{5}",
             TABLE_NAME, FIELD_STAR, FIELD_COMMENT, FIELD_IDUSER, FIELD_IDPLACE, FIELD_ID);
+
 
         public static IEnumerable<Review> Query()
         {
