@@ -12,13 +12,13 @@ namespace Cou_project.Models
         public static readonly string SERVER_FRANCOIS = "DESKTOP-I1BQBCI";
         public static readonly string SERVER_ELIOT = "DESKTOP-DJGE66N";
 
-        private static readonly string CONNECTION_STRING = $"Server={SERVER};Database=cou_project;Integrated Security=SSPI;";
+        private static readonly string CONNECTION_STRING = $"Server={SERVER_FIXE_PIERRE};Database=cou_project;Integrated Security=SSPI;";
         public static readonly string SERVER = "cou-project.database.windows.net";
 
         public static readonly string CONNECTION_AZURE =
             "Server=cou-project.database.windows.net;Database=cou_project;User Id=loginAdmin;Password=mdpCOU_project;Trusted_Connection=False;MultipleActiveResultSets=true;";
         
-        private static readonly string CONNECTION_STRING = $"Server={SERVER_ELIOT};Database=cou_project;Integrated Security=SSPI;";
+        //private static readonly string CONNECTION_STRING = $"Server={SERVER_ELIOT};Database=cou_project;Integrated Security=SSPI;";
 
         public static SqlConnection GetConnection()
         {

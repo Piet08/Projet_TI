@@ -46,13 +46,15 @@ namespace Cou_project.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<User>> query()
         {
+            
             return Ok(UserDAO.Query());
         }
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult<User> Post([FromBody] User util)
+        public ActionResult<User> Post([FromBody] UserAndAddress user)
         {
-            return Ok(UserDAO.Create(util));
+            return Ok(_userService.CreateUserAndAddress(user));
+            //return Ok(UserDAO.Create(util));
         }
         [AllowAnonymous]
         [HttpGet("{id}")]

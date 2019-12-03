@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {UserDto} from './user-dto';
+import {UserAndAddressDto, UserDto} from './user-dto';
 import {Favorites} from '../Favorites/favorites';
 import {FavoritesDto} from '../Favorites/favorites-dto';
 import {authenticateModelDto} from "./authenticateModel-dto";
+import {PlaceAndAddressDto} from "../views/lieu/place-dto";
 
 const URL_API_UTIL:string = "/api/User";
 const URL_API_AUTH:string = "/api/User/authenticate";
@@ -33,8 +34,12 @@ export class UserService {
     return this.http.get<UserDto>(URL_API_UTIL+'/'+id);
   }
 
-  post(utilisateur : UserDto): Observable<UserDto>{
+  /*post(utilisateur : UserDto): Observable<UserDto>{
     return this.http.post<UserDto>(URL_API_UTIL, utilisateur);
+  }*/
+
+  post(user : UserAndAddressDto): Observable<UserAndAddressDto>{
+    return this.http.post<UserAndAddressDto>(URL_API_UTIL, user);
   }
 
   delete(id: number): Observable<UserDto> {

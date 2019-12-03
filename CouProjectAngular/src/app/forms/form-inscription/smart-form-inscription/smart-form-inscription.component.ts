@@ -6,6 +6,8 @@ import {User, UserList} from "../../../User/user";
 import {Address, AddressList} from "../../../Address/address";
 import {UserService} from "../../../User/user.service";
 import {AddressService} from "../../../Address/address.service";
+import {PlaceAndAddressDto} from "../../../views/lieu/place-dto";
+import {UserAndAddressDto} from "../../../User/user-dto";
 
 @Component({
   selector: 'app-smart-form-inscription',
@@ -15,10 +17,8 @@ import {AddressService} from "../../../Address/address.service";
 export class SmartFormInscriptionComponent implements OnInit, OnDestroy {
 
   private subscriptions: Subscription[] = [];
-  private _users: UserList = [];
-  private _adresses: AddressList = [];
 
-  constructor(public userService: UserService, public adresseService : AddressService,  private http: HttpClient) { }
+  constructor(public userService: UserService,  private http: HttpClient) { }
 
   ngOnInit() {
   }
@@ -33,14 +33,8 @@ export class SmartFormInscriptionComponent implements OnInit, OnDestroy {
   }
 
 
-
-  createAdressUser($event: Address) {
-   const sub = this.adresseService.post($event.toAdresseDto()).subscribe( adresseDTO => this._adresses.push(new Address().fromAdresseDto(adresseDTO)));
-    this.subscriptions.push(sub);
+  createUser($event: UserAndAddressDto) {
+    this.subscriptions.push(this.userService.post($event).subscribe());
   }
 
-  createUser($event: User) {
-    const sub = this.userService.post($event.toUtilisateurDto()).subscribe( userDTO => this._users.push(new User().fromUtilisateurDto(userDTO)));
-    this.subscriptions.push(sub);
-  }
 }

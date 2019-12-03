@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using Cou_project.DAO;
 using Cou_project.Helpers;
 using Cou_project.Models;
 using Microsoft.Extensions.Options;
@@ -17,6 +18,7 @@ namespace Cou_project.Services
    
     {
         User Authenticate(User user);
+        User CreateUserAndAddress(UserAndAddress user);
         //IEnumerable<Utilisateur> GetAll();
     }
 
@@ -60,6 +62,15 @@ namespace Cou_project.Services
             user.Token = tokenHandler.WriteToken(token);
 
             return user.WithoutPassword();
+        }
+        
+        public User CreateUserAndAddress(UserAndAddress user)
+        {
+            Address adr = AddressDAO.Create(user.Address);
+               
+            user.User.Idadr = adr.Id;
+            return UserDAO.Create(user.User);
+            
         }
 
         /*public IEnumerable<Utilisateur> GetAll()
