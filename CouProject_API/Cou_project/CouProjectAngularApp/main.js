@@ -32,8 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div>\r\n      <h1>{{title}}</h1>\r\n  </div>\r\n</div>\r\n\r\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"authenticate\" class=\"nav-link\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Utilisateur\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"row\">\r\n  <div class=\"col-sm-8\" style=\"background-color:lavender;\">\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n  <div class=\"col-sm-4\">\r\n    <!--Pourquoi pas metter les Lieux les plus notés ??-->\r\n  </div>\r\n</div>\r\n\r\n");
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div style=\"background-color:red;\">\r\n      <h1>Cou</h1>\r\n  </div>\r\n</div>\r\n\r\n<nav class=\"nnavbar navbar-expand-lg navbar-light bg-light\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\">Menu</a>\r\n    </div>\r\n    <div class=\"navbar-collapse\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans \"app.module.ts-->\r\n        <li routerLinkActive=\"active\"><a routerLink=\"lieux\">Lieux</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"forms/lieux\">Ajouter Place</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"authenticate\">Connexion</a></li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"User\">Inscription</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container col-12\">\r\n    <div class=\"float-left col-10\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div>\r\n      <h1>{{title}}</h1>\r\n  </div>\r\n</div>\r\n\r\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User/authenticate\" class=\"nav-link\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n<!--<nav class=\"nnavbar navbar-expand-lg navbar-light bg-light\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\">Menu</a>\r\n    </div>\r\n    <div class=\"navbar-collapse\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <li routerLinkActive=\"active\"><a routerLink=\"lieux\">Lieux</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"forms/lieux\">Ajouter Place</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"authenticate\">Connexion</a></li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"User\">Inscription</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>-->\r\n\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"row\">\r\n  <div class=\"col-sm-8\" style=\"background-color:lavender;\">\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n  <div class=\"col-sm-4\">\r\n    <!--Pourquoi pas metter les Lieux les plus notés ??-->\r\n  </div>\r\n</div>\r\n\r\n");
 
 /***/ }),
 
@@ -46,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1>Formulaire Connexion</h1>\r\n  <form class=\"form-horizontal\" [formGroup]=\"formulaireConnexion\" (ngSubmit)=\"emitNewUserConnected()\" role=\"form\">\r\n    <div class=\"form-group\">\r\n      <label for=\"username\" class=\"col-sm-3 control-label\">Email</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type=\"text\" formControlName=\"username\" id=\"username\"/>\r\n      </div>\r\n    </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"motDePasseConnexion\" class=\"col-sm-3 control-label\">Mot de passe</label>\r\n        <div class=\"col-sm-6\">\r\n          <input class=\"form-control\" type = \"password\" formControlName=\"motDePasseConnexion\" id=\"motDePasseConnexion\"/>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"resterConnecter\" class=\"col-sm-3 control-label\"><b>Rester connecté?</b></label>\r\n        <input  type=\"checkbox\" formControlName=\"resterConnecter\" id=\"resterConnecter\"/>\r\n      </div>\r\n\r\n    <input type=\"submit\" value=\"Se connecter\" class=\"btn btn-primary col-sm-offset-3\" [disabled]=\"verificationFormulaire()\"/>\r\n  </form>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1>Formulaire Connexion</h1>\r\n  <form class=\"form-horizontal\" [formGroup]=\"formulaireConnexion\" (ngSubmit)=\"emitNewUserConnected()\" role=\"form\">\r\n    <div class=\"form-group\">\r\n      <label for=\"username\" class=\"col-sm-3 control-label\">Login</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type=\"text\" formControlName=\"username\" id=\"username\"/>\r\n      </div>\r\n    </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"motDePasseConnexion\" class=\"col-sm-3 control-label\">Mot de passe</label>\r\n        <div class=\"col-sm-6\">\r\n          <input class=\"form-control\" type = \"password\" formControlName=\"motDePasseConnexion\" id=\"motDePasseConnexion\"/>\r\n        </div>\r\n      </div>\r\n\r\n    <input type=\"submit\" value=\"Se connecter\" class=\"btn btn-primary col-sm-offset-3\" [disabled]=\"verificationFormulaire()\"/>\r\n  </form>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -98,8 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"alertMe()\">\r\n  <div class=\"form-group form-inline raw\">\r\n    <label for=\"nom\" class=\"col-6 \">Nom :</label>\r\n    <input type=\"text\" class=\"form-control col-6\" id=\"nom\" name=\"nom\" formControlName=\"nom\">\r\n  </div>\r\n  <div class=\"form-group form-inline raw\">\r\n    <label for=\"type\" class=\"col-6 \">Type :</label>\r\n    <input type=\"text\" class=\"form-control col-6\" id=\"type\" name=\"type\" formControlName=\"type\">\r\n  </div>\r\n  <div class=\"form-group form-inline raw\">\r\n    <label for=\"description\" class=\"col-6 \">Description :</label>\r\n    <input type=\"text\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n  </div>\r\n\r\n  <div formGroupName=\"adresse\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"rue\" class=\"col-6 \">Rue :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"rue\" name=\"rue\" formControlName=\"rue\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"num\" class=\"col-6 \">Numéro :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"cp\" class=\"col-6 \">Code Postal :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"cp\" name=\"cp\" formControlName=\"cp\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"ville\" class=\"col-6 \">Ville :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"ville\" name=\"ville\" formControlName=\"ville\">\r\n    </div>\r\n  </div>\r\n  <input type=\"submit\">\r\n</form>\r\n");
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"col-12\">\n  <form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\n    <div class=\"form-group form-inline raw\">\n      <label for=\"nom\" class=\"col-6 \">Nom :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"nom\" name=\"nom\" formControlName=\"nom\">\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"type\" class=\"col-6 \">Type :</label>\n      <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control col-6\">\n        <option class=\"form-control\" *ngFor=\"let type of typeLieu\" value=\"{{type}}\">{{type}}</option>\n      </select>\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"description\" class=\"col-6 \">Description :</label>\n      <textarea rows=\"5\" cols=\"30\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\n\n      </textarea>\n    </div>\n\n    <div formGroupName=\"address\">\n      <div class=\"form-group form-inline raw\">\n        <label for=\"rue\" class=\"col-6 \">Rue :</label>\n        <input type=\"text\" class=\"form-control col-6\" id=\"rue\" name=\"rue\" formControlName=\"rue\">\n      </div>\n      <div class=\"form-group form-inline raw\">\n        <label for=\"num\" class=\"col-6 \">Numéro :</label>\n        <input type=\"number\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\n      </div>\n      <div class=\"form-group form-inline raw\">\n        <label for=\"cp\" class=\"col-6 \">Code Postal :</label>\n        <input type=\"number\" class=\"form-control col-6\" id=\"cp\" name=\"cp\" formControlName=\"cp\">\n      </div>\n      <div class=\"form-group form-inline raw\">\n        <label for=\"ville\" class=\"col-6 \">Ville :</label>\n        <input type=\"text\" class=\"form-control col-6\" id=\"ville\" name=\"ville\" formControlName=\"ville\">\n      </div>\n    </div>\n    <div class=\"text-right\">\n      <input type=\"submit\" class=\"btn btn-primary btn-success\" [disabled]=\"!formLieu.valid\">\n    </div>\n  </form>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"col-12\">\r\n  <form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"nom\" class=\"col-6 \">Nom :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"nom\" name=\"nom\" formControlName=\"nom\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"type\" class=\"col-6 \">Type :</label>\r\n      <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control col-6\">\r\n        <option class=\"form-control\" *ngFor=\"let type of typeLieu\" value=\"{{type}}\">{{type}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"description\" class=\"col-6 \">Description :</label>\r\n      <textarea rows=\"5\" cols=\"30\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n\r\n      </textarea>\r\n    </div>\r\n\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"rue\" class=\"col-6 \">Rue :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"rue\" name=\"rue\" formControlName=\"rue\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-6 \">Numéro :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"cp\" class=\"col-6 \">Code Postal :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"cp\" name=\"cp\" formControlName=\"cp\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"ville\" class=\"col-6 \">Ville :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"ville\" name=\"ville\" formControlName=\"ville\">\r\n      </div>\r\n    </div>\r\n    <div class=\"text-right\">\r\n      <input type=\"submit\" class=\"btn btn-primary btn-success\" [disabled]=\"!formLieu.valid\">\r\n    </div>\r\n  </form>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -112,8 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\r\n  <div class=\"card-header\">\r\n    <p class=\"text-left\">\r\n      {{utilisateur.nom}} {{utilisateur.prenom}}\r\n      <span class=\"float-right\">{{avis.note}}/5</span>\r\n    </p>\r\n  </div>\r\n\r\n  <div class=\"card-body\">\r\n    <blockquote class=\"blockquote mb-0\">\r\n      <p>{{avis.commentaire}}</p>\r\n      <footer class=\"blockquote-footer\"> {{avis.date}} </footer>\r\n    </blockquote>\r\n  </div>\r\n</div>\r\n");
-/* harmony default export */ __webpack_exports__["default"] = ("<app-from-lieu (placeCreated)=\"createPlace($event)\"></app-from-lieu>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-from-lieu (placeCreated)=\"createPlace($event)\"></app-from-lieu>\r\n");
 
 /***/ }),
 
@@ -126,8 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul *ngFor=\"let avis of listAvis\">\r\n  <li>\r\n    <app-detail-comment [avis]=\"avis\"></app-detail-comment>\r\n  </li>\r\n</ul>\r\n");
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\n  <div class=\"card-header\">\n    <p class=\"text-left\">\n      {{utilisateur.name}} {{utilisateur.surname}}\n      <span class=\"float-right\">{{avis.star}}/5</span>\n    </p>\n  </div>\n\n  <div class=\"card-body\">\n    <blockquote class=\"blockquote mb-0\">\n      <p>{{avis.comment}}</p>\n      <footer class=\"blockquote-footer\"> {{avis.date}} </footer>\n    </blockquote>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\r\n  <div class=\"card-header\">\r\n    <p class=\"text-left\">\r\n      {{utilisateur.name}} {{utilisateur.surname}}\r\n      <span class=\"float-right\">{{avis.star}}/5</span>\r\n    </p>\r\n  </div>\r\n\r\n  <div class=\"card-body\">\r\n    <blockquote class=\"blockquote mb-0\">\r\n      <p>{{avis.comment}}</p>\r\n      <footer class=\"blockquote-footer\"> {{avis.date}} </footer>\r\n    </blockquote>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -140,8 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n  <app-single-lieu [lieu]=\"lieu\"></app-single-lieu>\r\n</div>\r\n\r\n<div>\r\n  <app-list-comment [id]=\"id\"></app-list-comment>\r\n</div>\r\n");
-/* harmony default export */ __webpack_exports__["default"] = ("<ul style=\"list-style: none;\" *ngFor=\"let avis of listAvis\">\n  <li>\n    <app-detail-comment [avis]=\"avis\"></app-detail-comment>\n  </li>\n</ul>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ul style=\"list-style: none;\" *ngFor=\"let avis of listAvis\">\r\n  <li>\r\n    <app-detail-comment [avis]=\"avis\"></app-detail-comment>\r\n  </li>\r\n</ul>\r\n");
 
 /***/ }),
 
@@ -154,8 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul>\r\n  <li *ngFor=\"let lieu of lieux\">\r\n    <app-single-lieu [lieu]=\"lieu\"></app-single-lieu>\r\n  </li>\r\n</ul>\r\n\r\n<div class=\"text-center\">\r\n  <button class=\"btn btn-info\">Ajouter lieu</button>\r\n</div>\r\n");
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <app-single-place [place]=\"place\"></app-single-place>\n</div>\n\n<div>\n  <app-list-review [id]=\"id\"></app-list-review>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n  <app-single-place [place]=\"place\"></app-single-place>\r\n</div>\r\n\r\n<div>\r\n  <app-list-review [id]=\"id\"></app-list-review>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -168,8 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\r\n  <div class=\"col-12\">\r\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\r\n      <div class=\"card-header bg-dark text-center text-light\">\r\n        <h5>{{lieu.nom}}</h5>\r\n      </div>\r\n\r\n      <div class=\"py-2 px-3\">\r\n        <div class=\"d-block\">\r\n          <hr>\r\n          <span class=\"d-inline\">{{lieu.id}} : </span>\r\n          <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{lieu.type}}</h6>\r\n          <hr>\r\n        </div>\r\n        <p class=\"card-text\"a>{{lieu.description}}</p>\r\n      </div>\r\n\r\n      <div class=\"card-footer\">\r\n        <div>\r\n          {{adresse.cp}} {{adresse.ville}}\r\n          <br>\r\n          {{adresse.rue}}, {{adresse.num}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"offset-3 col-8\">\n  <ul style=\"list-style: none;\">\n    <li *ngFor=\"let place of places\">\n      <app-single-place [place]=\"place\"></app-single-place>\n    </li>\n  </ul>\n\n  <div class=\"text-center\">\n    <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"offset-3 col-8\">\r\n  <ul style=\"list-style: none;\">\r\n    <li *ngFor=\"let place of places\">\r\n      <app-single-place [place]=\"place\"></app-single-place>\r\n    </li>\r\n  </ul>\r\n\r\n  <div class=\"text-center\">\r\n    <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -182,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\n  <div class=\"col-12\">\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\n      <div class=\"card-header bg-dark text-center text-light\">\n        <h5>{{place.name}}</h5>\n      </div>\n\n      <div class=\"py-2 px-3\">\n        <div class=\"d-block\">\n          <hr>\n          <span class=\"d-inline\">{{place.id}} : </span>\n          <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{place.type}}</h6>\n          <hr>\n        </div>\n        <p class=\"card-text\"a>{{place.description}}</p>\n      </div>\n\n      <div class=\"card-footer\">\n        <div>\n          {{address.postalCode}} {{address.city}}\n          <br>\n          {{address.straat}}, {{address.num}}\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\r\n  <div class=\"col-12\">\r\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\r\n      <div class=\"card-header bg-dark text-center text-light\">\r\n        <h5>{{place.name}}</h5>\r\n      </div>\r\n\r\n      <div class=\"py-2 px-3\">\r\n        <div class=\"d-block\">\r\n          <hr>\r\n          <span class=\"d-inline\">{{place.id}} : </span>\r\n          <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{place.type}}</h6>\r\n          <hr>\r\n        </div>\r\n        <p class=\"card-text\"a>{{place.description}}</p>\r\n      </div>\r\n\r\n      <div class=\"card-footer\">\r\n        <div>\r\n          {{address.postalCode}} {{address.city}}\r\n          <br>\r\n          {{address.straat}}, {{address.num}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -415,9 +408,9 @@ function __importDefault(mod) {
 
 /***/ }),
 
-/***/ "./src/app/Adresse/address.service.ts":
+/***/ "./src/app/Address/address.service.ts":
 /*!********************************************!*\
-  !*** ./src/app/Adresse/address.service.ts ***!
+  !*** ./src/app/Address/address.service.ts ***!
   \********************************************/
 /*! exports provided: AddressService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -465,9 +458,9 @@ AddressService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/Adresse/address.ts":
+/***/ "./src/app/Address/address.ts":
 /*!************************************!*\
-  !*** ./src/app/Adresse/address.ts ***!
+  !*** ./src/app/Address/address.ts ***!
   \************************************/
 /*! exports provided: Address */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -570,6 +563,52 @@ const TypeLieux = [EnumTypeLieu.RESTAURANT, EnumTypeLieu.BAR, EnumTypeLieu.MAGAS
 
 /***/ }),
 
+/***/ "./src/app/User/authenticateModel.ts":
+/*!*******************************************!*\
+  !*** ./src/app/User/authenticateModel.ts ***!
+  \*******************************************/
+/*! exports provided: authenticateModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "authenticateModel", function() { return authenticateModel; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class authenticateModel {
+    constructor(username = '', password = '') {
+        this._username = username;
+        this._password = password;
+    }
+    get password() {
+        return this._password;
+    }
+    set password(value) {
+        this._password = value;
+    }
+    get username() {
+        return this._username;
+    }
+    set username(value) {
+        this._username = value;
+    }
+    //Object provenant de la db donc type Object !! -> Function to set Type (Utilisateur)
+    fromAuthenticateModelDto(dto) {
+        Object.assign(this, dto);
+        return this;
+    }
+    //Inverse de la méthode du dessus !
+    toAuthenticateModelDto() {
+        return {
+            username: this._username,
+            password: this._password
+        };
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/User/user.service.ts":
 /*!**************************************!*\
   !*** ./src/app/User/user.service.ts ***!
@@ -587,19 +626,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const URL_API_UTIL = "/api/User";
-const URL_API_AUTH = "/api/authenticate";
+const URL_API_AUTH = "/api/User/authenticate";
 const URL_API_FAV = "/api/Favorites";
 let UserService = class UserService {
     constructor(http) {
         this.http = http;
     }
     //AUTHENTICATE
-    /*  queryAuth():Observable<UserDto[]>{
-        return this.http.get<UserDto[]>(URL_API_AUTH);
-      }
-      postAuth(utilisateur : UserDto): Observable<UserDto>{
-        return this.http.post<UserDto>(URL_API_AUTH, utilisateur);
-      }*/
+    postAuth(model) {
+        return this.http.post(URL_API_AUTH, model);
+    }
     //UTILISATEUR
     query() {
         return this.http.get(URL_API_UTIL);
@@ -652,10 +688,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
-class Utilisateur {
-    constructor(id = -1, nom = '', prenom = '', pseudo = '', type = '', email = '', hashpwd = '', idadr = -1) {
 class User {
-    constructor(id = -1, nom = '', prenom = '', pseudo = '', type = '', email = '', hashpwd = '', idadr = -1, token = '') {
+    constructor(id = -1, nom = '', prenom = '', pseudo = '', type = '', email = '', hashpwd = '', idadr = -1) {
         this._id = id;
         this._name = nom;
         this._surname = prenom;
@@ -745,122 +779,6 @@ class User {
         return false;
     }
 }
-
-
-/***/ }),
-
-/***/ "./src/app/Utilisateur/authenticateModel.ts":
-/*!**************************************************!*\
-  !*** ./src/app/Utilisateur/authenticateModel.ts ***!
-  \**************************************************/
-/*! exports provided: authenticateModel */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "authenticateModel", function() { return authenticateModel; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-class authenticateModel {
-    constructor(username = '', password = '') {
-        this._username = username;
-        this._password = password;
-    }
-    get password() {
-        return this._password;
-    }
-    set password(value) {
-        this._password = value;
-    }
-    get username() {
-        return this._username;
-    }
-    set username(value) {
-        this._username = value;
-    }
-    //Object provenant de la db donc type Object !! -> Function to set Type (Utilisateur)
-    fromAuthenticateModelDto(dto) {
-        Object.assign(this, dto);
-        return this;
-    }
-    //Inverse de la méthode du dessus !
-    toAuthenticateModelDto() {
-        return {
-            username: this._username,
-            password: this._password
-        };
-    }
-}
-
-
-/***/ }),
-
-/***/ "./src/app/Utilisateur/utilisateur.service.ts":
-/*!****************************************************!*\
-  !*** ./src/app/Utilisateur/utilisateur.service.ts ***!
-  \****************************************************/
-/*! exports provided: UtilisateurService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UtilisateurService", function() { return UtilisateurService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-
-
-
-const URL_API_UTIL = "/api/Utilisateur";
-const URL_API_AUTH = "/api/Utilisateur/authenticate";
-const URL_API_FAV = "/api/Favoris";
-let UtilisateurService = class UtilisateurService {
-    constructor(http) {
-        this.http = http;
-    }
-    //AUTHENTICATE
-    /*queryAuth():Observable<UtilisateurDto[]>{
-      return this.http.get<UtilisateurDto[]>(URL_API_AUTH);
-    }*/
-    postAuth(model) {
-        return this.http.post(URL_API_AUTH, model);
-    }
-    //UTILISATEUR
-    query() {
-        return this.http.get(URL_API_UTIL);
-    }
-    get(id) {
-        return this.http.get(URL_API_UTIL + '/' + id);
-    }
-    post(utilisateur) {
-        return this.http.post(URL_API_UTIL, utilisateur);
-    }
-    delete(id) {
-        return this.http.delete(URL_API_UTIL + '/' + id);
-    }
-    put(utilisateur) {
-        return this.http.put(URL_API_UTIL, utilisateur);
-    }
-    //FAVORIS
-    queryFavoris() {
-        return this.http.get(URL_API_FAV);
-    }
-    postFavoris(favoris) {
-        return this.http.post(URL_API_FAV, favoris);
-    }
-    deleteFavoris(id) {
-        return this.http.delete(URL_API_FAV + '/' + id);
-    }
-};
-UtilisateurService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-];
-UtilisateurService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    })
-], UtilisateurService);
-
 
 
 /***/ }),
@@ -962,22 +880,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _forms_form_inscription_dumb_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/form-inscription/dumb-form-inscription/form-inscription.component */ "./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _views_lieu_list_lieu_list_lieu_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/lieu/list-lieu/list-lieu.component */ "./src/app/views/lieu/list-lieu/list-lieu.component.ts");
-/* harmony import */ var _views_lieu_single_lieu_single_lieu_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/lieu/single-lieu/single-lieu.component */ "./src/app/views/lieu/single-lieu/single-lieu.component.ts");
-/* harmony import */ var _views_lieu_detail_lieu_detail_lieu_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/lieu/detail-lieu/detail-lieu.component */ "./src/app/views/lieu/detail-lieu/detail-lieu.component.ts");
-/* harmony import */ var _views_comment_list_comment_list_comment_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/comment/list-comment/list-comment.component */ "./src/app/views/comment/list-comment/list-comment.component.ts");
-/* harmony import */ var _views_comment_detail_comment_detail_comment_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/comment/detail-comment/detail-comment.component */ "./src/app/views/comment/detail-comment/detail-comment.component.ts");
-/* harmony import */ var _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/form-lieu/form-lieu.component */ "./src/app/forms/form-lieu/form-lieu.component.ts");
-/* harmony import */ var _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./forms/form-inscription/smart-form-inscription/smart-form-inscription.component */ "./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.ts");
-/* harmony import */ var _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./forms/form-connection/smart-form-connection/smart-form-connection.component */ "./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.ts");
+/* harmony import */ var _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./forms/form-inscription/smart-form-inscription/smart-form-inscription.component */ "./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.ts");
+/* harmony import */ var _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./forms/form-connection/smart-form-connection/smart-form-connection.component */ "./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.ts");
+/* harmony import */ var _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/lieu/list-place/list-place.component */ "./src/app/views/lieu/list-place/list-place.component.ts");
+/* harmony import */ var _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/lieu/single-place/single-place.component */ "./src/app/views/lieu/single-place/single-place.component.ts");
+/* harmony import */ var _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/lieu/detail-place/detail-place.component */ "./src/app/views/lieu/detail-place/detail-place.component.ts");
+/* harmony import */ var _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/comment/list-review/list-review.component */ "./src/app/views/comment/list-review/list-review.component.ts");
+/* harmony import */ var _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/comment/detail-review/detail-review.component */ "./src/app/views/comment/detail-review/detail-review.component.ts");
+/* harmony import */ var _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./forms/form-place/form-place.component */ "./src/app/forms/form-place/form-place.component.ts");
+/* harmony import */ var _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./forms/smart-form-place/smart-form-place.component */ "./src/app/forms/smart-form-place/smart-form-place.component.ts");
 
-/* harmony import */ var _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/lieu/list-place/list-place.component */ "./src/app/views/lieu/list-place/list-place.component.ts");
-/* harmony import */ var _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/lieu/single-place/single-place.component */ "./src/app/views/lieu/single-place/single-place.component.ts");
-/* harmony import */ var _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/lieu/detail-place/detail-place.component */ "./src/app/views/lieu/detail-place/detail-place.component.ts");
-/* harmony import */ var _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/comment/list-review/list-review.component */ "./src/app/views/comment/list-review/list-review.component.ts");
-/* harmony import */ var _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/comment/detail-review/detail-review.component */ "./src/app/views/comment/detail-review/detail-review.component.ts");
-/* harmony import */ var _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/form-place/form-place.component */ "./src/app/forms/form-place/form-place.component.ts");
-/* harmony import */ var _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./forms/smart-form-place/smart-form-place.component */ "./src/app/forms/smart-form-place/smart-form-place.component.ts");
+
 
 
 
@@ -1000,18 +913,11 @@ __webpack_require__.r(__webpack_exports__);
 // component : celui que l'on souhaite afficher
 // Les imports sont déja fait
 const routes = [
-    { path: 'authenticate', component: _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_18__["SmartFormConnectionComponent"] },
-    { path: 'Utilisateur', component: _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_17__["SmartFormInscriptionComponent"] },
-    { path: 'lieux', component: _views_lieu_list_lieu_list_lieu_component__WEBPACK_IMPORTED_MODULE_11__["ListLieuComponent"] },
-    { path: 'lieux/:id', component: _views_lieu_detail_lieu_detail_lieu_component__WEBPACK_IMPORTED_MODULE_13__["DetailLieuComponent"] },
-    { path: 'forms/lieux', component: _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__["FormLieuComponent"] },
-    { path: '', component: _views_lieu_list_lieu_list_lieu_component__WEBPACK_IMPORTED_MODULE_11__["ListLieuComponent"] }
-    { path: 'authenticate', component: _forms_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__["FormConnectionComponent"] },
-    { path: 'User', component: _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"] },
-    { path: 'lieux', component: _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_11__["ListPlaceComponent"] },
-    { path: 'lieux/:id', component: _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_13__["DetailPlaceComponent"] },
-    { path: 'forms/lieux', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_17__["SmartFormPlaceComponent"] },
-    { path: '', component: _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_11__["ListPlaceComponent"] }
+    { path: 'User/authenticate', component: _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_12__["SmartFormConnectionComponent"] },
+    { path: 'User', component: _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_11__["SmartFormInscriptionComponent"] },
+    { path: 'lieux', component: _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_13__["ListPlaceComponent"] },
+    { path: 'lieux/:id', component: _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_15__["DetailPlaceComponent"] },
+    { path: 'forms/lieux', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_19__["SmartFormPlaceComponent"] },
 ];
 let AppModule = class AppModule {
 };
@@ -1021,23 +927,15 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
             _forms_form_connection_dumb_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__["FormConnectionComponent"],
             _forms_form_inscription_dumb_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"],
-            _views_lieu_list_lieu_list_lieu_component__WEBPACK_IMPORTED_MODULE_11__["ListLieuComponent"],
-            _views_lieu_single_lieu_single_lieu_component__WEBPACK_IMPORTED_MODULE_12__["SingleLieuComponent"],
-            _views_lieu_detail_lieu_detail_lieu_component__WEBPACK_IMPORTED_MODULE_13__["DetailLieuComponent"],
-            _views_comment_list_comment_list_comment_component__WEBPACK_IMPORTED_MODULE_14__["ListCommentComponent"],
-            _views_comment_detail_comment_detail_comment_component__WEBPACK_IMPORTED_MODULE_15__["DetailCommentComponent"],
-            _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__["FormLieuComponent"],
-            _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_17__["SmartFormInscriptionComponent"],
-            _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_18__["SmartFormConnectionComponent"]
-            _forms_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__["FormConnectionComponent"],
-            _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"],
-            _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_11__["ListPlaceComponent"],
-            _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_12__["SinglePlaceComponent"],
-            _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_13__["DetailPlaceComponent"],
-            _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_14__["ListReviewComponent"],
-            _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_15__["DetailReviewComponent"],
-            _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_16__["FormPlaceComponent"],
-            _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_17__["SmartFormPlaceComponent"]
+            _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_11__["SmartFormInscriptionComponent"],
+            _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_12__["SmartFormConnectionComponent"],
+            _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_13__["ListPlaceComponent"],
+            _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_14__["SinglePlaceComponent"],
+            _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_15__["DetailPlaceComponent"],
+            _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_16__["ListReviewComponent"],
+            _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_17__["DetailReviewComponent"],
+            _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_18__["FormPlaceComponent"],
+            _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_19__["SmartFormPlaceComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1083,7 +981,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _Utilisateur_authenticateModel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Utilisateur/authenticateModel */ "./src/app/Utilisateur/authenticateModel.ts");
+/* harmony import */ var _User_authenticateModel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../User/authenticateModel */ "./src/app/User/authenticateModel.ts");
 
 
 
@@ -1093,25 +991,19 @@ let FormConnectionComponent = class FormConnectionComponent {
         this.fb = fb;
         this.formulaireConnexion = this.fb.group({
             username: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            motDePasseConnexion: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            resterConnecte: this.fb.control("")
+            motDePasseConnexion: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
         });
         this.userConnected = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     ngOnInit() {
     }
-    /*verificationEmail(){
-      var regex = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
-      if(this.formulaireConnexion.controls.emailConnexion.value.match(regex) !== null) return true;
-      return false;
-    }*/
     verificationFormulaire() {
         if ( /*this.verificationEmail() &&*/this.formulaireConnexion.valid)
             return false;
         return true;
     }
     buildUserConnected() {
-        const userConnected = new _Utilisateur_authenticateModel__WEBPACK_IMPORTED_MODULE_3__["authenticateModel"]();
+        const userConnected = new _User_authenticateModel__WEBPACK_IMPORTED_MODULE_3__["authenticateModel"]();
         userConnected.username = this.formulaireConnexion.get("username").value;
         userConnected.password = this.formulaireConnexion.get("motDePasseConnexion").value;
         return userConnected;
@@ -1165,17 +1057,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SmartFormConnectionComponent", function() { return SmartFormConnectionComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _Utilisateur_utilisateur_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Utilisateur/utilisateur.service */ "./src/app/Utilisateur/utilisateur.service.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _Utilisateur_authenticateModel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Utilisateur/authenticateModel */ "./src/app/Utilisateur/authenticateModel.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _User_authenticateModel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../User/authenticateModel */ "./src/app/User/authenticateModel.ts");
+/* harmony import */ var _User_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../User/user.service */ "./src/app/User/user.service.ts");
 
 
 
 
 
 let SmartFormConnectionComponent = class SmartFormConnectionComponent {
-    constructor(utilisateurService, http) {
-        this.utilisateurService = utilisateurService;
+    constructor(userService, http) {
+        this.userService = userService;
         this.http = http;
         this.subscriptions = [];
         this._usersConnected = [];
@@ -1191,14 +1083,14 @@ let SmartFormConnectionComponent = class SmartFormConnectionComponent {
         }
     }
     createUserConnected($event) {
-        console.log($event);
-        const sub = this.utilisateurService.postAuth($event.toAuthenticateModelDto()).subscribe(authenticateModelDTO => this._usersConnected.push(new _Utilisateur_authenticateModel__WEBPACK_IMPORTED_MODULE_4__["authenticateModel"]().fromAuthenticateModelDto(authenticateModelDTO)));
+        //console.log($event);
+        const sub = this.userService.postAuth($event.toAuthenticateModelDto()).subscribe(authenticateModelDTO => this._usersConnected.push(new _User_authenticateModel__WEBPACK_IMPORTED_MODULE_3__["authenticateModel"]().fromAuthenticateModelDto(authenticateModelDTO)));
         this.subscriptions.push(sub);
     }
 };
 SmartFormConnectionComponent.ctorParameters = () => [
-    { type: _Utilisateur_utilisateur_service__WEBPACK_IMPORTED_MODULE_2__["UtilisateurService"] },
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+    { type: _User_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
 SmartFormConnectionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1239,8 +1131,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _Utilisateur_Utilisateur__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Utilisateur/Utilisateur */ "./src/app/Utilisateur/Utilisateur.ts");
-/* harmony import */ var _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Adresse/Adresse */ "./src/app/Adresse/Adresse.ts");
+/* harmony import */ var _User_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../User/user */ "./src/app/User/user.ts");
+/* harmony import */ var _Address_address__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Address/address */ "./src/app/Address/address.ts");
 
 
 
@@ -1292,18 +1184,18 @@ let FormInscriptionComponent = class FormInscriptionComponent {
         this.formulaireInscription.reset();
     }
     buildAdressUser() {
-        const adress = new _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_5__["Adresse"]();
-        adress.ville = this.formulaireInscription.get("ville").value;
-        adress.rue = this.formulaireInscription.get("rue").value;
+        const adress = new _Address_address__WEBPACK_IMPORTED_MODULE_5__["Address"]();
+        adress.city = this.formulaireInscription.get("ville").value;
+        adress.straat = this.formulaireInscription.get("rue").value;
         adress.num = this.formulaireInscription.get("num").value;
-        adress.cp = this.formulaireInscription.get("codePostal").value;
+        adress.postalCode = this.formulaireInscription.get("codePostal").value;
         return adress;
     }
     buildUser() {
-        const user = new _Utilisateur_Utilisateur__WEBPACK_IMPORTED_MODULE_4__["Utilisateur"]();
+        const user = new _User_user__WEBPACK_IMPORTED_MODULE_4__["User"]();
         user.email = this.formulaireInscription.get("emailInscription").value;
-        user.nom = this.formulaireInscription.get("nom").value;
-        user.prenom = this.formulaireInscription.get("prenom").value;
+        user.name = this.formulaireInscription.get("nom").value;
+        user.surname = this.formulaireInscription.get("prenom").value;
         user.hashpwd = this.formulaireInscription.get("motDePasse").value;
         user.type = "0";
         return user;
@@ -1356,11 +1248,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SmartFormInscriptionComponent", function() { return SmartFormInscriptionComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _Utilisateur_utilisateur_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Utilisateur/utilisateur.service */ "./src/app/Utilisateur/utilisateur.service.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Adresse/Adresse */ "./src/app/Adresse/Adresse.ts");
-/* harmony import */ var _Utilisateur_Utilisateur__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Utilisateur/Utilisateur */ "./src/app/Utilisateur/Utilisateur.ts");
-/* harmony import */ var _Adresse_adresse_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Adresse/adresse.service */ "./src/app/Adresse/adresse.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _User_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../User/user */ "./src/app/User/user.ts");
+/* harmony import */ var _Address_address__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Address/address */ "./src/app/Address/address.ts");
+/* harmony import */ var _User_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../User/user.service */ "./src/app/User/user.service.ts");
+/* harmony import */ var _Address_address_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Address/address.service */ "./src/app/Address/address.service.ts");
 
 
 
@@ -1369,8 +1261,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SmartFormInscriptionComponent = class SmartFormInscriptionComponent {
-    constructor(utilisateurService, adresseService, http) {
-        this.utilisateurService = utilisateurService;
+    constructor(userService, adresseService, http) {
+        this.userService = userService;
         this.adresseService = adresseService;
         this.http = http;
         this.subscriptions = [];
@@ -1388,18 +1280,18 @@ let SmartFormInscriptionComponent = class SmartFormInscriptionComponent {
         }
     }
     createAdressUser($event) {
-        const sub = this.adresseService.post($event.toAdresseDto()).subscribe(adresseDTO => this._adresses.push(new _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_4__["Adresse"]().fromAdresseDto(adresseDTO)));
+        const sub = this.adresseService.post($event.toAdresseDto()).subscribe(adresseDTO => this._adresses.push(new _Address_address__WEBPACK_IMPORTED_MODULE_4__["Address"]().fromAdresseDto(adresseDTO)));
         this.subscriptions.push(sub);
     }
     createUser($event) {
-        const sub = this.utilisateurService.post($event.toUtilisateurDto()).subscribe(userDTO => this._users.push(new _Utilisateur_Utilisateur__WEBPACK_IMPORTED_MODULE_5__["Utilisateur"]().fromUtilisateurDto(userDTO)));
+        const sub = this.userService.post($event.toUtilisateurDto()).subscribe(userDTO => this._users.push(new _User_user__WEBPACK_IMPORTED_MODULE_3__["User"]().fromUtilisateurDto(userDTO)));
         this.subscriptions.push(sub);
     }
 };
 SmartFormInscriptionComponent.ctorParameters = () => [
-    { type: _Utilisateur_utilisateur_service__WEBPACK_IMPORTED_MODULE_2__["UtilisateurService"] },
-    { type: _Adresse_adresse_service__WEBPACK_IMPORTED_MODULE_6__["AdresseService"] },
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+    { type: _User_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"] },
+    { type: _Address_address_service__WEBPACK_IMPORTED_MODULE_6__["AddressService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
 SmartFormInscriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1413,10 +1305,6 @@ SmartFormInscriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
 
 /***/ }),
 
-/***/ "./src/app/forms/form-lieu/form-lieu.component.css":
-/*!*********************************************************!*\
-  !*** ./src/app/forms/form-lieu/form-lieu.component.css ***!
-  \*********************************************************/
 /***/ "./src/app/forms/form-place/form-place.component.css":
 /*!***********************************************************!*\
   !*** ./src/app/forms/form-place/form-place.component.css ***!
@@ -1445,7 +1333,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../EnumTypeLieu */ "./src/app/EnumTypeLieu.ts");
 /* harmony import */ var _views_lieu_place__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../views/lieu/place */ "./src/app/views/lieu/place.ts");
-/* harmony import */ var _Adresse_address__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Adresse/address */ "./src/app/Adresse/address.ts");
+/* harmony import */ var _Address_address__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Address/address */ "./src/app/Address/address.ts");
 
 
 
@@ -1493,7 +1381,7 @@ let FormPlaceComponent = class FormPlaceComponent {
         return lieu;
     }
     buildAdresse() {
-        const address = new _Adresse_address__WEBPACK_IMPORTED_MODULE_5__["Address"]();
+        const address = new _Address_address__WEBPACK_IMPORTED_MODULE_5__["Address"]();
         address.city = this.formLieu.get("address.ville").value;
         address.straat = this.formLieu.get("address.rue").value;
         address.num = this.formLieu.get("address.num").value;
@@ -1555,8 +1443,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SmartFormPlaceComponent", function() { return SmartFormPlaceComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _Adresse_address__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Adresse/address */ "./src/app/Adresse/address.ts");
-/* harmony import */ var _Adresse_address_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Adresse/address.service */ "./src/app/Adresse/address.service.ts");
+/* harmony import */ var _Address_address__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Address/address */ "./src/app/Address/address.ts");
+/* harmony import */ var _Address_address_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Address/address.service */ "./src/app/Address/address.service.ts");
 /* harmony import */ var _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../views/lieu/place.service */ "./src/app/views/lieu/place.service.ts");
 
 
@@ -1567,7 +1455,7 @@ let SmartFormPlaceComponent = class SmartFormPlaceComponent {
     constructor(adrService, lieuService) {
         this.adrService = adrService;
         this.lieuService = lieuService;
-        this._adr = new _Adresse_address__WEBPACK_IMPORTED_MODULE_2__["Address"]();
+        this._adr = new _Address_address__WEBPACK_IMPORTED_MODULE_2__["Address"]();
         this.subscriptions = [];
     }
     ngOnInit() {
@@ -1577,7 +1465,7 @@ let SmartFormPlaceComponent = class SmartFormPlaceComponent {
     }
 };
 SmartFormPlaceComponent.ctorParameters = () => [
-    { type: _Adresse_address_service__WEBPACK_IMPORTED_MODULE_3__["AddressService"] },
+    { type: _Address_address_service__WEBPACK_IMPORTED_MODULE_3__["AddressService"] },
     { type: _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_4__["PlaceService"] }
 ];
 SmartFormPlaceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -2220,8 +2108,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _place__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../place */ "./src/app/views/lieu/place.ts");
-/* harmony import */ var _Adresse_address__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Adresse/address */ "./src/app/Adresse/address.ts");
-/* harmony import */ var _Adresse_address_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Adresse/address.service */ "./src/app/Adresse/address.service.ts");
+/* harmony import */ var _Address_address__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Address/address */ "./src/app/Address/address.ts");
+/* harmony import */ var _Address_address_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Address/address.service */ "./src/app/Address/address.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 
 
@@ -2234,7 +2122,7 @@ let SinglePlaceComponent = class SinglePlaceComponent {
         this.adrService = adrService;
         this.router = router;
         this._place = new _place__WEBPACK_IMPORTED_MODULE_2__["Place"]();
-        this._address = new _Adresse_address__WEBPACK_IMPORTED_MODULE_3__["Address"]();
+        this._address = new _Address_address__WEBPACK_IMPORTED_MODULE_3__["Address"]();
         this._subscriptions = [];
     }
     ngOnInit() {
@@ -2256,7 +2144,7 @@ let SinglePlaceComponent = class SinglePlaceComponent {
         this._address = value;
     }
     updateAdresse(id) {
-        const sub = this.adrService.get(id).subscribe(adr => this._address = new _Adresse_address__WEBPACK_IMPORTED_MODULE_3__["Address"]().fromAdresseDto(adr));
+        const sub = this.adrService.get(id).subscribe(adr => this._address = new _Address_address__WEBPACK_IMPORTED_MODULE_3__["Address"]().fromAdresseDto(adr));
         this._subscriptions.push(sub);
     }
     onSingleLieuClick() {
@@ -2267,7 +2155,7 @@ let SinglePlaceComponent = class SinglePlaceComponent {
     }
 };
 SinglePlaceComponent.ctorParameters = () => [
-    { type: _Adresse_address_service__WEBPACK_IMPORTED_MODULE_4__["AddressService"] },
+    { type: _Address_address_service__WEBPACK_IMPORTED_MODULE_4__["AddressService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([

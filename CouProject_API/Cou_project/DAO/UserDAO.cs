@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using Cou_project.Helpers;
 using Cou_project.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 
@@ -46,23 +48,28 @@ namespace Cou_project.DAO
         private static readonly string RED_POST_FAVORIS = $"INSERT INTO {TABLE_FAVORIS}({FIELD_IDUSER}, {FIELD_IDPLACE}) VALUES (@{FIELD_IDUSER}, @{FIELD_IDPLACE})";
         private static readonly string REQ_DELETE_FAVORIS = $"DELETE FROM {TABLE_FAVORIS} WHERE {FIELD_IDUSER} = @{FIELD_IDUSER} AND {FIELD_IDPLACE} = @{FIELD_IDPLACE}";
 
+        static PasswordHasher hasher = new PasswordHasher();
         
-        
-        public static Utilisateur QueryAuth(AuthenticateModel model)
+        public static User QueryAuth(AuthenticateModel model)
         {
             using (var connection = DataBase.GetConnection())
             {
-                
+                //string password = hasher.HashPassword(model.Password);
+                string password = Crypto.Encrypt(model.Password);
+
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_POST_AUTH;
 
                 command.Parameters.AddWithValue($"@{FIELD_PSEUDO}", model.Username);
-                command.Parameters.AddWithValue($"@{FIELD_HASHPWD}", model.Password);
+                command.Parameters.AddWithValue($"@{FIELD_HASHPWD}", password);
                 
                 SqlDataReader reader = command.ExecuteReader();
 
-                return reader.Read() ? new Utilisateur(reader) : null;
+                if (reader.Read())
+                    return new User(reader);
+                else
+                    return null;
             }
         }
         
@@ -88,6 +95,9 @@ namespace Cou_project.DAO
         [HttpPost]
         public static User Create(User util)
         {
+            
+            //string password = hasher.HashPassword(util.Hashpwd);
+            string password = Crypto.Encrypt(util.Hashpwd);
             using (var connection = DataBase.GetConnection())
             {
                 connection.Open();
@@ -99,7 +109,7 @@ namespace Cou_project.DAO
                 command.Parameters.AddWithValue($"@{FIELD_PSEUDO}", util.Pseudo);
                 command.Parameters.AddWithValue($"@{FIELD_TYPE}", util.Type);
                 command.Parameters.AddWithValue($"@{FIELD_EMAIL}", util.Email);
-                command.Parameters.AddWithValue($"@{FIELD_HASHPWD}", util.Hashpwd);
+                command.Parameters.AddWithValue($"@{FIELD_HASHPWD}", password);
                 command.Parameters.AddWithValue($"@{FIELD_IDADR}", util.Idadr);
 
                 util.Id = (int) command.ExecuteScalar();

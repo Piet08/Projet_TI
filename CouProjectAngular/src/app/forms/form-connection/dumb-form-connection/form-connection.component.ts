@@ -1,8 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Utilisateur} from "../../../Utilisateur/Utilisateur";
-import {authenticateModelDto} from "../../../Utilisateur/authenticateModel-dto";
-import {authenticateModel} from "../../../Utilisateur/authenticateModel";
+import {authenticateModel} from "../../../User/authenticateModel";
+
 
 @Component({
   selector: 'app-form-connection',
@@ -13,8 +12,7 @@ export class FormConnectionComponent implements OnInit {
 
   formulaireConnexion: FormGroup = this.fb.group({
     username: this.fb.control("",Validators.required),
-    motDePasseConnexion : this.fb.control("",Validators.required),
-    resterConnecte : this.fb.control("")
+    motDePasseConnexion : this.fb.control("",Validators.required)
   });
 
   @Output()
@@ -25,12 +23,6 @@ export class FormConnectionComponent implements OnInit {
   ngOnInit() {
   }
 
-
-  /*verificationEmail(){
-    var regex = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
-    if(this.formulaireConnexion.controls.emailConnexion.value.match(regex) !== null) return true;
-    return false;
-  }*/
 
   verificationFormulaire(){
     if(/*this.verificationEmail() &&*/ this.formulaireConnexion.valid) return false;

@@ -26,7 +26,7 @@ namespace Cou_project.Controllers
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody]AuthenticateModel model)
         {
-            return Ok(_utilisateurService.Authenticate(UtilisateurDAO.QueryAuth(model)));
+            return Ok(_userService.Authenticate(UserDAO.QueryAuth(model)));
             /*var user = _userService.Authenticate(model.Username, model.Password);
 
             if (user == null)
@@ -34,6 +34,7 @@ namespace Cou_project.Controllers
 
             return Ok(user);*/
         }
+        
         /*[HttpGet("authenticate")]
         public IActionResult GetAll()
         {

@@ -1,5 +1,4 @@
 
-import {UtilisateurDto} from './Utilisateur-dto';
 import {UserDto} from './user-dto';
 import {PlaceDto} from '../views/lieu/place-dto';
 

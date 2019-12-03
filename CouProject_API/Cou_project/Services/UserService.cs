@@ -16,10 +16,8 @@ namespace Cou_project.Services
     public interface IUserService
    
     {
-        Utilisateur Authenticate(Utilisateur user);
+        User Authenticate(User user);
         //IEnumerable<Utilisateur> GetAll();
-        User Authenticate(string username, string password);
-        IEnumerable<User> GetAll();
     }
 
     public class UserService : IUserService
@@ -31,10 +29,6 @@ namespace Cou_project.Services
             new Utilisateur { Nom = "Test", Prenom = "Utilisateur", Pseudo = "test", Type = "test", Email = "test", Hashpwd = "test", Idadr = 0}
             
         };*/
-        private List<User> _users = new List<User>
-        { 
-            new User { Name = "Test", Surname = "Utilisateur", Pseudo = "test", Type = "test", Email = "test", Hashpwd = "test", Idadr = 0} 
-        };
 
         private readonly AppSettings _appSettings;
 
@@ -44,8 +38,7 @@ namespace Cou_project.Services
         }
 
         //Passé un user en argument ! 
-        public Utilisateur Authenticate(Utilisateur user)
-        public User Authenticate(string username, string password)
+        public User Authenticate(User user)
         {
             // return null if user not found
             if (user == null)

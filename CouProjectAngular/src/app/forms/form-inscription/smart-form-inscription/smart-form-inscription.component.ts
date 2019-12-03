@@ -1,11 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {UtilisateurService} from "../../../Utilisateur/utilisateur.service";
 import {FormBuilder} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
-import {Adresse, AdresseList} from "../../../Adresse/Adresse";
-import {Utilisateur, UtilisateurList} from "../../../Utilisateur/Utilisateur";
 import {Subscription} from "rxjs";
-import {AdresseService} from "../../../Adresse/adresse.service";
+import {User, UserList} from "../../../User/user";
+import {Address, AddressList} from "../../../Address/address";
+import {UserService} from "../../../User/user.service";
+import {AddressService} from "../../../Address/address.service";
 
 @Component({
   selector: 'app-smart-form-inscription',
@@ -15,10 +15,10 @@ import {AdresseService} from "../../../Adresse/adresse.service";
 export class SmartFormInscriptionComponent implements OnInit, OnDestroy {
 
   private subscriptions: Subscription[] = [];
-  private _users: UtilisateurList = [];
-  private _adresses: AdresseList = [];
+  private _users: UserList = [];
+  private _adresses: AddressList = [];
 
-  constructor(public utilisateurService: UtilisateurService, public adresseService : AdresseService,  private http: HttpClient) { }
+  constructor(public userService: UserService, public adresseService : AddressService,  private http: HttpClient) { }
 
   ngOnInit() {
   }
@@ -34,13 +34,13 @@ export class SmartFormInscriptionComponent implements OnInit, OnDestroy {
 
 
 
-  createAdressUser($event: Adresse) {
-   const sub = this.adresseService.post($event.toAdresseDto()).subscribe( adresseDTO => this._adresses.push(new Adresse().fromAdresseDto(adresseDTO)));
+  createAdressUser($event: Address) {
+   const sub = this.adresseService.post($event.toAdresseDto()).subscribe( adresseDTO => this._adresses.push(new Address().fromAdresseDto(adresseDTO)));
     this.subscriptions.push(sub);
   }
 
-  createUser($event: Utilisateur) {
-    const sub = this.utilisateurService.post($event.toUtilisateurDto()).subscribe( userDTO => this._users.push(new Utilisateur().fromUtilisateurDto(userDTO)));
+  createUser($event: User) {
+    const sub = this.userService.post($event.toUtilisateurDto()).subscribe( userDTO => this._users.push(new User().fromUtilisateurDto(userDTO)));
     this.subscriptions.push(sub);
   }
 }

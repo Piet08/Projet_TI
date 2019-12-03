@@ -13,7 +13,6 @@ namespace Cou_project.DAO
         public static readonly string FIELD_CITY = "ville";
         public static readonly string FIELD_STRAAT = "rue";
         public static readonly string FIELD_NUM = "num";
-        public static readonly string FIELD_CP = "cp";
         public static readonly string FIELD_POSTALCODE = "cp";
         
         //J'ai fais toutes les requêtes, quitte à en supp quelques une qui ne nous seront pas utiles, à voir plus tard ! 
@@ -22,14 +21,12 @@ namespace Cou_project.DAO
         
         private static readonly string RED_POST = String.Format(
             "INSERT INTO {0}({1}, {2}, {3}, {4}) OUTPUT Inserted.{5} VALUES (@{1}, @{2}, @{3}, @{4})",
-            TABLE_NAME, FIELD_VILLE, FIELD_RUE, FIELD_NUM, FIELD_CP, FIELD_ID);
             TABLE_NAME, FIELD_CITY, FIELD_STRAAT, FIELD_NUM, FIELD_POSTALCODE,FIELD_ID);
         private static readonly string REQ_GET = REQ_QUERY + $" Where {FIELD_ID} = @{FIELD_ID}";
         
         private static readonly string REQ_DELETE = $"DELETE FROM {TABLE_NAME} WHERE {FIELD_ID} = @{FIELD_ID}";
         
         private static readonly string REQ_UPDATE = String.Format("UPDATE {0} SET {1} = @{1}, {2} = @{2}, {3} = @{3}, {4} = @{4} WHERE {5} = @{5}",
-            TABLE_NAME, FIELD_VILLE, FIELD_RUE, FIELD_NUM, FIELD_CP, FIELD_ID);
             TABLE_NAME, FIELD_CITY, FIELD_STRAAT, FIELD_NUM, FIELD_POSTALCODE, FIELD_ID);
         
         public static IEnumerable<Address> Query()
@@ -61,7 +58,6 @@ namespace Cou_project.DAO
                 command.Parameters.AddWithValue($"@{FIELD_CITY}", adr.City);
                 command.Parameters.AddWithValue($"@{FIELD_STRAAT}", adr.Straat);
                 command.Parameters.AddWithValue($"@{FIELD_NUM}", adr.Num);
-                command.Parameters.AddWithValue($"@{FIELD_CP}", adr.Cp);
                 command.Parameters.AddWithValue($"@{FIELD_POSTALCODE}", adr.PostalCode);
 
                 adr.Id = (int) command.ExecuteScalar();

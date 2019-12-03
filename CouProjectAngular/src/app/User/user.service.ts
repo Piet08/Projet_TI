@@ -4,9 +4,10 @@ import {Observable} from 'rxjs';
 import {UserDto} from './user-dto';
 import {Favorites} from '../Favorites/favorites';
 import {FavoritesDto} from '../Favorites/favorites-dto';
+import {authenticateModelDto} from "./authenticateModel-dto";
 
 const URL_API_UTIL:string = "/api/User";
-const URL_API_AUTH:string = "/api/authenticate";
+const URL_API_AUTH:string = "/api/User/authenticate";
 const URL_API_FAV:string = "/api/Favorites";
 
 @Injectable({
@@ -16,13 +17,11 @@ export class UserService {
 
   constructor(public http:HttpClient) {}
 
+
   //AUTHENTICATE
-/*  queryAuth():Observable<UserDto[]>{
-    return this.http.get<UserDto[]>(URL_API_AUTH);
+  postAuth(model: authenticateModelDto): Observable<authenticateModelDto>{
+    return this.http.post<authenticateModelDto>(URL_API_AUTH, model);
   }
-  postAuth(utilisateur : UserDto): Observable<UserDto>{
-    return this.http.post<UserDto>(URL_API_AUTH, utilisateur);
-  }*/
 
 
   //UTILISATEUR

@@ -2,9 +2,8 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Utilisateur} from "../../../Utilisateur/Utilisateur";
-import {UtilisateurService} from "../../../Utilisateur/utilisateur.service";
-import {Adresse} from "../../../Adresse/Adresse";
+import {User} from "../../../User/user";
+import {Address} from "../../../Address/address";
 
 
 @Component({
@@ -30,9 +29,9 @@ export class FormInscriptionComponent implements OnInit {
   });
 
   @Output()
-  userCreated:EventEmitter<Utilisateur> = new EventEmitter<Utilisateur>();
+  userCreated:EventEmitter<User> = new EventEmitter<User>();
   @Output()
-  adressCreated:EventEmitter<Adresse> = new EventEmitter<Adresse>();
+  adressCreated:EventEmitter<Address> = new EventEmitter<Address>();
 
 
   constructor(public fb : FormBuilder, private http: HttpClient) {}
@@ -68,20 +67,20 @@ export class FormInscriptionComponent implements OnInit {
 
 
 
-  private buildAdressUser():Adresse{
-    const adress = new Adresse();
-    adress.ville = this.formulaireInscription.get("ville").value;
-    adress.rue = this.formulaireInscription.get("rue").value;
+  private buildAdressUser():Address{
+    const adress = new Address();
+    adress.city = this.formulaireInscription.get("ville").value;
+    adress.straat = this.formulaireInscription.get("rue").value;
     adress.num = this.formulaireInscription.get("num").value;
-    adress.cp = this.formulaireInscription.get("codePostal").value;
+    adress.postalCode = this.formulaireInscription.get("codePostal").value;
     return adress;
   }
 
-  private buildUser():Utilisateur{
-    const user = new Utilisateur();
+  private buildUser():User{
+    const user = new User();
     user.email = this.formulaireInscription.get("emailInscription").value;
-    user.nom = this.formulaireInscription.get("nom").value;
-    user.prenom = this.formulaireInscription.get("prenom").value;
+    user.name= this.formulaireInscription.get("nom").value;
+    user.surname = this.formulaireInscription.get("prenom").value;
     user.hashpwd = this.formulaireInscription.get("motDePasse").value;
     user.type = "0";
     return user;

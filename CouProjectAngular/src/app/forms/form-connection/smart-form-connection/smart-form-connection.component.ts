@@ -1,10 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {authenticateModelDto} from "../../../Utilisateur/authenticateModel-dto";
-import {UtilisateurService} from "../../../Utilisateur/utilisateur.service";
 import {HttpClient} from "@angular/common/http";
 import {Subscription} from "rxjs";
-import {authenticateModel, authenticateModelList} from "../../../Utilisateur/authenticateModel";
-import {Adresse} from "../../../Adresse/Adresse";
+import {authenticateModel, authenticateModelList} from "../../../User/authenticateModel";
+import {UserService} from "../../../User/user.service";
 
 @Component({
   selector: 'app-smart-form-connection',
@@ -16,7 +14,7 @@ export class SmartFormConnectionComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
   private _usersConnected: authenticateModelList = [];
 
-  constructor(public utilisateurService : UtilisateurService, private http: HttpClient) { }
+  constructor(public userService : UserService, private http: HttpClient) { }
 
   ngOnInit() {
   }
@@ -30,10 +28,9 @@ export class SmartFormConnectionComponent implements OnInit, OnDestroy {
     }
   }
 
-
   createUserConnected($event: authenticateModel) {
-    console.log($event);
-    const sub = this.utilisateurService.postAuth($event.toAuthenticateModelDto()).subscribe( authenticateModelDTO => this._usersConnected.push(new authenticateModel().fromAuthenticateModelDto(authenticateModelDTO)));
+    //console.log($event);
+    const sub = this.userService.postAuth($event.toAuthenticateModelDto()).subscribe( authenticateModelDTO => this._usersConnected.push(new authenticateModel().fromAuthenticateModelDto(authenticateModelDTO)));
     this.subscriptions.push(sub);
   }
 }
