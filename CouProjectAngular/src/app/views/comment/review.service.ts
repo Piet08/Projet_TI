@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {ReviewDto} from './review-dto';
+import {ReviewInsertDto} from './review-insert-dto';
 
 const URL_API:string = "/api/Review";
 
@@ -12,27 +12,27 @@ export class ReviewService {
 
   constructor(public http:HttpClient) {}
 
-  query():Observable<ReviewDto[]>{
-    return this.http.get<ReviewDto[]>(URL_API);
+  query():Observable<ReviewInsertDto[]>{
+    return this.http.get<ReviewInsertDto[]>(URL_API);
   }
 
   // get(id:number): Observable<ReviewDto>{
   //   return this.http.get<ReviewDto>(URL_API+'/'+id);
   // }
 
-  getAvisFromAnUser(idLieu:number):Observable<ReviewDto[]>{
-    return this.http.get<ReviewDto[]>(URL_API+'/'+idLieu);
+  getAvisFromAnUser(idLieu:number):Observable<ReviewInsertDto[]>{
+    return this.http.get<ReviewInsertDto[]>(URL_API+'/place/'+idLieu);
   }
 
-  post(avis : ReviewDto): Observable<ReviewDto>{
-    return this.http.post<ReviewDto>(URL_API, avis);
+  post(avis : ReviewInsertDto): Observable<ReviewInsertDto>{
+    return this.http.post<ReviewInsertDto>(URL_API, avis);
   }
 
-  delete(id: number): Observable<ReviewDto> {
-    return this.http.delete<ReviewDto>(URL_API+'/'+id);
+  delete(id: number): Observable<ReviewInsertDto> {
+    return this.http.delete<ReviewInsertDto>(URL_API+'/'+id);
   }
 
-  put(avis: ReviewDto): Observable<any>{
+  put(avis: ReviewInsertDto): Observable<any>{
     return this.http.put(URL_API, avis);
   }
 }

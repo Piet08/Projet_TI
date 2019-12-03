@@ -1,9 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Address} from '../../Address/address';
-import {AddressService} from '../../Address/address.service';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {PlaceService} from '../../views/lieu/place.service';
 import {Subscription} from 'rxjs';
-import {Place} from '../../views/lieu/place';
 import {PlaceAndAddressDto} from '../../views/lieu/place-dto';
 
 @Component({
@@ -11,12 +8,20 @@ import {PlaceAndAddressDto} from '../../views/lieu/place-dto';
   templateUrl: './smart-form-place.component.html',
   styleUrls: ['./smart-form-place.component.css']
 })
-export class SmartFormPlaceComponent implements OnInit {
-  private _adr:Address = new Address();
-  constructor(public adrService:AddressService, public lieuService:PlaceService) { }
+export class SmartFormPlaceComponent implements OnInit,OnDestroy{
+
+  constructor(public lieuService:PlaceService) { }
   private subscriptions:Subscription[] = [];
 
   ngOnInit() {
+  }
+
+  ngOnDestroy(): void {
+    for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+      const subscription = this.subscriptions[i];
+      subscription && subscription.unsubscribe();
+      this.subscriptions.pop();
+    }
   }
 
   createPlace($event: PlaceAndAddressDto) {

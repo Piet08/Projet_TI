@@ -3,5 +3,9 @@
 </div>
 
 <div>
-  <app-list-review [id]="id"></app-list-review>
+  <app-list-review></app-list-review>
+</div>
+
+<div>
+  <app-form-review (reviewCreated)="createReview($event)"></app-form-review>
 </div>

@@ -101,6 +101,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-review/form-review.component.html":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-review/form-review.component.html ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <form [formGroup]=\"formReview\" (ngSubmit)=\"emitNewReview()\">\n    <h3>Laisser une review !</h3>\n    <div class=\"form-group border pl-2 py-2\" style=\"border-radius: 10px;\">\n      <ngb-rating class=\"\" (hover)=\"hovered = $event\" (leave)=\"hovered = 0\" [(rate)]=\"rate\"></ngb-rating>\n      <hr>\n      <div class=\"form-text small\">\n        <div *ngIf=\"rate == 0\" class=\"text-danger\">Laisser une note !</div>\n        <div *ngIf=\"rate != 0\" class=\"text-success\">Note : {{rate}}/10</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n      <textarea rows=\"5\" cols=\"30\" placeholder=\"Laisser un commentaire\" id=\"comment\" class=\"form-control\" name=\"comment\" formControlName=\"comment\">\n      </textarea>\n    </div>\n    <input type=\"submit\" class=\"btn btn-success\">\n  </form>\n</div>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/smart-form-place/smart-form-place.component.html":
 /*!**************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/forms/smart-form-place/smart-form-place.component.html ***!
@@ -114,6 +127,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/smart-form-review/smart-form-review.component.html":
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/forms/smart-form-review/smart-form-review.component.html ***!
+  \****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/detail-review/detail-review.component.html":
 /*!****************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/detail-review/detail-review.component.html ***!
@@ -124,7 +150,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\r\n  <div class=\"card-header\">\r\n    <p class=\"text-left\">\r\n      {{utilisateur.name}} {{utilisateur.surname}}\r\n      <span class=\"float-right\">{{avis.star}}/5</span>\r\n    </p>\r\n  </div>\r\n\r\n  <div class=\"card-body\">\r\n    <blockquote class=\"blockquote mb-0\">\r\n      <p>{{avis.comment}}</p>\r\n      <footer class=\"blockquote-footer\"> {{avis.date}} </footer>\r\n    </blockquote>\r\n  </div>\r\n</div>\r\n");
-
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\n  <div class=\"card-header\">\n    <p class=\"text-left\">\n      {{user.name}} {{user.surname}}\n      <span class=\"float-right\">{{review.star}}/10</span>\n    </p>\n  </div>\n\n  <div class=\"card-body\">\n    <blockquote class=\"blockquote mb-0\">\n      <p>{{review.comment}}</p>\n      <footer class=\"blockquote-footer\"> {{review.date}} </footer>\n    </blockquote>\n  </div>\n</div>\n");
 /***/ }),
 
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/comment/list-review/list-review.component.html":
@@ -138,6 +164,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<ul style=\"list-style: none;\" *ngFor=\"let avis of listAvis\">\r\n  <li>\r\n    <app-detail-comment [avis]=\"avis\"></app-detail-comment>\r\n  </li>\r\n</ul>\r\n");
 
+/* harmony default export */ __webpack_exports__["default"] = ("<ul style=\"list-style: none;\" *ngFor=\"let review of listReview\">\n  <li>\n<!--    A MODIFIER EN DUMP => INJECTION D'USER EN + OU CREER UN MODELE ReviewAndUse-->\n    <app-detail-comment [review]=\"review\"></app-detail-comment>\n  </li>\n</ul>\n\n\n");
+
+
 /***/ }),
 
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/detail-place/detail-place.component.html":
@@ -150,6 +179,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n  <app-single-place [place]=\"place\"></app-single-place>\r\n</div>\r\n\r\n<div>\r\n  <app-list-review [id]=\"id\"></app-list-review>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <app-single-place [place]=\"place\"></app-single-place>\n</div>\n\n<div>\n  <app-list-review></app-list-review>\n</div>\n\n<div>\n  <app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\n</div>\n");
 
 /***/ }),
 
@@ -889,6 +919,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/comment/detail-review/detail-review.component */ "./src/app/views/comment/detail-review/detail-review.component.ts");
 /* harmony import */ var _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./forms/form-place/form-place.component */ "./src/app/forms/form-place/form-place.component.ts");
 /* harmony import */ var _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./forms/smart-form-place/smart-form-place.component */ "./src/app/forms/smart-form-place/smart-form-place.component.ts");
+/* harmony import */ var _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/lieu/list-place/list-place.component */ "./src/app/views/lieu/list-place/list-place.component.ts");
+/* harmony import */ var _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/lieu/single-place/single-place.component */ "./src/app/views/lieu/single-place/single-place.component.ts");
+/* harmony import */ var _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/lieu/detail-place/detail-place.component */ "./src/app/views/lieu/detail-place/detail-place.component.ts");
+/* harmony import */ var _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/comment/list-review/list-review.component */ "./src/app/views/comment/list-review/list-review.component.ts");
+/* harmony import */ var _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/comment/detail-review/detail-review.component */ "./src/app/views/comment/detail-review/detail-review.component.ts");
+/* harmony import */ var _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/form-place/form-place.component */ "./src/app/forms/form-place/form-place.component.ts");
+/* harmony import */ var _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./forms/smart-form-place/smart-form-place.component */ "./src/app/forms/smart-form-place/smart-form-place.component.ts");
+/* harmony import */ var _forms_form_review_form_review_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./forms/form-review/form-review.component */ "./src/app/forms/form-review/form-review.component.ts");
+/* harmony import */ var _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./forms/smart-form-review/smart-form-review.component */ "./src/app/forms/smart-form-review/smart-form-review.component.ts");
 
 
 
@@ -936,6 +975,17 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_17__["DetailReviewComponent"],
             _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_18__["FormPlaceComponent"],
             _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_19__["SmartFormPlaceComponent"]
+            _forms_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__["FormConnectionComponent"],
+            _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"],
+            _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_11__["ListPlaceComponent"],
+            _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_12__["SinglePlaceComponent"],
+            _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_13__["DetailPlaceComponent"],
+            _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_14__["ListReviewComponent"],
+            _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_15__["DetailReviewComponent"],
+            _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_16__["FormPlaceComponent"],
+            _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_17__["SmartFormPlaceComponent"],
+            _forms_form_review_form_review_component__WEBPACK_IMPORTED_MODULE_18__["FormReviewComponent"],
+            _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_19__["SmartFormReviewComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1146,14 +1196,14 @@ let FormInscriptionComponent = class FormInscriptionComponent {
         this._villesJSON = this.http.get("liste-des-codes-postaux-belges-fr.json");
         this.formulaireInscription = this.fb.group({
             emailInscription: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            nom: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            name: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             prenom: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             motDePasse: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             verifMotDePasse: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             numero: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            rue: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            straat: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             codePostal: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            ville: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+            city: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
         });
         this.userCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.adressCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
@@ -1343,33 +1393,27 @@ __webpack_require__.r(__webpack_exports__);
 let FormPlaceComponent = class FormPlaceComponent {
     constructor(fb) {
         this.fb = fb;
-        this.lieuCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        this.adresseCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.placeCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.typeLieu = [_EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].FAST_FOOD, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].MUSEE, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].MAGASIN,
             _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].BAR, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].BRASSERIE, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].DIVERTISSEMENT, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_3__["EnumTypeLieu"].RESTAURANT];
         this.formLieu = this.fb.group({
-            nom: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            name: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             type: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             description: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             address: this.fb.group({
-                rue: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-                cp: this.fb.control('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^\d{4}$/)]),
-                ville: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+                straat: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+                postalCode: this.fb.control('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^\d{4}$/)]),
+                city: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
                 num: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
             })
         });
-        this.subscriptions = [];
     }
     ngOnInit() {
     }
-    alertMe() {
-        alert(JSON.stringify(this.formLieu.getRawValue()));
-    }
     buildPlaceAndAddressDto() {
         const place = {
-            place: this.buildLieu().toLieuDto(),
-            address: this.buildAdresse().toAdresseDto()
+            place: this.buildPlace().toLieuDto(),
+            address: this.buildAddress().toAdresseDto()
         };
         return place;
     }
@@ -1384,25 +1428,28 @@ let FormPlaceComponent = class FormPlaceComponent {
         const address = new _Address_address__WEBPACK_IMPORTED_MODULE_5__["Address"]();
         address.city = this.formLieu.get("address.ville").value;
         address.straat = this.formLieu.get("address.rue").value;
+    buildPlace() {
+        const place = new _views_lieu_place__WEBPACK_IMPORTED_MODULE_4__["Place"]();
+        place.name = this.formLieu.get("name").value;
+        place.type = this.formLieu.get("type").value;
+        place.description = this.formLieu.get("description").value;
+        return place;
+    }
+    buildAddress() {
+        const address = new _Address_address__WEBPACK_IMPORTED_MODULE_5__["Address"]();
+        address.city = this.formLieu.get("address.city").value;
+        address.straat = this.formLieu.get("address.straat").value;
         address.num = this.formLieu.get("address.num").value;
-        address.postalCode = this.formLieu.get("address.cp").value;
+        address.postalCode = this.formLieu.get("address.postalCode").value;
         return address;
     }
     emitNewLieu() {
         this.placeCreated.next(this.buildPlaceAndAddressDto());
-        //this.adresseCreated.next(this.buildAdresse());
-        //this.lieuCreated.next(this.buildLieu());
     }
 };
 FormPlaceComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
 ];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-], FormPlaceComponent.prototype, "lieuCreated", void 0);
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-], FormPlaceComponent.prototype, "adresseCreated", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
 ], FormPlaceComponent.prototype, "placeCreated", void 0);
@@ -1413,6 +1460,95 @@ FormPlaceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./form-place.component.css */ "./src/app/forms/form-place/form-place.component.css")).default]
     })
 ], FormPlaceComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/forms/form-review/form-review.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/forms/form-review/form-review.component.css ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0tcmV2aWV3L2Zvcm0tcmV2aWV3LmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/forms/form-review/form-review.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/forms/form-review/form-review.component.ts ***!
+  \************************************************************/
+/*! exports provided: FormReviewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormReviewComponent", function() { return FormReviewComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _views_comment_review__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../views/comment/review */ "./src/app/views/comment/review.ts");
+
+
+
+
+let FormReviewComponent = class FormReviewComponent {
+    constructor(fb) {
+        this.fb = fb;
+        this._rate = 0;
+        this._hovered = 0;
+        this.reviewCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.formReview = this.fb.group({
+            comment: this.fb.control(''),
+            star: this.fb.control(null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+        });
+    }
+    ngOnInit() {
+    }
+    get rate() {
+        return this._rate;
+    }
+    set rate(value) {
+        this._rate = value;
+    }
+    get hovered() {
+        return this._hovered;
+    }
+    set hovered(value) {
+        this._hovered = value;
+    }
+    buildReview() {
+        const review = new _views_comment_review__WEBPACK_IMPORTED_MODULE_3__["Review"]();
+        review.star = this._rate;
+        review.comment = this.formReview.get("comment").value;
+        review.idPlace = 5;
+        review.idUser = 2;
+        return review;
+    }
+    emitNewReview() {
+        this.reviewCreated.next(this.buildReview());
+    }
+    getValueOfControl(controlName) {
+        return this.formReview.controls[controlName].value;
+    }
+};
+FormReviewComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], FormReviewComponent.prototype, "reviewCreated", void 0);
+FormReviewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-form-review',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./form-review.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-review/form-review.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./form-review.component.css */ "./src/app/forms/form-review/form-review.component.css")).default]
+    })
+], FormReviewComponent);
 
 
 
@@ -1448,17 +1584,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../views/lieu/place.service */ "./src/app/views/lieu/place.service.ts");
 
 
+/* harmony import */ var _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../views/lieu/place.service */ "./src/app/views/lieu/place.service.ts");
 
 
 
 let SmartFormPlaceComponent = class SmartFormPlaceComponent {
-    constructor(adrService, lieuService) {
-        this.adrService = adrService;
+    constructor(lieuService) {
         this.lieuService = lieuService;
         this._adr = new _Address_address__WEBPACK_IMPORTED_MODULE_2__["Address"]();
         this.subscriptions = [];
     }
     ngOnInit() {
+    }
+    ngOnDestroy() {
+        for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+            const subscription = this.subscriptions[i];
+            subscription && subscription.unsubscribe();
+            this.subscriptions.pop();
+        }
     }
     createPlace($event) {
         this.subscriptions.push(this.lieuService.post($event).subscribe());
@@ -1467,6 +1610,7 @@ let SmartFormPlaceComponent = class SmartFormPlaceComponent {
 SmartFormPlaceComponent.ctorParameters = () => [
     { type: _Address_address_service__WEBPACK_IMPORTED_MODULE_3__["AddressService"] },
     { type: _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_4__["PlaceService"] }
+    { type: _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_2__["PlaceService"] }
 ];
 SmartFormPlaceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1475,6 +1619,61 @@ SmartFormPlaceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./smart-form-place.component.css */ "./src/app/forms/smart-form-place/smart-form-place.component.css")).default]
     })
 ], SmartFormPlaceComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/forms/smart-form-review/smart-form-review.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/forms/smart-form-review/smart-form-review.component.css ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL3NtYXJ0LWZvcm0tcmV2aWV3L3NtYXJ0LWZvcm0tcmV2aWV3LmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/forms/smart-form-review/smart-form-review.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/forms/smart-form-review/smart-form-review.component.ts ***!
+  \************************************************************************/
+/*! exports provided: SmartFormReviewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SmartFormReviewComponent", function() { return SmartFormReviewComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _views_comment_review_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../views/comment/review.service */ "./src/app/views/comment/review.service.ts");
+
+
+
+let SmartFormReviewComponent = class SmartFormReviewComponent {
+    constructor(reviewService) {
+        this.reviewService = reviewService;
+        this.subscriptions = [];
+    }
+    ngOnInit() {
+    }
+    createReview($event) {
+        this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe());
+    }
+};
+SmartFormReviewComponent.ctorParameters = () => [
+    { type: _views_comment_review_service__WEBPACK_IMPORTED_MODULE_2__["ReviewService"] }
+];
+SmartFormReviewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-smart-form-review',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./smart-form-review.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/smart-form-review/smart-form-review.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./smart-form-review.component.css */ "./src/app/forms/smart-form-review/smart-form-review.component.css")).default]
+    })
+], SmartFormReviewComponent);
 
 
 
@@ -1514,26 +1713,33 @@ __webpack_require__.r(__webpack_exports__);
 let DetailReviewComponent = class DetailReviewComponent {
     constructor(utilService) {
         this.utilService = utilService;
-        this._utilisateur = new _User_user__WEBPACK_IMPORTED_MODULE_2__["User"]();
+        this._user = new _User_user__WEBPACK_IMPORTED_MODULE_2__["User"]();
         this.subscriptions = [];
     }
     ngOnInit() {
     }
-    get avis() {
-        return this._avis;
+    ngOnDestroy() {
+        for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+            const subscription = this.subscriptions[i];
+            subscription && subscription.unsubscribe();
+            this.subscriptions.pop();
+        }
     }
-    set avis(value) {
-        this._avis = value;
-        this.updateUtilisateur(this._avis.idUser);
+    get review() {
+        return this._review;
     }
-    get utilisateur() {
-        return this._utilisateur;
+    set review(value) {
+        this._review = value;
+        this.getUser(this._review.idUser);
     }
-    set utilisateur(value) {
-        this._utilisateur = value;
+    get user() {
+        return this._user;
     }
-    updateUtilisateur(idutil) {
-        const sub = this.utilService.get(idutil).subscribe(user => this._utilisateur = new _User_user__WEBPACK_IMPORTED_MODULE_2__["User"]().fromUtilisateurDto(user));
+    set user(value) {
+        this._user = value;
+    }
+    getUser(idutil) {
+        const sub = this.utilService.get(idutil).subscribe(user => this._user = new _User_user__WEBPACK_IMPORTED_MODULE_2__["User"]().fromUtilisateurDto(user));
         this.subscriptions.push(sub);
     }
 };
@@ -1542,7 +1748,7 @@ DetailReviewComponent.ctorParameters = () => [
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], DetailReviewComponent.prototype, "avis", null);
+], DetailReviewComponent.prototype, "review", null);
 DetailReviewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-detail-comment',
@@ -1584,8 +1790,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _review_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../review.service */ "./src/app/views/comment/review.service.ts");
 /* harmony import */ var _lieu_place__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lieu/place */ "./src/app/views/lieu/place.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _lieu_place_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../lieu/place.service */ "./src/app/views/lieu/place.service.ts");
-
 
 
 
@@ -1593,56 +1797,55 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ListReviewComponent = class ListReviewComponent {
-    constructor(avisService, route, lieuService) {
+    constructor(avisService, route) {
         this.avisService = avisService;
         this.route = route;
-        this.lieuService = lieuService;
-        this._lieu = new _lieu_place__WEBPACK_IMPORTED_MODULE_4__["Place"]();
-        this._listAvis = [];
+        this._place = new _lieu_place__WEBPACK_IMPORTED_MODULE_4__["Place"]();
+        this._listReview = [];
         this._id = -1;
         this.subscriptions = [];
     }
     ngOnInit() {
-        // this._id = this.route.snapshot.params['id'];
-        this.loadAvisList(this._id);
-        // this.loadLieu(this._id);
+        this._id = this.route.snapshot.params['id'];
+        console.log(this._id);
+        this.loadReviewList(this._id);
+    }
+    ngOnDestroy() {
+        for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+            const subscription = this.subscriptions[i];
+            subscription && subscription.unsubscribe();
+            this.subscriptions.pop();
+        }
     }
     get id() {
         return this._id;
     }
+    // @Input()
     set id(value) {
         this._id = value;
     }
-    get lieu() {
-        return this._lieu;
+    get place() {
+        return this._place;
     }
-    set lieu(value) {
-        this._lieu = value;
+    // @Input()
+    set place(value) {
+        this._place = value;
     }
-    get listAvis() {
-        return this._listAvis;
+    get listReview() {
+        return this._listReview;
     }
-    set listAvis(value) {
-        this._listAvis = value;
+    set listReview(value) {
+        this._listReview = value;
     }
-    loadAvisList(id) {
-        const sub = this.avisService.getAvisFromAnUser(id).subscribe(listA => this._listAvis = listA.map(a => new _review__WEBPACK_IMPORTED_MODULE_2__["Review"]().fromAvisDto(a)));
-    }
-    loadLieu(id) {
-        const sub = this.lieuService.get(id).subscribe(lieu => this._lieu = new _lieu_place__WEBPACK_IMPORTED_MODULE_4__["Place"]().fromLieuDto(lieu));
+    loadReviewList(id) {
+        const sub = this.avisService.getAvisFromAnUser(id).subscribe(listA => this._listReview = listA.map(a => new _review__WEBPACK_IMPORTED_MODULE_2__["Review"]().fromAvisDto(a)));
+        this.subscriptions.push(sub);
     }
 };
 ListReviewComponent.ctorParameters = () => [
     { type: _review_service__WEBPACK_IMPORTED_MODULE_3__["ReviewService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] },
-    { type: _lieu_place_service__WEBPACK_IMPORTED_MODULE_6__["PlaceService"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] }
 ];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], ListReviewComponent.prototype, "id", null);
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], ListReviewComponent.prototype, "lieu", null);
 ListReviewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-list-review',
@@ -1683,7 +1886,7 @@ let ReviewService = class ReviewService {
     //   return this.http.get<ReviewDto>(URL_API+'/'+id);
     // }
     getAvisFromAnUser(idLieu) {
-        return this.http.get(URL_API + '/' + idLieu);
+        return this.http.get(URL_API + '/place/' + idLieu);
     }
     post(avis) {
         return this.http.post(URL_API, avis);
@@ -1721,7 +1924,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class Review {
-    constructor(id = -1, note = -1, commentaire = '', valider = -1, idutil = -1, idlieu = -1, date = '') {
+    constructor(id = -1, note = -1, commentaire = '', valider = 0, idutil = -1, idlieu = -1, date = '') {
         this._id = id;
         this._star = note;
         this._comment = commentaire;
@@ -1828,19 +2031,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _place__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../place */ "./src/app/views/lieu/place.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _place_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../place.service */ "./src/app/views/lieu/place.service.ts");
+/* harmony import */ var _comment_review_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../comment/review.service */ "./src/app/views/comment/review.service.ts");
+
 
 
 
 
 
 let DetailPlaceComponent = class DetailPlaceComponent {
-    constructor(route, lieuService) {
+    constructor(route, lieuService, reviewService) {
         this.route = route;
         this.lieuService = lieuService;
+        this.reviewService = reviewService;
+        this.subscriptions = [];
     }
     ngOnInit() {
-        this._id = this.route.snapshot.params['id'];
+        this._id = parseInt(this.route.snapshot.params['id'], 10);
         this.loadPlace(this._id);
+    }
+    ngOnDestroy() {
+        for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+            const subscription = this.subscriptions[i];
+            subscription && subscription.unsubscribe();
+            this.subscriptions.pop();
+        }
     }
     get id() {
         return this._id;
@@ -1856,11 +2070,18 @@ let DetailPlaceComponent = class DetailPlaceComponent {
     }
     loadPlace(id) {
         const sub = this.lieuService.get(id).subscribe(lieu => this._place = new _place__WEBPACK_IMPORTED_MODULE_2__["Place"]().fromLieuDto(lieu));
+        this.subscriptions.push(sub);
+    }
+    createReview($event) {
+        $event.idPlace = this._id;
+        console.log(JSON.stringify($event));
+        this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe());
     }
 };
 DetailPlaceComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
-    { type: _place_service__WEBPACK_IMPORTED_MODULE_4__["PlaceService"] }
+    { type: _place_service__WEBPACK_IMPORTED_MODULE_4__["PlaceService"] },
+    { type: _comment_review_service__WEBPACK_IMPORTED_MODULE_5__["ReviewService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
@@ -1969,7 +2190,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const URL_API = "/api/Place";
+const URL_API = "/api/place";
 let PlaceService = class PlaceService {
     constructor(http) {
         this.http = http;

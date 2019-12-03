@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Review, ReviewList} from '../review';
 import {Subscription} from 'rxjs';
 import {ReviewService} from '../review.service';
@@ -11,51 +11,57 @@ import {PlaceService} from '../../lieu/place.service';
   templateUrl: './list-review.component.html',
   styleUrls: ['./list-review.component.css']
 })
-export class ListReviewComponent implements OnInit {
-  private _lieu:Place = new Place();
-  private _listAvis:ReviewList = [];
+export class ListReviewComponent implements OnInit,OnDestroy{
+  private _place:Place = new Place();
+  private _listReview:ReviewList = [];
   private _id:number = -1;
   private subscriptions:Subscription[] = [];
-  constructor(public avisService:ReviewService, private route:ActivatedRoute, public lieuService:PlaceService) { }
+  constructor(public avisService:ReviewService, private route:ActivatedRoute) { }
 
   ngOnInit() {
-    // this._id = this.route.snapshot.params['id'];
-    this.loadAvisList(this._id);
-    // this.loadLieu(this._id);
+    this._id = this.route.snapshot.params['id'];
+    console.log(this._id);
+    this.loadReviewList(this._id);
+  }
+
+  ngOnDestroy(): void {
+    for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+      const subscription = this.subscriptions[i];
+      subscription && subscription.unsubscribe();
+      this.subscriptions.pop();
+    }
   }
 
 
   get id(): number {
     return this._id;
   }
-  @Input()
+  // @Input()
   set id(value: number) {
     this._id = value;
   }
 
-  get lieu(): Place {
-    return this._lieu;
+  get place(): Place {
+    return this._place;
   }
-  @Input()
-  set lieu(value: Place) {
-    this._lieu = value;
-  }
-
-  get listAvis(): Review[] {
-    return this._listAvis;
+  // @Input()
+  set place(value: Place) {
+    this._place = value;
   }
 
-  set listAvis(value: Review[]) {
-    this._listAvis = value;
+  get listReview(): Review[] {
+    return this._listReview;
   }
 
-  private loadAvisList(id:number) {
+  set listReview(value: Review[]) {
+    this._listReview = value;
+  }
+
+  private loadReviewList(id:number) {
     const sub = this.avisService.getAvisFromAnUser(id).subscribe(
-      listA => this._listAvis = listA.map(a =>  new Review().fromAvisDto(a))
+      listA => this._listReview = listA.map(a =>  new Review().fromAvisDto(a))
     );
+    this.subscriptions.push(sub);
   }
 
-  private loadLieu(id: number) {
-    const sub = this.lieuService.get(id).subscribe( lieu => this._lieu = new Place().fromLieuDto(lieu));
-  }
 }

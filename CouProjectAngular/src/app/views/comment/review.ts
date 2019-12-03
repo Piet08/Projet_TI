@@ -1,4 +1,4 @@
-import {ReviewDto} from './review-dto';
+import {ReviewInsertDto} from './review-insert-dto';
 
 export declare type ReviewList = Review[];
 
@@ -11,7 +11,7 @@ export class Review{
   private _idPlace: number;
   private _date:string;
 
-  constructor(id: number = -1, note: number = -1, commentaire: string = '', valider: number = -1, idutil: number = -1, idlieu: number = -1,date:string = '') {
+  constructor(id: number = -1, note: number = -1, commentaire: string = '', valider: number = 0, idutil: number = -1, idlieu: number = -1,date:string = '') {
     this._id = id;
     this._star = note;
     this._comment = commentaire;
@@ -63,12 +63,12 @@ export class Review{
     this._comment = value;
   }
   //Object provenant de la db donc type Object !! -> Function to set Type (Review)
-  fromAvisDto(dto : ReviewDto): Review{
+  fromAvisDto(dto : ReviewInsertDto): Review{
     Object.assign(this, dto);
     return this;
   }
   //Inverse de la méthode du dessus !
-  toAvisDto() : ReviewDto {
+  toAvisDto() : ReviewInsertDto {
     return {
       id : this._id,
       star: this._star,

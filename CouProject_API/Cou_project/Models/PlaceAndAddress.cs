@@ -30,7 +30,6 @@ namespace Cou_project.Models
             Place.Type = reader[PlaceDAO.FIELD_TYPE].ToString();
             Place.Description = reader[PlaceDAO.FIELD_DESCRIPTION].ToString();
             Place.IdAdr = Address.Id;
-            
         }
     }
 }

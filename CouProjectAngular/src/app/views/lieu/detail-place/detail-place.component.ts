@@ -1,21 +1,34 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Place} from '../place';
 import {ActivatedRoute} from '@angular/router';
 import {PlaceService} from '../place.service';
+import {Subscription} from 'rxjs';
+import {Review} from '../../comment/review';
+import {ReviewService} from '../../comment/review.service';
 
 @Component({
   selector: 'app-detai-lieu',
   templateUrl: './detail-place.component.html',
   styleUrls: ['./detail-place.component.css']
 })
-export class DetailPlaceComponent implements OnInit {
+export class DetailPlaceComponent implements OnInit,OnDestroy{
   private _place:Place;
   private _id:number;
-  constructor(private route:ActivatedRoute, public lieuService:PlaceService) { }
+  private subscriptions:Subscription[] = [];
+
+  constructor(private route:ActivatedRoute, public lieuService:PlaceService,public reviewService:ReviewService) { }
 
   ngOnInit() {
-    this._id = this.route.snapshot.params['id'];
+    this._id = parseInt(this.route.snapshot.params['id'],10);
     this.loadPlace(this._id);
+  }
+
+  ngOnDestroy(): void {
+    for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+      const subscription = this.subscriptions[i];
+      subscription && subscription.unsubscribe();
+      this.subscriptions.pop();
+    }
   }
 
   get id(): number {
@@ -37,5 +50,12 @@ export class DetailPlaceComponent implements OnInit {
 
   private loadPlace(id: number) {
     const sub = this.lieuService.get(id).subscribe( lieu => this._place = new Place().fromLieuDto(lieu));
+    this.subscriptions.push(sub);
+  }
+
+  createReview($event: Review) {
+    $event.idPlace = this._id;
+    console.log(JSON.stringify($event));
+    this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe());
   }
 }

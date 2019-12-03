@@ -12,12 +12,13 @@ namespace Cou_project.Models
         public int IsValid { get; set; }
         public int IdUser { get; set; }
         public int IdPlace { get; set; }
+        public string Date { get; set; }
 
         public Review()
         {
         }
 
-        public Review(int id, float star, string comment, int isValid, int idUser, int idPlace)
+        public Review(int id, float star, string comment, int isValid, int idUser, int idPlace, string date)
         {
             Id = id;
             Star = star;
@@ -25,6 +26,7 @@ namespace Cou_project.Models
             IsValid = isValid;
             IdUser = idUser;
             IdPlace = idPlace;
+            Date = date;
         }
         
         public Review(SqlDataReader reader)
@@ -35,6 +37,7 @@ namespace Cou_project.Models
             IsValid = Convert.ToInt32(reader[ReviewDAO.FIELD_ISVALID].ToString());
             IdUser = Convert.ToInt32(reader[ReviewDAO.FIELD_IDUSER].ToString());
             IdPlace = Convert.ToInt32(reader[ReviewDAO.FIELD_IDPLACE].ToString());
+            Date = reader[ReviewDAO.FIELD_DATE].ToString();
         }
     }
 }

@@ -18,14 +18,14 @@ export class FormInscriptionComponent implements OnInit {
 
   formulaireInscription: FormGroup = this.fb.group({
     emailInscription: this.fb.control("", Validators.required),
-    nom: this.fb.control("", Validators.required),
+    name: this.fb.control("", Validators.required),
     prenom: this.fb.control("", Validators.required),
     motDePasse: this.fb.control("", Validators.required),
     verifMotDePasse: this.fb.control("", Validators.required),
     numero: this.fb.control("", Validators.required),
-    rue: this.fb.control("", Validators.required),
+    straat: this.fb.control("", Validators.required),
     codePostal: this.fb.control("", Validators.required),
-    ville: this.fb.control("", Validators.required)
+    city: this.fb.control("", Validators.required)
   });
 
   @Output()
