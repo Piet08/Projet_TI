@@ -32,34 +32,59 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div style=\"background-color:red;\">\r\n      <h1>Cou</h1>\r\n  </div>\r\n</div>\r\n\r\n<nav class=\"nnavbar navbar-expand-lg navbar-light bg-light\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\">Menu</a>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n      <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans \"app.module.ts-->\r\n      <li><a routerLink=\"authenticate\">Connexion</a></li>\r\n      <li><a routerLink=\"Utilisateur\">Inscription</a></li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n");
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div style=\"background-color:red;\">\r\n      <h1>Cou</h1>\r\n  </div>\r\n</div>\r\n\r\n<nav class=\"nnavbar navbar-expand-lg navbar-light bg-light\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\">Menu</a>\r\n    </div>\r\n    <div class=\"navbar-collapse\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans \"app.module.ts-->\r\n        <li routerLinkActive=\"active\"><a routerLink=\"lieux\">Lieux</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"forms/lieux\">Ajouter Lieu</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"authenticate\">Connexion</a></li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"Utilisateur\">Inscription</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div>\r\n      <h1>{{title}}</h1>\r\n  </div>\r\n</div>\r\n\r\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"authenticate\" class=\"nav-link\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Utilisateur\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"row\">\r\n  <div class=\"col-sm-8\" style=\"background-color:lavender;\">\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n  <div class=\"col-sm-4\">\r\n    <!--Pourquoi pas metter les Lieux les plus notés ??-->\r\n  </div>\r\n</div>\r\n\r\n");
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-connection/form-connection.component.html":
-/*!************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-connection/form-connection.component.html ***!
-  \************************************************************************************************************/
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-connection/dumb-form-connection/form-connection.component.html":
+/*!*********************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-connection/dumb-form-connection/form-connection.component.html ***!
+  \*********************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1>Formulaire Connexion</h1>\r\n  <form class=\"form-horizontal\" [formGroup]=\"formulaireConnexion\" (ngSubmit)=\"alertME()\" role=\"form\">\r\n    <div class=\"form-group\">\r\n      <label for=\"emailConnexion\" class=\"col-sm-3 control-label\">Email</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type=\"text\" formControlName=\"emailConnexion\" id=\"emailConnexion\"/>\r\n      </div>\r\n    </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"motDePasseConnexion\" class=\"col-sm-3 control-label\">Mot de passe</label>\r\n        <div class=\"col-sm-6\">\r\n          <input class=\"form-control\" type = \"password\" formControlName=\"motDePasseConnexion\" id=\"motDePasseConnexion\"/>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"resterConnecter\" class=\"col-sm-3 control-label\"><b>Rester connecté?</b></label>\r\n        <input  type=\"checkbox\" formControlName=\"resterConnecter\" id=\"resterConnecter\"/>\r\n      </div>\r\n\r\n    <input type=\"submit\" value=\"Se connecter\" class=\"btn btn-primary col-sm-offset-3\" [disabled]=\"verificationFormulaire()\"/>\r\n  </form>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1>Formulaire Connexion</h1>\r\n  <form class=\"form-horizontal\" [formGroup]=\"formulaireConnexion\" (ngSubmit)=\"emitNewUserConnected()\" role=\"form\">\r\n    <div class=\"form-group\">\r\n      <label for=\"username\" class=\"col-sm-3 control-label\">Email</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type=\"text\" formControlName=\"username\" id=\"username\"/>\r\n      </div>\r\n    </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"motDePasseConnexion\" class=\"col-sm-3 control-label\">Mot de passe</label>\r\n        <div class=\"col-sm-6\">\r\n          <input class=\"form-control\" type = \"password\" formControlName=\"motDePasseConnexion\" id=\"motDePasseConnexion\"/>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"resterConnecter\" class=\"col-sm-3 control-label\"><b>Rester connecté?</b></label>\r\n        <input  type=\"checkbox\" formControlName=\"resterConnecter\" id=\"resterConnecter\"/>\r\n      </div>\r\n\r\n    <input type=\"submit\" value=\"Se connecter\" class=\"btn btn-primary col-sm-offset-3\" [disabled]=\"verificationFormulaire()\"/>\r\n  </form>\r\n</div>\r\n");
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-inscription/form-inscription.component.html":
-/*!**************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-inscription/form-inscription.component.html ***!
-  \**************************************************************************************************************/
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.html":
+/*!****************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.html ***!
+  \****************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1>Formulaire inscription</h1>\r\n  <form class=\"form-horizontal\" [formGroup] = \"formulaireInscription\" (ngSubmit)=\"alertME()\" role=\"form\">\r\n    <div class=\"form-group\">\r\n      <label for=\"emailInscription\" class=\"col-sm-3 control-label\">Email</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type=\"text\" formControlName=\"emailInscription\" id=\"emailInscription\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"nom\" class=\"col-sm-3 control-label\">Nom</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"text\" formControlName=\"nom\" id=\"nom\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"prenom\" class=\"col-sm-3 control-label\">Prenom</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"text\" formControlName=\"prenom\" id=\"prenom\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"motDePasseInscription\" class=\"col-sm-3 control-label\">Mot de passe</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"password\" formControlName=\"motDePasse\" id=\"motDePasseInscription\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"verifMotDePasse\" class=\"col-sm-3 control-label\">Vérification mot de passe</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"password\" formControlName=\"verfiMotDePasse\" id=\"verifMotDePasse\"/>\r\n        <span *ngIf=\"!verificationMotDePasse()\">Erreur, mauvais mot de passe</span>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"numero\" class=\"col-sm-3 control-label\">Numéro</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"text\" formControlName=\"numero\" id=\"numero\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"rue\" class=\"col-sm-3 control-label\">Rue</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"text\" formControlName=\"rue\" id=\"rue\"/>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"codePostal\" class=\"col-sm-3 control-label\">Code Postal</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"number\" formControlName=\"codePostal\" id=\"codePostal\" min=\"4000\" max=\"8000\"/>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"ville\" class=\"col-sm-3 control-label\">Ville</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" list=\"listVille\" formControlName=\"ville\" id=\"ville\" />\r\n        <datalist id=\"listeVille\">\r\n          <option>Test</option>\r\n        </datalist>\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <input class=\"btn btn-primary col-sm-offset-3\" type=\"submit\" value=\"S'inscrire\" id=\"btnInscription\" [disabled]=\"verificationFormulaire()\"/>\r\n  </form>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-form-connection (userConnected)=\"createUserConnected($event)\"></app-form-connection>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.html":
+/*!************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.html ***!
+  \************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1>Formulaire inscription</h1>\r\n  <form class=\"form-horizontal\" [formGroup] = \"formulaireInscription\" (ngSubmit)=\"emitNewUser()\" role=\"form\">\r\n    <div class=\"form-group\">\r\n      <label for=\"emailInscription\" class=\"col-sm-3 control-label\">Email</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type=\"text\" formControlName=\"emailInscription\" id=\"emailInscription\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"nom\" class=\"col-sm-3 control-label\">Nom</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"text\" formControlName=\"nom\" id=\"nom\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"prenom\" class=\"col-sm-3 control-label\">Prenom</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"text\" formControlName=\"prenom\" id=\"prenom\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"motDePasseInscription\" class=\"col-sm-3 control-label\">Mot de passe</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"password\" formControlName=\"motDePasse\" id=\"motDePasseInscription\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"verifMotDePasse\" class=\"col-sm-3 control-label\">Vérification mot de passe</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"password\" formControlName=\"verfiMotDePasse\" id=\"verifMotDePasse\"/>\r\n        <span *ngIf=\"!verificationMotDePasse()\">Erreur, mauvais mot de passe</span>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"numero\" class=\"col-sm-3 control-label\">Numéro</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"text\" formControlName=\"numero\" id=\"numero\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"rue\" class=\"col-sm-3 control-label\">Rue</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"text\" formControlName=\"rue\" id=\"rue\"/>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"codePostal\" class=\"col-sm-3 control-label\">Code Postal</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"number\" formControlName=\"codePostal\" id=\"codePostal\" min=\"4000\" max=\"8000\"/>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"ville\" class=\"col-sm-3 control-label\">Ville</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" list=\"listVille\" formControlName=\"ville\" id=\"ville\" />\r\n        <datalist id=\"listeVille\">\r\n          <option>Test</option>\r\n        </datalist>\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <input class=\"btn btn-primary col-sm-offset-3\" type=\"submit\" value=\"S'inscrire\" id=\"btnInscription\" [disabled]=\"verificationFormulaire()\"/>\r\n  </form>\r\n</div>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.html":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.html ***!
+  \*******************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-form-inscription (adressCreated)=\"createAdressUser($event)\" (userCreated)=\"createUser($event)\"></app-form-inscription>\n");
 
 /***/ }),
 
@@ -72,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"alertMe()\">\n  <div class=\"form-group form-inline raw\">\n    <label for=\"nom\" class=\"col-6 \">Nom :</label>\n    <input type=\"text\" class=\"form-control col-6\" id=\"nom\" name=\"nom\" formControlName=\"nom\">\n  </div>\n  <div class=\"form-group form-inline raw\">\n    <label for=\"type\" class=\"col-6 \">Type :</label>\n    <input type=\"text\" class=\"form-control col-6\" id=\"type\" name=\"type\" formControlName=\"type\">\n  </div>\n  <div class=\"form-group form-inline raw\">\n    <label for=\"description\" class=\"col-6 \">Description :</label>\n    <input type=\"text\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\n  </div>\n\n  <div formGroupName=\"adresse\">\n    <div class=\"form-group form-inline raw\">\n      <label for=\"rue\" class=\"col-6 \">Rue :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"rue\" name=\"rue\" formControlName=\"rue\">\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"num\" class=\"col-6 \">Numéro :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"cp\" class=\"col-6 \">Code Postal :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"cp\" name=\"cp\" formControlName=\"cp\">\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"ville\" class=\"col-6 \">Ville :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"ville\" name=\"ville\" formControlName=\"ville\">\n    </div>\n  </div>\n  <input type=\"submit\">\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"alertMe()\">\r\n  <div class=\"form-group form-inline raw\">\r\n    <label for=\"nom\" class=\"col-6 \">Nom :</label>\r\n    <input type=\"text\" class=\"form-control col-6\" id=\"nom\" name=\"nom\" formControlName=\"nom\">\r\n  </div>\r\n  <div class=\"form-group form-inline raw\">\r\n    <label for=\"type\" class=\"col-6 \">Type :</label>\r\n    <input type=\"text\" class=\"form-control col-6\" id=\"type\" name=\"type\" formControlName=\"type\">\r\n  </div>\r\n  <div class=\"form-group form-inline raw\">\r\n    <label for=\"description\" class=\"col-6 \">Description :</label>\r\n    <input type=\"text\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n  </div>\r\n\r\n  <div formGroupName=\"adresse\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"rue\" class=\"col-6 \">Rue :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"rue\" name=\"rue\" formControlName=\"rue\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"num\" class=\"col-6 \">Numéro :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"cp\" class=\"col-6 \">Code Postal :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"cp\" name=\"cp\" formControlName=\"cp\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"ville\" class=\"col-6 \">Ville :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"ville\" name=\"ville\" formControlName=\"ville\">\r\n    </div>\r\n  </div>\r\n  <input type=\"submit\">\r\n</form>\r\n");
 
 /***/ }),
 
@@ -85,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\n  <div class=\"card-header\">\n    <p class=\"text-left\">\n      {{utilisateur.nom}} {{utilisateur.prenom}}\n      <span class=\"float-right\">{{avis.note}}/5</span>\n    </p>\n  </div>\n\n  <div class=\"card-body\">\n    <blockquote class=\"blockquote mb-0\">\n      <p>{{avis.commentaire}}</p>\n      <footer class=\"blockquote-footer\"> {{avis.date}} </footer>\n    </blockquote>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\r\n  <div class=\"card-header\">\r\n    <p class=\"text-left\">\r\n      {{utilisateur.nom}} {{utilisateur.prenom}}\r\n      <span class=\"float-right\">{{avis.note}}/5</span>\r\n    </p>\r\n  </div>\r\n\r\n  <div class=\"card-body\">\r\n    <blockquote class=\"blockquote mb-0\">\r\n      <p>{{avis.commentaire}}</p>\r\n      <footer class=\"blockquote-footer\"> {{avis.date}} </footer>\r\n    </blockquote>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -98,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul *ngFor=\"let avis of listAvis\">\n  <li>\n    <app-detail-comment [avis]=\"avis\"></app-detail-comment>\n  </li>\n</ul>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ul *ngFor=\"let avis of listAvis\">\r\n  <li>\r\n    <app-detail-comment [avis]=\"avis\"></app-detail-comment>\r\n  </li>\r\n</ul>\r\n");
 
 /***/ }),
 
@@ -111,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <app-single-lieu [lieu]=\"lieu\"></app-single-lieu>\n</div>\n\n<div>\n  <app-list-comment [id]=\"id\"></app-list-comment>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n  <app-single-lieu [lieu]=\"lieu\"></app-single-lieu>\r\n</div>\r\n\r\n<div>\r\n  <app-list-comment [id]=\"id\"></app-list-comment>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -124,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul>\n  <li *ngFor=\"let lieu of lieux\">\n    <app-single-lieu [lieu]=\"lieu\"></app-single-lieu>\n  </li>\n</ul>\n\n<div class=\"text-center\">\n  <button class=\"btn btn-info\">Ajouter lieu</button>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ul>\r\n  <li *ngFor=\"let lieu of lieux\">\r\n    <app-single-lieu [lieu]=\"lieu\"></app-single-lieu>\r\n  </li>\r\n</ul>\r\n\r\n<div class=\"text-center\">\r\n  <button class=\"btn btn-info\">Ajouter lieu</button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -137,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\n  <div class=\"col-12\">\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\n      <div class=\"card-header bg-dark text-center text-light\">\n        <h5>{{lieu.nom}}</h5>\n      </div>\n\n      <div class=\"py-2 px-3\">\n        <div class=\"d-block\">\n          <hr>\n          <span class=\"d-inline\">{{lieu.id}} : </span>\n          <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{lieu.type}}</h6>\n          <hr>\n        </div>\n        <p class=\"card-text\"a>{{lieu.description}}</p>\n      </div>\n\n      <div class=\"card-footer\">\n        <div>\n          {{adresse.cp}} {{adresse.ville}}\n          <br>\n          {{adresse.rue}}, {{adresse.num}}\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\r\n  <div class=\"col-12\">\r\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\r\n      <div class=\"card-header bg-dark text-center text-light\">\r\n        <h5>{{lieu.nom}}</h5>\r\n      </div>\r\n\r\n      <div class=\"py-2 px-3\">\r\n        <div class=\"d-block\">\r\n          <hr>\r\n          <span class=\"d-inline\">{{lieu.id}} : </span>\r\n          <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{lieu.type}}</h6>\r\n          <hr>\r\n        </div>\r\n        <p class=\"card-text\"a>{{lieu.description}}</p>\r\n      </div>\r\n\r\n      <div class=\"card-footer\">\r\n        <div>\r\n          {{adresse.cp}} {{adresse.ville}}\r\n          <br>\r\n          {{adresse.rue}}, {{adresse.num}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -509,7 +534,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class Utilisateur {
-    constructor(id = -1, nom = '', prenom = '', pseudo = '', type = '', email = '', hashpwd = '', idadr = -1, token = '') {
+    constructor(id = -1, nom = '', prenom = '', pseudo = '', type = '', email = '', hashpwd = '', idadr = -1) {
         this._id = id;
         this._nom = nom;
         this._prenom = prenom;
@@ -518,8 +543,6 @@ class Utilisateur {
         this._email = email;
         this._hashpwd = hashpwd;
         this._idadr = idadr;
-        // A voir si il faut l'instancier ici
-        this._token = token;
     }
     get id() {
         return this._id;
@@ -605,6 +628,52 @@ class Utilisateur {
 
 /***/ }),
 
+/***/ "./src/app/Utilisateur/authenticateModel.ts":
+/*!**************************************************!*\
+  !*** ./src/app/Utilisateur/authenticateModel.ts ***!
+  \**************************************************/
+/*! exports provided: authenticateModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "authenticateModel", function() { return authenticateModel; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class authenticateModel {
+    constructor(username = '', password = '') {
+        this._username = username;
+        this._password = password;
+    }
+    get password() {
+        return this._password;
+    }
+    set password(value) {
+        this._password = value;
+    }
+    get username() {
+        return this._username;
+    }
+    set username(value) {
+        this._username = value;
+    }
+    //Object provenant de la db donc type Object !! -> Function to set Type (Utilisateur)
+    fromAuthenticateModelDto(dto) {
+        Object.assign(this, dto);
+        return this;
+    }
+    //Inverse de la méthode du dessus !
+    toAuthenticateModelDto() {
+        return {
+            username: this._username,
+            password: this._password
+        };
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/Utilisateur/utilisateur.service.ts":
 /*!****************************************************!*\
   !*** ./src/app/Utilisateur/utilisateur.service.ts ***!
@@ -622,19 +691,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const URL_API_UTIL = "/api/Utilisateur";
-const URL_API_AUTH = "/api/authenticate";
+const URL_API_AUTH = "/api/Utilisateur/authenticate";
 const URL_API_FAV = "/api/Favoris";
 let UtilisateurService = class UtilisateurService {
     constructor(http) {
         this.http = http;
     }
     //AUTHENTICATE
-    /*  queryAuth():Observable<UtilisateurDto[]>{
-        return this.http.get<UtilisateurDto[]>(URL_API_AUTH);
-      }
-      postAuth(utilisateur : UtilisateurDto): Observable<UtilisateurDto>{
-        return this.http.post<UtilisateurDto>(URL_API_AUTH, utilisateur);
-      }*/
+    /*queryAuth():Observable<UtilisateurDto[]>{
+      return this.http.get<UtilisateurDto[]>(URL_API_AUTH);
+    }*/
+    postAuth(model) {
+        return this.http.post(URL_API_AUTH, model);
+    }
     //UTILISATEUR
     query() {
         return this.http.get(URL_API_UTIL);
@@ -714,7 +783,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".title{\r\n  font-size: 45px;\r\n  text-align: center;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3BCIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGl0bGV7XHJcbiAgZm9udC1zaXplOiA0NXB4O1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".title{\r\n  font-size: 45px;\r\n  text-align: center;\r\n  border: black;\r\n  border-style: groove;\r\n  background-color: #99541f;\r\n}\r\n.navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixvQkFBb0I7RUFDcEIseUJBQXlCO0FBQzNCO0FBQ0E7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsZUFBZTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRpdGxle1xyXG4gIGZvbnQtc2l6ZTogNDVweDtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgYm9yZGVyOiBibGFjaztcclxuICBib3JkZXItc3R5bGU6IGdyb292ZTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjOTk1NDFmO1xyXG59XHJcbi5uYXZiYXJ7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGZvbnQtc2l6ZSA6IDE4cHg7XHJcbn1cclxuLm5hYmFyLW5hdntcclxuICB3aWR0aCA6IDMwMHB4O1xyXG59XHJcbi5jb250YWN0e1xyXG4gIGhlaWdodDogMTAwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogZGltZ3JheTtcclxuICBmb250LXNpemU6IDM1cHg7XHJcbn1cclxuIl19 */");
 
 /***/ }),
 
@@ -736,6 +805,7 @@ let AppComponent = class AppComponent {
     constructor() {
         this.title = 'Cou_Project';
         this.currentJustify = 'justified';
+        this.isCollapsed = true;
     }
 };
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -767,9 +837,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _forms_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./forms/form-connection/form-connection.component */ "./src/app/forms/form-connection/form-connection.component.ts");
+/* harmony import */ var _forms_form_connection_dumb_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./forms/form-connection/dumb-form-connection/form-connection.component */ "./src/app/forms/form-connection/dumb-form-connection/form-connection.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/form-inscription/form-inscription.component */ "./src/app/forms/form-inscription/form-inscription.component.ts");
+/* harmony import */ var _forms_form_inscription_dumb_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/form-inscription/dumb-form-inscription/form-inscription.component */ "./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _views_lieu_list_lieu_list_lieu_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/lieu/list-lieu/list-lieu.component */ "./src/app/views/lieu/list-lieu/list-lieu.component.ts");
 /* harmony import */ var _views_lieu_single_lieu_single_lieu_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/lieu/single-lieu/single-lieu.component */ "./src/app/views/lieu/single-lieu/single-lieu.component.ts");
@@ -777,15 +847,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_comment_list_comment_list_comment_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/comment/list-comment/list-comment.component */ "./src/app/views/comment/list-comment/list-comment.component.ts");
 /* harmony import */ var _views_comment_detail_comment_detail_comment_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/comment/detail-comment/detail-comment.component */ "./src/app/views/comment/detail-comment/detail-comment.component.ts");
 /* harmony import */ var _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/form-lieu/form-lieu.component */ "./src/app/forms/form-lieu/form-lieu.component.ts");
+/* harmony import */ var _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./forms/form-inscription/smart-form-inscription/smart-form-inscription.component */ "./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.ts");
+/* harmony import */ var _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./forms/form-connection/smart-form-connection/smart-form-connection.component */ "./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // path = le nom du controller de l'api en fonction de ce que l'on veut faire
 // component : celui que l'on souhaite afficher
 // Les imports sont déja fait
 const routes = [
-    { path: 'authenticate', component: _forms_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__["FormConnectionComponent"] },
-    { path: 'Utilisateur', component: _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"] }
-    { path: 'Utilisateur', component: _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"] },
+    { path: 'authenticate', component: _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_18__["SmartFormConnectionComponent"] },
+    { path: 'Utilisateur', component: _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_17__["SmartFormInscriptionComponent"] },
     { path: 'lieux', component: _views_lieu_list_lieu_list_lieu_component__WEBPACK_IMPORTED_MODULE_11__["ListLieuComponent"] },
     { path: 'lieux/:id', component: _views_lieu_detail_lieu_detail_lieu_component__WEBPACK_IMPORTED_MODULE_13__["DetailLieuComponent"] },
     { path: 'forms/lieux', component: _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__["FormLieuComponent"] },
@@ -797,14 +885,16 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-            _forms_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__["FormConnectionComponent"],
-            _forms_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"],
+            _forms_form_connection_dumb_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__["FormConnectionComponent"],
+            _forms_form_inscription_dumb_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"],
             _views_lieu_list_lieu_list_lieu_component__WEBPACK_IMPORTED_MODULE_11__["ListLieuComponent"],
             _views_lieu_single_lieu_single_lieu_component__WEBPACK_IMPORTED_MODULE_12__["SingleLieuComponent"],
             _views_lieu_detail_lieu_detail_lieu_component__WEBPACK_IMPORTED_MODULE_13__["DetailLieuComponent"],
             _views_comment_list_comment_list_comment_component__WEBPACK_IMPORTED_MODULE_14__["ListCommentComponent"],
             _views_comment_detail_comment_detail_comment_component__WEBPACK_IMPORTED_MODULE_15__["DetailCommentComponent"],
-            _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__["FormLieuComponent"]
+            _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__["FormLieuComponent"],
+            _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_17__["SmartFormInscriptionComponent"],
+            _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_18__["SmartFormConnectionComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -824,23 +914,23 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/forms/form-connection/form-connection.component.css":
-/*!*********************************************************************!*\
-  !*** ./src/app/forms/form-connection/form-connection.component.css ***!
-  \*********************************************************************/
+/***/ "./src/app/forms/form-connection/dumb-form-connection/form-connection.component.css":
+/*!******************************************************************************************!*\
+  !*** ./src/app/forms/form-connection/dumb-form-connection/form-connection.component.css ***!
+  \******************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0tY29ubmVjdGlvbi9mb3JtLWNvbm5lY3Rpb24uY29tcG9uZW50LmNzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0tY29ubmVjdGlvbi9kdW1iLWZvcm0tY29ubmVjdGlvbi9mb3JtLWNvbm5lY3Rpb24uY29tcG9uZW50LmNzcyJ9 */");
 
 /***/ }),
 
-/***/ "./src/app/forms/form-connection/form-connection.component.ts":
-/*!********************************************************************!*\
-  !*** ./src/app/forms/form-connection/form-connection.component.ts ***!
-  \********************************************************************/
+/***/ "./src/app/forms/form-connection/dumb-form-connection/form-connection.component.ts":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/forms/form-connection/dumb-form-connection/form-connection.component.ts ***!
+  \*****************************************************************************************/
 /*! exports provided: FormConnectionComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -850,6 +940,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _Utilisateur_authenticateModel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Utilisateur/authenticateModel */ "./src/app/Utilisateur/authenticateModel.ts");
+
 
 
 
@@ -857,36 +949,47 @@ let FormConnectionComponent = class FormConnectionComponent {
     constructor(fb) {
         this.fb = fb;
         this.formulaireConnexion = this.fb.group({
-            emailConnexion: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            username: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             motDePasseConnexion: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             resterConnecte: this.fb.control("")
         });
+        this.userConnected = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     ngOnInit() {
     }
-    alertME() {
-        console.log(this.formulaireConnexion.controls.emailConnexion.value);
-    }
-    verificationEmail() {
-        var regex = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
-        if (this.formulaireConnexion.controls.emailConnexion.value.match(regex) !== null)
-            return true;
-        return false;
-    }
+    /*verificationEmail(){
+      var regex = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
+      if(this.formulaireConnexion.controls.emailConnexion.value.match(regex) !== null) return true;
+      return false;
+    }*/
     verificationFormulaire() {
-        if (this.verificationEmail() && this.formulaireConnexion.valid)
+        if ( /*this.verificationEmail() &&*/this.formulaireConnexion.valid)
             return false;
         return true;
+    }
+    buildUserConnected() {
+        const userConnected = new _Utilisateur_authenticateModel__WEBPACK_IMPORTED_MODULE_3__["authenticateModel"]();
+        userConnected.username = this.formulaireConnexion.get("username").value;
+        userConnected.password = this.formulaireConnexion.get("motDePasseConnexion").value;
+        return userConnected;
+    }
+    emitNewUserConnected() {
+        this.userConnected.next(this.buildUserConnected());
+        console.log(this.userConnected);
+        this.formulaireConnexion.reset();
     }
 };
 FormConnectionComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], FormConnectionComponent.prototype, "userConnected", void 0);
 FormConnectionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-form-connection',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./form-connection.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-connection/form-connection.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./form-connection.component.css */ "./src/app/forms/form-connection/form-connection.component.css")).default]
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./form-connection.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-connection/dumb-form-connection/form-connection.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./form-connection.component.css */ "./src/app/forms/form-connection/dumb-form-connection/form-connection.component.css")).default]
     })
 ], FormConnectionComponent);
 
@@ -894,23 +997,95 @@ FormConnectionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/forms/form-inscription/form-inscription.component.css":
-/*!***********************************************************************!*\
-  !*** ./src/app/forms/form-inscription/form-inscription.component.css ***!
-  \***********************************************************************/
+/***/ "./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.css":
+/*!*************************************************************************************************!*\
+  !*** ./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.css ***!
+  \*************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0taW5zY3JpcHRpb24vZm9ybS1pbnNjcmlwdGlvbi5jb21wb25lbnQuY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0tY29ubmVjdGlvbi9zbWFydC1mb3JtLWNvbm5lY3Rpb24vc21hcnQtZm9ybS1jb25uZWN0aW9uLmNvbXBvbmVudC5jc3MifQ== */");
 
 /***/ }),
 
-/***/ "./src/app/forms/form-inscription/form-inscription.component.ts":
-/*!**********************************************************************!*\
-  !*** ./src/app/forms/form-inscription/form-inscription.component.ts ***!
-  \**********************************************************************/
+/***/ "./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.ts":
+/*!************************************************************************************************!*\
+  !*** ./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.ts ***!
+  \************************************************************************************************/
+/*! exports provided: SmartFormConnectionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SmartFormConnectionComponent", function() { return SmartFormConnectionComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _Utilisateur_utilisateur_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Utilisateur/utilisateur.service */ "./src/app/Utilisateur/utilisateur.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _Utilisateur_authenticateModel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Utilisateur/authenticateModel */ "./src/app/Utilisateur/authenticateModel.ts");
+
+
+
+
+
+let SmartFormConnectionComponent = class SmartFormConnectionComponent {
+    constructor(utilisateurService, http) {
+        this.utilisateurService = utilisateurService;
+        this.http = http;
+        this.subscriptions = [];
+        this._usersConnected = [];
+    }
+    ngOnInit() {
+    }
+    ngOnDestroy() {
+        for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+            const subscription = this.subscriptions[i];
+            //IF subscription EXISTE
+            subscription && subscription.unsubscribe();
+            this.subscriptions.pop();
+        }
+    }
+    createUserConnected($event) {
+        console.log($event);
+        const sub = this.utilisateurService.postAuth($event.toAuthenticateModelDto()).subscribe(authenticateModelDTO => this._usersConnected.push(new _Utilisateur_authenticateModel__WEBPACK_IMPORTED_MODULE_4__["authenticateModel"]().fromAuthenticateModelDto(authenticateModelDTO)));
+        this.subscriptions.push(sub);
+    }
+};
+SmartFormConnectionComponent.ctorParameters = () => [
+    { type: _Utilisateur_utilisateur_service__WEBPACK_IMPORTED_MODULE_2__["UtilisateurService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+];
+SmartFormConnectionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-smart-form-connection',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./smart-form-connection.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./smart-form-connection.component.css */ "./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.css")).default]
+    })
+], SmartFormConnectionComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.css":
+/*!*********************************************************************************************!*\
+  !*** ./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.css ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0taW5zY3JpcHRpb24vZHVtYi1mb3JtLWluc2NyaXB0aW9uL2Zvcm0taW5zY3JpcHRpb24uY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.ts":
+/*!********************************************************************************************!*\
+  !*** ./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.ts ***!
+  \********************************************************************************************/
 /*! exports provided: FormInscriptionComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -921,6 +1096,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _Utilisateur_Utilisateur__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Utilisateur/Utilisateur */ "./src/app/Utilisateur/Utilisateur.ts");
+/* harmony import */ var _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Adresse/Adresse */ "./src/app/Adresse/Adresse.ts");
+
+
 
 
 
@@ -941,12 +1120,11 @@ let FormInscriptionComponent = class FormInscriptionComponent {
             codePostal: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             ville: this.fb.control("", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
         });
+        this.userCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.adressCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     ngOnInit() {
         this.chargerVillesJSON();
-    }
-    alertME() {
-        console.log(this.formulaireInscription.controls.emailInscription.value);
     }
     verificationMotDePasse() {
         return this.formulaireInscription.controls.motDePasse.value === this.formulaireInscription.controls.verifMotDePasse.value;
@@ -965,18 +1143,128 @@ let FormInscriptionComponent = class FormInscriptionComponent {
     chargerVillesJSON() {
         console.log(this._villesJSON);
     }
+    emitNewUser() {
+        this.adressCreated.next(this.buildAdressUser());
+        this.userCreated.next(this.buildUser());
+        this.formulaireInscription.reset();
+    }
+    buildAdressUser() {
+        const adress = new _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_5__["Adresse"]();
+        adress.ville = this.formulaireInscription.get("ville").value;
+        adress.rue = this.formulaireInscription.get("rue").value;
+        adress.num = this.formulaireInscription.get("num").value;
+        adress.cp = this.formulaireInscription.get("codePostal").value;
+        return adress;
+    }
+    buildUser() {
+        const user = new _Utilisateur_Utilisateur__WEBPACK_IMPORTED_MODULE_4__["Utilisateur"]();
+        user.email = this.formulaireInscription.get("emailInscription").value;
+        user.nom = this.formulaireInscription.get("nom").value;
+        user.prenom = this.formulaireInscription.get("prenom").value;
+        user.hashpwd = this.formulaireInscription.get("motDePasse").value;
+        user.type = "0";
+        return user;
+    }
 };
 FormInscriptionComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], FormInscriptionComponent.prototype, "userCreated", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], FormInscriptionComponent.prototype, "adressCreated", void 0);
 FormInscriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-form-inscription',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./form-inscription.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-inscription/form-inscription.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./form-inscription.component.css */ "./src/app/forms/form-inscription/form-inscription.component.css")).default]
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./form-inscription.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./form-inscription.component.css */ "./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.css")).default]
     })
 ], FormInscriptionComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.css":
+/*!****************************************************************************************************!*\
+  !*** ./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.css ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0taW5zY3JpcHRpb24vc21hcnQtZm9ybS1pbnNjcmlwdGlvbi9zbWFydC1mb3JtLWluc2NyaXB0aW9uLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.ts":
+/*!***************************************************************************************************!*\
+  !*** ./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.ts ***!
+  \***************************************************************************************************/
+/*! exports provided: SmartFormInscriptionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SmartFormInscriptionComponent", function() { return SmartFormInscriptionComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _Utilisateur_utilisateur_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Utilisateur/utilisateur.service */ "./src/app/Utilisateur/utilisateur.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Adresse/Adresse */ "./src/app/Adresse/Adresse.ts");
+/* harmony import */ var _Utilisateur_Utilisateur__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Utilisateur/Utilisateur */ "./src/app/Utilisateur/Utilisateur.ts");
+/* harmony import */ var _Adresse_adresse_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Adresse/adresse.service */ "./src/app/Adresse/adresse.service.ts");
+
+
+
+
+
+
+
+let SmartFormInscriptionComponent = class SmartFormInscriptionComponent {
+    constructor(utilisateurService, adresseService, http) {
+        this.utilisateurService = utilisateurService;
+        this.adresseService = adresseService;
+        this.http = http;
+        this.subscriptions = [];
+        this._users = [];
+        this._adresses = [];
+    }
+    ngOnInit() {
+    }
+    ngOnDestroy() {
+        for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+            const subscription = this.subscriptions[i];
+            //IF subscription EXISTE
+            subscription && subscription.unsubscribe();
+            this.subscriptions.pop();
+        }
+    }
+    createAdressUser($event) {
+        const sub = this.adresseService.post($event.toAdresseDto()).subscribe(adresseDTO => this._adresses.push(new _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_4__["Adresse"]().fromAdresseDto(adresseDTO)));
+        this.subscriptions.push(sub);
+    }
+    createUser($event) {
+        const sub = this.utilisateurService.post($event.toUtilisateurDto()).subscribe(userDTO => this._users.push(new _Utilisateur_Utilisateur__WEBPACK_IMPORTED_MODULE_5__["Utilisateur"]().fromUtilisateurDto(userDTO)));
+        this.subscriptions.push(sub);
+    }
+};
+SmartFormInscriptionComponent.ctorParameters = () => [
+    { type: _Utilisateur_utilisateur_service__WEBPACK_IMPORTED_MODULE_2__["UtilisateurService"] },
+    { type: _Adresse_adresse_service__WEBPACK_IMPORTED_MODULE_6__["AdresseService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+];
+SmartFormInscriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-smart-form-inscription',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./smart-form-inscription.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./smart-form-inscription.component.css */ "./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.css")).default]
+    })
+], SmartFormInscriptionComponent);
 
 
 

@@ -16,18 +16,19 @@ namespace Cou_project.Services
     public interface IUtilisateurService
    
     {
-        Utilisateur Authenticate(string username, string password);
-        IEnumerable<Utilisateur> GetAll();
+        Utilisateur Authenticate(Utilisateur user);
+        //IEnumerable<Utilisateur> GetAll();
     }
 
     public class UtilisateurService : IUtilisateurService
    
     {
         // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-        private List<Utilisateur> _users = new List<Utilisateur>
+        /*private List<Utilisateur> _users = new List<Utilisateur>
         { 
-            new Utilisateur { Nom = "Test", Prenom = "Utilisateur", Pseudo = "test", Type = "test", Email = "test", Hashpwd = "test", Idadr = 0} 
-        };
+            new Utilisateur { Nom = "Test", Prenom = "Utilisateur", Pseudo = "test", Type = "test", Email = "test", Hashpwd = "test", Idadr = 0}
+            
+        };*/
 
         private readonly AppSettings _appSettings;
 
@@ -36,10 +37,9 @@ namespace Cou_project.Services
             _appSettings = appSettings.Value;
         }
 
-        public Utilisateur Authenticate(string username, string password)
+        //Passé un user en argument ! 
+        public Utilisateur Authenticate(Utilisateur user)
         {
-            var user = _users.SingleOrDefault(x => x.Pseudo == username && x.Hashpwd == password);
-
             // return null if user not found
             if (user == null)
                 return null;
@@ -62,9 +62,9 @@ namespace Cou_project.Services
             return user.WithoutPassword();
         }
 
-        public IEnumerable<Utilisateur> GetAll()
+        /*public IEnumerable<Utilisateur> GetAll()
         {
             return _users.WithoutPasswords();
-        }
+        }*/
     }
 }

@@ -1,10 +1,10 @@
 <div align="center">
   <h1>Formulaire Connexion</h1>
-  <form class="form-horizontal" [formGroup]="formulaireConnexion" (ngSubmit)="alertME()" role="form">
+  <form class="form-horizontal" [formGroup]="formulaireConnexion" (ngSubmit)="emitNewUserConnected()" role="form">
     <div class="form-group">
-      <label for="emailConnexion" class="col-sm-3 control-label">Email</label>
+      <label for="username" class="col-sm-3 control-label">Email</label>
       <div class="col-sm-6">
-        <input class="form-control" type="text" formControlName="emailConnexion" id="emailConnexion"/>
+        <input class="form-control" type="text" formControlName="username" id="username"/>
       </div>
     </div>
 

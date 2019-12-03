@@ -12,7 +12,7 @@ namespace Cou_project.Models
         public static readonly string SERVER_FRANCOIS = "DESKTOP-I1BQBCI";
         public static readonly string SERVER_ELIOT = "DESKTOP-DJGE66N";
 
-        private static readonly string CONNECTION_STRING = $"Server={SERVER_ELIOT};Database=cou_project;Integrated Security=SSPI;";
+        private static readonly string CONNECTION_STRING = $"Server={SERVER};Database=cou_project;Integrated Security=SSPI;";
 
         public static SqlConnection GetConnection()
         {

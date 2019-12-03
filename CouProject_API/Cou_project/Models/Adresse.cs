@@ -11,17 +11,14 @@ namespace Cou_project.Models
         public string Rue { get; set; }
         public int Num { get; set; }
         public int Cp { get; set; }
-        
-        public string Date { get; set; }
-        
-        public Adresse(int id, string ville, string rue, int num, int cp, string date)
+
+        public Adresse(int id, string ville, string rue, int num, int cp)
         {
             Id = id;
             Ville = ville;
             Rue = rue;
             Num = num;
             Cp = cp;
-            Date = date;
         }
 
         public Adresse()

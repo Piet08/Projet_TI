@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Utilisateur} from "../../../Utilisateur/Utilisateur";
+import {UtilisateurService} from "../../../Utilisateur/utilisateur.service";
+import {Adresse} from "../../../Adresse/Adresse";
 
 
 @Component({
@@ -26,16 +29,16 @@ export class FormInscriptionComponent implements OnInit {
     ville: this.fb.control("", Validators.required)
   });
 
+  @Output()
+  userCreated:EventEmitter<Utilisateur> = new EventEmitter<Utilisateur>();
+  @Output()
+  adressCreated:EventEmitter<Adresse> = new EventEmitter<Adresse>();
 
 
   constructor(public fb : FormBuilder, private http: HttpClient) {}
 
   ngOnInit() {
     this.chargerVillesJSON();
-  }
-
-  alertME() {
-      console.log(this.formulaireInscription.controls.emailInscription.value);
   }
 
   verificationMotDePasse(){
@@ -56,6 +59,34 @@ export class FormInscriptionComponent implements OnInit {
   chargerVillesJSON(){
       console.log(this._villesJSON);
   }
+
+  emitNewUser() {
+    this.adressCreated.next(this.buildAdressUser());
+    this.userCreated.next(this.buildUser());
+    this.formulaireInscription.reset();
+  }
+
+
+
+  private buildAdressUser():Adresse{
+    const adress = new Adresse();
+    adress.ville = this.formulaireInscription.get("ville").value;
+    adress.rue = this.formulaireInscription.get("rue").value;
+    adress.num = this.formulaireInscription.get("num").value;
+    adress.cp = this.formulaireInscription.get("codePostal").value;
+    return adress;
+  }
+
+  private buildUser():Utilisateur{
+    const user = new Utilisateur();
+    user.email = this.formulaireInscription.get("emailInscription").value;
+    user.nom = this.formulaireInscription.get("nom").value;
+    user.prenom = this.formulaireInscription.get("prenom").value;
+    user.hashpwd = this.formulaireInscription.get("motDePasse").value;
+    user.type = "0";
+    return user;
+  }
+
 
 
 }

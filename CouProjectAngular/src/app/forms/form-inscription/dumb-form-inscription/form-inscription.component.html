@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Formulaire inscription</h1>
-  <form class="form-horizontal" [formGroup] = "formulaireInscription" (ngSubmit)="alertME()" role="form">
+  <form class="form-horizontal" [formGroup] = "formulaireInscription" (ngSubmit)="emitNewUser()" role="form">
     <div class="form-group">
       <label for="emailInscription" class="col-sm-3 control-label">Email</label>
       <div class="col-sm-6">

@@ -36,12 +36,37 @@ namespace Cou_project.DAO
         private static readonly string REQ_UPDATE = String.Format("UPDATE {0} SET {1} = @{1}, {2} = @{2} WHERE {3} = @{3}",
             TABLE_NAME, FIELD_NOM, FIELD_PRENOM, FIELD_ID);
 
+        //AUTHENTIFICATION
+        private static readonly string REQ_POST_AUTH =
+            $"SELECT * FROM {TABLE_NAME} WHERE {FIELD_PSEUDO} = @{FIELD_PSEUDO} AND {FIELD_HASHPWD} = @{FIELD_HASHPWD}";
+        
         //FAVORIS
         private static readonly string REQ_QUERY_FAVORIS = $"SELECT * FROM {TABLE_FAVORIS}";
         //Pas de String.format() sinon Exception vue qu'il n'y a que du int a insérer
         private static readonly string RED_POST_FAVORIS = $"INSERT INTO {TABLE_FAVORIS}({FIELD_IDUTIL}, {FIELD_IDLIEU}) VALUES (@{FIELD_IDUTIL}, @{FIELD_IDLIEU})";
         private static readonly string REQ_DELETE_FAVORIS = $"DELETE FROM {TABLE_FAVORIS} WHERE {FIELD_IDUTIL} = @{FIELD_IDUTIL} AND {FIELD_IDLIEU} = @{FIELD_IDLIEU}";
 
+        
+        
+        public static Utilisateur QueryAuth(AuthenticateModel model)
+        {
+            using (var connection = DataBase.GetConnection())
+            {
+                
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_POST_AUTH;
+
+                command.Parameters.AddWithValue($"@{FIELD_PSEUDO}", model.Username);
+                command.Parameters.AddWithValue($"@{FIELD_HASHPWD}", model.Password);
+                
+                SqlDataReader reader = command.ExecuteReader();
+
+                return reader.Read() ? new Utilisateur(reader) : null;
+            }
+        }
+        
+        
         public static IEnumerable<Utilisateur> Query()
         {
             List<Utilisateur> utilisateurs = new List<Utilisateur>();

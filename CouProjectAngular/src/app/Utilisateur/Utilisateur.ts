@@ -1,5 +1,4 @@
 import {UtilisateurDto} from './Utilisateur-dto';
-import {LieuDto} from '../views/lieu/Lieu-dto';
 
 export declare type UtilisateurList = Utilisateur[];
 
@@ -14,7 +13,7 @@ export class Utilisateur {
   private _idadr: number;
   private _token: string;
 
-  constructor(id: number = -1, nom: string = '', prenom: string='', pseudo: string='', type: string='', email: string='', hashpwd: string='', idadr: number=-1, token: string='') {
+  constructor(id: number = -1, nom: string = '', prenom: string='', pseudo: string='', type: string='', email: string='', hashpwd: string='', idadr: number=-1) {
     this._id = id;
     this._nom = nom;
     this._prenom = prenom;
@@ -23,8 +22,6 @@ export class Utilisateur {
     this._email = email;
     this._hashpwd = hashpwd;
     this._idadr = idadr;
-    // A voir si il faut l'instancier ici
-    this._token = token;
   }
   get id(): number {
     return this._id;
