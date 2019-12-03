@@ -17,6 +17,7 @@ import { DetailReviewComponent } from './views/comment/detail-review/detail-revi
 import { FormPlaceComponent } from './forms/form-place/form-place.component';
 import { SmartFormPlaceComponent } from './forms/smart-form-place/smart-form-place.component';
 import { FormReviewComponent } from './forms/form-review/form-review.component';
+import { SmartFormReviewComponent } from './forms/smart-form-review/smart-form-review.component';
 
 // path = le nom du controller de l'api en fonction de ce que l'on veut faire
 // component : celui que l'on souhaite afficher
@@ -43,7 +44,8 @@ const routes: Routes = [
     DetailReviewComponent,
     FormPlaceComponent,
     SmartFormPlaceComponent,
-    FormReviewComponent
+    FormReviewComponent,
+    SmartFormReviewComponent
   ],
   imports: [
     BrowserModule,

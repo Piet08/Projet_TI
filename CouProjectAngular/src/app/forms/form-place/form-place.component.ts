@@ -3,9 +3,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {EnumTypeLieu} from '../../EnumTypeLieu';
 import {Place} from '../../views/lieu/place';
 import {Address} from '../../Address/address';
-import {PlaceService} from '../../views/lieu/place.service';
-import {Subscription} from 'rxjs';
-import {AddressService} from '../../Address/address.service';
 import {PlaceAndAddressDto} from '../../views/lieu/place-dto';
 
 @Component({
@@ -33,7 +30,6 @@ export class FormPlaceComponent implements OnInit {
     })
   })
 
-  private subscriptions: Subscription[] = [];
   constructor(public fb:FormBuilder) { }
 
   ngOnInit() {
@@ -41,21 +37,21 @@ export class FormPlaceComponent implements OnInit {
 
   buildPlaceAndAddressDto(){
     const place = {
-      place : this.buildLieu().toLieuDto(),
-      address : this.buildAdresse().toAdresseDto()
+      place : this.buildPlace().toLieuDto(),
+      address : this.buildAddress().toAdresseDto()
     }
     return place;
   }
 
-  buildLieu(){
-    const lieu = new Place();
-    lieu.name = this.formLieu.get("name").value;
-    lieu.type = this.formLieu.get("type").value;
-    lieu.description = this.formLieu.get("description").value;
-    return lieu;
+  buildPlace(){
+    const place = new Place();
+    place.name = this.formLieu.get("name").value;
+    place.type = this.formLieu.get("type").value;
+    place.description = this.formLieu.get("description").value;
+    return place;
   }
 
-  buildAdresse(){
+  buildAddress(){
     const address = new Address();
     address.city = this.formLieu.get("address.city").value;
     address.straat = this.formLieu.get("address.straat").value;

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Cou_project.DAO;
 using Cou_project.Models;
+using Cou_project.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cou_project.Controllers
@@ -9,18 +10,28 @@ namespace Cou_project.Controllers
     [Route("/api/[controller]")]
     public class ReviewController : ControllerBase
     {
+        private ReviewService _reviewService = new ReviewService();
+            
         [HttpGet]
         public ActionResult<IEnumerable<Review>> Query()
         {
             return Ok(ReviewDAO.Query());
         }
 
-        [HttpGet("{id}")]
+//        [HttpGet("reviewAndUser/{id}")]
+//        public ActionResult<ReviewAndUser> GetReviewAndUser(int id)
+//        {
+//            
+//        }
+        
+        // api/places/8/reviews
+        
+        [HttpGet("place/{id}")]
         public ActionResult<IEnumerable<Review>> GetAvisByLieu(int id)
         {
-            IEnumerable<Review> aviss = ReviewDAO.GetAvisByPlace(id);
-            return aviss != null
-                ? (ActionResult<IEnumerable<Review>>) Ok(aviss)
+            IEnumerable<Review> reviews = ReviewDAO.GetAvisByPlace(id);
+            return reviews != null
+                ? (ActionResult<IEnumerable<Review>>) Ok(reviews)
                 : NotFound("This lieu does not exists !");
         }
         

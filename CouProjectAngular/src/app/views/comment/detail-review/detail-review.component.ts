@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Review} from '../review';
 import {User} from '../../../User/user';
 import {UserService} from '../../../User/user.service';
@@ -9,35 +9,43 @@ import {Subscription} from 'rxjs';
   templateUrl: './detail-review.component.html',
   styleUrls: ['./detail-review.component.css']
 })
-export class DetailReviewComponent implements OnInit {
-  private _avis:Review;
-  private _utilisateur:User = new User();
+export class DetailReviewComponent implements OnInit,OnDestroy{
+  private _review:Review;
+  private _user:User = new User();
   private subscriptions: Subscription[] = [];
   constructor(public utilService:UserService) { }
-d
+
   ngOnInit() {
   }
 
-  get avis(): Review {
-    return this._avis;
+  ngOnDestroy(): void {
+    for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+      const subscription = this.subscriptions[i];
+      subscription && subscription.unsubscribe();
+      this.subscriptions.pop();
+    }
+  }
+
+  get review(): Review {
+    return this._review;
   }
 
   @Input()
-  set avis(value: Review) {
-    this._avis = value;
-    this.updateUtilisateur(this._avis.idUser);
+  set review(value: Review) {
+    this._review = value;
+    this.getUser(this._review.idUser);
   }
 
-  get utilisateur(): User {
-    return this._utilisateur;
+  get user(): User {
+    return this._user;
   }
 
-  set utilisateur(value: User) {
-    this._utilisateur = value;
+  set user(value: User) {
+    this._user = value;
   }
 
-  private updateUtilisateur(idutil: number) {
-    const sub = this.utilService.get(idutil).subscribe(user => this._utilisateur = new User().fromUtilisateurDto(user));
+  private getUser(idutil: number) {
+    const sub = this.utilService.get(idutil).subscribe(user => this._user = new User().fromUtilisateurDto(user));
     this.subscriptions.push(sub);
   }
 }

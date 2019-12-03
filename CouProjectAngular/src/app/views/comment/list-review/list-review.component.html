@@ -1,9 +1,8 @@
-<ul style="list-style: none;" *ngFor="let avis of listAvis">
+<ul style="list-style: none;" *ngFor="let review of listReview">
   <li>
-    <app-detail-comment [avis]="avis"></app-detail-comment>
+<!--    A MODIFIER EN DUMP => INJECTION D'USER EN + OU CREER UN MODELE ReviewAndUse-->
+    <app-detail-comment [review]="review"></app-detail-comment>
   </li>
 </ul>
 
-<div>
-  <app-form-review></app-form-review>
-</div>
+

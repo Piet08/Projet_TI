@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {PlaceDto, PlaceAndAddressDto} from './place-dto';
-import {Place} from './place';
 
-const URL_API:string = "/api/Place";
+const URL_API:string = "/api/place";
 
 @Injectable({
   providedIn: 'root'
