@@ -17,6 +17,13 @@ import { DetailCommentComponent } from './views/comment/detail-comment/detail-co
 import { FormLieuComponent } from './forms/form-lieu/form-lieu.component';
 import {SmartFormInscriptionComponent} from "./forms/form-inscription/smart-form-inscription/smart-form-inscription.component";
 import {SmartFormConnectionComponent} from "./forms/form-connection/smart-form-connection/smart-form-connection.component";
+import { ListPlaceComponent } from './views/lieu/list-place/list-place.component';
+import { SinglePlaceComponent } from './views/lieu/single-place/single-place.component';
+import { DetailPlaceComponent } from './views/lieu/detail-place/detail-place.component';
+import { ListReviewComponent } from './views/comment/list-review/list-review.component';
+import { DetailReviewComponent } from './views/comment/detail-review/detail-review.component';
+import { FormPlaceComponent } from './forms/form-place/form-place.component';
+import { SmartFormPlaceComponent } from './forms/smart-form-place/smart-form-place.component';
 
 // path = le nom du controller de l'api en fonction de ce que l'on veut faire
 // component : celui que l'on souhaite afficher
@@ -28,7 +35,14 @@ const routes: Routes = [
   {path: 'lieux/:id', component:DetailLieuComponent},
   {path: 'forms/lieux', component:FormLieuComponent},
   {path: '',component:ListLieuComponent}
+  {path: 'authenticate', component:FormConnectionComponent},
+  {path: 'User', component:FormInscriptionComponent},
+  {path: 'lieux', component:ListPlaceComponent},
+  {path: 'lieux/:id', component:DetailPlaceComponent},
+  {path: 'forms/lieux', component:SmartFormPlaceComponent},
+  {path: '',component:ListPlaceComponent}
 ];
+
 
 @NgModule({
   declarations: [
@@ -43,6 +57,13 @@ const routes: Routes = [
     FormLieuComponent,
     SmartFormInscriptionComponent,
     SmartFormConnectionComponent
+    ListPlaceComponent,
+    SinglePlaceComponent,
+    DetailPlaceComponent,
+    ListReviewComponent,
+    DetailReviewComponent,
+    FormPlaceComponent,
+    SmartFormPlaceComponent
   ],
   imports: [
     BrowserModule,

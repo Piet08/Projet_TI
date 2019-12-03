@@ -1,0 +1,11 @@
+<div class="offset-3 col-8">
+  <ul style="list-style: none;">
+    <li *ngFor="let place of places">
+      <app-single-place [place]="place"></app-single-place>
+    </li>
+  </ul>
+
+  <div class="text-center">
+    <button class="btn btn-info" (click)="navigateToFormAddLieu()">Ajouter lieu</button>
+  </div>
+</div>
