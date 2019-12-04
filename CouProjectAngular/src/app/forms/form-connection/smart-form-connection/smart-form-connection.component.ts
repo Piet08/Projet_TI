@@ -30,7 +30,8 @@ export class SmartFormConnectionComponent implements OnInit, OnDestroy {
 
   createUserConnected($event: authenticateModel) {
     //console.log($event);
-    const sub = this.userService.postAuth($event.toAuthenticateModelDto()).subscribe( authenticateModelDTO => this._usersConnected.push(new authenticateModel().fromAuthenticateModelDto(authenticateModelDTO)));
+    const sub = this.userService.postAuth($event.toAuthenticateModelDto()).subscribe(
+      authenticateModelDTO => this._usersConnected.push(new authenticateModel().fromAuthenticateModelDto(authenticateModelDTO)));
     this.subscriptions.push(sub);
   }
 }

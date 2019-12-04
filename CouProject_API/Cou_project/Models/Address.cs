@@ -12,16 +12,14 @@ namespace Cou_project.Models
         public int Num { get; set; }
         public int PostalCode { get; set; }
         
-        public string Date { get; set; }
         
-        public Address(int id, string city, string straat, int num, int postalCode, string date)
+        public Address(int id, string city, string straat, int num, int postalCode)
         {
             Id = id;
             City = city;
             Straat = straat;
             Num = num;
             PostalCode = postalCode;
-            Date = date;
         }
 
         public Address()

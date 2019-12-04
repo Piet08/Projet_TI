@@ -14,9 +14,7 @@ namespace Cou_project.DAO
         public static readonly string FIELD_STRAAT = "rue";
         public static readonly string FIELD_NUM = "num";
         public static readonly string FIELD_POSTALCODE = "cp";
-        
-        //J'ai fais toutes les requêtes, quitte à en supp quelques une qui ne nous seront pas utiles, à voir plus tard ! 
-        
+
         private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME}";
         
         private static readonly string RED_POST = String.Format(
