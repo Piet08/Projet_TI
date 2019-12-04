@@ -1,17 +1,19 @@
-<div class="col-12">
+
+<div class="col-12" algin="center">
+  <h1 align="center"><b>Formulaire d'ajout de lieu</b></h1>
   <form class="" [formGroup]="formLieu" (ngSubmit)="emitNewLieu()">
     <div class="form-group form-inline raw">
-      <label for="nom" class="col-6 ">Nom :</label>
-      <input type="text" class="form-control col-6" id="nom" name="nom" formControlName="nom">
+      <label for="name" class="col-4">Nom :</label>
+      <input type="text" class="form-control col-6" id="name" name="name" formControlName="name">
     </div>
     <div class="form-group form-inline raw">
-      <label for="type" class="col-6 ">Type :</label>
+      <label for="type" class="col-4 ">Type :</label>
       <select id="type" name="type" formControlName="type" class="form-control col-6">
         <option class="form-control" *ngFor="let type of typeLieu" value="{{type}}">{{type}}</option>
       </select>
     </div>
     <div class="form-group form-inline raw">
-      <label for="description" class="col-6 ">Description :</label>
+      <label for="description" class="col-4 ">Description :</label>
       <textarea rows="5" cols="30" class="form-control col-6" id="description" name="description" formControlName="description">
 
       </textarea>
@@ -19,24 +21,24 @@
 
     <div formGroupName="address">
       <div class="form-group form-inline raw">
-        <label for="rue" class="col-6 ">Rue :</label>
-        <input type="text" class="form-control col-6" id="rue" name="rue" formControlName="rue">
+        <label for="straat" class="col-4 ">Rue :</label>
+        <input type="text" class="form-control col-6" id="straat" name="straat" formControlName="straat">
       </div>
       <div class="form-group form-inline raw">
-        <label for="num" class="col-6 ">Numéro :</label>
+        <label for="num" class="col-4 ">Numéro :</label>
         <input type="number" class="form-control col-6" id="num" name="num" formControlName="num">
       </div>
       <div class="form-group form-inline raw">
-        <label for="cp" class="col-6 ">Code Postal :</label>
-        <input type="number" class="form-control col-6" id="cp" name="cp" formControlName="cp">
+        <label for="postalCode" class="col-4 ">Code Postal :</label>
+        <input type="number" class="form-control col-6" id="postalCode" name="postalCode" formControlName="postalCode">
       </div>
       <div class="form-group form-inline raw">
-        <label for="ville" class="col-6 ">Ville :</label>
-        <input type="text" class="form-control col-6" id="ville" name="ville" formControlName="ville">
+        <label for="city" class="col-4 ">Ville :</label>
+        <input type="text" class="form-control col-6" id="city" name="city" formControlName="city">
       </div>
     </div>
-    <div class="text-right">
-      <input type="submit" class="btn btn-primary btn-success" [disabled]="!formLieu.valid">
+    <div class="text-center" size="50px">
+      <input type="submit" class="btn btn-primary btn-success" >
     </div>
   </form>
 </div>
