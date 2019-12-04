@@ -24,8 +24,12 @@ import { FormPlaceComponent } from './forms/form-place/form-place.component';
 import { SmartFormPlaceComponent } from './forms/smart-form-place/smart-form-place.component';
 import { FormReviewComponent } from './forms/form-review/form-review.component';
 import { SmartFormReviewComponent } from './forms/smart-form-review/smart-form-review.component';
+
 import { DumpMapComponent } from './map/dump-map/dump-map.component';
 import { SmartMapComponent } from './map/smart-map/smart-map.component';
+
+import { HomeComponent } from './views/home/home.component';
+
 
 // path = le nom du controller de l'api en fonction de ce que l'on veut faire
 // component : celui que l'on souhaite afficher
@@ -36,7 +40,11 @@ const routes: Routes = [
   {path: 'lieux', component:ListPlaceComponent},
   {path: 'lieux/:id', component:DetailPlaceComponent},
   {path: 'forms/lieux', component:SmartFormPlaceComponent},
+
   {path: 'Address', component:SmartMapComponent}
+
+  {path: 'home', component:HomeComponent}
+
 ];
 
 
@@ -58,8 +66,12 @@ const routes: Routes = [
     SmartFormPlaceComponent,
     FormReviewComponent,
     SmartFormReviewComponent,
+
     DumpMapComponent,
     SmartMapComponent
+
+    HomeComponent
+
   ],
   imports: [
     BrowserModule,

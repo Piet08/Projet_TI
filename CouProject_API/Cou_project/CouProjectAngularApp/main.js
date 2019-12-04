@@ -32,7 +32,11 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+
 /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div>\r\n      <h1>{{title}}</h1>\r\n  </div>\r\n</div>\r\n<!--<app-map [addressList]=\"addressList\"></app-map>\r\n<app-list-adress [addressList]=\"addressList\"></app-list-adress>-->\r\n\r\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User/authenticate\" class=\"nav-link\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n<!--<nav class=\"nnavbar navbar-expand-lg navbar-light bg-light\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\">Menu</a>\r\n    </div>\r\n    <div class=\"navbar-collapse\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <li routerLinkActive=\"active\"><a routerLink=\"lieux\">Lieux</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"forms/lieux\">Ajouter Place</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"authenticate\">Connexion</a></li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"User\">Inscription</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>-->\r\n\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"row\">\r\n  <div class=\"col-sm-8\" style=\"background-color:lavender;\">\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n  <div class=\"col-sm-4\">\r\n    <!--Pourquoi pas metter les Lieux les plus notés ??-->\r\n  </div>\r\n</div>\r\n");
+
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User/authenticate\" class=\"nav-link\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n      <router-outlet></router-outlet>\r\n</div>\r\n\r\n");
+
 
 /***/ }),
 
@@ -45,7 +49,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1>Formulaire Connexion</h1>\r\n  <form class=\"form-horizontal\" [formGroup]=\"formulaireConnexion\" (ngSubmit)=\"emitNewUserConnected()\" role=\"form\">\r\n    <div class=\"form-group\">\r\n      <label for=\"username\" class=\"col-sm-3 control-label\">Login</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type=\"text\" formControlName=\"username\" id=\"username\"/>\r\n      </div>\r\n    </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"motDePasseConnexion\" class=\"col-sm-3 control-label\">Mot de passe</label>\r\n        <div class=\"col-sm-6\">\r\n          <input class=\"form-control\" type = \"password\" formControlName=\"motDePasseConnexion\" id=\"motDePasseConnexion\"/>\r\n        </div>\r\n      </div>\r\n\r\n    <input type=\"submit\" value=\"Se connecter\" class=\"btn btn-primary col-sm-offset-3\" [disabled]=\"verificationFormulaire()\"/>\r\n  </form>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1><b>Formulaire Connexion</b></h1>\r\n  <form class=\"form-horizontal\" [formGroup]=\"formulaireConnexion\" (ngSubmit)=\"emitNewUserConnected()\" role=\"form\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"username\" class=\"col-4\">Login</label>\r\n      <input class=\" form-control col-6\" type=\"text\" formControlName=\"username\" id=\"username\"/>\r\n    </div>\r\n\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"motDePasseConnexion\" class=\"col-4\">Mot de passe</label>\r\n        <input class=\" form-control col-6\" type = \"password\" formControlName=\"motDePasseConnexion\" id=\"motDePasseConnexion\"/>\r\n      </div>\r\n\r\n    <input type=\"submit\" value=\"Se connecter\" class=\"btn btn-primary col-sm-offset-3\" [disabled]=\"verificationFormulaire()\"/>\r\n  </form>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -71,7 +75,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1>Formulaire inscription</h1>\r\n  <form class=\"form-horizontal\" [formGroup] = \"formulaireInscription\" (ngSubmit)=\"emitNewUser()\" role=\"form\">\r\n    <div class=\"form-group\">\r\n      <label for=\"emailInscription\" class=\"col-sm-3 control-label\">Email</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type=\"text\" formControlName=\"emailInscription\" id=\"emailInscription\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"nom\" class=\"col-sm-3 control-label\">Nom</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"text\" formControlName=\"nom\" id=\"nom\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"prenom\" class=\"col-sm-3 control-label\">Prenom</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"text\" formControlName=\"prenom\" id=\"prenom\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"pseudo\" class=\"col-sm-3 control-label\">Pseudo</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"text\" formControlName=\"pseudo\" id=\"pseudo\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"motDePasseInscription\" class=\"col-sm-3 control-label\">Mot de passe</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"password\" formControlName=\"motDePasseInscription\" id=\"motDePasseInscription\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label for=\"verifMotDePasse\" class=\"col-sm-3 control-label\">Vérification mot de passe</label>\r\n      <div class=\"col-sm-6\">\r\n        <input class=\"form-control\" type =\"password\" formControlName=\"verifMotDePasse\" id=\"verifMotDePasse\"/>\r\n       <!-- <span *ngIf=\"!verificationMotDePasse()\">Erreur, mauvais mot de passe</span> -->\r\n      </div>\r\n    </div>\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"straat\" class=\"col-6 \">Rue :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-6 \">Numéro :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"postalCode\" class=\"col-6 \">Code Postal :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"city\" class=\"col-6 \">Ville :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <input class=\"btn btn-primary col-sm-offset-3\" type=\"submit\" value=\"S'inscrire\" id=\"btnInscription\"/>  <!--[disabled]=\"verificationFormulaire()\"-->\r\n  </form>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1><b>Formulaire inscription</b></h1>\r\n  <form class=\"form-horizontal\" [formGroup] = \"formulaireInscription\" (ngSubmit)=\"emitNewUser()\" role=\"form\">\r\n    <div class=\"form-group  form-inline raw\">\r\n      <label for=\"emailInscription\" class=\"col-4\">Email</label>\r\n      <input type=\"text\" class=\" form-control col-6\"  formControlName=\"emailInscription\" id=\"emailInscription\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"nom\" class=\"col-4\">Nom</label>\r\n      <input class=\"form-control\" type =\"text\" class=\"form-control col-6\" formControlName=\"nom\" id=\"nom\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"prenom\" class=\"col-4\">Prenom</label>\r\n      <input class=\"form-control\" type =\"text\"  class=\"form-control col-6\" formControlName=\"prenom\" id=\"prenom\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"pseudo\" class=\"col-4\">Pseudo</label>\r\n      <input class=\"form-control\" type =\"text\" class=\"form-control col-6\"  formControlName=\"pseudo\" id=\"pseudo\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"motDePasseInscription\" class=\"col-4\">Mot de passe</label>\r\n      <input class=\"form-control\" type =\"password\" class=\"form-control col-6\"  formControlName=\"motDePasseInscription\" id=\"motDePasseInscription\"/>\r\n    </div>\r\n    <div class=\"form-group  form-inline raw\">\r\n      <label for=\"verifMotDePasse\" class=\"col-4\">Vérification mot de passe</label>\r\n      <input class=\"form-control\" type =\"password\"  class=\"form-control col-6\"  formControlName=\"verifMotDePasse\" id=\"verifMotDePasse\"/>\r\n       <!-- <span *ngIf=\"!verificationMotDePasse()\">Erreur, mauvais mot de passe</span> -->\r\n    </div>\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"straat\" class=\"col-4 \">Rue </label>\r\n        <input type=\"text\" class=\"form-control col-6\"  id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-4\">Numéro </label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"postalCode\" class=\"col-4 \">Code Postal </label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"city\" class=\"col-4 \">Ville </label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <input class=\"btn btn-primary col-sm-offset-3\" type=\"submit\" value=\"S'inscrire\" id=\"btnInscription\"/>  <!--[disabled]=\"verificationFormulaire()\"-->\r\n  </form>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -97,7 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"col-12\">\r\n  <form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"nom\" class=\"col-6 \">Nom :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"nom\" name=\"nom\" formControlName=\"nom\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"type\" class=\"col-6 \">Type :</label>\r\n      <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control col-6\">\r\n        <option class=\"form-control\" *ngFor=\"let type of typeLieu\" value=\"{{type}}\">{{type}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"description\" class=\"col-6 \">Description :</label>\r\n      <textarea rows=\"5\" cols=\"30\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n\r\n      </textarea>\r\n    </div>\r\n\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"rue\" class=\"col-6 \">Rue :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"rue\" name=\"rue\" formControlName=\"rue\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-6 \">Numéro :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"cp\" class=\"col-6 \">Code Postal :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"cp\" name=\"cp\" formControlName=\"cp\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"ville\" class=\"col-6 \">Ville :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"ville\" name=\"ville\" formControlName=\"ville\">\r\n      </div>\r\n    </div>\r\n    <div class=\"text-right\">\r\n      <input type=\"submit\" class=\"btn btn-primary btn-success\" [disabled]=\"!formLieu.valid\">\r\n    </div>\r\n  </form>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<div class=\"col-12\" algin=\"center\">\r\n  <h1 align=\"center\"><b>Formulaire d'ajout de lieu</b></h1>\r\n  <form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"name\" class=\"col-4\">Nom :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"name\" name=\"name\" formControlName=\"name\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"type\" class=\"col-4 \">Type :</label>\r\n      <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control col-6\">\r\n        <option class=\"form-control\" *ngFor=\"let type of typeLieu\" value=\"{{type}}\">{{type}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"description\" class=\"col-4 \">Description :</label>\r\n      <textarea rows=\"5\" cols=\"30\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n\r\n      </textarea>\r\n    </div>\r\n\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"straat\" class=\"col-4 \">Rue :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-4 \">Numéro :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"postalCode\" class=\"col-4 \">Code Postal :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"city\" class=\"col-4 \">Ville :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <div class=\"text-center\" size=\"50px\">\r\n      <input type=\"submit\" class=\"btn btn-primary btn-success\" >\r\n    </div>\r\n  </form>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -218,6 +222,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/home/home.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/home/home.component.html ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\" id=\"header\">\n  <h2 class=\"display-3\">Cou ? </h2>\n  <p class=\"lead\">New student in Mons ? Find all you need here ! </p>\n  <hr class=\"my-4\">\n  <p>With an account, you can find all place you need and create a favorite's list place !<br>\n  You can make the difference with a rating/comments system ! Don't wait, join our community !</p>\n</div>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/detail-place/detail-place.component.html":
 /*!***********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/detail-place/detail-place.component.html ***!
@@ -240,7 +257,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"offset-3 col-8\">\r\n  <ul style=\"list-style: none;\">\r\n    <li *ngFor=\"let place of places\">\r\n      <app-single-place [place]=\"place\"></app-single-place>\r\n    </li>\r\n  </ul>\r\n\r\n  <div class=\"text-center\">\r\n    <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container container-fluid\">\r\n  <ul style=\"list-style: none;\">\r\n    <li *ngFor=\"let place of places\">\r\n      <app-single-place [place]=\"place\"></app-single-place>\r\n    </li>\r\n  </ul>\r\n\r\n  <div class=\"container\" align=\"center\">\r\n    <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -903,7 +920,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".title{\r\n  font-size: 45px;\r\n  text-align: center;\r\n  border: black;\r\n  border-style: groove;\r\n  background-color: #99541f;\r\n}\r\n.navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixvQkFBb0I7RUFDcEIseUJBQXlCO0FBQzNCO0FBQ0E7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsZUFBZTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRpdGxle1xyXG4gIGZvbnQtc2l6ZTogNDVweDtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgYm9yZGVyOiBibGFjaztcclxuICBib3JkZXItc3R5bGU6IGdyb292ZTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjOTk1NDFmO1xyXG59XHJcbi5uYXZiYXJ7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGZvbnQtc2l6ZSA6IDE4cHg7XHJcbn1cclxuLm5hYmFyLW5hdntcclxuICB3aWR0aCA6IDMwMHB4O1xyXG59XHJcbi5jb250YWN0e1xyXG4gIGhlaWdodDogMTAwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogZGltZ3JheTtcclxuICBmb250LXNpemU6IDM1cHg7XHJcbn1cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.nav-link{\r\n  font-size: 18px;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n#displayComp{\r\n  background-color: lavender;\r\n}\r\n#header {\r\n\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtFQUNFLGVBQWU7QUFDakI7QUFDQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsMEJBQTBCO0FBQzVCO0FBQ0E7O0FBRUEiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZiYXJ7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGZvbnQtc2l6ZSA6IDE4cHg7XHJcbn1cclxuLm5hYmFyLW5hdntcclxuICB3aWR0aCA6IDMwMHB4O1xyXG59XHJcbi5uYXYtbGlua3tcclxuICBmb250LXNpemU6IDE4cHg7XHJcbn1cclxuLmNvbnRhY3R7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkaW1ncmF5O1xyXG4gIGZvbnQtc2l6ZTogMzVweDtcclxufVxyXG4jZGlzcGxheUNvbXB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbGF2ZW5kZXI7XHJcbn1cclxuI2hlYWRlciB7XHJcblxyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -984,6 +1001,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _forms_form_inscription_dumb_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/form-inscription/dumb-form-inscription/form-inscription.component */ "./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
 /* harmony import */ var _map_map_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./map/map.component */ "./src/app/map/map.component.ts");
 /* harmony import */ var _list_adress_list_adress_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./list-adress/list-adress.component */ "./src/app/list-adress/list-adress.component.ts");
@@ -1001,10 +1019,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./forms/smart-form-review/smart-form-review.component */ "./src/app/forms/smart-form-review/smart-form-review.component.ts");
 /* harmony import */ var _map_dump_map_dump_map_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./map/dump-map/dump-map.component */ "./src/app/map/dump-map/dump-map.component.ts");
 /* harmony import */ var _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./map/smart-map/smart-map.component */ "./src/app/map/smart-map/smart-map.component.ts");
-
-
-
-
+/* harmony import */ var _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./forms/form-inscription/smart-form-inscription/smart-form-inscription.component */ "./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.ts");
+/* harmony import */ var _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./forms/form-connection/smart-form-connection/smart-form-connection.component */ "./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.ts");
+/* harmony import */ var _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/lieu/list-place/list-place.component */ "./src/app/views/lieu/list-place/list-place.component.ts");
+/* harmony import */ var _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/lieu/single-place/single-place.component */ "./src/app/views/lieu/single-place/single-place.component.ts");
+/* harmony import */ var _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/lieu/detail-place/detail-place.component */ "./src/app/views/lieu/detail-place/detail-place.component.ts");
+/* harmony import */ var _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/comment/list-review/list-review.component */ "./src/app/views/comment/list-review/list-review.component.ts");
+/* harmony import */ var _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/comment/detail-review/detail-review.component */ "./src/app/views/comment/detail-review/detail-review.component.ts");
+/* harmony import */ var _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./forms/form-place/form-place.component */ "./src/app/forms/form-place/form-place.component.ts");
+/* harmony import */ var _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./forms/smart-form-place/smart-form-place.component */ "./src/app/forms/smart-form-place/smart-form-place.component.ts");
+/* harmony import */ var _forms_form_review_form_review_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./forms/form-review/form-review.component */ "./src/app/forms/form-review/form-review.component.ts");
+/* harmony import */ var _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./forms/smart-form-review/smart-form-review.component */ "./src/app/forms/smart-form-review/smart-form-review.component.ts");
+/* harmony import */ var _views_home_home_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./views/home/home.component */ "./src/app/views/home/home.component.ts");
 
 
 
@@ -1039,6 +1065,13 @@ const routes = [
     { path: 'lieux/:id', component: _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_19__["DetailPlaceComponent"] },
     { path: 'forms/lieux', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_23__["SmartFormPlaceComponent"] },
     { path: 'Address', component: _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_27__["SmartMapComponent"] }
+    { path: 'User/authenticate', component: _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_12__["SmartFormConnectionComponent"] },
+    { path: 'User', component: _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_11__["SmartFormInscriptionComponent"] },
+    { path: 'lieux', component: _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_13__["ListPlaceComponent"] },
+    { path: 'lieux/:id', component: _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_15__["DetailPlaceComponent"] },
+    { path: 'forms/lieux', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_19__["SmartFormPlaceComponent"] },
+    { path: 'home', component: _views_home_home_component__WEBPACK_IMPORTED_MODULE_22__["HomeComponent"] }
+
 ];
 let AppModule = class AppModule {
 };
@@ -1063,6 +1096,18 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_25__["SmartFormReviewComponent"],
             _map_dump_map_dump_map_component__WEBPACK_IMPORTED_MODULE_26__["DumpMapComponent"],
             _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_27__["SmartMapComponent"]
+            _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_11__["SmartFormInscriptionComponent"],
+            _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_12__["SmartFormConnectionComponent"],
+            _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_13__["ListPlaceComponent"],
+            _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_14__["SinglePlaceComponent"],
+            _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_15__["DetailPlaceComponent"],
+            _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_16__["ListReviewComponent"],
+            _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_17__["DetailReviewComponent"],
+            _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_18__["FormPlaceComponent"],
+            _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_19__["SmartFormPlaceComponent"],
+            _forms_form_review_form_review_component__WEBPACK_IMPORTED_MODULE_20__["FormReviewComponent"],
+            _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_21__["SmartFormReviewComponent"],
+            _views_home_home_component__WEBPACK_IMPORTED_MODULE_22__["HomeComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1093,7 +1138,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0tY29ubmVjdGlvbi9kdW1iLWZvcm0tY29ubmVjdGlvbi9mb3JtLWNvbm5lY3Rpb24uY29tcG9uZW50LmNzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = (".col-4{\r\n  font-size: 25px;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9ybXMvZm9ybS1jb25uZWN0aW9uL2R1bWItZm9ybS1jb25uZWN0aW9uL2Zvcm0tY29ubmVjdGlvbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0tY29ubmVjdGlvbi9kdW1iLWZvcm0tY29ubmVjdGlvbi9mb3JtLWNvbm5lY3Rpb24uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb2wtNHtcclxuICBmb250LXNpemU6IDI1cHg7XHJcbn1cclxuXHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -1242,7 +1287,7 @@ SmartFormConnectionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"](
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0taW5zY3JpcHRpb24vZHVtYi1mb3JtLWluc2NyaXB0aW9uL2Zvcm0taW5zY3JpcHRpb24uY29tcG9uZW50LmNzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = (".col-4{\r\n  font-size: 25px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9ybXMvZm9ybS1pbnNjcmlwdGlvbi9kdW1iLWZvcm0taW5zY3JpcHRpb24vZm9ybS1pbnNjcmlwdGlvbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0taW5zY3JpcHRpb24vZHVtYi1mb3JtLWluc2NyaXB0aW9uL2Zvcm0taW5zY3JpcHRpb24uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb2wtNHtcclxuICBmb250LXNpemU6IDI1cHg7XHJcbn1cclxuIl19 */");
 
 /***/ }),
 
@@ -1438,7 +1483,7 @@ SmartFormInscriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0tcGxhY2UvZm9ybS1wbGFjZS5jb21wb25lbnQuY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".col-4{\r\n  font-size: 25px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9ybXMvZm9ybS1wbGFjZS9mb3JtLXBsYWNlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvZm9ybXMvZm9ybS1wbGFjZS9mb3JtLXBsYWNlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29sLTR7XHJcbiAgZm9udC1zaXplOiAyNXB4O1xyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -2686,6 +2731,50 @@ class Review {
         return false;
     }
 }
+
+
+/***/ }),
+
+/***/ "./src/app/views/home/home.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/views/home/home.component.css ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/views/home/home.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/views/home/home.component.ts ***!
+  \**********************************************/
+/*! exports provided: HomeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let HomeComponent = class HomeComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-home',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/home/home.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./home.component.css */ "./src/app/views/home/home.component.css")).default]
+    })
+], HomeComponent);
+
 
 
 /***/ }),
