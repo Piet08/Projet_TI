@@ -22,7 +22,7 @@ namespace Cou_project.Models
             Address.Id = Convert.ToInt32(reader[AddressDAO.FIELD_ID].ToString());
             Address.City = reader[AddressDAO.FIELD_CITY].ToString();
             Address.Straat = reader[AddressDAO.FIELD_STRAAT].ToString();
-            Address.Num = Convert.ToInt32(reader[AddressDAO.FIELD_NUM].ToString());
+            Address.Num = reader[AddressDAO.FIELD_NUM].ToString();
             Address.PostalCode = Convert.ToInt32(reader[AddressDAO.FIELD_POSTALCODE].ToString());
             
             Place.Id = Convert.ToInt32(reader[PlaceDAO.FIELD_ID].ToString());
