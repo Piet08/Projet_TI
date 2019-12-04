@@ -1,37 +1,66 @@
 <div class="title">
-  <div style="background-color:red;">
-      <h1>Cou</h1>
+  <div>
+      <h1>{{title}}</h1>
   </div>
 </div>
 <app-map [adressList]="adressList"></app-map>
 <!--<agm-map id="map" [latitude]="lat" [longitude]="lng">
   <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
+</agm-map>-->
 
 <input (click)="test()" id='test' type="button" value="Ajouter Marker">-->
 <app-list-adress [adressList]="adressList"></app-list-adress>
-<nav class="nnavbar navbar-expand-lg navbar-light bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="navbar-header">
+    <a class="navbar-brand">Menu</a>
+  </div>
+  <div class="container-fluid navbar-collapse" id="AngularNav" [ngbCollapse]="isCollapsed">
+    <ul class="navbar-nav container-fluid" >
+      <li class="nav-item active text-center">
+        <a routerLink="" class="nav-link">Accueil</a>
+      </li>
+      <li class="nav-item text-center">
+        <a routerLink="User/authenticate" class="nav-link">Connexion</a>
+      </li>
+      <li class="nav-item text-center">
+        <a routerLink="User" class="nav-link">Inscription</a>
+      </li>
+      <li class="nav-item text-center">
+        <a routerLink="" class="nav-link">Cartes</a>
+      </li>
+      <li class="nav-item text-center">
+        <a routerLink="forms/lieux" class="nav-link">Ajout lieu</a>
+      </li>
+      <li class="nav-item text-center">
+        <a routerLink="lieux" class="nav-link">Lieux</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--<nav class="nnavbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand">Menu</a>
     </div>
     <div class="navbar-collapse">
       <ul class="nav navbar-nav">
-        <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans "app.module.ts-->
         <li routerLinkActive="active"><a routerLink="lieux">Lieux</a> </li>
-        <li routerLinkActive="active"><a routerLink="forms/lieux">Ajouter Lieu</a> </li>
+        <li routerLinkActive="active"><a routerLink="forms/lieux">Ajouter Place</a> </li>
         <li routerLinkActive="active"><a routerLink="authenticate">Connexion</a></li>
-        <li routerLinkActive="active"><a routerLink="Utilisateur">Inscription</a></li>
+        <li routerLinkActive="active"><a routerLink="User">Inscription</a></li>
       </ul>
     </div>
   </div>
-</nav>
+</nav>-->
+
 
 <!--Permet l'affichage des component-->
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
+<div class="row">
+  <div class="col-sm-8" style="background-color:lavender;">
       <router-outlet></router-outlet>
-    </div>
+  </div>
+  <div class="col-sm-4">
+    <!--Pourquoi pas metter les Lieux les plus notés ??-->
   </div>
 </div>

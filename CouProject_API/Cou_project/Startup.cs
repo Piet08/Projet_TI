@@ -64,7 +64,7 @@ namespace Cou_project
                 });
 
             // configure DI for application services
-            services.AddScoped<IUtilisateurService, UtilisateurService>();
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

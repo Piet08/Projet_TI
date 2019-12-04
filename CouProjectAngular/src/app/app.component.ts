@@ -12,7 +12,10 @@ import {Adresse} from './Adresse/Adresse';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
+export class AppComponent {
+  title = 'Cou_Project';
+  currentJustify = 'justified';
+  isCollapsed: boolean = true;
 
   private _adressList: Adresse[] = [];
   private subscriptions: Subscription[] = [];
@@ -32,7 +35,7 @@ export class AppComponent{
   get adressList(): Adresse[] {
     return this._adressList;
   }
-  
+
   set adressList(value: Adresse[]) {
     this._adressList = value;
   }

@@ -1,0 +1,18 @@
+<div>
+  <form [formGroup]="formReview" (ngSubmit)="emitNewReview()">
+    <h3>Laisser une review !</h3>
+    <div class="form-group border pl-2 py-2" style="border-radius: 10px;">
+      <ngb-rating class="" (hover)="hovered = $event" (leave)="hovered = 0" [(rate)]="rate"></ngb-rating>
+      <hr>
+      <div class="form-text small">
+        <div *ngIf="rate == 0" class="text-danger">Laisser une note !</div>
+        <div *ngIf="rate != 0" class="text-success">Note : {{rate}}/10</div>
+        </div>
+    </div>
+    <div class="form-group">
+      <textarea rows="5" cols="30" placeholder="Laisser un commentaire" id="comment" class="form-control" name="comment" formControlName="comment">
+      </textarea>
+    </div>
+    <input type="submit" class="btn btn-success">
+  </form>
+</div>

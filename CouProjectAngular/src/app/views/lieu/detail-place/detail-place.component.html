@@ -1,0 +1,11 @@
+<div>
+  <app-single-place [place]="place"></app-single-place>
+</div>
+
+<div>
+  <app-list-review></app-list-review>
+</div>
+
+<div>
+  <app-form-review (reviewCreated)="createReview($event)"></app-form-review>
+</div>

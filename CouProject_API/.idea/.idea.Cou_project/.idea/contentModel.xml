@@ -7,10 +7,10 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="AdresseController.cs" t="Include" />
-          <e p="AvisController.cs" t="Include" />
-          <e p="LieuController.cs" t="Include" />
-          <e p="UtilisateurController.cs" t="Include" />
+          <e p="AddressController.cs" t="Include" />
+          <e p="PlaceController.cs" t="Include" />
+          <e p="ReviewController.cs" t="Include" />
+          <e p="UserController.cs" t="Include" />
           <e p="WeatherForecastController.cs" t="Include" />
         </e>
         <e p="Cou_project.csproj" t="IncludeRecursive" />
@@ -29,23 +29,27 @@
           <e p="vendor.js.map" t="Include" />
         </e>
         <e p="DAO" t="Include">
-          <e p="AdresseDAO.cs" t="Include" />
-          <e p="AvisDAO.cs" t="Include" />
-          <e p="LieuDAO.cs" t="Include" />
-          <e p="UtilisateurDAO.cs" t="Include" />
+          <e p="AddressDAO.cs" t="Include" />
+          <e p="PlaceDAO.cs" t="Include" />
+          <e p="ReviewDAO.cs" t="Include" />
+          <e p="UserDAO.cs" t="Include" />
         </e>
         <e p="Helpers" t="Include">
           <e p="AppSettings.cs" t="Include" />
+          <e p="Crypto.cs" t="Include" />
           <e p="ExtensionMethods.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
-          <e p="Adresse.cs" t="Include" />
+          <e p="Address.cs" t="Include" />
           <e p="AuthenticateModel.cs" t="Include" />
-          <e p="Avis.cs" t="Include" />
           <e p="Database.cs" t="Include" />
-          <e p="Favoris.cs" t="Include" />
-          <e p="Lieu.cs" t="Include" />
-          <e p="Utilisateur.cs" t="Include" />
+          <e p="Favorites.cs" t="Include" />
+          <e p="Place.cs" t="Include" />
+          <e p="PlaceAndAddress.cs" t="Include" />
+          <e p="Review.cs" t="Include" />
+          <e p="ReviewAndUser.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+          <e p="UserAndAddress.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -59,7 +63,9 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Services" t="Include">
-          <e p="UtilisateurService.cs" t="Include" />
+          <e p="PlaceService.cs" t="Include" />
+          <e p="ReviewService.cs" t="Include" />
+          <e p="UserService.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="WeatherForecast.cs" t="Include" />

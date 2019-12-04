@@ -7,11 +7,11 @@ namespace Cou_project.Helpers
 {
     public static class ExtensionMethods
     {
-        public static IEnumerable<Utilisateur> WithoutPasswords(this IEnumerable<Utilisateur> users) {
+        public static IEnumerable<User> WithoutPasswords(this IEnumerable<User> users) {
             return users.Select(x => x.WithoutPassword());
         }
 
-        public static Utilisateur WithoutPassword(this Utilisateur user) {
+        public static User WithoutPassword(this User user) {
             user.Hashpwd = null;
             return user;
         }
