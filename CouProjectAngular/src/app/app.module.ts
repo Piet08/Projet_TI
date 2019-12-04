@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -10,8 +9,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FormInscriptionComponent } from './forms/form-inscription/dumb-form-inscription/form-inscription.component';
 import {RouterModule, Routes} from "@angular/router";
 import {AgmCoreModule} from '@agm/core';
-import { MapComponent } from './map/map.component';
-import { ListAdressComponent } from './list-adress/list-adress.component';
 import {AgmJsMarkerClustererModule} from '@agm/js-marker-clusterer';
 import {SmartFormInscriptionComponent} from "./forms/form-inscription/smart-form-inscription/smart-form-inscription.component";
 import {SmartFormConnectionComponent} from "./forms/form-connection/smart-form-connection/smart-form-connection.component";
@@ -24,7 +21,6 @@ import { FormPlaceComponent } from './forms/form-place/form-place.component';
 import { SmartFormPlaceComponent } from './forms/smart-form-place/smart-form-place.component';
 import { FormReviewComponent } from './forms/form-review/form-review.component';
 import { SmartFormReviewComponent } from './forms/smart-form-review/smart-form-review.component';
-
 import { DumpMapComponent } from './map/dump-map/dump-map.component';
 import { SmartMapComponent } from './map/smart-map/smart-map.component';
 
@@ -40,9 +36,7 @@ const routes: Routes = [
   {path: 'lieux', component:ListPlaceComponent},
   {path: 'lieux/:id', component:DetailPlaceComponent},
   {path: 'forms/lieux', component:SmartFormPlaceComponent},
-
-  {path: 'Address', component:SmartMapComponent}
-
+  {path: 'Address', component:SmartMapComponent},
   {path: 'home', component:HomeComponent}
 
 ];
@@ -53,8 +47,6 @@ const routes: Routes = [
     AppComponent,
     FormConnectionComponent,
     FormInscriptionComponent,
-    MapComponent,
-    ListAdressComponent,
     SmartFormInscriptionComponent,
     SmartFormConnectionComponent,
     ListPlaceComponent,
@@ -66,10 +58,8 @@ const routes: Routes = [
     SmartFormPlaceComponent,
     FormReviewComponent,
     SmartFormReviewComponent,
-
     DumpMapComponent,
-    SmartMapComponent
-
+    SmartMapComponent,
     HomeComponent
 
   ],

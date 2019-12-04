@@ -1,6 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Address} from '../../Address/address';
-import {Location} from '../../location-model';
 
 @Component({
   selector: 'app-dump-map',
@@ -273,10 +271,6 @@ export class DumpMapComponent implements OnInit {
   @Input()
   set markers(value: marker[]) {
     this._markers = value;
-  }
-
-  sayCOUCOU() {
-    console.log(this.markers)
   }
 
   sayCoucouFromMarker(label: string, id: number, lat:number, lng:number) {

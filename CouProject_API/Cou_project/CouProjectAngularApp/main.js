@@ -32,11 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div>\r\n      <h1>{{title}}</h1>\r\n  </div>\r\n</div>\r\n<!--<app-map [addressList]=\"addressList\"></app-map>\r\n<app-list-adress [addressList]=\"addressList\"></app-list-adress>-->\r\n\r\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User/authenticate\" class=\"nav-link\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n<!--<nav class=\"nnavbar navbar-expand-lg navbar-light bg-light\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\">Menu</a>\r\n    </div>\r\n    <div class=\"navbar-collapse\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <li routerLinkActive=\"active\"><a routerLink=\"lieux\">Lieux</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"forms/lieux\">Ajouter Place</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"authenticate\">Connexion</a></li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"User\">Inscription</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>-->\r\n\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"row\">\r\n  <div class=\"col-sm-8\" style=\"background-color:lavender;\">\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n  <div class=\"col-sm-4\">\r\n    <!--Pourquoi pas metter les Lieux les plus notés ??-->\r\n  </div>\r\n</div>\r\n");
-
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User/authenticate\" class=\"nav-link\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n      <router-outlet></router-outlet>\r\n</div>\r\n\r\n");
-
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User/authenticate\" class=\"nav-link\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n      <router-outlet></router-outlet>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -144,19 +140,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/list-adress/list-adress.component.html":
-/*!**********************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/list-adress/list-adress.component.html ***!
-  \**********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul>\n  <li *ngFor=\"let adress of addressList\">\n    {{adress.straat}}\n  </li>\n</ul>\n");
-
-/***/ }),
-
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/map/dump-map/dump-map.component.html":
 /*!********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/map/dump-map/dump-map.component.html ***!
@@ -166,20 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<agm-map mapTypeId=\"roadmap\"  id=\"map\" [latitude]=\"50\" [longitude]=\"3\">\n  <agm-marker-cluster imagePath=\"https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m\">\n    <agm-marker *ngFor=\"let m of markers ; let i= index\"\n                        [latitude]=\"m.lat\"\n                        [longitude]=\"m.lng\"\n                        (markerClick)=\"sayCoucouFromMarker(m.label,m.id,m.lat,m.lng)\">\n\n      <agm-info-window>{{m.label}}</agm-info-window>\n    </agm-marker>\n  </agm-marker-cluster>\n\n</agm-map>\n<input type=\"button\" value=\"CC\" (click)=\"sayCOUCOU()\">\n");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/map/map.component.html":
-/*!******************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/map/map.component.html ***!
-  \******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<agm-map mapTypeId=\"roadmap\" [styles]=\"style\" [clickableIcons]=\"false\" disableDefaultUI=\"true\" id=\"map\" [latitude]=\"50\" [longitude]=\"3\">\n  <agm-marker-cluster imagePath=\"https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m\">\n\n    <agm-marker *ngFor=\"let m of markers; let i = index\"\n                [latitude]=\"m.lat\"\n                [longitude]=\"m.lng\"\n                (markerClick)=\"sayCoucouFromMarker(m.label,m.id)\">\n\n      <agm-info-window>{{m.label}}</agm-info-window>\n    </agm-marker>\n\n  </agm-marker-cluster>\n\n</agm-map>\n<input (click)=\"test()\" id='test' type=\"button\" value=\"Ajouter Marker\">\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<agm-map mapTypeId=\"roadmap\"  id=\"map\" [latitude]=\"50.4535039\" [longitude]=\"3.9516516\">\n  <agm-marker-cluster imagePath=\"https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m\">\n    <agm-marker *ngFor=\"let m of markers ; let i= index\"\n                        [latitude]=\"m.lat\"\n                        [longitude]=\"m.lng\"\n                        (markerClick)=\"sayCoucouFromMarker(m.label,m.id,m.lat,m.lng)\">\n\n      <agm-info-window>{{m.label}}</agm-info-window>\n    </agm-marker>\n  </agm-marker-cluster>\n\n</agm-map>\n");
 
 /***/ }),
 
@@ -192,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-dump-map [markers]=\"markers\"></app-dump-map>\n<input type=\"button\" (click)=\"test()\">\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-dump-map [markers]=\"markers\"></app-dump-map>\n");
 
 /***/ }),
 
@@ -231,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\" id=\"header\">\n  <h2 class=\"display-3\">Cou ? </h2>\n  <p class=\"lead\">New student in Mons ? Find all you need here ! </p>\n  <hr class=\"my-4\">\n  <p>With an account, you can find all place you need and create a favorite's list place !<br>\n  You can make the difference with a rating/comments system ! Don't wait, join our community !</p>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\" id=\"header\">\r\n  <h2 class=\"display-3\">Cou ? </h2>\r\n  <p class=\"lead\">New student in Mons ? Find all you need here ! </p>\r\n  <hr class=\"my-4\">\r\n  <p>With an account, you can find all place you need and create a favorite's list place !<br>\r\n  You can make the difference with a rating/comments system ! Don't wait, join our community !</p>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -936,38 +906,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _Address_address_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Address/address.service */ "./src/app/Address/address.service.ts");
-/* harmony import */ var _Address_address__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Address/address */ "./src/app/Address/address.ts");
-
-
 
 
 let AppComponent = class AppComponent {
-    constructor(adressService) {
-        this.adressService = adressService;
+    constructor() {
         this.title = 'Cou_Project';
         this.currentJustify = 'justified';
         this.isCollapsed = true;
-        this._addressList = [];
-        this.subscriptions = [];
     }
     ngOnInit() {
-        //this.loadAdress();
-    }
-    loadAdress() {
-        const sub = this.adressService.query().subscribe(listAdress => this.addressList = listAdress.map(adress => new _Address_address__WEBPACK_IMPORTED_MODULE_3__["Address"]().fromAdresseDto(adress)));
-        this.subscriptions.push(sub);
-    }
-    get addressList() {
-        return this._addressList;
-    }
-    set addressList(value) {
-        this._addressList = value;
     }
 };
-AppComponent.ctorParameters = () => [
-    { type: _Address_address_service__WEBPACK_IMPORTED_MODULE_2__["AddressService"] }
-];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
@@ -1001,36 +950,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _forms_form_inscription_dumb_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/form-inscription/dumb-form-inscription/form-inscription.component */ "./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-
 /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
-/* harmony import */ var _map_map_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./map/map.component */ "./src/app/map/map.component.ts");
-/* harmony import */ var _list_adress_list_adress_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./list-adress/list-adress.component */ "./src/app/list-adress/list-adress.component.ts");
-/* harmony import */ var _agm_js_marker_clusterer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @agm/js-marker-clusterer */ "./node_modules/@agm/js-marker-clusterer/fesm2015/agm-js-marker-clusterer.js");
-/* harmony import */ var _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./forms/form-inscription/smart-form-inscription/smart-form-inscription.component */ "./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.ts");
-/* harmony import */ var _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/form-connection/smart-form-connection/smart-form-connection.component */ "./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.ts");
-/* harmony import */ var _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/lieu/list-place/list-place.component */ "./src/app/views/lieu/list-place/list-place.component.ts");
-/* harmony import */ var _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./views/lieu/single-place/single-place.component */ "./src/app/views/lieu/single-place/single-place.component.ts");
-/* harmony import */ var _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./views/lieu/detail-place/detail-place.component */ "./src/app/views/lieu/detail-place/detail-place.component.ts");
-/* harmony import */ var _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./views/comment/list-review/list-review.component */ "./src/app/views/comment/list-review/list-review.component.ts");
-/* harmony import */ var _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./views/comment/detail-review/detail-review.component */ "./src/app/views/comment/detail-review/detail-review.component.ts");
-/* harmony import */ var _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./forms/form-place/form-place.component */ "./src/app/forms/form-place/form-place.component.ts");
-/* harmony import */ var _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./forms/smart-form-place/smart-form-place.component */ "./src/app/forms/smart-form-place/smart-form-place.component.ts");
-/* harmony import */ var _forms_form_review_form_review_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./forms/form-review/form-review.component */ "./src/app/forms/form-review/form-review.component.ts");
-/* harmony import */ var _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./forms/smart-form-review/smart-form-review.component */ "./src/app/forms/smart-form-review/smart-form-review.component.ts");
-/* harmony import */ var _map_dump_map_dump_map_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./map/dump-map/dump-map.component */ "./src/app/map/dump-map/dump-map.component.ts");
-/* harmony import */ var _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./map/smart-map/smart-map.component */ "./src/app/map/smart-map/smart-map.component.ts");
-/* harmony import */ var _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./forms/form-inscription/smart-form-inscription/smart-form-inscription.component */ "./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.ts");
-/* harmony import */ var _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./forms/form-connection/smart-form-connection/smart-form-connection.component */ "./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.ts");
-/* harmony import */ var _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/lieu/list-place/list-place.component */ "./src/app/views/lieu/list-place/list-place.component.ts");
-/* harmony import */ var _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/lieu/single-place/single-place.component */ "./src/app/views/lieu/single-place/single-place.component.ts");
-/* harmony import */ var _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/lieu/detail-place/detail-place.component */ "./src/app/views/lieu/detail-place/detail-place.component.ts");
-/* harmony import */ var _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/comment/list-review/list-review.component */ "./src/app/views/comment/list-review/list-review.component.ts");
-/* harmony import */ var _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/comment/detail-review/detail-review.component */ "./src/app/views/comment/detail-review/detail-review.component.ts");
-/* harmony import */ var _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./forms/form-place/form-place.component */ "./src/app/forms/form-place/form-place.component.ts");
-/* harmony import */ var _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./forms/smart-form-place/smart-form-place.component */ "./src/app/forms/smart-form-place/smart-form-place.component.ts");
-/* harmony import */ var _forms_form_review_form_review_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./forms/form-review/form-review.component */ "./src/app/forms/form-review/form-review.component.ts");
-/* harmony import */ var _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./forms/smart-form-review/smart-form-review.component */ "./src/app/forms/smart-form-review/smart-form-review.component.ts");
-/* harmony import */ var _views_home_home_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./views/home/home.component */ "./src/app/views/home/home.component.ts");
+/* harmony import */ var _agm_js_marker_clusterer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @agm/js-marker-clusterer */ "./node_modules/@agm/js-marker-clusterer/fesm2015/agm-js-marker-clusterer.js");
+/* harmony import */ var _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./forms/form-inscription/smart-form-inscription/smart-form-inscription.component */ "./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.ts");
+/* harmony import */ var _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./forms/form-connection/smart-form-connection/smart-form-connection.component */ "./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.ts");
+/* harmony import */ var _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/lieu/list-place/list-place.component */ "./src/app/views/lieu/list-place/list-place.component.ts");
+/* harmony import */ var _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./views/lieu/single-place/single-place.component */ "./src/app/views/lieu/single-place/single-place.component.ts");
+/* harmony import */ var _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./views/lieu/detail-place/detail-place.component */ "./src/app/views/lieu/detail-place/detail-place.component.ts");
+/* harmony import */ var _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./views/comment/list-review/list-review.component */ "./src/app/views/comment/list-review/list-review.component.ts");
+/* harmony import */ var _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./views/comment/detail-review/detail-review.component */ "./src/app/views/comment/detail-review/detail-review.component.ts");
+/* harmony import */ var _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./forms/form-place/form-place.component */ "./src/app/forms/form-place/form-place.component.ts");
+/* harmony import */ var _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./forms/smart-form-place/smart-form-place.component */ "./src/app/forms/smart-form-place/smart-form-place.component.ts");
+/* harmony import */ var _forms_form_review_form_review_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./forms/form-review/form-review.component */ "./src/app/forms/form-review/form-review.component.ts");
+/* harmony import */ var _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./forms/smart-form-review/smart-form-review.component */ "./src/app/forms/smart-form-review/smart-form-review.component.ts");
+/* harmony import */ var _map_dump_map_dump_map_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./map/dump-map/dump-map.component */ "./src/app/map/dump-map/dump-map.component.ts");
+/* harmony import */ var _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./map/smart-map/smart-map.component */ "./src/app/map/smart-map/smart-map.component.ts");
+/* harmony import */ var _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./views/home/home.component */ "./src/app/views/home/home.component.ts");
+
+
+
 
 
 
@@ -1059,19 +997,13 @@ __webpack_require__.r(__webpack_exports__);
 // component : celui que l'on souhaite afficher
 // Les imports sont déja fait
 const routes = [
-    { path: 'User/authenticate', component: _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_16__["SmartFormConnectionComponent"] },
-    { path: 'User', component: _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_15__["SmartFormInscriptionComponent"] },
-    { path: 'lieux', component: _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_17__["ListPlaceComponent"] },
-    { path: 'lieux/:id', component: _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_19__["DetailPlaceComponent"] },
-    { path: 'forms/lieux', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_23__["SmartFormPlaceComponent"] },
-    { path: 'Address', component: _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_27__["SmartMapComponent"] }
-    { path: 'User/authenticate', component: _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_12__["SmartFormConnectionComponent"] },
-    { path: 'User', component: _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_11__["SmartFormInscriptionComponent"] },
-    { path: 'lieux', component: _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_13__["ListPlaceComponent"] },
-    { path: 'lieux/:id', component: _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_15__["DetailPlaceComponent"] },
-    { path: 'forms/lieux', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_19__["SmartFormPlaceComponent"] },
-    { path: 'home', component: _views_home_home_component__WEBPACK_IMPORTED_MODULE_22__["HomeComponent"] }
-
+    { path: 'User/authenticate', component: _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_14__["SmartFormConnectionComponent"] },
+    { path: 'User', component: _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_13__["SmartFormInscriptionComponent"] },
+    { path: 'lieux', component: _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_15__["ListPlaceComponent"] },
+    { path: 'lieux/:id', component: _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_17__["DetailPlaceComponent"] },
+    { path: 'forms/lieux', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_21__["SmartFormPlaceComponent"] },
+    { path: 'Address', component: _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_25__["SmartMapComponent"] },
+    { path: 'home', component: _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"] }
 ];
 let AppModule = class AppModule {
 };
@@ -1081,33 +1013,20 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
             _forms_form_connection_dumb_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__["FormConnectionComponent"],
             _forms_form_inscription_dumb_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"],
-            _map_map_component__WEBPACK_IMPORTED_MODULE_12__["MapComponent"],
-            _list_adress_list_adress_component__WEBPACK_IMPORTED_MODULE_13__["ListAdressComponent"],
-            _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_15__["SmartFormInscriptionComponent"],
-            _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_16__["SmartFormConnectionComponent"],
-            _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_17__["ListPlaceComponent"],
-            _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_18__["SinglePlaceComponent"],
-            _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_19__["DetailPlaceComponent"],
-            _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_20__["ListReviewComponent"],
-            _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_21__["DetailReviewComponent"],
-            _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_22__["FormPlaceComponent"],
-            _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_23__["SmartFormPlaceComponent"],
-            _forms_form_review_form_review_component__WEBPACK_IMPORTED_MODULE_24__["FormReviewComponent"],
-            _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_25__["SmartFormReviewComponent"],
-            _map_dump_map_dump_map_component__WEBPACK_IMPORTED_MODULE_26__["DumpMapComponent"],
-            _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_27__["SmartMapComponent"]
-            _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_11__["SmartFormInscriptionComponent"],
-            _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_12__["SmartFormConnectionComponent"],
-            _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_13__["ListPlaceComponent"],
-            _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_14__["SinglePlaceComponent"],
-            _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_15__["DetailPlaceComponent"],
-            _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_16__["ListReviewComponent"],
-            _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_17__["DetailReviewComponent"],
-            _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_18__["FormPlaceComponent"],
-            _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_19__["SmartFormPlaceComponent"],
-            _forms_form_review_form_review_component__WEBPACK_IMPORTED_MODULE_20__["FormReviewComponent"],
-            _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_21__["SmartFormReviewComponent"],
-            _views_home_home_component__WEBPACK_IMPORTED_MODULE_22__["HomeComponent"]
+            _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_13__["SmartFormInscriptionComponent"],
+            _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_14__["SmartFormConnectionComponent"],
+            _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_15__["ListPlaceComponent"],
+            _views_lieu_single_place_single_place_component__WEBPACK_IMPORTED_MODULE_16__["SinglePlaceComponent"],
+            _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_17__["DetailPlaceComponent"],
+            _views_comment_list_review_list_review_component__WEBPACK_IMPORTED_MODULE_18__["ListReviewComponent"],
+            _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_19__["DetailReviewComponent"],
+            _forms_form_place_form_place_component__WEBPACK_IMPORTED_MODULE_20__["FormPlaceComponent"],
+            _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_21__["SmartFormPlaceComponent"],
+            _forms_form_review_form_review_component__WEBPACK_IMPORTED_MODULE_22__["FormReviewComponent"],
+            _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_23__["SmartFormReviewComponent"],
+            _map_dump_map_dump_map_component__WEBPACK_IMPORTED_MODULE_24__["DumpMapComponent"],
+            _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_25__["SmartMapComponent"],
+            _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1118,7 +1037,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"].forRoot(routes),
             _agm_core__WEBPACK_IMPORTED_MODULE_11__["AgmCoreModule"].forRoot({ apiKey: 'AIzaSyD6dHdCHR8CbbpkMiCkYAcJxzXgvV1E64k' }),
-            _agm_js_marker_clusterer__WEBPACK_IMPORTED_MODULE_14__["AgmJsMarkerClustererModule"]
+            _agm_js_marker_clusterer__WEBPACK_IMPORTED_MODULE_12__["AgmJsMarkerClustererModule"]
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -1779,132 +1698,6 @@ SmartFormReviewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/geocode.service.ts":
-/*!************************************!*\
-  !*** ./src/app/geocode.service.ts ***!
-  \************************************/
-/*! exports provided: GeocodeService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GeocodeService", function() { return GeocodeService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
-/* harmony import */ var rxjs_internal_compatibility__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/internal-compatibility */ "./node_modules/rxjs/_esm2015/internal-compatibility/index.js");
-
-
-
-
-
-
-let GeocodeService = class GeocodeService {
-    constructor(mapLoader) {
-        this.mapLoader = mapLoader;
-    }
-    initGeocoder() {
-        this.geocoder = new google.maps.Geocoder();
-    }
-    waitForMapsToLoad() {
-        if (!this.geocoder) {
-            return Object(rxjs_internal_compatibility__WEBPACK_IMPORTED_MODULE_5__["fromPromise"])(this.mapLoader.load())
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(() => this.initGeocoder()), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(() => true));
-        }
-        return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(true);
-    }
-    geocodeAddress(location) {
-        return this.waitForMapsToLoad().pipe(
-        // filter(loaded => loaded),
-        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(() => {
-            return new rxjs__WEBPACK_IMPORTED_MODULE_4__["Observable"](observer => {
-                this.geocoder.geocode({ 'address': location }, (results, status) => {
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        observer.next({
-                            lat: results[0].geometry.location.lat(),
-                            lng: results[0].geometry.location.lng()
-                        });
-                    }
-                    else {
-                        console.log('Error - ', results, ' & Status - ', status);
-                        observer.next({ lat: 0, lng: 0 });
-                    }
-                    observer.complete();
-                });
-            });
-        }));
-    }
-};
-GeocodeService.ctorParameters = () => [
-    { type: _agm_core__WEBPACK_IMPORTED_MODULE_2__["MapsAPILoader"] }
-];
-GeocodeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    })
-], GeocodeService);
-
-
-
-/***/ }),
-
-/***/ "./src/app/list-adress/list-adress.component.css":
-/*!*******************************************************!*\
-  !*** ./src/app/list-adress/list-adress.component.css ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xpc3QtYWRyZXNzL2xpc3QtYWRyZXNzLmNvbXBvbmVudC5jc3MifQ== */");
-
-/***/ }),
-
-/***/ "./src/app/list-adress/list-adress.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/list-adress/list-adress.component.ts ***!
-  \******************************************************/
-/*! exports provided: ListAdressComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListAdressComponent", function() { return ListAdressComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-
-
-let ListAdressComponent = class ListAdressComponent {
-    constructor() {
-        this._addressList = [];
-    }
-    ngOnInit() {
-    }
-    get addressList() {
-        return this._addressList;
-    }
-    set addressList(value) {
-        this._addressList = value;
-    }
-};
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], ListAdressComponent.prototype, "addressList", null);
-ListAdressComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-list-adress',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./list-adress.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/list-adress/list-adress.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./list-adress.component.css */ "./src/app/list-adress/list-adress.component.css")).default]
-    })
-], ListAdressComponent);
-
-
-
-/***/ }),
-
 /***/ "./src/app/map/dump-map/dump-map.component.css":
 /*!*****************************************************!*\
   !*** ./src/app/map/dump-map/dump-map.component.css ***!
@@ -1914,7 +1707,7 @@ ListAdressComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("agm-map {\r\n  height: 300px;\r\n  width: auto;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFwL2R1bXAtbWFwL2R1bXAtbWFwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhO0VBQ2IsV0FBVztBQUNiIiwiZmlsZSI6InNyYy9hcHAvbWFwL2R1bXAtbWFwL2R1bXAtbWFwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhZ20tbWFwIHtcclxuICBoZWlnaHQ6IDMwMHB4O1xyXG4gIHdpZHRoOiBhdXRvO1xyXG59XHJcbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("agm-map {\r\n  height: 700px;\r\n  width: auto;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFwL2R1bXAtbWFwL2R1bXAtbWFwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhO0VBQ2IsV0FBVztBQUNiIiwiZmlsZSI6InNyYy9hcHAvbWFwL2R1bXAtbWFwL2R1bXAtbWFwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhZ20tbWFwIHtcclxuICBoZWlnaHQ6IDcwMHB4O1xyXG4gIHdpZHRoOiBhdXRvO1xyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -2193,9 +1986,6 @@ let DumpMapComponent = class DumpMapComponent {
     set markers(value) {
         this._markers = value;
     }
-    sayCOUCOU() {
-        console.log(this.markers);
-    }
     sayCoucouFromMarker(label, id, lat, lng) {
         console.log("Coucou de " + label + " " + id + " LAT : " + lat + " LONG : " + lng);
     }
@@ -2215,92 +2005,72 @@ DumpMapComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/map/map.component.css":
-/*!***************************************!*\
-  !*** ./src/app/map/map.component.css ***!
-  \***************************************/
-/*! exports provided: default */
+/***/ "./src/app/map/geocode.service.ts":
+/*!****************************************!*\
+  !*** ./src/app/map/geocode.service.ts ***!
+  \****************************************/
+/*! exports provided: GeocodeService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hcC9tYXAuY29tcG9uZW50LmNzcyJ9 */");
-
-/***/ }),
-
-/***/ "./src/app/map/map.component.ts":
-/*!**************************************!*\
-  !*** ./src/app/map/map.component.ts ***!
-  \**************************************/
-/*! exports provided: MapComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapComponent", function() { return MapComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GeocodeService", function() { return GeocodeService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _geocode_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../geocode.service */ "./src/app/geocode.service.ts");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var rxjs_internal_compatibility__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/internal-compatibility */ "./node_modules/rxjs/_esm2015/internal-compatibility/index.js");
 
 
 
-let MapComponent = class MapComponent {
-    constructor(geocodeService) {
-        this.geocodeService = geocodeService;
-        this.markers = [];
-        this._addressList = [];
+
+
+
+let GeocodeService = class GeocodeService {
+    constructor(mapLoader) {
+        this.mapLoader = mapLoader;
     }
-    ngOnInit() {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            yield this.loadingMap(300); // permet de charger la carte pour y charger les markers de la bdd
-            this.addressToCoordinates();
-        });
+    initGeocoder() {
+        this.geocoder = new google.maps.Geocoder();
     }
-    test() {
-        this.addressToCoordinates();
+    waitForMapsToLoad() {
+        if (!this.geocoder) {
+            return Object(rxjs_internal_compatibility__WEBPACK_IMPORTED_MODULE_5__["fromPromise"])(this.mapLoader.load())
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(() => this.initGeocoder()), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(() => true));
+        }
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(true);
     }
-    addressToCoordinates() {
-        for (let i = 0; i < this.addressList.length; i++) {
-            this.geocodeService.geocodeAddress(this.addressList[i].city + ", " + this.addressList[i].straat + " N° " + this.addressList[i].num + ", " + this.addressList[i].postalCode)
-                .subscribe((location) => {
-                this.location = location;
-                console.log(this.location);
-                this.markers.push({
-                    lat: this.location.lat,
-                    lng: this.location.lng,
-                    label: this.addressList[i].city + ", " + this.addressList[i].straat + " N° " + this.addressList[i].num + ", " + this.addressList[i].postalCode,
-                    id: this.addressList[i].id
+    geocodeAddress(location) {
+        return this.waitForMapsToLoad().pipe(
+        // filter(loaded => loaded),
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(() => {
+            return new rxjs__WEBPACK_IMPORTED_MODULE_4__["Observable"](observer => {
+                this.geocoder.geocode({ 'address': location }, (results, status) => {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        observer.next({
+                            lat: results[0].geometry.location.lat(),
+                            lng: results[0].geometry.location.lng()
+                        });
+                    }
+                    else {
+                        console.log('Error - ', results, ' & Status - ', status);
+                        observer.next({ lat: 0, lng: 0 });
+                    }
+                    observer.complete();
                 });
             });
-        }
-    }
-    loadingMap(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-    get addressList() {
-        return this._addressList;
-    }
-    set addressList(value) {
-        this._addressList = value;
-    }
-    sayCoucouFromMarker(label, id, lat, lng) {
-        console.log("coucou");
-        // console.log("Coucou de " + label + " " + id + " LAT : " + lat + " LONG : " + lng );
+        }));
     }
 };
-MapComponent.ctorParameters = () => [
-    { type: _geocode_service__WEBPACK_IMPORTED_MODULE_2__["GeocodeService"] }
+GeocodeService.ctorParameters = () => [
+    { type: _agm_core__WEBPACK_IMPORTED_MODULE_2__["MapsAPILoader"] }
 ];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], MapComponent.prototype, "addressList", null);
-MapComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-map',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./map.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/map/map.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./map.component.css */ "./src/app/map/map.component.css")).default]
+GeocodeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
     })
-], MapComponent);
+], GeocodeService);
 
 
 
@@ -2332,7 +2102,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _Address_address__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Address/address */ "./src/app/Address/address.ts");
-/* harmony import */ var _geocode_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../geocode.service */ "./src/app/geocode.service.ts");
+/* harmony import */ var _geocode_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../geocode.service */ "./src/app/map/geocode.service.ts");
 /* harmony import */ var _Address_address_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Address/address.service */ "./src/app/Address/address.service.ts");
 
 
@@ -2349,6 +2119,14 @@ let SmartMapComponent = class SmartMapComponent {
     }
     ngOnInit() {
         this.loadAllAdress();
+    }
+    ngOnDestroy() {
+        for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+            const subscription = this.subscriptions[i];
+            //IF subscription EXISTE
+            subscription && subscription.unsubscribe();
+            this.subscriptions.pop();
+        }
     }
     //Convertit la liste d'adresses en markers pour les envoyer au dump-map qui les afficheras
     loadAllAdressToMarkers() {
@@ -2390,9 +2168,6 @@ let SmartMapComponent = class SmartMapComponent {
     }
     set location(value) {
         this._location = value;
-    }
-    test() {
-        console.log(this.markers);
     }
 };
 SmartMapComponent.ctorParameters = () => [

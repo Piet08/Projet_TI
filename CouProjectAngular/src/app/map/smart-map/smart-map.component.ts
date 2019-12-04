@@ -1,7 +1,7 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
-import {Location} from '../../location-model';
+import {Component, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {Location} from '../location-model';
 import {Address, AddressList} from '../../Address/address';
-import {GeocodeService} from '../../geocode.service';
+import {GeocodeService} from '../geocode.service';
 import {AddressService} from '../../Address/address.service';
 import {Subscription} from 'rxjs';
 
@@ -10,7 +10,7 @@ import {Subscription} from 'rxjs';
   templateUrl: './smart-map.component.html',
   styleUrls: ['./smart-map.component.css']
 })
-export class SmartMapComponent implements OnInit {
+export class SmartMapComponent implements OnInit, OnDestroy {
 
   private _markers: marker[] = [];
   private _addressList: Address[] = [];
@@ -21,6 +21,15 @@ export class SmartMapComponent implements OnInit {
 
    ngOnInit() {
     this.loadAllAdress();
+  }
+
+  ngOnDestroy(): void {
+    for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+      const subscription = this.subscriptions[i];
+      //IF subscription EXISTE
+      subscription && subscription.unsubscribe();
+      this.subscriptions.pop();
+    }
   }
 
   //Convertit la liste d'adresses en markers pour les envoyer au dump-map qui les afficheras
@@ -75,9 +84,5 @@ export class SmartMapComponent implements OnInit {
 
   set location(value: Location) {
     this._location = value;
-  }
-
-  test() {
-    console.log(this.markers)
   }
 }

@@ -1,4 +1,4 @@
-<agm-map mapTypeId="roadmap"  id="map" [latitude]="50" [longitude]="3">
+<agm-map mapTypeId="roadmap"  id="map" [latitude]="50.4535039" [longitude]="3.9516516">
   <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
     <agm-marker *ngFor="let m of markers ; let i= index"
                         [latitude]="m.lat"
@@ -10,4 +10,3 @@
   </agm-marker-cluster>
 
 </agm-map>
-<input type="button" value="CC" (click)="sayCOUCOU()">
