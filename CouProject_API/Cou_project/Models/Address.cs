@@ -9,12 +9,12 @@ namespace Cou_project.Models
         public int Id { get; set; }
         public string City { get; set; }
         public string Straat { get; set; }
-        public int Num { get; set; }
+        public string Num { get; set; }
         public int PostalCode { get; set; }
         
         public string Date { get; set; }
         
-        public Address(int id, string city, string straat, int num, int postalCode, string date)
+        public Address(int id, string city, string straat, string num, int postalCode, string date)
         {
             Id = id;
             City = city;
@@ -33,7 +33,7 @@ namespace Cou_project.Models
             Id = Convert.ToInt32(reader[AddressDAO.FIELD_ID].ToString());
             City = reader[AddressDAO.FIELD_CITY].ToString();
             Straat = reader[AddressDAO.FIELD_STRAAT].ToString();
-            Num = Convert.ToInt32(reader[AddressDAO.FIELD_NUM].ToString());
+            Num = reader[AddressDAO.FIELD_NUM].ToString();
             PostalCode = Convert.ToInt32(reader[AddressDAO.FIELD_POSTALCODE].ToString());
         }
     }

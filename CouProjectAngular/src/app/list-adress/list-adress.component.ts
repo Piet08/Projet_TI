@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Adresse} from '../Adresse/Adresse';
+import {Address} from '../Address/address';
 
 @Component({
   selector: 'app-list-adress',
@@ -8,7 +8,7 @@ import {Adresse} from '../Adresse/Adresse';
 })
 export class ListAdressComponent implements OnInit{
 
-  private _adressList: Adresse[] = [];
+  private _addressList: Address[] = [];
 
   constructor(){}
 
@@ -16,12 +16,12 @@ export class ListAdressComponent implements OnInit{
   }
 
 
-  get adressList(): Adresse[] {
-    return this._adressList;
+  get addressList(): Address[] {
+    return this._addressList;
   }
 
   @Input()
-  set adressList(value: Adresse[]) {
-    this._adressList = value;
+  set addressList(value: Address[]) {
+    this._addressList = value;
   }
 }

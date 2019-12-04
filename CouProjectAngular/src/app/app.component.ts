@@ -1,11 +1,10 @@
 import {ChangeDetectorRef, Component, Input, OnInit, ViewChild} from '@angular/core';
-import { google } from '@agm/core/services/google-maps-types';
 import {} from 'googlemaps';
 import { GeocodeService } from './geocode.service';
 import { Location } from './location-model';
 import {Subscription} from 'rxjs';
-import {AdresseService} from './Adresse/adresse.service';
-import {Adresse} from './Adresse/Adresse';
+import {AddressService} from './Address/address.service';
+import {Address} from './Address/address';
 
 @Component({
   selector: 'app-root',
@@ -17,26 +16,26 @@ export class AppComponent {
   currentJustify = 'justified';
   isCollapsed: boolean = true;
 
-  private _adressList: Adresse[] = [];
+  private _addressList: Address[] = [];
   private subscriptions: Subscription[] = [];
 
-  constructor(public adressService: AdresseService ) { }
+  constructor(public adressService: AddressService ) { }
 
   ngOnInit() {
-    this.loadAdress();
+    //this.loadAdress();
   }
 
   loadAdress() {
-    const sub = this.adressService.query().subscribe(listAdress => this.adressList = listAdress.map(adress => new Adresse().fromAdresseDto(adress)));
+    const sub = this.adressService.query().subscribe(listAdress => this.addressList = listAdress.map(adress => new Address().fromAdresseDto(adress)));
     this.subscriptions.push(sub);
   }
 
 
-  get adressList(): Adresse[] {
-    return this._adressList;
+  get addressList(): Address[] {
+    return this._addressList;
   }
 
-  set adressList(value: Adresse[]) {
-    this._adressList = value;
+  set addressList(value: Address[]) {
+    this._addressList = value;
   }
 }

@@ -1,0 +1,13 @@
+<agm-map mapTypeId="roadmap"  id="map" [latitude]="50" [longitude]="3">
+  <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+    <agm-marker *ngFor="let m of markers ; let i= index"
+                        [latitude]="m.lat"
+                        [longitude]="m.lng"
+                        (markerClick)="sayCoucouFromMarker(m.label,m.id,m.lat,m.lng)">
+
+      <agm-info-window>{{m.label}}</agm-info-window>
+    </agm-marker>
+  </agm-marker-cluster>
+
+</agm-map>
+<input type="button" value="CC" (click)="sayCOUCOU()">

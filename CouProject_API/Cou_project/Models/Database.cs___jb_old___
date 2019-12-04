@@ -20,7 +20,7 @@ namespace Cou_project.Models
 
         public static SqlConnection GetConnection()
         {
-            return new SqlConnection(CONNECTION_AZURE);
+            return new SqlConnection(CONNECTION_STRING);
         }
     }
 }

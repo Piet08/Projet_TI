@@ -1,4 +1,4 @@
-<agm-map id="map" [latitude]="51" [longitude]="3">
+<agm-map mapTypeId="roadmap" [styles]="style" [clickableIcons]="false" disableDefaultUI="true" id="map" [latitude]="50" [longitude]="3">
   <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
 
     <agm-marker *ngFor="let m of markers; let i = index"

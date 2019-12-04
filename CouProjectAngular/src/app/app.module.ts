@@ -9,12 +9,6 @@ import { FormConnectionComponent } from './forms/form-connection/dumb-form-conne
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FormInscriptionComponent } from './forms/form-inscription/dumb-form-inscription/form-inscription.component';
 import {RouterModule, Routes} from "@angular/router";
-import { ListLieuComponent } from './views/lieu/list-lieu/list-lieu.component';
-import { SingleLieuComponent } from './views/lieu/single-lieu/single-lieu.component';
-import { DetailLieuComponent } from './views/lieu/detail-lieu/detail-lieu.component';
-import { ListCommentComponent } from './views/comment/list-comment/list-comment.component';
-import { DetailCommentComponent } from './views/comment/detail-comment/detail-comment.component';
-import { FormLieuComponent } from './forms/form-lieu/form-lieu.component';
 import {AgmCoreModule} from '@agm/core';
 import { MapComponent } from './map/map.component';
 import { ListAdressComponent } from './list-adress/list-adress.component';
@@ -30,6 +24,8 @@ import { FormPlaceComponent } from './forms/form-place/form-place.component';
 import { SmartFormPlaceComponent } from './forms/smart-form-place/smart-form-place.component';
 import { FormReviewComponent } from './forms/form-review/form-review.component';
 import { SmartFormReviewComponent } from './forms/smart-form-review/smart-form-review.component';
+import { DumpMapComponent } from './map/dump-map/dump-map.component';
+import { SmartMapComponent } from './map/smart-map/smart-map.component';
 
 // path = le nom du controller de l'api en fonction de ce que l'on veut faire
 // component : celui que l'on souhaite afficher
@@ -40,6 +36,7 @@ const routes: Routes = [
   {path: 'lieux', component:ListPlaceComponent},
   {path: 'lieux/:id', component:DetailPlaceComponent},
   {path: 'forms/lieux', component:SmartFormPlaceComponent},
+  {path: 'Address', component:SmartMapComponent}
 ];
 
 
@@ -48,12 +45,6 @@ const routes: Routes = [
     AppComponent,
     FormConnectionComponent,
     FormInscriptionComponent,
-    ListLieuComponent,
-    SingleLieuComponent,
-    DetailLieuComponent,
-    ListCommentComponent,
-    DetailCommentComponent,
-    FormLieuComponent,
     MapComponent,
     ListAdressComponent,
     SmartFormInscriptionComponent,
@@ -66,7 +57,9 @@ const routes: Routes = [
     FormPlaceComponent,
     SmartFormPlaceComponent,
     FormReviewComponent,
-    SmartFormReviewComponent
+    SmartFormReviewComponent,
+    DumpMapComponent,
+    SmartMapComponent
   ],
   imports: [
     BrowserModule,

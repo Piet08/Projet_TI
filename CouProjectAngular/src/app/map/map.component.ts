@@ -1,8 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Location} from '../location-model';
 import {GeocodeService} from '../geocode.service';
-import {AdresseService} from '../Adresse/adresse.service';
-import {Adresse} from '../Adresse/Adresse';
+import {Address} from '../Address/address';
+import {} from 'googlemaps';
+import StyledMapType = google.maps.StyledMapType;
 
 @Component({
   selector: 'app-map',
@@ -11,12 +12,13 @@ import {Adresse} from '../Adresse/Adresse';
 })
 export class MapComponent implements OnInit{
     markers: marker[] = [];
-    private _adressList: Adresse[] = [];
+    private _addressList: Address[] = [];
 
     location: Location;
 
 
     async ngOnInit(){
+      await this.loadingMap(300); // permet de charger la carte pour y charger les markers de la bdd
       this.addressToCoordinates();
     }
 
@@ -32,8 +34,8 @@ export class MapComponent implements OnInit{
 
   addressToCoordinates() {
 
-    for (let i = 0; i < this.adressList.length; i++) {
-      this.geocodeService.geocodeAddress(this.adressList[i].ville + ", " + this.adressList[i].rue + " N° " + this.adressList[i].num + ", " + this.adressList[i].cp)
+    for (let i = 0; i < this.addressList.length; i++) {
+      this.geocodeService.geocodeAddress(this.addressList[i].city + ", " + this.addressList[i].straat + " N° " + this.addressList[i].num + ", " + this.addressList[i].postalCode)
         .subscribe((location: Location) =>
           {
             this.location = location;
@@ -42,8 +44,8 @@ export class MapComponent implements OnInit{
               {
                 lat: this.location.lat,
                 lng: this.location.lng,
-                label: this.adressList[i].ville + ", " + this.adressList[i].rue + " N° " + this.adressList[i].num + ", " + this.adressList[i].cp,
-                id: this.adressList[i].id
+                label: this.addressList[i].city + ", " + this.addressList[i].straat + " N° " + this.addressList[i].num + ", " + this.addressList[i].postalCode,
+                id: this.addressList[i].id
               }
             );
           }
@@ -57,24 +59,18 @@ export class MapComponent implements OnInit{
   }
 
 
-  get adressList(): Adresse[] {
-    return this._adressList;
+  get addressList(): Address[] {
+    return this._addressList;
   }
 
   @Input()
-  set adressList(value: Adresse[]) {
-    this._adressList = value;
+  set addressList(value: Address[]) {
+    this._addressList = value;
   }
 
 
-  sayCoucouFromMarker(label: string, id: number) {
-    console.log("Coucou de " + label + " " + id);
+  sayCoucouFromMarker(label: string, id: number, lat:number, lng:number) {
+    console.log("coucou")
+    // console.log("Coucou de " + label + " " + id + " LAT : " + lat + " LONG : " + lng );
   }
-}
-
-interface marker {
-  lat: number;
-  lng: number;
-  label: string;
-  id: number;
 }

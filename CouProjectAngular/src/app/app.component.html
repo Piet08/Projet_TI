@@ -3,13 +3,8 @@
       <h1>{{title}}</h1>
   </div>
 </div>
-<app-map [adressList]="adressList"></app-map>
-<!--<agm-map id="map" [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>-->
-
-<input (click)="test()" id='test' type="button" value="Ajouter Marker">-->
-<app-list-adress [adressList]="adressList"></app-list-adress>
+<!--<app-map [addressList]="addressList"></app-map>
+<app-list-adress [addressList]="addressList"></app-list-adress>-->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="navbar-header">
@@ -27,7 +22,7 @@
         <a routerLink="User" class="nav-link">Inscription</a>
       </li>
       <li class="nav-item text-center">
-        <a routerLink="" class="nav-link">Cartes</a>
+        <a routerLink="Address" class="nav-link">Cartes</a>
       </li>
       <li class="nav-item text-center">
         <a routerLink="forms/lieux" class="nav-link">Ajout lieu</a>
