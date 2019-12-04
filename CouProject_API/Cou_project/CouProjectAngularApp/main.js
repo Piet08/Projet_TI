@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div style=\"background-color:red;\">\r\n      <h1>Cou</h1>\r\n  </div>\r\n</div>\r\n\r\n<nav class=\"nnavbar navbar-expand-lg navbar-light bg-light\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\">Menu</a>\r\n    </div>\r\n    <div class=\"navbar-collapse\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans \"app.module.ts-->\r\n        <li routerLinkActive=\"active\"><a routerLink=\"lieux\">Lieux</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"forms/lieux\">Ajouter Lieu</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"authenticate\">Connexion</a></li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"Utilisateur\">Inscription</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"title\">\r\n  <div style=\"background-color:red;\">\r\n      <h1>Cou</h1>\r\n  </div>\r\n</div>\r\n<app-map [adressList]=\"adressList\"></app-map>\r\n<!--<agm-map id=\"map\" [latitude]=\"lat\" [longitude]=\"lng\">\r\n  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\r\n</agm-map>\r\n\r\n<input (click)=\"test()\" id='test' type=\"button\" value=\"Ajouter Marker\">-->\r\n<app-list-adress [adressList]=\"adressList\"></app-list-adress>\r\n<nav class=\"nnavbar navbar-expand-lg navbar-light bg-light\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\">Menu</a>\r\n    </div>\r\n    <div class=\"navbar-collapse\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <!--Ajouté la ligne du dessous pour ajouter un onglet + Spécifié la routes dans \"app.module.ts-->\r\n        <li routerLinkActive=\"active\"><a routerLink=\"lieux\">Lieux</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"forms/lieux\">Ajouter Lieu</a> </li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"authenticate\">Connexion</a></li>\r\n        <li routerLinkActive=\"active\"><a routerLink=\"Utilisateur\">Inscription</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -71,7 +71,33 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"alertMe()\">\n  <div class=\"form-group form-inline raw\">\n    <label for=\"nom\" class=\"col-6 \">Nom :</label>\n    <input type=\"text\" class=\"form-control col-6\" id=\"nom\" name=\"nom\" formControlName=\"nom\">\n  </div>\n  <div class=\"form-group form-inline raw\">\n    <label for=\"type\" class=\"col-6 \">Type :</label>\n    <input type=\"text\" class=\"form-control col-6\" id=\"type\" name=\"type\" formControlName=\"type\">\n  </div>\n  <div class=\"form-group form-inline raw\">\n    <label for=\"description\" class=\"col-6 \">Description :</label>\n    <input type=\"text\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\n  </div>\n\n  <div formGroupName=\"adresse\">\n    <div class=\"form-group form-inline raw\">\n      <label for=\"rue\" class=\"col-6 \">Rue :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"rue\" name=\"rue\" formControlName=\"rue\">\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"num\" class=\"col-6 \">Numéro :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"cp\" class=\"col-6 \">Code Postal :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"cp\" name=\"cp\" formControlName=\"cp\">\n    </div>\n    <div class=\"form-group form-inline raw\">\n      <label for=\"ville\" class=\"col-6 \">Ville :</label>\n      <input type=\"text\" class=\"form-control col-6\" id=\"ville\" name=\"ville\" formControlName=\"ville\">\n    </div>\n  </div>\n  <input type=\"submit\">\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"alertMe()\">\r\n  <div class=\"form-group form-inline raw\">\r\n    <label for=\"nom\" class=\"col-6 \">Nom :</label>\r\n    <input type=\"text\" class=\"form-control col-6\" id=\"nom\" name=\"nom\" formControlName=\"nom\">\r\n  </div>\r\n  <div class=\"form-group form-inline raw\">\r\n    <label for=\"type\" class=\"col-6 \">Type :</label>\r\n    <input type=\"text\" class=\"form-control col-6\" id=\"type\" name=\"type\" formControlName=\"type\">\r\n  </div>\r\n  <div class=\"form-group form-inline raw\">\r\n    <label for=\"description\" class=\"col-6 \">Description :</label>\r\n    <input type=\"text\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n  </div>\r\n\r\n  <div formGroupName=\"adresse\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"rue\" class=\"col-6 \">Rue :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"rue\" name=\"rue\" formControlName=\"rue\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"num\" class=\"col-6 \">Numéro :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"cp\" class=\"col-6 \">Code Postal :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"cp\" name=\"cp\" formControlName=\"cp\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"ville\" class=\"col-6 \">Ville :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"ville\" name=\"ville\" formControlName=\"ville\">\r\n    </div>\r\n  </div>\r\n  <input type=\"submit\">\r\n</form>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/list-adress/list-adress.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/list-adress/list-adress.component.html ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ul>\n  <li *ngFor=\"let adress of adressList\">\n    {{adress.rue}}\n  </li>\n</ul>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/map/map.component.html":
+/*!******************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/map/map.component.html ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<agm-map id=\"map\" [latitude]=\"51\" [longitude]=\"3\">\n  <agm-marker-cluster imagePath=\"https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m\">\n\n    <agm-marker *ngFor=\"let m of markers; let i = index\"\n                [latitude]=\"m.lat\"\n                [longitude]=\"m.lng\"\n                (markerClick)=\"sayCoucouFromMarker(m.label,m.id)\">\n\n      <agm-info-window>{{m.label}}</agm-info-window>\n    </agm-marker>\n\n  </agm-marker-cluster>\n\n</agm-map>\n<input (click)=\"test()\" id='test' type=\"button\" value=\"Ajouter Marker\">\n");
 
 /***/ }),
 
@@ -84,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\n  <div class=\"card-header\">\n    <p class=\"text-left\">\n      {{utilisateur.nom}} {{utilisateur.prenom}}\n      <span class=\"float-right\">{{avis.note}}/5</span>\n    </p>\n  </div>\n\n  <div class=\"card-body\">\n    <blockquote class=\"blockquote mb-0\">\n      <p>{{avis.commentaire}}</p>\n      <footer class=\"blockquote-footer\"> {{avis.date}} </footer>\n    </blockquote>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\r\n  <div class=\"card-header\">\r\n    <p class=\"text-left\">\r\n      {{utilisateur.nom}} {{utilisateur.prenom}}\r\n      <span class=\"float-right\">{{avis.note}}/5</span>\r\n    </p>\r\n  </div>\r\n\r\n  <div class=\"card-body\">\r\n    <blockquote class=\"blockquote mb-0\">\r\n      <p>{{avis.commentaire}}</p>\r\n      <footer class=\"blockquote-footer\"> {{avis.date}} </footer>\r\n    </blockquote>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -97,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul *ngFor=\"let avis of listAvis\">\n  <li>\n    <app-detail-comment [avis]=\"avis\"></app-detail-comment>\n  </li>\n</ul>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ul *ngFor=\"let avis of listAvis\">\r\n  <li>\r\n    <app-detail-comment [avis]=\"avis\"></app-detail-comment>\r\n  </li>\r\n</ul>\r\n");
 
 /***/ }),
 
@@ -110,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <app-single-lieu [lieu]=\"lieu\"></app-single-lieu>\n</div>\n\n<div>\n  <app-list-comment [id]=\"id\"></app-list-comment>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n  <app-single-lieu [lieu]=\"lieu\"></app-single-lieu>\r\n</div>\r\n\r\n<div>\r\n  <app-list-comment [id]=\"id\"></app-list-comment>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -123,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul>\n  <li *ngFor=\"let lieu of lieux\">\n    <app-single-lieu [lieu]=\"lieu\"></app-single-lieu>\n  </li>\n</ul>\n\n<div class=\"text-center\">\n  <button class=\"btn btn-info\">Ajouter lieu</button>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ul>\r\n  <li *ngFor=\"let lieu of lieux\">\r\n    <app-single-lieu [lieu]=\"lieu\"></app-single-lieu>\r\n  </li>\r\n</ul>\r\n\r\n<div class=\"text-center\">\r\n  <button class=\"btn btn-info\">Ajouter lieu</button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -136,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\n  <div class=\"col-12\">\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\n      <div class=\"card-header bg-dark text-center text-light\">\n        <h5>{{lieu.nom}}</h5>\n      </div>\n\n      <div class=\"py-2 px-3\">\n        <div class=\"d-block\">\n          <hr>\n          <span class=\"d-inline\">{{lieu.id}} : </span>\n          <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{lieu.type}}</h6>\n          <hr>\n        </div>\n        <p class=\"card-text\"a>{{lieu.description}}</p>\n      </div>\n\n      <div class=\"card-footer\">\n        <div>\n          {{adresse.cp}} {{adresse.ville}}\n          <br>\n          {{adresse.rue}}, {{adresse.num}}\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\r\n  <div class=\"col-12\">\r\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\r\n      <div class=\"card-header bg-dark text-center text-light\">\r\n        <h5>{{lieu.nom}}</h5>\r\n      </div>\r\n\r\n      <div class=\"py-2 px-3\">\r\n        <div class=\"d-block\">\r\n          <hr>\r\n          <span class=\"d-inline\">{{lieu.id}} : </span>\r\n          <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{lieu.type}}</h6>\r\n          <hr>\r\n        </div>\r\n        <p class=\"card-text\"a>{{lieu.description}}</p>\r\n      </div>\r\n\r\n      <div class=\"card-footer\">\r\n        <div>\r\n          {{adresse.cp}} {{adresse.ville}}\r\n          <br>\r\n          {{adresse.rue}}, {{adresse.num}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -729,14 +755,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _Adresse_adresse_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Adresse/adresse.service */ "./src/app/Adresse/adresse.service.ts");
+/* harmony import */ var _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Adresse/Adresse */ "./src/app/Adresse/Adresse.ts");
+
+
 
 
 let AppComponent = class AppComponent {
-    constructor() {
-        this.title = 'Cou_Project';
-        this.currentJustify = 'justified';
+    constructor(adressService) {
+        this.adressService = adressService;
+        this._adressList = [];
+        this.subscriptions = [];
+    }
+    ngOnInit() {
+        this.loadAdress();
+    }
+    loadAdress() {
+        const sub = this.adressService.query().subscribe(listAdress => this.adressList = listAdress.map(adress => new _Adresse_Adresse__WEBPACK_IMPORTED_MODULE_3__["Adresse"]().fromAdresseDto(adress)));
+        this.subscriptions.push(sub);
+    }
+    get adressList() {
+        return this._adressList;
+    }
+    set adressList(value) {
+        this._adressList = value;
     }
 };
+AppComponent.ctorParameters = () => [
+    { type: _Adresse_adresse_service__WEBPACK_IMPORTED_MODULE_2__["AdresseService"] }
+];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
@@ -776,6 +823,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_comment_list_comment_list_comment_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/comment/list-comment/list-comment.component */ "./src/app/views/comment/list-comment/list-comment.component.ts");
 /* harmony import */ var _views_comment_detail_comment_detail_comment_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./views/comment/detail-comment/detail-comment.component */ "./src/app/views/comment/detail-comment/detail-comment.component.ts");
 /* harmony import */ var _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./forms/form-lieu/form-lieu.component */ "./src/app/forms/form-lieu/form-lieu.component.ts");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
+/* harmony import */ var _map_map_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./map/map.component */ "./src/app/map/map.component.ts");
+/* harmony import */ var _list_adress_list_adress_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./list-adress/list-adress.component */ "./src/app/list-adress/list-adress.component.ts");
+/* harmony import */ var _agm_js_marker_clusterer__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @agm/js-marker-clusterer */ "./node_modules/@agm/js-marker-clusterer/fesm2015/agm-js-marker-clusterer.js");
+
+
+
+
 
 
 
@@ -817,7 +872,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _views_lieu_detail_lieu_detail_lieu_component__WEBPACK_IMPORTED_MODULE_13__["DetailLieuComponent"],
             _views_comment_list_comment_list_comment_component__WEBPACK_IMPORTED_MODULE_14__["ListCommentComponent"],
             _views_comment_detail_comment_detail_comment_component__WEBPACK_IMPORTED_MODULE_15__["DetailCommentComponent"],
-            _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__["FormLieuComponent"]
+            _forms_form_lieu_form_lieu_component__WEBPACK_IMPORTED_MODULE_16__["FormLieuComponent"],
+            _map_map_component__WEBPACK_IMPORTED_MODULE_18__["MapComponent"],
+            _list_adress_list_adress_component__WEBPACK_IMPORTED_MODULE_19__["ListAdressComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -826,7 +883,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"].forRoot(routes)
+            _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"].forRoot(routes),
+            _agm_core__WEBPACK_IMPORTED_MODULE_17__["AgmCoreModule"].forRoot({ apiKey: 'AIzaSyD6dHdCHR8CbbpkMiCkYAcJxzXgvV1E64k' }),
+            _agm_js_marker_clusterer__WEBPACK_IMPORTED_MODULE_20__["AgmJsMarkerClustererModule"]
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -1055,6 +1114,221 @@ FormLieuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./form-lieu.component.css */ "./src/app/forms/form-lieu/form-lieu.component.css")).default]
     })
 ], FormLieuComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/geocode.service.ts":
+/*!************************************!*\
+  !*** ./src/app/geocode.service.ts ***!
+  \************************************/
+/*! exports provided: GeocodeService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GeocodeService", function() { return GeocodeService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var rxjs_internal_compatibility__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/internal-compatibility */ "./node_modules/rxjs/_esm2015/internal-compatibility/index.js");
+
+
+
+
+
+
+let GeocodeService = class GeocodeService {
+    constructor(mapLoader) {
+        this.mapLoader = mapLoader;
+    }
+    initGeocoder() {
+        this.geocoder = new google.maps.Geocoder();
+    }
+    waitForMapsToLoad() {
+        if (!this.geocoder) {
+            return Object(rxjs_internal_compatibility__WEBPACK_IMPORTED_MODULE_5__["fromPromise"])(this.mapLoader.load())
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(() => this.initGeocoder()), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(() => true));
+        }
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(true);
+    }
+    geocodeAddress(location) {
+        return this.waitForMapsToLoad().pipe(
+        // filter(loaded => loaded),
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(() => {
+            return new rxjs__WEBPACK_IMPORTED_MODULE_4__["Observable"](observer => {
+                this.geocoder.geocode({ 'address': location }, (results, status) => {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        observer.next({
+                            lat: results[0].geometry.location.lat(),
+                            lng: results[0].geometry.location.lng()
+                        });
+                    }
+                    else {
+                        console.log('Error - ', results, ' & Status - ', status);
+                        observer.next({ lat: 0, lng: 0 });
+                    }
+                    observer.complete();
+                });
+            });
+        }));
+    }
+};
+GeocodeService.ctorParameters = () => [
+    { type: _agm_core__WEBPACK_IMPORTED_MODULE_2__["MapsAPILoader"] }
+];
+GeocodeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], GeocodeService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/list-adress/list-adress.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/list-adress/list-adress.component.css ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xpc3QtYWRyZXNzL2xpc3QtYWRyZXNzLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/list-adress/list-adress.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/list-adress/list-adress.component.ts ***!
+  \******************************************************/
+/*! exports provided: ListAdressComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListAdressComponent", function() { return ListAdressComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let ListAdressComponent = class ListAdressComponent {
+    constructor() {
+        this._adressList = [];
+    }
+    ngOnInit() {
+    }
+    get adressList() {
+        return this._adressList;
+    }
+    set adressList(value) {
+        this._adressList = value;
+    }
+};
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ListAdressComponent.prototype, "adressList", null);
+ListAdressComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-list-adress',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./list-adress.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/list-adress/list-adress.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./list-adress.component.css */ "./src/app/list-adress/list-adress.component.css")).default]
+    })
+], ListAdressComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/map/map.component.css":
+/*!***************************************!*\
+  !*** ./src/app/map/map.component.css ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hcC9tYXAuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/map/map.component.ts":
+/*!**************************************!*\
+  !*** ./src/app/map/map.component.ts ***!
+  \**************************************/
+/*! exports provided: MapComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapComponent", function() { return MapComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _geocode_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../geocode.service */ "./src/app/geocode.service.ts");
+
+
+
+let MapComponent = class MapComponent {
+    constructor(geocodeService) {
+        this.geocodeService = geocodeService;
+        this.markers = [];
+        this._adressList = [];
+    }
+    ngOnInit() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.addressToCoordinates();
+        });
+    }
+    test() {
+        this.addressToCoordinates();
+    }
+    addressToCoordinates() {
+        for (let i = 0; i < this.adressList.length; i++) {
+            this.geocodeService.geocodeAddress(this.adressList[i].ville + ", " + this.adressList[i].rue + " N° " + this.adressList[i].num + ", " + this.adressList[i].cp)
+                .subscribe((location) => {
+                this.location = location;
+                console.log(this.location);
+                this.markers.push({
+                    lat: this.location.lat,
+                    lng: this.location.lng,
+                    label: this.adressList[i].ville + ", " + this.adressList[i].rue + " N° " + this.adressList[i].num + ", " + this.adressList[i].cp,
+                    id: this.adressList[i].id
+                });
+            });
+        }
+    }
+    loadingMap(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    get adressList() {
+        return this._adressList;
+    }
+    set adressList(value) {
+        this._adressList = value;
+    }
+    sayCoucouFromMarker(label, id) {
+        console.log("Coucou de " + label + " " + id);
+    }
+};
+MapComponent.ctorParameters = () => [
+    { type: _geocode_service__WEBPACK_IMPORTED_MODULE_2__["GeocodeService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], MapComponent.prototype, "adressList", null);
+MapComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-map',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./map.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/map/map.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./map.component.css */ "./src/app/map/map.component.css")).default]
+    })
+], MapComponent);
 
 
 

@@ -15,6 +15,10 @@ import { DetailLieuComponent } from './views/lieu/detail-lieu/detail-lieu.compon
 import { ListCommentComponent } from './views/comment/list-comment/list-comment.component';
 import { DetailCommentComponent } from './views/comment/detail-comment/detail-comment.component';
 import { FormLieuComponent } from './forms/form-lieu/form-lieu.component';
+import {AgmCoreModule} from '@agm/core';
+import { MapComponent } from './map/map.component';
+import { ListAdressComponent } from './list-adress/list-adress.component';
+import {AgmJsMarkerClustererModule} from '@agm/js-marker-clusterer';
 
 // path = le nom du controller de l'api en fonction de ce que l'on veut faire
 // component : celui que l'on souhaite afficher
@@ -38,7 +42,9 @@ const routes: Routes = [
     DetailLieuComponent,
     ListCommentComponent,
     DetailCommentComponent,
-    FormLieuComponent
+    FormLieuComponent,
+    MapComponent,
+    ListAdressComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,9 @@ const routes: Routes = [
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyD6dHdCHR8CbbpkMiCkYAcJxzXgvV1E64k'}),
+    AgmJsMarkerClustererModule
   ],
   providers: [],
   bootstrap: [AppComponent]
