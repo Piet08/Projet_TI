@@ -1,8 +1,10 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Subscription} from "rxjs";
 import {authenticateModel, authenticateModelList} from "../../../User/authenticateModel";
 import {UserService} from "../../../User/user.service";
+import {User} from "../../../User/user";
+import {authenticateModelDto} from "../../../User/authenticateModel-dto";
 
 @Component({
   selector: 'app-smart-form-connection',
@@ -12,7 +14,8 @@ import {UserService} from "../../../User/user.service";
 export class SmartFormConnectionComponent implements OnInit, OnDestroy {
 
   private subscriptions: Subscription[] = [];
-  private _usersConnected: authenticateModelList = [];
+  private _usersAuthenticate: authenticateModelList = [];
+
 
   constructor(public userService : UserService, private http: HttpClient) { }
 
@@ -28,10 +31,19 @@ export class SmartFormConnectionComponent implements OnInit, OnDestroy {
     }
   }
 
+
+
   createUserConnected($event: authenticateModel) {
-    //console.log($event);
     const sub = this.userService.postAuth($event.toAuthenticateModelDto()).subscribe(
-      authenticateModelDTO => this._usersConnected.push(new authenticateModel().fromAuthenticateModelDto(authenticateModelDTO)));
+      authenticateModelDTO =>{
+        this._usersAuthenticate.push(new authenticateModel().fromAuthenticateModelDto(authenticateModelDTO));
+        this._usersAuthenticate.forEach(use => localStorage.setItem("id_token", use.token));
+      });
     this.subscriptions.push(sub);
+
   }
+
+
+
+
 }

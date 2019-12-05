@@ -32,10 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User/authenticate\" class=\"nav-link\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n      <router-outlet></router-outlet>\r\n</div>\r\n\r\n");
-
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User/authenticate\" class=\"nav-link\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n      <router-outlet></router-outlet>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a id=\"LogIn\" routerLink=\"User/authenticate\" class=\"nav-link\" [ngStyle]=\"isLogIn()\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a id=\"LogOut\" (click)=\"logOut()\" class=\"nav-link\">Déconnexion</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n      <router-outlet id=\"component\">\r\n\r\n      </router-outlet>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -61,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-form-connection (userConnected)=\"createUserConnected($event)\"></app-form-connection>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-form-connection (userConnected)=\"createUserConnected($event)\"></app-form-connection>\n");
 
 /***/ }),
 
@@ -87,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-form-inscription (userCreated)=\"createUser($event)\"></app-form-inscription>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-form-inscription (userCreated)=\"createUser($event)\"></app-form-inscription>\n");
 
 /***/ }),
 
@@ -152,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<agm-map mapTypeId=\"roadmap\"  id=\"map\" [latitude]=\"50.4535039\" [longitude]=\"3.9516516\">\n  <agm-marker-cluster imagePath=\"https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m\">\n    <agm-marker *ngFor=\"let m of markers ; let i= index\"\n                        [latitude]=\"m.lat\"\n                        [longitude]=\"m.lng\"\n                        (markerClick)=\"sayCoucouFromMarker(m.label,m.id,m.lat,m.lng)\">\n\n      <agm-info-window>{{m.label}}</agm-info-window>\n    </agm-marker>\n  </agm-marker-cluster>\n\n</agm-map>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<agm-map mapTypeId=\"roadmap\"  id=\"map\" [latitude]=\"50.4535039\" [longitude]=\"3.9516516\">\r\n  <agm-marker-cluster imagePath=\"https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m\">\r\n    <agm-marker *ngFor=\"let m of markers ; let i= index\"\r\n                        [latitude]=\"m.lat\"\r\n                        [longitude]=\"m.lng\"\r\n                        (markerClick)=\"sayCoucouFromMarker(m.label,m.id,m.lat,m.lng)\">\r\n\r\n      <agm-info-window>{{m.label}}</agm-info-window>\r\n    </agm-marker>\r\n  </agm-marker-cluster>\r\n\r\n</agm-map>\r\n\r\n<div class=\"container\" align=\"center\">\r\n  <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -165,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-dump-map [markers]=\"markers\"></app-dump-map>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-dump-map [markers]=\"markers\"></app-dump-map>\r\n");
 
 /***/ }),
 
@@ -204,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\" id=\"header\">\r\n  <h2 class=\"display-3\">Cou ? </h2>\r\n  <p class=\"lead\">New student in Mons ? Find all you need here ! </p>\r\n  <hr class=\"my-4\">\r\n  <p>With an account, you can find all place you need and create a favorite's list place !<br>\r\n  You can make the difference with a rating/comments system ! Don't wait, join our community !</p>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\" id=\"header\">\n  <h2 class=\"display-3\">Cou ? </h2>\n  <p class=\"lead\">New student in Mons ? Find all you need here ! </p>\n  <hr class=\"my-4\">\n  <p>With an account, you can find all place you need and create a favorite's list place !<br>\n  You can make the difference with a rating/comments system ! Don't wait, join our community !</p>\n</div>\n");
 
 /***/ }),
 
@@ -644,9 +641,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class authenticateModel {
-    constructor(username = '', password = '') {
+    get token() {
+        return this._token;
+    }
+    set token(value) {
+        this._token = value;
+    }
+    constructor(username = '', password = '', token = '') {
         this._username = username;
         this._password = password;
+        this._token = token;
     }
     get password() {
         return this._password;
@@ -662,14 +666,17 @@ class authenticateModel {
     }
     //Object provenant de la db donc type Object !! -> Function to set Type (Utilisateur)
     fromAuthenticateModelDto(dto) {
-        Object.assign(this, dto);
+        Object.assign(this._password, dto);
+        Object.assign(this._username, dto);
+        this._token = dto.token;
         return this;
     }
     //Inverse de la méthode du dessus !
     toAuthenticateModelDto() {
         return {
             username: this._username,
-            password: this._password
+            password: this._password,
+            token: this._token
         };
     }
 }
@@ -704,6 +711,9 @@ let UserService = class UserService {
     postAuth(model) {
         return this.http.post(URL_API_AUTH, model);
     }
+    /*getAuth(model : authenticateModelDto): Observable<authenticateModelDto>{
+      return this.http.get<authenticateModelDto>(URL_API_AUTH);
+    }*/
     //UTILISATEUR
     query() {
         return this.http.get(URL_API_UTIL);
@@ -711,9 +721,6 @@ let UserService = class UserService {
     get(id) {
         return this.http.get(URL_API_UTIL + '/' + id);
     }
-    /*post(utilisateur : UserDto): Observable<UserDto>{
-      return this.http.post<UserDto>(URL_API_UTIL, utilisateur);
-    }*/
     post(user) {
         return this.http.post(URL_API_UTIL, user);
     }
@@ -893,7 +900,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.nav-link{\r\n  font-size: 18px;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n#displayComp{\r\n  background-color: lavender;\r\n}\r\n#header {\r\n\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtFQUNFLGVBQWU7QUFDakI7QUFDQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsMEJBQTBCO0FBQzVCO0FBQ0E7O0FBRUEiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZiYXJ7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGZvbnQtc2l6ZSA6IDE4cHg7XHJcbn1cclxuLm5hYmFyLW5hdntcclxuICB3aWR0aCA6IDMwMHB4O1xyXG59XHJcbi5uYXYtbGlua3tcclxuICBmb250LXNpemU6IDE4cHg7XHJcbn1cclxuLmNvbnRhY3R7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkaW1ncmF5O1xyXG4gIGZvbnQtc2l6ZTogMzVweDtcclxufVxyXG4jZGlzcGxheUNvbXB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbGF2ZW5kZXI7XHJcbn1cclxuI2hlYWRlciB7XHJcblxyXG59XHJcbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.nav-link{\r\n  font-size: 18px;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n#displayComp{\r\n  background-color: lavender;\r\n  height : 80%;\r\n}\r\n#footer {\r\n  height : 20px;\r\n  background-color: dimgray;\r\n  text-align: center;\r\n  vertical-align: middle;\r\n}\r\n#LogOut{\r\n  border-style: solid;\r\n  border-radius: 20px;\r\n  border-right-width: 10px;\r\n  border-left-width: 10px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtFQUNFLGVBQWU7QUFDakI7QUFDQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsMEJBQTBCO0VBQzFCLFlBQVk7QUFDZDtBQUNBO0VBQ0UsYUFBYTtFQUNiLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsc0JBQXNCO0FBQ3hCO0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsbUJBQW1CO0VBQ25CLHdCQUF3QjtFQUN4Qix1QkFBdUI7QUFDekIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZiYXJ7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGZvbnQtc2l6ZSA6IDE4cHg7XHJcbn1cclxuLm5hYmFyLW5hdntcclxuICB3aWR0aCA6IDMwMHB4O1xyXG59XHJcbi5uYXYtbGlua3tcclxuICBmb250LXNpemU6IDE4cHg7XHJcbn1cclxuLmNvbnRhY3R7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkaW1ncmF5O1xyXG4gIGZvbnQtc2l6ZTogMzVweDtcclxufVxyXG4jZGlzcGxheUNvbXB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbGF2ZW5kZXI7XHJcbiAgaGVpZ2h0IDogODAlO1xyXG59XHJcbiNmb290ZXIge1xyXG4gIGhlaWdodCA6IDIwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogZGltZ3JheTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG5cclxuI0xvZ091dHtcclxuICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgYm9yZGVyLXJpZ2h0LXdpZHRoOiAxMHB4O1xyXG4gIGJvcmRlci1sZWZ0LXdpZHRoOiAxMHB4O1xyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -918,6 +925,20 @@ let AppComponent = class AppComponent {
         this.isCollapsed = true;
     }
     ngOnInit() {
+    }
+    logOut() {
+        localStorage.removeItem("id_token");
+        this.style = {
+            'background-color': ''
+        };
+    }
+    isLogIn() {
+        if (localStorage.length >= 1) {
+            this.style = {
+                'background-color': 'green'
+            };
+        }
+        return this.style;
     }
 };
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -953,7 +974,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _forms_form_inscription_dumb_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/form-inscription/dumb-form-inscription/form-inscription.component */ "./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/fesm2015/agm-core.js");
 /* harmony import */ var _agm_js_marker_clusterer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @agm/js-marker-clusterer */ "./node_modules/@agm/js-marker-clusterer/fesm2015/agm-js-marker-clusterer.js");
 /* harmony import */ var _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./forms/form-inscription/smart-form-inscription/smart-form-inscription.component */ "./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.ts");
 /* harmony import */ var _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./forms/form-connection/smart-form-connection/smart-form-connection.component */ "./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.ts");
@@ -1102,11 +1123,11 @@ let FormConnectionComponent = class FormConnectionComponent {
         const userConnected = new _User_authenticateModel__WEBPACK_IMPORTED_MODULE_3__["authenticateModel"]();
         userConnected.username = this.formulaireConnexion.get("username").value;
         userConnected.password = this.formulaireConnexion.get("motDePasseConnexion").value;
+        userConnected.token;
         return userConnected;
     }
     emitNewUserConnected() {
         this.userConnected.next(this.buildUserConnected());
-        console.log(this.userConnected);
         this.formulaireConnexion.reset();
     }
 };
@@ -1166,7 +1187,7 @@ let SmartFormConnectionComponent = class SmartFormConnectionComponent {
         this.userService = userService;
         this.http = http;
         this.subscriptions = [];
-        this._usersConnected = [];
+        this._usersAuthenticate = [];
     }
     ngOnInit() {
     }
@@ -1179,8 +1200,10 @@ let SmartFormConnectionComponent = class SmartFormConnectionComponent {
         }
     }
     createUserConnected($event) {
-        //console.log($event);
-        const sub = this.userService.postAuth($event.toAuthenticateModelDto()).subscribe(authenticateModelDTO => this._usersConnected.push(new _User_authenticateModel__WEBPACK_IMPORTED_MODULE_3__["authenticateModel"]().fromAuthenticateModelDto(authenticateModelDTO)));
+        const sub = this.userService.postAuth($event.toAuthenticateModelDto()).subscribe(authenticateModelDTO => {
+            this._usersAuthenticate.push(new _User_authenticateModel__WEBPACK_IMPORTED_MODULE_3__["authenticateModel"]().fromAuthenticateModelDto(authenticateModelDTO));
+            this._usersAuthenticate.forEach(use => localStorage.setItem("id_token", use.token));
+        });
         this.subscriptions.push(sub);
     }
 };
@@ -1726,10 +1749,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DumpMapComponent", function() { return DumpMapComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 let DumpMapComponent = class DumpMapComponent {
-    constructor() {
+    constructor(router) {
+        this.router = router;
         this._markers = [];
         this.style = [
             {
@@ -1992,7 +2018,13 @@ let DumpMapComponent = class DumpMapComponent {
     sayCoucouFromMarker(label, id, lat, lng) {
         console.log("Coucou de " + label + " " + id + " LAT : " + lat + " LONG : " + lng);
     }
+    navigateToFormAddLieu() {
+        this.router.navigate(['place']);
+    }
 };
+DumpMapComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], DumpMapComponent.prototype, "markers", null);
@@ -2020,7 +2052,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GeocodeService", function() { return GeocodeService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/fesm2015/agm-core.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_internal_compatibility__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/internal-compatibility */ "./node_modules/rxjs/_esm2015/internal-compatibility/index.js");
@@ -2706,7 +2738,7 @@ let ListPlaceComponent = class ListPlaceComponent {
         this.subscriptions.push(sub);
     }
     navigateToFormAddLieu() {
-        this.router.navigate(['forms/lieux']);
+        this.router.navigate(['place']);
     }
 };
 ListPlaceComponent.ctorParameters = () => [

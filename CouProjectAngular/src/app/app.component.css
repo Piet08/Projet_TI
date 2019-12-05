@@ -15,7 +15,18 @@
 }
 #displayComp{
   background-color: lavender;
+  height : 80%;
 }
-#header {
+#footer {
+  height : 20px;
+  background-color: dimgray;
+  text-align: center;
+  vertical-align: middle;
+}
 
+#LogOut{
+  border-style: solid;
+  border-radius: 20px;
+  border-right-width: 10px;
+  border-left-width: 10px;
 }

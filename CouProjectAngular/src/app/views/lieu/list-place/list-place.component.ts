@@ -37,6 +37,6 @@ export class ListPlaceComponent implements OnInit {
   }
 
   navigateToFormAddLieu() {
-    this.router.navigate(['forms/lieux']);
+    this.router.navigate(['place']);
   }
 }

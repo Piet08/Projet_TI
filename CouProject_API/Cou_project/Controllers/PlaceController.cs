@@ -19,7 +19,7 @@ namespace Cou_project.Controllers
             return Ok(PlaceDAO.Query());
         }
         
-        [HttpPost]
+        [HttpPost("forms")]
         public ActionResult<Place> Post([FromBody] PlaceAndAddress place)
         {
 //          return Ok(LieuDAO.Create(place));

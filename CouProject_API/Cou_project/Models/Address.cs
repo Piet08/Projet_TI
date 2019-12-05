@@ -13,7 +13,7 @@ namespace Cou_project.Models
         public int PostalCode { get; set; }
         
         
-        public Address(int id, string city, string straat, int num, int postalCode)
+        public Address(int id, string city, string straat, string num, int postalCode)
         {
             Id = id;
             City = city;
