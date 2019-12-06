@@ -3,6 +3,7 @@ import {Review} from '../review';
 import {User} from '../../../User/user';
 import {UserService} from '../../../User/user.service';
 import {Subscription} from 'rxjs';
+import {ReviewAndUserDto} from '../review-insert-dto';
 
 @Component({
   selector: 'app-detail-comment',
@@ -10,42 +11,21 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./detail-review.component.css']
 })
 export class DetailReviewComponent implements OnInit,OnDestroy{
-  private _review:Review;
-  private _user:User = new User();
-  private subscriptions: Subscription[] = [];
-  constructor(public utilService:UserService) { }
+  private _reviewAndUser:ReviewAndUserDto;
+
+  constructor() { }
 
   ngOnInit() {
   }
 
-  ngOnDestroy(): void {
-    for (let i = this.subscriptions.length - 1; i >= 0; i--) {
-      const subscription = this.subscriptions[i];
-      subscription && subscription.unsubscribe();
-      this.subscriptions.pop();
-    }
-  }
+  ngOnDestroy(): void {}
 
-  get review(): Review {
-    return this._review;
+  get reviewAndUser(): ReviewAndUserDto {
+    return this._reviewAndUser;
   }
-
   @Input()
-  set review(value: Review) {
-    this._review = value;
-    this.getUser(this._review.idUser);
+  set reviewAndUser(value: ReviewAndUserDto) {
+    this._reviewAndUser = value;
   }
 
-  get user(): User {
-    return this._user;
-  }
-
-  set user(value: User) {
-    this._user = value;
-  }
-
-  private getUser(idutil: number) {
-    const sub = this.utilService.get(idutil).subscribe(user => this._user = new User().fromUtilisateurDto(user));
-    this.subscriptions.push(sub);
-  }
 }

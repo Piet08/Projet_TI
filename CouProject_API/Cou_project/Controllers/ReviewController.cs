@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cou_project.DAO;
 using Cou_project.Models;
 using Cou_project.Services;
@@ -18,18 +19,25 @@ namespace Cou_project.Controllers
             return Ok(ReviewDAO.Query());
         }
 
-//        [HttpGet("reviewAndUser/{id}")]
-//        public ActionResult<ReviewAndUser> GetReviewAndUser(int id)
-//        {
-//            
-//        }
+        [HttpGet("user/{id}")]
+        public ActionResult<ReviewAndUser> GetReviewAndUser(int id)
+        {
+            ReviewAndUser reviewAndUser = _reviewService.GetReviewAndUser(id);
+            return reviewAndUser != null ? (ActionResult<ReviewAndUser>) Ok(reviewAndUser) : NotFound("Review not found");
+        }
         
         // api/places/8/reviews
+
+        [HttpGet("users/place/{id}")]
+        public ActionResult<IEnumerable<ReviewAndUser>> GetReviewAndUserByPlace(int id)
+        {
+            return Ok(_reviewService.GetReviewAndUserByPlace(id));
+        }
         
         [HttpGet("place/{id}")]
-        public ActionResult<IEnumerable<Review>> GetAvisByLieu(int id)
+        public ActionResult<IEnumerable<Review>> GetReviewByPlace(int id)
         {
-            IEnumerable<Review> reviews = ReviewDAO.GetAvisByPlace(id);
+            IEnumerable<Review> reviews = ReviewDAO.GetReviewByPlace(id);
             return reviews != null
                 ? (ActionResult<IEnumerable<Review>>) Ok(reviews)
                 : NotFound("This lieu does not exists !");

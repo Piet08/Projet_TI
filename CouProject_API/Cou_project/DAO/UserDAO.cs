@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using Cou_project.Helpers;
 using Cou_project.Models;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cou_project.DAO
@@ -48,7 +46,6 @@ namespace Cou_project.DAO
         private static readonly string RED_POST_FAVORIS = $"INSERT INTO {TABLE_FAVORIS}({FIELD_IDUSER}, {FIELD_IDPLACE}) VALUES (@{FIELD_IDUSER}, @{FIELD_IDPLACE})";
         private static readonly string REQ_DELETE_FAVORIS = $"DELETE FROM {TABLE_FAVORIS} WHERE {FIELD_IDUSER} = @{FIELD_IDUSER} AND {FIELD_IDPLACE} = @{FIELD_IDPLACE}";
 
-        static PasswordHasher hasher = new PasswordHasher();
         
         public static User QueryAuth(AuthenticateModel model)
         {

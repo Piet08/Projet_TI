@@ -5,6 +5,9 @@ import {PlaceService} from '../place.service';
 import {Subscription} from 'rxjs';
 import {Review} from '../../comment/review';
 import {ReviewService} from '../../comment/review.service';
+import {ReviewAndUserDto} from '../../comment/review-insert-dto';
+import {User} from '../../../User/user';
+import {PlaceAndAddressDto} from '../place-dto';
 
 @Component({
   selector: 'app-detai-lieu',
@@ -13,14 +16,17 @@ import {ReviewService} from '../../comment/review.service';
 })
 export class DetailPlaceComponent implements OnInit,OnDestroy{
   private _place:Place;
+  private _placeAndAddress:PlaceAndAddressDto;
   private _id:number;
   private subscriptions:Subscription[] = [];
+  private _listReviewAndUser: ReviewAndUserDto[];
 
   constructor(private route:ActivatedRoute, public lieuService:PlaceService,public reviewService:ReviewService) { }
 
   ngOnInit() {
     this._id = parseInt(this.route.snapshot.params['id'],10);
     this.loadPlace(this._id);
+    this.loadReviewOfPlace(this._id);
   }
 
   ngOnDestroy(): void {
@@ -29,6 +35,14 @@ export class DetailPlaceComponent implements OnInit,OnDestroy{
       subscription && subscription.unsubscribe();
       this.subscriptions.pop();
     }
+  }
+
+  get placeAndAddress(): PlaceAndAddressDto {
+    return this._placeAndAddress;
+  }
+
+  set placeAndAddress(value: PlaceAndAddressDto) {
+    this._placeAndAddress = value;
   }
 
   get id(): number {
@@ -48,14 +62,33 @@ export class DetailPlaceComponent implements OnInit,OnDestroy{
     this._place = value;
   }
 
+  get listReviewAndUser(): ReviewAndUserDto[] {
+    return this._listReviewAndUser;
+  }
+
+  set listReviewAndUser(value: ReviewAndUserDto[]) {
+    this._listReviewAndUser = value;
+  }
+
   private loadPlace(id: number) {
-    const sub = this.lieuService.get(id).subscribe( lieu => this._place = new Place().fromLieuDto(lieu));
+    const sub = this.lieuService.getPlaceAndAddress(id).subscribe( lieu => this._placeAndAddress = lieu);
     this.subscriptions.push(sub);
   }
 
   createReview($event: Review) {
     $event.idPlace = this._id;
-    console.log(JSON.stringify($event));
-    this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe());
+    this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe(
+      // review => this.listReviewAndUser.push({
+      //   review : review,
+      //   user : null
+      // })
+    ));
+  }
+
+  private loadReviewOfPlace(id: number) {
+    const sub = this.reviewService.getReviewsAndUserFromAPlace(id).subscribe(
+      listReviewAndUser => this._listReviewAndUser = listReviewAndUser
+    );
+    this.subscriptions.push(sub);
   }
 }

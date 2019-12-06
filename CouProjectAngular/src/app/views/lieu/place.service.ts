@@ -19,7 +19,12 @@ export class PlaceService {
   get(id:number): Observable<PlaceDto>{
     return this.http.get<PlaceDto>(URL_API+'/'+id);
   }
-
+  getPlaceAndAddress(id:number): Observable<PlaceAndAddressDto>{
+    return this.http.get<PlaceAndAddressDto>(URL_API+'/address/'+id);
+  }
+  getPlacesAndAddressees():Observable<PlaceAndAddressDto[]>{
+    return this.http.get<PlaceAndAddressDto[]>(URL_API+"/addresses");
+  }
   // post(lieu : LieuDto): Observable<LieuDto>{
   //   return this.http.post<LieuDto>(URL_API, lieu);
   // }

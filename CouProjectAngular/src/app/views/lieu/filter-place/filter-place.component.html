@@ -1,0 +1,17 @@
+<form [formGroup]="formFilter" class="offset-1">
+  <div class="d-inline-block">
+    <div class="form-group form-inline float-left">
+      <label for="category">Catégorie :</label>
+      <select name="category" id="category" class="form-control ml-3" [value]="'ALL'" formControlName="category"
+              (change)="emitFilterCategory()">
+        <option class="form-control" *ngFor="let cat of TYPE_LIEUX" value="{{cat}}">{{cat}}</option>
+      </select>
+    </div>
+    <div class="form-group form-inline pl-5 float-right">
+      <label>Trier :</label>
+      <select name="sort" id="sort" class="form-control ml-3" [value]="TYPE_SORT[0].key" formControlName="sort" (change)="emitTypeSort()">
+        <option class="form-control" *ngFor="let sort of TYPE_SORT" value="{{sort.key}}">{{sort.name}}</option>
+      </select>
+    </div>
+  </div>
+</form>

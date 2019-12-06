@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {ReviewInsertDto} from './review-insert-dto';
+import {ReviewAndUserDto, ReviewInsertDto} from './review-insert-dto';
 
 const URL_API:string = "/api/Review";
 
@@ -20,7 +20,11 @@ export class ReviewService {
   //   return this.http.get<ReviewDto>(URL_API+'/'+id);
   // }
 
-  getAvisFromAnUser(idLieu:number):Observable<ReviewInsertDto[]>{
+  getReviewsAndUserFromAPlace(idLieu:number):Observable<ReviewAndUserDto[]>{
+    return this.http.get<ReviewAndUserDto[]>(URL_API+'/users/place/'+idLieu);
+  }
+
+  getReviewsFromAPlace(idLieu:number):Observable<ReviewInsertDto[]>{
     return this.http.get<ReviewInsertDto[]>(URL_API+'/place/'+idLieu);
   }
 
