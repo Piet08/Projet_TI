@@ -19,6 +19,12 @@ namespace Cou_project.Controllers
             return Ok(PlaceDAO.Query());
         }
         
+        [HttpGet("map")]
+        public ActionResult<IEnumerable<Place>> QueryMap()
+        {
+            return Ok(_placeService.GetPlacesAndAddresses());
+        }
+        
         [HttpPost]
         public ActionResult<Place> Post([FromBody] PlaceAndAddress place)
         {

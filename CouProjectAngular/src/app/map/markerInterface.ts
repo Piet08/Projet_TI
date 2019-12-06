@@ -1,6 +1,9 @@
 interface marker {
   lat: number;
   lng: number;
-  label: string;
+  label_address: string;
   id: number;
+  name: string;
+  type: string;
+  description: string;
 }

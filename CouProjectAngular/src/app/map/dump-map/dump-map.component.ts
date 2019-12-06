@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Place} from '../../views/lieu/place';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dump-map',
@@ -8,6 +10,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class DumpMapComponent implements OnInit {
 
   private _markers: marker[] = [];
+  private _places: Place[] = [];
   style: any = [
     {
       'elementType': 'geometry',
@@ -258,9 +261,13 @@ export class DumpMapComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  navigateToDetailLieu(id:number) {
+    this.router.navigate(['lieux/'+id]);
   }
 
 
@@ -271,6 +278,16 @@ export class DumpMapComponent implements OnInit {
   @Input()
   set markers(value: marker[]) {
     this._markers = value;
+  }
+
+
+  get places(): Place[] {
+    return this._places;
+  }
+
+  @Input()
+  set places(value: Place[]) {
+    this._places = value;
   }
 
   sayCoucouFromMarker(label: string, id: number, lat:number, lng:number) {

@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<agm-map mapTypeId=\"roadmap\"  id=\"map\" [latitude]=\"50.4535039\" [longitude]=\"3.9516516\">\n  <agm-marker-cluster imagePath=\"https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m\">\n    <agm-marker *ngFor=\"let m of markers ; let i= index\"\n                        [latitude]=\"m.lat\"\n                        [longitude]=\"m.lng\"\n                        (markerClick)=\"sayCoucouFromMarker(m.label,m.id,m.lat,m.lng)\">\n\n      <agm-info-window>{{m.label}}</agm-info-window>\n    </agm-marker>\n  </agm-marker-cluster>\n\n</agm-map>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<agm-map mapTypeId=\"roadmap\" id=\"map\" [latitude]=\"50.4535039\" [longitude]=\"3.9516516\">\n  <agm-marker-cluster imagePath=\"https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m\">\n    <agm-marker *ngFor=\"let m of markers ; let i= index\"\n                [latitude]=\"m.lat\"\n                [longitude]=\"m.lng\"\n                (markerClick)=\"sayCoucouFromMarker(m.description,m.id,m.lat,m.lng)\">\n\n      <agm-info-window>\n        <b>{{m.label_address}}</b>\n        <br>\n        {{m.name + \" : \" + m.description}}\n        <br>\n        <input type=\"button\" (click)=\"navigateToDetailLieu(places[i].id)\" value=\">>See Place<<\">\n      </agm-info-window>\n    </agm-marker>\n  </agm-marker-cluster>\n\n</agm-map>\n");
 
 /***/ }),
 
@@ -162,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-dump-map [markers]=\"markers\"></app-dump-map>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-dump-map [markers]=\"markers\" [places]=\"places\"></app-dump-map>\n");
 
 /***/ }),
 
@@ -1723,11 +1723,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DumpMapComponent", function() { return DumpMapComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 let DumpMapComponent = class DumpMapComponent {
-    constructor() {
+    constructor(router) {
+        this.router = router;
         this._markers = [];
+        this._places = [];
         this.style = [
             {
                 'elementType': 'geometry',
@@ -1980,19 +1984,34 @@ let DumpMapComponent = class DumpMapComponent {
     }
     ngOnInit() {
     }
+    navigateToDetailLieu(id) {
+        this.router.navigate(['lieux/' + id]);
+    }
     get markers() {
         return this._markers;
     }
     set markers(value) {
         this._markers = value;
     }
+    get places() {
+        return this._places;
+    }
+    set places(value) {
+        this._places = value;
+    }
     sayCoucouFromMarker(label, id, lat, lng) {
         console.log("Coucou de " + label + " " + id + " LAT : " + lat + " LONG : " + lng);
     }
 };
+DumpMapComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], DumpMapComponent.prototype, "markers", null);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], DumpMapComponent.prototype, "places", null);
 DumpMapComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-dump-map',
@@ -2101,53 +2120,55 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SmartMapComponent", function() { return SmartMapComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _Address_address__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Address/address */ "./src/app/Address/address.ts");
-/* harmony import */ var _geocode_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../geocode.service */ "./src/app/map/geocode.service.ts");
-/* harmony import */ var _Address_address_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Address/address.service */ "./src/app/Address/address.service.ts");
+/* harmony import */ var _geocode_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../geocode.service */ "./src/app/map/geocode.service.ts");
+/* harmony import */ var _views_lieu_place__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../views/lieu/place */ "./src/app/views/lieu/place.ts");
+/* harmony import */ var _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../views/lieu/place.service */ "./src/app/views/lieu/place.service.ts");
 
 
 
 
 
 let SmartMapComponent = class SmartMapComponent {
-    constructor(geocodeService, addressService) {
+    constructor(geocodeService, /*public addressService: AddressService, */ placeService) {
         this.geocodeService = geocodeService;
-        this.addressService = addressService;
+        this.placeService = placeService;
         this._markers = [];
-        this._addressList = [];
+        this._placeAndAddress = [];
         this.subscriptions = [];
+        this._places = [];
     }
     ngOnInit() {
-        this.loadAllAdress();
+        this.loadPlaceAndAddress((places) => this.loadAllAdressToMarkers(places)); // callback
     }
     ngOnDestroy() {
-        for (let i = this.subscriptions.length - 1; i >= 0; i--) {
-            const subscription = this.subscriptions[i];
-            //IF subscription EXISTE
-            subscription && subscription.unsubscribe();
-            this.subscriptions.pop();
-        }
     }
     //Convertit la liste d'adresses en markers pour les envoyer au dump-map qui les afficheras
-    loadAllAdressToMarkers() {
-        for (let i = 0; i < this.addressList.length; i++) {
-            this.geocodeService.geocodeAddress(this.addressList[i].city + ", " + this.addressList[i].straat + " N° " + this.addressList[i].num + ", " + this.addressList[i].postalCode)
+    loadAllAdressToMarkers(placeAndAddress) {
+        for (let i = 0; i < placeAndAddress.length; i++) {
+            let tmpDto = placeAndAddress[i].place;
+            let tmpPlace = new _views_lieu_place__WEBPACK_IMPORTED_MODULE_3__["Place"](tmpDto.id, tmpDto.name, tmpDto.type, tmpDto.description, tmpDto.idAdr);
+            this.places.push(tmpPlace);
+            this.geocodeService.geocodeAddress(placeAndAddress[i].address.city + ", " + placeAndAddress[i].address.straat + " N° " + placeAndAddress[i].address.num + ", " + placeAndAddress[i].address.postalCode)
                 .subscribe((location) => {
                 this.location = location;
-                this._markers.push({
+                this.markers.push({
                     lat: this.location.lat,
                     lng: this.location.lng,
-                    label: this.addressList[i].city + ", " + this.addressList[i].straat + " N° " + this.addressList[i].num + ", " + this.addressList[i].postalCode,
-                    id: this.addressList[i].id
+                    label_address: this.placeAndAddress[i].address.city + ", " + placeAndAddress[i].address.straat + " N° " + placeAndAddress[i].address.num + ", " + placeAndAddress[i].address.postalCode,
+                    id: this.placeAndAddress[i].place.id,
+                    name: tmpPlace.name,
+                    type: tmpPlace.type,
+                    description: tmpPlace.description
                 });
             });
         }
     }
-    //Contacte l'API pour récupérer toutes les adresses contenues dans la bdd
-    loadAllAdress() {
-        const sub = this.addressService.query().subscribe(listAddress => {
-            this.addressList = listAddress.map(address => new _Address_address__WEBPACK_IMPORTED_MODULE_2__["Address"]().fromAdresseDto(address));
-            this.loadAllAdressToMarkers();
+    loadPlaceAndAddress(fn) {
+        const sub = this.placeService
+            .queryMap()
+            .subscribe(placeAndAddress => {
+            this._placeAndAddress = placeAndAddress;
+            fn(placeAndAddress);
         });
         this.subscriptions.push(sub);
     }
@@ -2157,23 +2178,35 @@ let SmartMapComponent = class SmartMapComponent {
     set markers(value) {
         this._markers = value;
     }
-    get addressList() {
-        return this._addressList;
-    }
-    set addressList(value) {
-        this._addressList = value;
-    }
     get location() {
         return this._location;
     }
     set location(value) {
         this._location = value;
     }
+    get placeAndAddress() {
+        return this._placeAndAddress;
+    }
+    set placeAndAddress(value) {
+        this._placeAndAddress = value;
+    }
+    get places() {
+        return this._places;
+    }
+    set places(value) {
+        this._places = value;
+    }
 };
 SmartMapComponent.ctorParameters = () => [
-    { type: _geocode_service__WEBPACK_IMPORTED_MODULE_3__["GeocodeService"] },
-    { type: _Address_address_service__WEBPACK_IMPORTED_MODULE_4__["AddressService"] }
+    { type: _geocode_service__WEBPACK_IMPORTED_MODULE_2__["GeocodeService"] },
+    { type: _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_4__["PlaceService"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], SmartMapComponent.prototype, "markers", null);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], SmartMapComponent.prototype, "places", null);
 SmartMapComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-smart-map',
@@ -2742,12 +2775,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const URL_API = "/api/place";
+const URL_API_MAP = "/api/place/map";
 let PlaceService = class PlaceService {
     constructor(http) {
         this.http = http;
     }
     query() {
         return this.http.get(URL_API);
+    }
+    queryMap() {
+        return this.http.get(URL_API_MAP);
     }
     get(id) {
         return this.http.get(URL_API + '/' + id);

@@ -4,6 +4,9 @@ import {Address, AddressList} from '../../Address/address';
 import {GeocodeService} from '../geocode.service';
 import {AddressService} from '../../Address/address.service';
 import {Subscription} from 'rxjs';
+import {Place} from '../../views/lieu/place';
+import {PlaceService} from '../../views/lieu/place.service';
+import {PlaceAndAddressDto} from '../../views/lieu/place-dto';
 
 @Component({
   selector: 'app-smart-map',
@@ -13,70 +16,68 @@ import {Subscription} from 'rxjs';
 export class SmartMapComponent implements OnInit, OnDestroy {
 
   private _markers: marker[] = [];
-  private _addressList: Address[] = [];
-  private _location: Location;
+  private _placeAndAddress: PlaceAndAddressDto[] = [];
   private subscriptions: Subscription[] = [];
+  private _location: Location;
+  private _places: Place [] = [];
 
-  constructor(public geocodeService: GeocodeService, public addressService: AddressService) { }
+
+  constructor(public geocodeService: GeocodeService, /*public addressService: AddressService, */public placeService : PlaceService) { }
 
    ngOnInit() {
-    this.loadAllAdress();
+    this.loadPlaceAndAddress((places) => this.loadAllAdressToMarkers(places)); // callback
   }
 
   ngOnDestroy(): void {
-    for (let i = this.subscriptions.length - 1; i >= 0; i--) {
-      const subscription = this.subscriptions[i];
-      //IF subscription EXISTE
-      subscription && subscription.unsubscribe();
-      this.subscriptions.pop();
-    }
+
   }
 
   //Convertit la liste d'adresses en markers pour les envoyer au dump-map qui les afficheras
-  loadAllAdressToMarkers(){
-    for (let i = 0; i < this.addressList.length; i++) {
-      this.geocodeService.geocodeAddress(this.addressList[i].city + ", " + this.addressList[i].straat + " N° " + this.addressList[i].num + ", " + this.addressList[i].postalCode)
-        .subscribe((location: Location) =>
-          {
-            this.location = location;
-            this._markers.push(
-              {
-                lat: this.location.lat,
-                lng: this.location.lng,
-                label: this.addressList[i].city + ", " + this.addressList[i].straat + " N° " + this.addressList[i].num + ", " + this.addressList[i].postalCode,
-                id: this.addressList[i].id
-              }
-            );
-          }
-        );
+  loadAllAdressToMarkers(placeAndAddress: PlaceAndAddressDto[]) {
+    for (let i = 0; i < placeAndAddress.length; i++) {
+      let tmpDto = placeAndAddress[i].place;
+      let tmpPlace = new Place(tmpDto.id,tmpDto.name,tmpDto.type,tmpDto.description,tmpDto.idAdr);
+      this.places.push(tmpPlace);
+      this.geocodeService.geocodeAddress(placeAndAddress[i].address.city + ", " + placeAndAddress[i].address.straat + " N° " + placeAndAddress[i].address.num + ", " + placeAndAddress[i].address.postalCode)
+        .subscribe((location: Location) => {
+          this.location = location;
+          this.markers.push(
+            {
+              lat: this.location.lat,
+              lng: this.location.lng,
+              label_address: this.placeAndAddress[i].address.city + ", " + placeAndAddress[i].address.straat + " N° " + placeAndAddress[i].address.num + ", " + placeAndAddress[i].address.postalCode,
+              id: this.placeAndAddress[i].place.id,
+              name: tmpPlace.name,
+              type: tmpPlace.type,
+              description: tmpPlace.description
+            }
+          );
+        }
+
+    );
     }
   }
 
-  //Contacte l'API pour récupérer toutes les adresses contenues dans la bdd
-  loadAllAdress(){
-    const sub = this.addressService.query().subscribe(listAddress =>
-    {
-      this.addressList = listAddress.map(address => new Address().fromAdresseDto(address));
-      this.loadAllAdressToMarkers();
-    });
+  loadPlaceAndAddress(fn){
+    const sub = this.placeService
+      .queryMap()
+      .subscribe(placeAndAddress => {
+        this._placeAndAddress = placeAndAddress;
+        fn(placeAndAddress);
+      });
     this.subscriptions.push(sub);
   }
+
 
   get markers(): marker[] {
     return this._markers;
   }
 
+  @Input()
   set markers(value: marker[]) {
     this._markers = value;
   }
 
-  get addressList(): Address[] {
-    return this._addressList;
-  }
-
-  set addressList(value: Address[]) {
-    this._addressList = value;
-  }
 
   get location(): Location {
     return this._location;
@@ -84,5 +85,24 @@ export class SmartMapComponent implements OnInit, OnDestroy {
 
   set location(value: Location) {
     this._location = value;
+  }
+
+
+  get placeAndAddress(): PlaceAndAddressDto[] {
+    return this._placeAndAddress;
+  }
+
+  set placeAndAddress(value: PlaceAndAddressDto[]) {
+    this._placeAndAddress = value;
+  }
+
+
+  get places(): Place[] {
+    return this._places;
+  }
+
+  @Input()
+  set places(value: Place[]) {
+    this._places = value;
   }
 }

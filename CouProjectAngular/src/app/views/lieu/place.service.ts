@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {PlaceDto, PlaceAndAddressDto} from './place-dto';
 
 const URL_API:string = "/api/place";
+const URL_API_MAP:string = "/api/place/map";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,10 @@ export class PlaceService {
 
   query():Observable<PlaceDto[]>{
     return this.http.get<PlaceDto[]>(URL_API);
+  }
+
+  queryMap():Observable<PlaceAndAddressDto[]>{
+    return this.http.get<PlaceAndAddressDto[]>(URL_API_MAP);
   }
 
   get(id:number): Observable<PlaceDto>{

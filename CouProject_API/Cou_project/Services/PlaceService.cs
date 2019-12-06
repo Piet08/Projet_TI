@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Cou_project.DAO;
 using Cou_project.Models;
 
@@ -20,5 +22,26 @@ namespace Cou_project.Services
             return PlaceDAO.Create(place.Place);
             
         }
+
+        public PlaceAndAddress GetPlaceAndAddress(int id)
+        {
+            Place place = PlaceDAO.Get(id);
+            return new PlaceAndAddress(place,AddressDAO.Get(place.IdAdr));
+        }
+
+        public IEnumerable<PlaceAndAddress> GetPlacesAndAddresses()
+        {
+            IEnumerable<Place> places = PlaceDAO.Query();
+            PlaceAndAddress[] placeAndAddresses = new PlaceAndAddress[places.Count()];
+            int i = 0;
+            foreach (var place in places)
+            {
+                placeAndAddresses[i] = new PlaceAndAddress(place,AddressDAO.Get(place.IdAdr));
+                i++;
+            }
+
+            return placeAndAddresses;
+        }
+
     }
 }
