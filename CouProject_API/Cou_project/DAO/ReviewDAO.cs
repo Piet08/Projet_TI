@@ -53,7 +53,7 @@ namespace Cou_project.DAO
             return listAvis;
         }
 
-        public static IEnumerable<Review> GetAvisByPlace(int id)
+        public static IEnumerable<Review> GetReviewByPlace(int id)
         {
             List<Review> listReview = new List<Review>();
             using (var connection = DataBase.GetConnection())

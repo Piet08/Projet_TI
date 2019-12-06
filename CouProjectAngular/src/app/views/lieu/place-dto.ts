@@ -11,4 +11,5 @@ export interface PlaceDto {
 export interface PlaceAndAddressDto {
   place : PlaceDto;
   address : AddressDto;
+  avgRate : number;
 }

@@ -11,8 +11,9 @@ export interface ReviewInsertDto {
   date:string;
 }
 
-export interface ReviewDto {
-
+export interface ReviewAndUserDto {
+  review : ReviewInsertDto;
+  user : UserDto;
 }
 
 export interface ReviewWithPlaceAndAddress{

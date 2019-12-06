@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Place} from '../../views/lieu/place';
 import {Router} from '@angular/router';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dump-map',
@@ -292,5 +293,9 @@ export class DumpMapComponent implements OnInit {
 
   sayCoucouFromMarker(label: string, id: number, lat:number, lng:number) {
     console.log("Coucou de " + label + " " + id + " LAT : " + lat + " LONG : " + lng );
+  }
+
+  navigateToFormAddLieu() {
+    this.router.navigate(['place']);
   }
 }

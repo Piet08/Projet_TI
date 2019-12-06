@@ -1,42 +1,52 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Place, Places} from '../place';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {PlaceService} from '../place.service';
 import {Subscription} from 'rxjs';
-import {Address} from '../../../Address/address';
 import {Router} from '@angular/router';
+import {PlaceAndAddressDto} from '../place-dto';
+import {EnumTypeLieu} from '../../../EnumTypeLieu';
 
 @Component({
   selector: 'app-list-lieu',
   templateUrl: './list-place.component.html',
   styleUrls: ['./list-place.component.css']
 })
-export class ListPlaceComponent implements OnInit {
-  _places: Places = [];
+export class ListPlaceComponent implements OnInit,OnDestroy{
+  private _placesAndAddresses:PlaceAndAddressDto[] = [];
   private subscriptions:Subscription[] = [];
+  categoryFilter: EnumTypeLieu = EnumTypeLieu.ALL;
+  sortFilter: number = 0;
 
   constructor(public lieuService:PlaceService, private router:Router) { }
 
   ngOnInit() {
-    this.loadLieux();
+    this.loadPlace();
   }
 
-  get places(): Place[] {
-    return this._places;
+  ngOnDestroy(): void {
+    for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+      const subscription = this.subscriptions[i];
+      subscription && subscription.unsubscribe();
+      this.subscriptions.pop();
+    }
   }
 
-  @Input()
-  set places(value: Place[]) {
-    this._places = value;
+  get placesAndAddresses(): PlaceAndAddressDto[] {
+    return this._placesAndAddresses;
   }
 
-  private loadLieux() {
-    const sub = this.lieuService.query().subscribe(
-      lieux => this._places = lieux.map(lieu => new Place().fromLieuDto(lieu))
+  set placesAndAddresses(value: PlaceAndAddressDto[]) {
+    this._placesAndAddresses = value;
+  }
+
+  private loadPlace() {
+    const sub = this.lieuService.getPlacesAndAddressees().subscribe(
+      places => {this._placesAndAddresses = places;console.log(JSON.stringify(places))}
     );
+
     this.subscriptions.push(sub);
   }
 
   navigateToFormAddLieu() {
-    this.router.navigate(['forms/lieux']);
+    this.router.navigate(['forms/place']);
   }
 }

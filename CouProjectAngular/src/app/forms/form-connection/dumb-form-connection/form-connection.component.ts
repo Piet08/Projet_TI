@@ -18,6 +18,7 @@ export class FormConnectionComponent implements OnInit {
   @Output()
   userConnected:EventEmitter<authenticateModel> = new EventEmitter<authenticateModel>();
 
+
   constructor(public fb: FormBuilder) { }
 
   ngOnInit() {
@@ -32,11 +33,11 @@ export class FormConnectionComponent implements OnInit {
     const userConnected = new authenticateModel();
     userConnected.username = this.formulaireConnexion.get("username").value;
     userConnected.password = this.formulaireConnexion.get("motDePasseConnexion").value;
+    userConnected.token;
     return userConnected;
   }
   emitNewUserConnected() {
     this.userConnected.next(this.buildUserConnected());
-    console.log(this.userConnected);
     this.formulaireConnexion.reset();
   }
 

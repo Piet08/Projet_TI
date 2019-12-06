@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cou_project.DAO;
 using Cou_project.Models;
 using Cou_project.Services;
@@ -18,6 +19,12 @@ namespace Cou_project.Controllers
         {
             return Ok(PlaceDAO.Query());
         }
+
+        [HttpGet("addresses")]
+        public ActionResult<IEnumerable<PlaceAndAddress>> GetPlaceAndAddresses()
+        {
+            return Ok(_placeService.GetPlacesAndAddresses());
+        }
         
         [HttpGet("map")]
         public ActionResult<IEnumerable<Place>> QueryMap()
@@ -25,11 +32,18 @@ namespace Cou_project.Controllers
             return Ok(_placeService.GetPlacesAndAddresses());
         }
         
-        [HttpPost]
+        [HttpPost("forms")]
         public ActionResult<Place> Post([FromBody] PlaceAndAddress place)
         {
-//          return Ok(LieuDAO.Create(place));
             return Ok(_placeService.CreatePlaceAndAddress(place));
+        }
+
+        [HttpGet("address/{id}")]
+        public ActionResult<PlaceAndAddress> GetPlaceAndAddress(int id)
+        {
+            Console.WriteLine("test");
+            PlaceAndAddress placeAndAddress = _placeService.GetPlaceAndAddress(id);  
+            return placeAndAddress != null ? (ActionResult<PlaceAndAddress>) Ok(placeAndAddress) : NotFound("This place does not exists !");
         }
         
         [HttpGet("{id}")]
@@ -38,6 +52,7 @@ namespace Cou_project.Controllers
             Place place = PlaceDAO.Get(id);
             return place != null ? (ActionResult<Place>) Ok(place) : NotFound("This user does not exists!");
         }
+        
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {

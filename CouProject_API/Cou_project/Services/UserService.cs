@@ -18,19 +18,13 @@ namespace Cou_project.Services
    
     {
         User Authenticate(User user);
-        User CreateUserAndAddress(UserAndAddress user);
-        //IEnumerable<Utilisateur> GetAll();
+        User CreateUserAndAddress(UserAndAddress user); 
+        //User Get(User user);
     }
 
     public class UserService : IUserService
    
     {
-        // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-        /*private List<Utilisateur> _users = new List<Utilisateur>
-        { 
-            new Utilisateur { Nom = "Test", Prenom = "Utilisateur", Pseudo = "test", Type = "test", Email = "test", Hashpwd = "test", Idadr = 0}
-            
-        };*/
 
         private readonly AppSettings _appSettings;
 
@@ -72,11 +66,10 @@ namespace Cou_project.Services
             return UserDAO.Create(user.User);
             
         }
-
-        /*public IEnumerable<Utilisateur> GetAll()
-        public IEnumerable<User> GetAll()
+        
+       /* public User Get(User user)
         {
-            return _users.WithoutPasswords();
+            return user.WithoutPassword();
         }*/
     }
 }

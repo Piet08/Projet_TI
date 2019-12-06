@@ -14,12 +14,14 @@ namespace Cou_project.DAO
         public static readonly string FIELD_TYPE = "type";
         public static readonly string FIELD_DESCRIPTION = "description";
         public static readonly string FIELD_IDADR = "idadr";
+        public static readonly string FIELD_AVGRATE = "avgRate";
+        
         
         //J'ai fais toutes les requêtes, quitte à en supp quelques une qui ne nous seront pas utiles, à voir plus tard ! 
 
         private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME}";
 
-        private static readonly string RED_POST = String.Format(
+        private static readonly string REQ_POST = String.Format(
             "INSERT INTO {0}({1}, {2}, {3}, {4}) OUTPUT Inserted.{5} VALUES (@{1}, @{2}, @{3}, @{4})",
             TABLE_NAME, FIELD_NAME, FIELD_TYPE, FIELD_DESCRIPTION, FIELD_IDADR, FIELD_ID);
 
@@ -31,6 +33,8 @@ namespace Cou_project.DAO
             "UPDATE {0} SET {1} = @{1}, {2} = @{2}, {3} = @{3}, {4} = @{4} WHERE {5} = @{5}",
             TABLE_NAME, FIELD_NAME, FIELD_TYPE, FIELD_DESCRIPTION, FIELD_IDADR, FIELD_ID);
 
+        private static readonly string REQ_GET_AVGRATE = $"SELECT COALESCE(ROUND(AVG(a.note),2),'') as {FIELD_AVGRATE} FROM {TABLE_NAME} l " +
+                                                         $"INNER JOIN Avis a on l.id = a.idlieu where l.id = @{FIELD_ID}";
 
         public static IEnumerable<Place> Query()
         {
@@ -48,6 +52,24 @@ namespace Cou_project.DAO
             }
             return places;
         }
+
+        public static double GetAvgRate(int id)
+        {
+            double avgRate = 0;
+            using (var connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_GET_AVGRATE;
+
+                command.Parameters.AddWithValue($"@{FIELD_ID}", id);
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+                avgRate = Convert.ToDouble(reader[FIELD_AVGRATE].ToString());
+            }
+            
+            return avgRate == null ? 0 : avgRate;
+        }
         //Attention l'IDADR doit se trouver dans la BD pour que ca fonctionne ! a gérer au moment des connexions ;)
         [HttpPost]
         public static Place Create(Place place)
@@ -56,7 +78,7 @@ namespace Cou_project.DAO
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = RED_POST;
+                command.CommandText = REQ_POST;
 
                 command.Parameters.AddWithValue($"@{FIELD_NAME}", place.Name);
                 command.Parameters.AddWithValue($"@{FIELD_TYPE}", place.Type);

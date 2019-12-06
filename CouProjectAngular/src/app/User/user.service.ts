@@ -23,6 +23,9 @@ export class UserService {
   postAuth(model: authenticateModelDto): Observable<authenticateModelDto>{
     return this.http.post<authenticateModelDto>(URL_API_AUTH, model);
   }
+  /*getAuth(model : authenticateModelDto): Observable<authenticateModelDto>{
+    return this.http.get<authenticateModelDto>(URL_API_AUTH);
+  }*/
 
 
   //UTILISATEUR
@@ -33,10 +36,6 @@ export class UserService {
   get(id:number): Observable<UserDto>{
     return this.http.get<UserDto>(URL_API_UTIL+'/'+id);
   }
-
-  /*post(utilisateur : UserDto): Observable<UserDto>{
-    return this.http.post<UserDto>(URL_API_UTIL, utilisateur);
-  }*/
 
   post(user : UserAndAddressDto): Observable<UserAndAddressDto>{
     return this.http.post<UserAndAddressDto>(URL_API_UTIL, user);
@@ -60,6 +59,5 @@ export class UserService {
   deleteFavoris(id: number): Observable<FavoritesDto> {
     return this.http.delete<FavoritesDto>(URL_API_FAV+'/'+id);
   }
-
 
 }

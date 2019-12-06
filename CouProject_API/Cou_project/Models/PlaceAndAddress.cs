@@ -8,13 +8,15 @@ namespace Cou_project.Models
     {
         public Place Place { get; set; }
         public Address Address { get; set; }
+        public double AvgRate { get; set; }
 
         public PlaceAndAddress(){}
 
-        public PlaceAndAddress(Place place, Address address)
+        public PlaceAndAddress(Place place, Address address,double avgRate)
         {
             Place = place;
             Address = address;
+            AvgRate = avgRate;
         }
 
         public PlaceAndAddress(SqlDataReader reader)
@@ -30,6 +32,9 @@ namespace Cou_project.Models
             Place.Type = reader[PlaceDAO.FIELD_TYPE].ToString();
             Place.Description = reader[PlaceDAO.FIELD_DESCRIPTION].ToString();
             Place.IdAdr = Address.Id;
+
+            AvgRate = 5;
+
         }
     }
 }

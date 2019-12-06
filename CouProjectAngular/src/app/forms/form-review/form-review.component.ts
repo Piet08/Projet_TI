@@ -51,9 +51,4 @@ export class FormReviewComponent implements OnInit {
     this.reviewCreated.next(this.buildReview());
   }
 
-  getValueOfControl(controlName:string) : number{
-    return this.formReview.controls[controlName].value;
-  }
-
-
 }

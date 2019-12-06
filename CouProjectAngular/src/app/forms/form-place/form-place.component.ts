@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {EnumTypeLieu} from '../../EnumTypeLieu';
+import {EnumTypeLieu, TYPE_LIEUX} from '../../EnumTypeLieu';
 import {Place} from '../../views/lieu/place';
 import {Address} from '../../Address/address';
 import {PlaceAndAddressDto} from '../../views/lieu/place-dto';
@@ -14,9 +14,7 @@ export class FormPlaceComponent implements OnInit {
 
   @Output()
   placeCreated: EventEmitter<PlaceAndAddressDto> = new EventEmitter<PlaceAndAddressDto>();
-
-  typeLieu:EnumTypeLieu[] = [EnumTypeLieu.FAST_FOOD,EnumTypeLieu.MUSEE,EnumTypeLieu.MAGASIN
-  ,EnumTypeLieu.BAR,EnumTypeLieu.BRASSERIE,EnumTypeLieu.DIVERTISSEMENT,EnumTypeLieu.RESTAURANT];
+  TYPE_LIEUX:EnumTypeLieu[] = TYPE_LIEUX;
 
   formLieu:FormGroup = this.fb.group({
     name : this.fb.control('',Validators.required),
@@ -28,7 +26,7 @@ export class FormPlaceComponent implements OnInit {
       city : this.fb.control('',Validators.required),
       num : this.fb.control('',Validators.required)
     })
-  })
+  });
 
   constructor(public fb:FormBuilder) { }
 
@@ -38,7 +36,8 @@ export class FormPlaceComponent implements OnInit {
   buildPlaceAndAddressDto(){
     const place = {
       place : this.buildPlace().toLieuDto(),
-      address : this.buildAddress().toAdresseDto()
+      address : this.buildAddress().toAdresseDto(),
+      avgRate : 0
     }
     return place;
   }

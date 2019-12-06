@@ -25,6 +25,9 @@ import { DumpMapComponent } from './map/dump-map/dump-map.component';
 import { SmartMapComponent } from './map/smart-map/smart-map.component';
 
 import { HomeComponent } from './views/home/home.component';
+import { TypePipe } from './views/lieu/filter-place/pipe/type.pipe';
+import { FilterPlaceComponent } from './views/lieu/filter-place/filter-place.component';
+import { RatingPipe } from './views/lieu/filter-place/pipe/rating.pipe';
 
 
 // path = le nom du controller de l'api en fonction de ce que l'on veut faire
@@ -35,7 +38,7 @@ const routes: Routes = [
   {path: 'User', component:SmartFormInscriptionComponent},
   {path: 'lieux', component:ListPlaceComponent},
   {path: 'lieux/:id', component:DetailPlaceComponent},
-  {path: 'forms/lieux', component:SmartFormPlaceComponent},
+  {path: 'forms/place', component:SmartFormPlaceComponent},
   {path: 'Address', component:SmartMapComponent},
   {path: 'home', component:HomeComponent}
 
@@ -58,10 +61,13 @@ const routes: Routes = [
     SmartFormPlaceComponent,
     FormReviewComponent,
     SmartFormReviewComponent,
+    HomeComponent,
+    TypePipe,
+    FilterPlaceComponent,
+    RatingPipe,
     DumpMapComponent,
     SmartMapComponent,
     HomeComponent
-
   ],
   imports: [
     BrowserModule,

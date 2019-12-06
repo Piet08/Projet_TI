@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User/authenticate\" class=\"nav-link\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n      <router-outlet></router-outlet>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a id=\"LogIn\" routerLink=\"User/authenticate\" class=\"nav-link\" [ngStyle]=\"isLogIn()\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/place\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a id=\"LogOut\" (click)=\"logOut()\" class=\"nav-link\">Déconnexion</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n      <router-outlet id=\"component\">\r\n\r\n      </router-outlet>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<div class=\"col-12\" algin=\"center\">\r\n  <h1 align=\"center\"><b>Formulaire d'ajout de lieu</b></h1>\r\n  <form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"name\" class=\"col-4\">Nom :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"name\" name=\"name\" formControlName=\"name\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"type\" class=\"col-4 \">Type :</label>\r\n      <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control col-6\">\r\n        <option class=\"form-control\" *ngFor=\"let type of typeLieu\" value=\"{{type}}\">{{type}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"description\" class=\"col-4 \">Description :</label>\r\n      <textarea rows=\"5\" cols=\"30\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n\r\n      </textarea>\r\n    </div>\r\n\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"straat\" class=\"col-4 \">Rue :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-4 \">Numéro :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"postalCode\" class=\"col-4 \">Code Postal :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"city\" class=\"col-4 \">Ville :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <div class=\"text-center\" size=\"50px\">\r\n      <input type=\"submit\" class=\"btn btn-primary btn-success\" >\r\n    </div>\r\n  </form>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<div class=\"col-12\" algin=\"center\">\r\n  <h1 align=\"center\"><b>Formulaire d'ajout de lieu</b></h1>\r\n  <form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"name\" class=\"col-4\">Nom :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"name\" name=\"name\" formControlName=\"name\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"type\" class=\"col-4 \">Type :</label>\r\n      <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control col-6\">\r\n        <option class=\"form-control\" *ngFor=\"let type of TYPE_LIEUX\" value=\"{{type}}\">{{type}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"description\" class=\"col-4 \">Description :</label>\r\n      <textarea rows=\"5\" cols=\"30\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n\r\n      </textarea>\r\n    </div>\r\n\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"straat\" class=\"col-4 \">Rue :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-4 \">Numéro :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"postalCode\" class=\"col-4 \">Code Postal :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"city\" class=\"col-4 \">Ville :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <div class=\"text-center\" size=\"50px\">\r\n      <input type=\"submit\" class=\"btn btn-primary btn-success\" >\r\n    </div>\r\n  </form>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<agm-map mapTypeId=\"roadmap\" id=\"map\" [latitude]=\"50.4535039\" [longitude]=\"3.9516516\">\n  <agm-marker-cluster imagePath=\"https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m\">\n    <agm-marker *ngFor=\"let m of markers ; let i= index\"\n                [latitude]=\"m.lat\"\n                [longitude]=\"m.lng\"\n                (markerClick)=\"sayCoucouFromMarker(m.description,m.id,m.lat,m.lng)\">\n\n      <agm-info-window>\n        <b>{{m.label_address}}</b>\n        <br>\n        {{m.name + \" : \" + m.description}}\n        <br>\n        <input type=\"button\" (click)=\"navigateToDetailLieu(places[i].id)\" value=\">>See Place<<\">\n      </agm-info-window>\n    </agm-marker>\n  </agm-marker-cluster>\n\n</agm-map>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<agm-map mapTypeId=\"roadmap\" id=\"map\" [latitude]=\"50.4535039\" [longitude]=\"3.9516516\">\r\n  <agm-marker-cluster imagePath=\"https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m\">\r\n    <agm-marker *ngFor=\"let m of markers ; let i= index\"\r\n                [latitude]=\"m.lat\"\r\n                [longitude]=\"m.lng\"\r\n                (markerClick)=\"sayCoucouFromMarker(m.description,m.id,m.lat,m.lng)\">\r\n\r\n      <agm-info-window>\r\n        <b>{{m.label_address}}</b>\r\n        <br>\r\n        {{m.name + \" : \" + m.description}}\r\n        <br>\r\n        <input type=\"button\" (click)=\"navigateToDetailLieu(places[i].id)\" value=\">>See Place<<\">\r\n      </agm-info-window>\r\n    </agm-marker>\r\n  </agm-marker-cluster>\r\n\r\n</agm-map>\r\n\r\n<div class=\"container\" align=\"center\">\r\n  <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -175,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\r\n  <div class=\"card-header\">\r\n    <p class=\"text-left\">\r\n      {{user.name}} {{user.surname}}\r\n      <span class=\"float-right\">{{review.star}}/10</span>\r\n    </p>\r\n  </div>\r\n\r\n  <div class=\"card-body\">\r\n    <blockquote class=\"blockquote mb-0\">\r\n      <p>{{review.comment}}</p>\r\n      <footer class=\"blockquote-footer\"> {{review.date}} </footer>\r\n    </blockquote>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\r\n  <div class=\"card-header\">\r\n    <p class=\"text-left\">\r\n      {{reviewAndUser.user.name}} {{reviewAndUser.user.surname}}\r\n      <span class=\"float-right\">{{reviewAndUser.review.star}}/10</span>\r\n    </p>\r\n  </div>\r\n\r\n  <div class=\"card-body\">\r\n    <blockquote class=\"blockquote mb-0\">\r\n      <p>{{reviewAndUser.review.comment}}</p>\r\n      <footer class=\"blockquote-footer\"> {{reviewAndUser.review.date}} </footer>\r\n    </blockquote>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -188,7 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul style=\"list-style: none;\" *ngFor=\"let review of listReview\">\r\n  <li>\r\n<!--    A MODIFIER EN DUMP => INJECTION D'USER EN + OU CREER UN MODELE ReviewAndUse-->\r\n    <app-detail-comment [review]=\"review\"></app-detail-comment>\r\n  </li>\r\n</ul>\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ul style=\"list-style: none;\" *ngFor=\"let review of listReviewAndUser\">\r\n  <li>\r\n    <app-detail-comment [reviewAndUser]=\"review\" ></app-detail-comment>\r\n  </li>\r\n</ul>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -214,7 +214,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n  <app-single-place [place]=\"place\"></app-single-place>\r\n</div>\r\n\r\n<div>\r\n  <app-list-review></app-list-review>\r\n</div>\r\n\r\n<div>\r\n  <app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n  <app-single-place [placeAndAddress]=\"placeAndAddress\"></app-single-place>\r\n</div>\r\n\r\n<div>\r\n  <app-list-review [listReviewAndUser]=\"listReviewAndUser\"></app-list-review>\r\n</div>\r\n\r\n<div>\r\n  <app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\r\n</div>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/filter-place/filter-place.component.html":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/filter-place/filter-place.component.html ***!
+  \***********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"formFilter\" class=\"offset-1\">\r\n  <div class=\"d-inline-block\">\r\n    <div class=\"form-group form-inline float-left\">\r\n      <label for=\"category\">Catégorie :</label>\r\n      <select name=\"category\" id=\"category\" class=\"form-control ml-3\" [value]=\"'ALL'\" formControlName=\"category\"\r\n              (change)=\"emitFilterCategory()\">\r\n        <option class=\"form-control\" *ngFor=\"let cat of TYPE_LIEUX\" value=\"{{cat}}\">{{cat}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline pl-5 float-right\">\r\n      <label>Trier :</label>\r\n      <select name=\"sort\" id=\"sort\" class=\"form-control ml-3\" [value]=\"TYPE_SORT[0].key\" formControlName=\"sort\" (change)=\"emitTypeSort()\">\r\n        <option class=\"form-control\" *ngFor=\"let sort of TYPE_SORT\" value=\"{{sort.key}}\">{{sort.name}}</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n</form>\r\n");
 
 /***/ }),
 
@@ -227,7 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container container-fluid\">\r\n  <ul style=\"list-style: none;\">\r\n    <li *ngFor=\"let place of places\">\r\n      <app-single-place [place]=\"place\"></app-single-place>\r\n    </li>\r\n  </ul>\r\n\r\n  <div class=\"container\" align=\"center\">\r\n    <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container pt-4\">\r\n  <app-filter-place (category)=\"categoryFilter = $event\" (sort)=\"sortFilter = $event\"></app-filter-place>\r\n</div>\r\n\r\n<div class=\"container container-fluid\">\r\n  <ul style=\"list-style: none;\">\r\n    <li *ngFor=\"let placeAndAddress of placesAndAddresses|type:categoryFilter|rating:sortFilter\">\r\n      <app-single-place [placeAndAddress]=\"placeAndAddress\"></app-single-place>\r\n    </li>\r\n  </ul>\r\n\r\n  <div class=\"container\" align=\"center\">\r\n    <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -240,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\r\n  <div class=\"col-12\">\r\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\r\n      <div class=\"card-header bg-dark text-center text-light\">\r\n        <h5>{{place.name}}</h5>\r\n      </div>\r\n\r\n      <div class=\"py-2 px-3\">\r\n        <div class=\"d-block\">\r\n          <hr>\r\n          <span class=\"d-inline\">{{place.id}} : </span>\r\n          <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{place.type}}</h6>\r\n          <hr>\r\n        </div>\r\n        <p class=\"card-text\"a>{{place.description}}</p>\r\n      </div>\r\n\r\n      <div class=\"card-footer\">\r\n        <div>\r\n          {{address.postalCode}} {{address.city}}\r\n          <br>\r\n          {{address.straat}}, {{address.num}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\r\n  <div class=\"col-12\">\r\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\r\n      <div class=\"card-header bg-dark text-center text-light\">\r\n        <h5>{{placeAndAddress.place.name}}</h5>\r\n      </div>\r\n\r\n      <div class=\"py-2 px-3\">\r\n        <div class=\"d-block\">\r\n          <div class=\"text-left pt-3\">\r\n            <span class=\"d-inline\">{{placeAndAddress.place.id}} : </span>\r\n            <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{placeAndAddress.place.type}}</h6>\r\n            <div class=\"float-right\">\r\n              <span class=\"fa fa-star mr-2\" style=\"color: #ffd106\"></span>\r\n              <span class=\"\" >{{placeAndAddress.avgRate}}/10</span>\r\n              <span class=\"fa fa-star pl-2\" style=\"color: #ffd106\"></span>\r\n            </div>\r\n          </div>\r\n          <hr>\r\n        </div>\r\n        <p class=\"card-text\"a>{{placeAndAddress.place.description}}</p>\r\n      </div>\r\n\r\n      <div class=\"card-footer\">\r\n        <div>\r\n          {{placeAndAddress.address.postalCode}} {{placeAndAddress.address.city}}\r\n          <br>\r\n          {{placeAndAddress.address.straat}}, {{placeAndAddress.address.num}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -890,7 +903,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.nav-link{\r\n  font-size: 18px;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n#displayComp{\r\n  background-color: lavender;\r\n}\r\n#header {\r\n\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtFQUNFLGVBQWU7QUFDakI7QUFDQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsMEJBQTBCO0FBQzVCO0FBQ0E7O0FBRUEiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZiYXJ7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGZvbnQtc2l6ZSA6IDE4cHg7XHJcbn1cclxuLm5hYmFyLW5hdntcclxuICB3aWR0aCA6IDMwMHB4O1xyXG59XHJcbi5uYXYtbGlua3tcclxuICBmb250LXNpemU6IDE4cHg7XHJcbn1cclxuLmNvbnRhY3R7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkaW1ncmF5O1xyXG4gIGZvbnQtc2l6ZTogMzVweDtcclxufVxyXG4jZGlzcGxheUNvbXB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbGF2ZW5kZXI7XHJcbn1cclxuI2hlYWRlciB7XHJcblxyXG59XHJcbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.nav-link{\r\n  font-size: 18px;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n#displayComp{\r\n  background-color: lavender;\r\n  height : 80%;\r\n}\r\n#footer {\r\n  height : 20px;\r\n  background-color: dimgray;\r\n  text-align: center;\r\n  vertical-align: middle;\r\n}\r\n#LogOut{\r\n  border-style: solid;\r\n  border-radius: 20px;\r\n  border-right-width: 10px;\r\n  border-left-width: 10px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtFQUNFLGVBQWU7QUFDakI7QUFDQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsMEJBQTBCO0VBQzFCLFlBQVk7QUFDZDtBQUNBO0VBQ0UsYUFBYTtFQUNiLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsc0JBQXNCO0FBQ3hCO0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsbUJBQW1CO0VBQ25CLHdCQUF3QjtFQUN4Qix1QkFBdUI7QUFDekIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZiYXJ7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGZvbnQtc2l6ZSA6IDE4cHg7XHJcbn1cclxuLm5hYmFyLW5hdntcclxuICB3aWR0aCA6IDMwMHB4O1xyXG59XHJcbi5uYXYtbGlua3tcclxuICBmb250LXNpemU6IDE4cHg7XHJcbn1cclxuLmNvbnRhY3R7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkaW1ncmF5O1xyXG4gIGZvbnQtc2l6ZTogMzVweDtcclxufVxyXG4jZGlzcGxheUNvbXB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbGF2ZW5kZXI7XHJcbiAgaGVpZ2h0IDogODAlO1xyXG59XHJcbiNmb290ZXIge1xyXG4gIGhlaWdodCA6IDIwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogZGltZ3JheTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG5cclxuI0xvZ091dHtcclxuICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgYm9yZGVyLXJpZ2h0LXdpZHRoOiAxMHB4O1xyXG4gIGJvcmRlci1sZWZ0LXdpZHRoOiAxMHB4O1xyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -966,6 +979,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _map_dump_map_dump_map_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./map/dump-map/dump-map.component */ "./src/app/map/dump-map/dump-map.component.ts");
 /* harmony import */ var _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./map/smart-map/smart-map.component */ "./src/app/map/smart-map/smart-map.component.ts");
 /* harmony import */ var _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./views/home/home.component */ "./src/app/views/home/home.component.ts");
+/* harmony import */ var _views_lieu_filter_place_pipe_type_pipe__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./views/lieu/filter-place/pipe/type.pipe */ "./src/app/views/lieu/filter-place/pipe/type.pipe.ts");
+/* harmony import */ var _views_lieu_filter_place_filter_place_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./views/lieu/filter-place/filter-place.component */ "./src/app/views/lieu/filter-place/filter-place.component.ts");
+/* harmony import */ var _views_lieu_filter_place_pipe_rating_pipe__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./views/lieu/filter-place/pipe/rating.pipe */ "./src/app/views/lieu/filter-place/pipe/rating.pipe.ts");
+
+
+
 
 
 
@@ -1001,7 +1020,7 @@ const routes = [
     { path: 'User', component: _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_13__["SmartFormInscriptionComponent"] },
     { path: 'lieux', component: _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_15__["ListPlaceComponent"] },
     { path: 'lieux/:id', component: _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_17__["DetailPlaceComponent"] },
-    { path: 'forms/lieux', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_21__["SmartFormPlaceComponent"] },
+    { path: 'forms/place', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_21__["SmartFormPlaceComponent"] },
     { path: 'Address', component: _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_25__["SmartMapComponent"] },
     { path: 'home', component: _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"] }
 ];
@@ -1024,6 +1043,10 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_21__["SmartFormPlaceComponent"],
             _forms_form_review_form_review_component__WEBPACK_IMPORTED_MODULE_22__["FormReviewComponent"],
             _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_23__["SmartFormReviewComponent"],
+            _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"],
+            _views_lieu_filter_place_pipe_type_pipe__WEBPACK_IMPORTED_MODULE_27__["TypePipe"],
+            _views_lieu_filter_place_filter_place_component__WEBPACK_IMPORTED_MODULE_28__["FilterPlaceComponent"],
+            _views_lieu_filter_place_pipe_rating_pipe__WEBPACK_IMPORTED_MODULE_29__["RatingPipe"],
             _map_dump_map_dump_map_component__WEBPACK_IMPORTED_MODULE_24__["DumpMapComponent"],
             _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_25__["SmartMapComponent"],
             _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"]
@@ -2002,6 +2025,9 @@ let DumpMapComponent = class DumpMapComponent {
     sayCoucouFromMarker(label, id, lat, lng) {
         console.log("Coucou de " + label + " " + id + " LAT : " + lat + " LONG : " + lng);
     }
+    navigateToFormAddLieu() {
+        this.router.navigate(['place']);
+    }
 };
 DumpMapComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
@@ -2677,6 +2703,190 @@ DetailPlaceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./detail-place.component.css */ "./src/app/views/lieu/detail-place/detail-place.component.css")).default]
     })
 ], DetailPlaceComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/lieu/filter-place/filter-place.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/views/lieu/filter-place/filter-place.component.css ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2xpZXUvZmlsdGVyLXBsYWNlL2ZpbHRlci1wbGFjZS5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/views/lieu/filter-place/filter-place.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/views/lieu/filter-place/filter-place.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: FilterPlaceComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterPlaceComponent", function() { return FilterPlaceComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../EnumTypeLieu */ "./src/app/EnumTypeLieu.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
+
+
+
+let FilterPlaceComponent = class FilterPlaceComponent {
+    constructor(fb) {
+        this.fb = fb;
+        this.TYPE_LIEUX = [_EnumTypeLieu__WEBPACK_IMPORTED_MODULE_2__["EnumTypeLieu"].ALL, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_2__["EnumTypeLieu"].RESTAURANT, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_2__["EnumTypeLieu"].BAR, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_2__["EnumTypeLieu"].MAGASIN, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_2__["EnumTypeLieu"].MUSEE, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_2__["EnumTypeLieu"].FAST_FOOD,
+            _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_2__["EnumTypeLieu"].BRASSERIE, _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_2__["EnumTypeLieu"].DIVERTISSEMENT];
+        this.TYPE_SORT = [
+            {
+                key: 0,
+                name: "Tri par défaut"
+            },
+            {
+                key: 1,
+                name: "Tri par note décroissante"
+            },
+            {
+                key: 2,
+                name: "Tri par note croissante"
+            },
+            {
+                key: 3,
+                name: "Z à A"
+            },
+            {
+                key: 4,
+                name: "A à Z"
+            },
+        ];
+        this.category = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.sort = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.formFilter = this.fb.group({
+            category: this.fb.control(''),
+            sort: this.fb.control('')
+        });
+    }
+    ngOnInit() {
+    }
+    emitFilterCategory() {
+        this.category.next(this.formFilter.get('category').value);
+    }
+    emitTypeSort() {
+        this.sort.next(this.formFilter.get('sort').value);
+    }
+};
+FilterPlaceComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], FilterPlaceComponent.prototype, "category", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], FilterPlaceComponent.prototype, "sort", void 0);
+FilterPlaceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-filter-place',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./filter-place.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/lieu/filter-place/filter-place.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./filter-place.component.css */ "./src/app/views/lieu/filter-place/filter-place.component.css")).default]
+    })
+], FilterPlaceComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/lieu/filter-place/pipe/rating.pipe.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/views/lieu/filter-place/pipe/rating.pipe.ts ***!
+  \*************************************************************/
+/*! exports provided: RatingPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RatingPipe", function() { return RatingPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let RatingPipe = class RatingPipe {
+    transform(places, filter) {
+        if (!filter)
+            return places;
+        //Tri par ID
+        if (filter == 0) {
+            return places.sort((a, b) => {
+                if (a.place.id > b.place.id)
+                    return 1;
+                if (a.place.id <= b.place.id)
+                    return -1;
+                return 0;
+            });
+        }
+        //Tri par note moyenne
+        if (filter == 1 || filter == 2) {
+            return places.sort((a, b) => {
+                if (a.avgRate > b.avgRate)
+                    return filter == 1 ? -1 : 1;
+                if (a.avgRate <= b.avgRate)
+                    return filter == 1 ? 1 : -1;
+                return 0;
+            });
+        }
+        //Tri par ordre alphabétique
+        if (filter == 3 || filter == 4) {
+            return places.sort((a, b) => {
+                if (a.place.name > b.place.name)
+                    return filter == 3 ? -1 : 1;
+                if (a.place.name <= b.place.name)
+                    return filter == 3 ? 1 : -1;
+            });
+        }
+        return places;
+    }
+};
+RatingPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'rating'
+    })
+], RatingPipe);
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/lieu/filter-place/pipe/type.pipe.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/views/lieu/filter-place/pipe/type.pipe.ts ***!
+  \***********************************************************/
+/*! exports provided: TypePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TypePipe", function() { return TypePipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let TypePipe = class TypePipe {
+    transform(places, filter) {
+        return filter === "ALL" ? places : places.filter(place => place.place.type == filter);
+    }
+};
+TypePipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'type'
+    })
+], TypePipe);
 
 
 

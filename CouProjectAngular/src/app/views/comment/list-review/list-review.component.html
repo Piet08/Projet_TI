@@ -1,7 +1,6 @@
-<ul style="list-style: none;" *ngFor="let review of listReview">
+<ul style="list-style: none;" *ngFor="let review of listReviewAndUser">
   <li>
-<!--    A MODIFIER EN DUMP => INJECTION D'USER EN + OU CREER UN MODELE ReviewAndUse-->
-    <app-detail-comment [review]="review"></app-detail-comment>
+    <app-detail-comment [reviewAndUser]="review" ></app-detail-comment>
   </li>
 </ul>
 

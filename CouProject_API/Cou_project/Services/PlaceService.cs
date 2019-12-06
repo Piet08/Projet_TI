@@ -10,23 +10,23 @@ namespace Cou_project.Services
     public interface ILieuService
     {
         Place CreatePlaceAndAddress(PlaceAndAddress place);
+        PlaceAndAddress GetPlaceAndAddress(int id);
     }
-    
+
     public class PlaceService : ILieuService
     {
         public Place CreatePlaceAndAddress(PlaceAndAddress place)
         {
             Address adr = AddressDAO.Create(place.Address);
-               
+
             place.Place.IdAdr = adr.Id;
             return PlaceDAO.Create(place.Place);
-            
-        }
 
+        }
         public PlaceAndAddress GetPlaceAndAddress(int id)
         {
             Place place = PlaceDAO.Get(id);
-            return new PlaceAndAddress(place,AddressDAO.Get(place.IdAdr));
+            return new PlaceAndAddress(place, AddressDAO.Get(place.IdAdr),PlaceDAO.GetAvgRate(id));
         }
 
         public IEnumerable<PlaceAndAddress> GetPlacesAndAddresses()
@@ -36,7 +36,7 @@ namespace Cou_project.Services
             int i = 0;
             foreach (var place in places)
             {
-                placeAndAddresses[i] = new PlaceAndAddress(place,AddressDAO.Get(place.IdAdr));
+                placeAndAddresses[i] = new PlaceAndAddress(place,AddressDAO.Get(place.IdAdr),PlaceDAO.GetAvgRate(place.Id));
                 i++;
             }
 

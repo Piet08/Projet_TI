@@ -1,9 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Place} from '../place';
 import {Address} from '../../../Address/address';
-import {AddressService} from '../../../Address/address.service';
-import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
+import {PlaceAndAddressDto} from '../place-dto';
 
 @Component({
   selector: 'app-single-place',
@@ -11,47 +10,24 @@ import {Router} from '@angular/router';
   styleUrls: ['./single-place.component.css']
 })
 export class SinglePlaceComponent implements OnInit {
+  //Initialisation a null
+  private _placeAndAddress:PlaceAndAddressDto={place:new Place().toLieuDto(),address:new Address().toAdresseDto(),avgRate:0};
 
-  private _place:Place = new Place();
-  private _address:Address = new Address();
-  private _subscriptions:Subscription[] = [];
-
-  constructor(public adrService:AddressService, private router:Router) { }
+  constructor( private router:Router) { }
 
   ngOnInit() {
   }
 
-  get place(): Place {
-    return this._place;
+  get placeAndAddress(): PlaceAndAddressDto {
+    return this._placeAndAddress;
   }
-
   @Input()
-  set place(value: Place) {
-    console.log(JSON.stringify(value));
-    if(value) {
-      this._place = value;
-      this.updateAdresse(this._place.idAdr);
-    }
-  }
-
-  get address(): Address {
-    return this._address;
-  }
-
-  set address(value: Address) {
-    this._address = value;
-  }
-
-  private updateAdresse(id:number) {
-    const sub = this.adrService.get(id).subscribe(adr => this._address = new Address().fromAdresseDto(adr));
-    this._subscriptions.push(sub);
-  }
-
-  onSingleLieuClick() {
-    prompt("message");
+  set placeAndAddress(value: PlaceAndAddressDto) {
+    if(value)
+      this._placeAndAddress = value;
   }
 
   navigateToDetailLieu() {
-    this.router.navigate(['lieux/'+this.place.id]);
+    this.router.navigate(['lieux/'+this.placeAndAddress.place.id]);
   }
 }

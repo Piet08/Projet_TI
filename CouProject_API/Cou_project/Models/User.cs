@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
 using Cou_project.DAO;
-using Microsoft.AspNet.Identity;
 
 namespace Cou_project.Models
 {

@@ -1,7 +1,11 @@
+<div class="container pt-4">
+  <app-filter-place (category)="categoryFilter = $event" (sort)="sortFilter = $event"></app-filter-place>
+</div>
+
 <div class="container container-fluid">
   <ul style="list-style: none;">
-    <li *ngFor="let place of places">
-      <app-single-place [place]="place"></app-single-place>
+    <li *ngFor="let placeAndAddress of placesAndAddresses|type:categoryFilter|rating:sortFilter">
+      <app-single-place [placeAndAddress]="placeAndAddress"></app-single-place>
     </li>
   </ul>
 

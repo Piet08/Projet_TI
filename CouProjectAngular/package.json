@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@agm/core": "^1.0.0-beta.7",
+    "@agm/core": "^1.1.0",
     "@agm/js-marker-clusterer": "^1.1.0",
     "@angular/animations": "~8.2.9",
     "@angular/common": "~8.2.9",
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~8.2.9",
     "@angular/platform-browser-dynamic": "~8.2.9",
     "@angular/router": "~8.2.9",
+    "@google/markerclusterer": "^2.0.3",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "angular-geocoder": "^8.1.0",
     "bootstrap": "^4.4.1",
