@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a id=\"LogIn\" routerLink=\"User/authenticate\" class=\"nav-link\" [ngStyle]=\"isLogIn()\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/lieux\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a id=\"LogOut\" (click)=\"logOut()\" class=\"nav-link\">Déconnexion</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n      <router-outlet id=\"component\">\r\n\r\n      </router-outlet>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\">Menu</a>\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a id=\"LogIn\" routerLink=\"User/authenticate\" class=\"nav-link\" [ngStyle]=\"isLogIn()\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/place\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a id=\"LogOut\" (click)=\"logOut()\" class=\"nav-link\">Déconnexion</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n        <router-outlet id=\"component\">\r\n\r\n        </router-outlet>\r\n</div>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-form-connection (userConnected)=\"createUserConnected($event)\"></app-form-connection>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-form-connection (userConnected)=\"createUserConnected($event)\"></app-form-connection>\n");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-form-inscription (userCreated)=\"createUser($event)\"></app-form-inscription>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-form-inscription (userCreated)=\"createUser($event)\"></app-form-inscription>\n");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <form [formGroup]=\"formReview\" (ngSubmit)=\"emitNewReview()\">\n    <h3>Laisser une review !</h3>\n    <div class=\"form-group border pl-2 py-2\" style=\"border-radius: 10px;\">\n      <ngb-rating class=\"\" (hover)=\"hovered = $event\" (leave)=\"hovered = 0\" [(rate)]=\"rate\"></ngb-rating>\n      <hr>\n      <div class=\"form-text small\">\n        <div *ngIf=\"rate == 0\" class=\"text-danger\">Laisser une note !</div>\n        <div *ngIf=\"rate != 0\" class=\"text-success\">Note : {{rate}}/10</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n      <textarea rows=\"5\" cols=\"30\" placeholder=\"Laisser un commentaire\" id=\"comment\" class=\"form-control\" name=\"comment\" formControlName=\"comment\">\n      </textarea>\n    </div>\n    <input type=\"submit\" class=\"btn btn-success\">\n  </form>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n  <form [formGroup]=\"formReview\" (ngSubmit)=\"emitNewReview()\">\r\n    <h3>Laisser une review !</h3>\r\n    <div class=\"form-group border pl-2 py-2\" style=\"border-radius: 10px;\">\r\n      <ngb-rating class=\"\" (hover)=\"hovered = $event\" (leave)=\"hovered = 0\" [(rate)]=\"rate\"></ngb-rating>\r\n      <hr>\r\n      <div class=\"form-text small\">\r\n        <div *ngIf=\"rate == 0\" class=\"text-danger\">Laisser une note !</div>\r\n        <div *ngIf=\"rate != 0\" class=\"text-success\">Note : {{rate}}/10</div>\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <textarea rows=\"5\" cols=\"30\" placeholder=\"Laisser un commentaire\" id=\"comment\" class=\"form-control\" name=\"comment\" formControlName=\"comment\">\r\n      </textarea>\r\n    </div>\r\n    <input type=\"submit\" class=\"btn btn-success\">\r\n  </form>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-from-lieu (placeCreated)=\"createPlace($event)\"></app-from-lieu>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-from-lieu (placeCreated)=\"createPlace($event)\"></app-from-lieu>\r\n");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\r\n");
 
 /***/ }),
 
@@ -175,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\n  <div class=\"card-header\">\n    <p class=\"text-left\">\n      {{reviewAndUser.user.name}} {{reviewAndUser.user.surname}}\n      <span class=\"float-right\">{{reviewAndUser.review.star}}/10</span>\n    </p>\n  </div>\n\n  <div class=\"card-body\">\n    <blockquote class=\"blockquote mb-0\">\n      <p>{{reviewAndUser.review.comment}}</p>\n      <footer class=\"blockquote-footer\"> {{reviewAndUser.review.date}} </footer>\n    </blockquote>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\r\n  <div class=\"card-header\">\r\n    <p class=\"text-left\">\r\n      {{reviewAndUser.user.name}} {{reviewAndUser.user.surname}}\r\n      <span class=\"float-right\">{{reviewAndUser.review.star}}/10</span>\r\n    </p>\r\n  </div>\r\n\r\n  <div class=\"card-body\">\r\n    <blockquote class=\"blockquote mb-0\">\r\n      <p>{{reviewAndUser.review.comment}}</p>\r\n      <footer class=\"blockquote-footer\"> {{reviewAndUser.review.date}} </footer>\r\n    </blockquote>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -188,7 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul style=\"list-style: none;\" *ngFor=\"let review of listReviewAndUser\">\n  <li>\n    <app-detail-comment [reviewAndUser]=\"review\" ></app-detail-comment>\n  </li>\n</ul>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ul style=\"list-style: none;\" *ngFor=\"let review of listReviewAndUser\">\r\n  <li>\r\n    <app-detail-comment [reviewAndUser]=\"review\" ></app-detail-comment>\r\n  </li>\r\n</ul>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -201,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\" id=\"header\">\r\n  <h2 class=\"display-3\">Cou ? </h2>\r\n  <p class=\"lead\">New student in Mons ? Find all you need here ! </p>\r\n  <hr class=\"my-4\">\r\n  <p>With an account, you can find all place you need and create a favorite's list place !<br>\r\n  You can make the difference with a rating/comments system ! Don't wait, join our community !</p>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\" id=\"header\">\n  <h2 class=\"display-3\">Cou ? </h2>\n  <p class=\"lead\">New student in Mons ? Find all you need here ! </p>\n  <hr class=\"my-4\">\n  <p>With an account, you can find all place you need and create a favorite's list place !<br>\n  You can make the difference with a rating/comments system ! Don't wait, join our community !</p>\n</div>\n");
 
 /***/ }),
 
@@ -214,7 +214,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <app-single-place [placeAndAddress]=\"placeAndAddress\"></app-single-place>\n</div>\n\n<div>\n  <app-list-review [listReviewAndUser]=\"listReviewAndUser\"></app-list-review>\n</div>\n\n<div>\n  <app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n  <app-single-place [placeAndAddress]=\"placeAndAddress\"></app-single-place>\r\n</div>\r\n\r\n<div>\r\n  <app-list-review [listReviewAndUser]=\"listReviewAndUser\"></app-list-review>\r\n</div>\r\n\r\n<div>\r\n  <app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -227,7 +227,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"formFilter\" class=\"offset-1\">\n  <div class=\"d-inline-block\">\n    <div class=\"form-group form-inline float-left\">\n      <label for=\"category\">Catégorie :</label>\n      <select name=\"category\" id=\"category\" class=\"form-control ml-3\" [value]=\"'ALL'\" formControlName=\"category\"\n              (change)=\"emitFilterCategory()\">\n        <option class=\"form-control\" *ngFor=\"let cat of TYPE_LIEUX\" value=\"{{cat}}\">{{cat}}</option>\n      </select>\n    </div>\n    <div class=\"form-group form-inline pl-5 float-right\">\n      <label>Trier :</label>\n      <select name=\"sort\" id=\"sort\" class=\"form-control ml-3\" [value]=\"TYPE_SORT[0].key\" formControlName=\"sort\" (change)=\"emitTypeSort()\">\n        <option class=\"form-control\" *ngFor=\"let sort of TYPE_SORT\" value=\"{{sort.key}}\">{{sort.name}}</option>\n      </select>\n    </div>\n  </div>\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"formFilter\" class=\"offset-1\">\r\n  <div class=\"d-inline-block\">\r\n    <div class=\"form-group form-inline float-left\">\r\n      <label for=\"category\">Catégorie :</label>\r\n      <select name=\"category\" id=\"category\" class=\"form-control ml-3\" [value]=\"'ALL'\" formControlName=\"category\"\r\n              (change)=\"emitFilterCategory()\">\r\n        <option class=\"form-control\" *ngFor=\"let cat of TYPE_LIEUX\" value=\"{{cat}}\">{{cat}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline pl-5 float-right\">\r\n      <label>Trier :</label>\r\n      <select name=\"sort\" id=\"sort\" class=\"form-control ml-3\" [value]=\"TYPE_SORT[0].key\" formControlName=\"sort\" (change)=\"emitTypeSort()\">\r\n        <option class=\"form-control\" *ngFor=\"let sort of TYPE_SORT\" value=\"{{sort.key}}\">{{sort.name}}</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n</form>\r\n");
 
 /***/ }),
 
@@ -253,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\n  <div class=\"col-12\">\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\n      <div class=\"card-header bg-dark text-center text-light\">\n        <h5>{{placeAndAddress.place.name}}</h5>\n      </div>\n\n      <div class=\"py-2 px-3\">\n        <div class=\"d-block\">\n          <div class=\"text-left pt-3\">\n            <span class=\"d-inline\">{{placeAndAddress.place.id}} : </span>\n            <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{placeAndAddress.place.type}}</h6>\n            <div class=\"float-right\">\n              <span class=\"fa fa-star mr-2\" style=\"color: #ffd106\"></span>\n              <span class=\"\" >{{placeAndAddress.avgRate}}/10</span>\n              <span class=\"fa fa-star pl-2\" style=\"color: #ffd106\"></span>\n            </div>\n          </div>\n          <hr>\n        </div>\n        <p class=\"card-text\"a>{{placeAndAddress.place.description}}</p>\n      </div>\n\n      <div class=\"card-footer\">\n        <div>\n          {{placeAndAddress.address.postalCode}} {{placeAndAddress.address.city}}\n          <br>\n          {{placeAndAddress.address.straat}}, {{placeAndAddress.address.num}}\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\" >\r\n  <div class=\"col-12\">\r\n    <div class=\"card m-3\" (click)=\"navigateToDetailLieu()\">\r\n      <div class=\"card-header bg-dark text-center text-light\">\r\n        <h5>{{placeAndAddress.place.name}}</h5>\r\n      </div>\r\n\r\n      <div class=\"py-2 px-3\">\r\n        <div class=\"d-block\">\r\n          <div class=\"text-left pt-3\">\r\n            <span class=\"d-inline\">{{placeAndAddress.place.id}} : </span>\r\n            <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{placeAndAddress.place.type}}</h6>\r\n            <div class=\"float-right\">\r\n              <span class=\"fa fa-star mr-2\" style=\"color: #ffd106\"></span>\r\n              <span class=\"\" >{{placeAndAddress.avgRate}}/10</span>\r\n              <span class=\"fa fa-star pl-2\" style=\"color: #ffd106\"></span>\r\n            </div>\r\n          </div>\r\n          <hr>\r\n        </div>\r\n        <p class=\"card-text\"a>{{placeAndAddress.place.description}}</p>\r\n      </div>\r\n\r\n      <div class=\"card-footer\">\r\n        <div>\r\n          {{placeAndAddress.address.postalCode}} {{placeAndAddress.address.city}}\r\n          <br>\r\n          {{placeAndAddress.address.straat}}, {{placeAndAddress.address.num}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -486,6 +486,56 @@ function __importDefault(mod) {
 
 /***/ }),
 
+/***/ "./src/app/Address/address.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/Address/address.service.ts ***!
+  \********************************************/
+/*! exports provided: AddressService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddressService", function() { return AddressService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+const URL_API = "/api/Address";
+let AddressService = class AddressService {
+    constructor(http) {
+        this.http = http;
+    }
+    query() {
+        return this.http.get(URL_API);
+    }
+    get(id) {
+        return this.http.get(URL_API + '/' + id);
+    }
+    post(adresse) {
+        return this.http.post(URL_API, adresse);
+    }
+    delete(id) {
+        return this.http.delete(URL_API + '/' + id);
+    }
+    put(adresse) {
+        return this.http.put(URL_API, adresse);
+    }
+};
+AddressService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+AddressService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], AddressService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/Address/address.ts":
 /*!************************************!*\
   !*** ./src/app/Address/address.ts ***!
@@ -605,16 +655,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class authenticateModel {
+    constructor(username = '', password = '', token = '', type = 0) {
+        this._username = username;
+        this._password = password;
+        this._token = token;
+        this._type = type;
+    }
+    get type() {
+        return this._type;
+    }
+    set type(value) {
+        this._type = value;
+    }
     get token() {
         return this._token;
     }
     set token(value) {
         this._token = value;
-    }
-    constructor(username = '', password = '', token = '') {
-        this._username = username;
-        this._password = password;
-        this._token = token;
     }
     get password() {
         return this._password;
@@ -632,6 +689,7 @@ class authenticateModel {
     fromAuthenticateModelDto(dto) {
         Object.assign(this._password, dto);
         Object.assign(this._username, dto);
+        this._type = dto.type;
         this._token = dto.token;
         return this;
     }
@@ -640,7 +698,8 @@ class authenticateModel {
         return {
             username: this._username,
             password: this._password,
-            token: this._token
+            token: this._token,
+            type: this._type
         };
     }
 }
@@ -864,7 +923,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.nav-link{\r\n  font-size: 18px;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n#displayComp{\r\n  background-color: lavender;\r\n  height : 80%;\r\n}\r\n#footer {\r\n  height : 20px;\r\n  background-color: dimgray;\r\n  text-align: center;\r\n  vertical-align: middle;\r\n}\r\n#LogOut{\r\n  border-style: solid;\r\n  border-radius: 20px;\r\n  border-right-width: 10px;\r\n  border-left-width: 10px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtFQUNFLGVBQWU7QUFDakI7QUFDQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsMEJBQTBCO0VBQzFCLFlBQVk7QUFDZDtBQUNBO0VBQ0UsYUFBYTtFQUNiLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsc0JBQXNCO0FBQ3hCO0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsbUJBQW1CO0VBQ25CLHdCQUF3QjtFQUN4Qix1QkFBdUI7QUFDekIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZiYXJ7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGZvbnQtc2l6ZSA6IDE4cHg7XHJcbn1cclxuLm5hYmFyLW5hdntcclxuICB3aWR0aCA6IDMwMHB4O1xyXG59XHJcbi5uYXYtbGlua3tcclxuICBmb250LXNpemU6IDE4cHg7XHJcbn1cclxuLmNvbnRhY3R7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkaW1ncmF5O1xyXG4gIGZvbnQtc2l6ZTogMzVweDtcclxufVxyXG4jZGlzcGxheUNvbXB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbGF2ZW5kZXI7XHJcbiAgaGVpZ2h0IDogODAlO1xyXG59XHJcbiNmb290ZXIge1xyXG4gIGhlaWdodCA6IDIwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogZGltZ3JheTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG5cclxuI0xvZ091dHtcclxuICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgYm9yZGVyLXJpZ2h0LXdpZHRoOiAxMHB4O1xyXG4gIGJvcmRlci1sZWZ0LXdpZHRoOiAxMHB4O1xyXG59XHJcbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.nav-link{\r\n  font-size: 18px;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n.textFooter{\r\n  font-size: 15px;\r\n  color : white;\r\n}\r\n#displayComp{\r\n  background-color: lavender;\r\n  height: 100%;\r\n  margin: 0em;\r\n  overflow-y: auto;\r\n}\r\n#LogOut{\r\n  border-style: solid;\r\n  border-radius: 20px;\r\n  border-right-width: 10px;\r\n  border-left-width: 10px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtFQUNFLGVBQWU7QUFDakI7QUFDQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsZUFBZTtFQUNmLGFBQWE7QUFDZjtBQUNBO0VBQ0UsMEJBQTBCO0VBQzFCLFlBQVk7RUFDWixXQUFXO0VBQ1gsZ0JBQWdCO0FBQ2xCO0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsbUJBQW1CO0VBQ25CLHdCQUF3QjtFQUN4Qix1QkFBdUI7QUFDekIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZiYXJ7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGZvbnQtc2l6ZSA6IDE4cHg7XHJcbn1cclxuLm5hYmFyLW5hdntcclxuICB3aWR0aCA6IDMwMHB4O1xyXG59XHJcbi5uYXYtbGlua3tcclxuICBmb250LXNpemU6IDE4cHg7XHJcbn1cclxuLmNvbnRhY3R7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkaW1ncmF5O1xyXG4gIGZvbnQtc2l6ZTogMzVweDtcclxufVxyXG4udGV4dEZvb3RlcntcclxuICBmb250LXNpemU6IDE1cHg7XHJcbiAgY29sb3IgOiB3aGl0ZTtcclxufVxyXG4jZGlzcGxheUNvbXB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbGF2ZW5kZXI7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIG1hcmdpbjogMGVtO1xyXG4gIG92ZXJmbG93LXk6IGF1dG87XHJcbn1cclxuXHJcbiNMb2dPdXR7XHJcbiAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gIGJvcmRlci1yaWdodC13aWR0aDogMTBweDtcclxuICBib3JkZXItbGVmdC13aWR0aDogMTBweDtcclxufVxyXG4iXX0= */");
 
 /***/ }),
 
@@ -954,6 +1013,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _map_dump_map_dump_map_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./map/dump-map/dump-map.component */ "./src/app/map/dump-map/dump-map.component.ts");
 /* harmony import */ var _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./map/smart-map/smart-map.component */ "./src/app/map/smart-map/smart-map.component.ts");
 /* harmony import */ var _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./views/home/home.component */ "./src/app/views/home/home.component.ts");
+/* harmony import */ var _views_lieu_filter_place_pipe_type_pipe__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./views/lieu/filter-place/pipe/type.pipe */ "./src/app/views/lieu/filter-place/pipe/type.pipe.ts");
+/* harmony import */ var _views_lieu_filter_place_filter_place_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./views/lieu/filter-place/filter-place.component */ "./src/app/views/lieu/filter-place/filter-place.component.ts");
+/* harmony import */ var _views_lieu_filter_place_pipe_rating_pipe__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./views/lieu/filter-place/pipe/rating.pipe */ "./src/app/views/lieu/filter-place/pipe/rating.pipe.ts");
+
+
+
 
 
 
@@ -989,7 +1054,7 @@ const routes = [
     { path: 'User', component: _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_13__["SmartFormInscriptionComponent"] },
     { path: 'lieux', component: _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_15__["ListPlaceComponent"] },
     { path: 'lieux/:id', component: _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_17__["DetailPlaceComponent"] },
-    { path: 'forms/lieux', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_21__["SmartFormPlaceComponent"] },
+    { path: 'forms/place', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_21__["SmartFormPlaceComponent"] },
     { path: 'Address', component: _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_25__["SmartMapComponent"] },
     { path: 'home', component: _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"] }
 ];
@@ -1001,9 +1066,6 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
             _forms_form_connection_dumb_form_connection_form_connection_component__WEBPACK_IMPORTED_MODULE_7__["FormConnectionComponent"],
             _forms_form_inscription_dumb_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__["FormInscriptionComponent"],
-          	_views_lieu_filter_place_pipe_type_pipe__WEBPACK_IMPORTED_MODULE_23__["TypePipe"],
-            _views_lieu_filter_place_filter_place_component__WEBPACK_IMPORTED_MODULE_24__["FilterPlaceComponent"],
-            _views_lieu_filter_place_pipe_rating_pipe__WEBPACK_IMPORTED_MODULE_25__["RatingPipe"]
             _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_13__["SmartFormInscriptionComponent"],
             _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_14__["SmartFormConnectionComponent"],
             _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_15__["ListPlaceComponent"],
@@ -1015,6 +1077,10 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_21__["SmartFormPlaceComponent"],
             _forms_form_review_form_review_component__WEBPACK_IMPORTED_MODULE_22__["FormReviewComponent"],
             _forms_smart_form_review_smart_form_review_component__WEBPACK_IMPORTED_MODULE_23__["SmartFormReviewComponent"],
+            _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"],
+            _views_lieu_filter_place_pipe_type_pipe__WEBPACK_IMPORTED_MODULE_27__["TypePipe"],
+            _views_lieu_filter_place_filter_place_component__WEBPACK_IMPORTED_MODULE_28__["FilterPlaceComponent"],
+            _views_lieu_filter_place_pipe_rating_pipe__WEBPACK_IMPORTED_MODULE_29__["RatingPipe"],
             _map_dump_map_dump_map_component__WEBPACK_IMPORTED_MODULE_24__["DumpMapComponent"],
             _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_25__["SmartMapComponent"],
             _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"]
@@ -1091,6 +1157,7 @@ let FormConnectionComponent = class FormConnectionComponent {
         userConnected.username = this.formulaireConnexion.get("username").value;
         userConnected.password = this.formulaireConnexion.get("motDePasseConnexion").value;
         userConnected.token;
+        userConnected.type;
         return userConnected;
     }
     emitNewUserConnected() {
@@ -1170,8 +1237,17 @@ let SmartFormConnectionComponent = class SmartFormConnectionComponent {
         const sub = this.userService.postAuth($event.toAuthenticateModelDto()).subscribe(authenticateModelDTO => {
             this._usersAuthenticate.push(new _User_authenticateModel__WEBPACK_IMPORTED_MODULE_3__["authenticateModel"]().fromAuthenticateModelDto(authenticateModelDTO));
             this._usersAuthenticate.forEach(use => localStorage.setItem("id_token", use.token));
+            this.isAdmin(this._usersAuthenticate);
         });
         this.subscriptions.push(sub);
+    }
+    //Méthode qui récup le type de l'utilisateur qui se connecte et check si admin ! A partir de la tu fais ce que tu veux ;)
+    isAdmin(auth) {
+        var typeAuth;
+        auth.forEach(use => typeAuth = use.type);
+        if (typeAuth == 1) {
+            alert("Bienvenue administrateur");
+        }
     }
 };
 SmartFormConnectionComponent.ctorParameters = () => [
@@ -1256,13 +1332,13 @@ let FormInscriptionComponent = class FormInscriptionComponent {
     /*verificationMotDePasse(){
       return this.formulaireInscription.controls.motDePasse.value === this.formulaireInscription.controls.verifMotDePasse.value
     }
-
+  
     verificationEmail(){
       var regex = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
       if(this.formulaireInscription.controls.emailInscription.value.match(regex) !== null) return true;
       return false;
     }
-
+  
     verificationFormulaire(){
       if(this.verificationMotDePasse() && this.verificationEmail() && this.formulaireInscription.valid) return false;
       return true;
@@ -2924,7 +3000,7 @@ let PlaceService = class PlaceService {
     //   return this.http.post<LieuDto>(URL_API, lieu);
     // }
     post(place) {
-        return this.http.post(URL_API, place);
+        return this.http.post(URL_API + "/forms", place);
     }
     delete(id) {
         return this.http.delete(URL_API + '/' + id);

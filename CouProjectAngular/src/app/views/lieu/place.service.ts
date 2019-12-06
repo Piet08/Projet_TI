@@ -30,7 +30,7 @@ export class PlaceService {
   // }
 
   post(place : PlaceAndAddressDto): Observable<PlaceAndAddressDto>{
-    return this.http.post<PlaceAndAddressDto>(URL_API, place);
+    return this.http.post<PlaceAndAddressDto>(URL_API+"/forms", place);
   }
 
   delete(id: number): Observable<PlaceDto> {

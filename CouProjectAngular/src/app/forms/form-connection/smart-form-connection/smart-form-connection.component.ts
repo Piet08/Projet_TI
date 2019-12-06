@@ -38,11 +38,21 @@ export class SmartFormConnectionComponent implements OnInit, OnDestroy {
       authenticateModelDTO =>{
         this._usersAuthenticate.push(new authenticateModel().fromAuthenticateModelDto(authenticateModelDTO));
         this._usersAuthenticate.forEach(use => localStorage.setItem("id_token", use.token));
+        this.isAdmin(this._usersAuthenticate);
       });
     this.subscriptions.push(sub);
 
   }
 
+  //Méthode qui récup le type de l'utilisateur qui se connecte et check si admin ! A partir de la tu fais ce que tu veux ;)
+
+  isAdmin(auth : authenticateModelList){
+    var typeAuth;
+    auth.forEach(use =>  typeAuth = use.type);
+    if(typeAuth == 1){
+      alert("Bienvenue administrateur");
+    }
+  }
 
 
 
