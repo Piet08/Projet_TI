@@ -655,16 +655,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class authenticateModel {
+    constructor(username = '', password = '', token = '', type = 0) {
+        this._username = username;
+        this._password = password;
+        this._token = token;
+        this._type = type;
+    }
+    get type() {
+        return this._type;
+    }
+    set type(value) {
+        this._type = value;
+    }
     get token() {
         return this._token;
     }
     set token(value) {
         this._token = value;
-    }
-    constructor(username = '', password = '', token = '') {
-        this._username = username;
-        this._password = password;
-        this._token = token;
     }
     get password() {
         return this._password;
@@ -682,6 +689,7 @@ class authenticateModel {
     fromAuthenticateModelDto(dto) {
         Object.assign(this._password, dto);
         Object.assign(this._username, dto);
+        this._type = dto.type;
         this._token = dto.token;
         return this;
     }
@@ -690,7 +698,8 @@ class authenticateModel {
         return {
             username: this._username,
             password: this._password,
-            token: this._token
+            token: this._token,
+            type: this._type
         };
     }
 }
@@ -914,7 +923,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.nav-link{\r\n  font-size: 18px;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n#displayComp{\r\n  background-color: lavender;\r\n  height : 80%;\r\n}\r\n#footer {\r\n  height : 20px;\r\n  background-color: dimgray;\r\n  text-align: center;\r\n  vertical-align: middle;\r\n}\r\n#LogOut{\r\n  border-style: solid;\r\n  border-radius: 20px;\r\n  border-right-width: 10px;\r\n  border-left-width: 10px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtFQUNFLGVBQWU7QUFDakI7QUFDQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsMEJBQTBCO0VBQzFCLFlBQVk7QUFDZDtBQUNBO0VBQ0UsYUFBYTtFQUNiLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsc0JBQXNCO0FBQ3hCO0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsbUJBQW1CO0VBQ25CLHdCQUF3QjtFQUN4Qix1QkFBdUI7QUFDekIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZiYXJ7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGZvbnQtc2l6ZSA6IDE4cHg7XHJcbn1cclxuLm5hYmFyLW5hdntcclxuICB3aWR0aCA6IDMwMHB4O1xyXG59XHJcbi5uYXYtbGlua3tcclxuICBmb250LXNpemU6IDE4cHg7XHJcbn1cclxuLmNvbnRhY3R7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkaW1ncmF5O1xyXG4gIGZvbnQtc2l6ZTogMzVweDtcclxufVxyXG4jZGlzcGxheUNvbXB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbGF2ZW5kZXI7XHJcbiAgaGVpZ2h0IDogODAlO1xyXG59XHJcbiNmb290ZXIge1xyXG4gIGhlaWdodCA6IDIwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogZGltZ3JheTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG5cclxuI0xvZ091dHtcclxuICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgYm9yZGVyLXJpZ2h0LXdpZHRoOiAxMHB4O1xyXG4gIGJvcmRlci1sZWZ0LXdpZHRoOiAxMHB4O1xyXG59XHJcbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.nav-link{\r\n  font-size: 18px;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n.textFooter{\r\n  font-size: 15px;\r\n  color : white;\r\n}\r\n#displayComp{\r\n  background-color: lavender;\r\n  height: 100%;\r\n  margin: 0em;\r\n  overflow-y: auto;\r\n}\r\n#LogOut{\r\n  border-style: solid;\r\n  border-radius: 20px;\r\n  border-right-width: 10px;\r\n  border-left-width: 10px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtFQUNFLGVBQWU7QUFDakI7QUFDQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsZUFBZTtFQUNmLGFBQWE7QUFDZjtBQUNBO0VBQ0UsMEJBQTBCO0VBQzFCLFlBQVk7RUFDWixXQUFXO0VBQ1gsZ0JBQWdCO0FBQ2xCO0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsbUJBQW1CO0VBQ25CLHdCQUF3QjtFQUN4Qix1QkFBdUI7QUFDekIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZiYXJ7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGZvbnQtc2l6ZSA6IDE4cHg7XHJcbn1cclxuLm5hYmFyLW5hdntcclxuICB3aWR0aCA6IDMwMHB4O1xyXG59XHJcbi5uYXYtbGlua3tcclxuICBmb250LXNpemU6IDE4cHg7XHJcbn1cclxuLmNvbnRhY3R7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkaW1ncmF5O1xyXG4gIGZvbnQtc2l6ZTogMzVweDtcclxufVxyXG4udGV4dEZvb3RlcntcclxuICBmb250LXNpemU6IDE1cHg7XHJcbiAgY29sb3IgOiB3aGl0ZTtcclxufVxyXG4jZGlzcGxheUNvbXB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbGF2ZW5kZXI7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIG1hcmdpbjogMGVtO1xyXG4gIG92ZXJmbG93LXk6IGF1dG87XHJcbn1cclxuXHJcbiNMb2dPdXR7XHJcbiAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gIGJvcmRlci1yaWdodC13aWR0aDogMTBweDtcclxuICBib3JkZXItbGVmdC13aWR0aDogMTBweDtcclxufVxyXG4iXX0= */");
 
 /***/ }),
 
@@ -1148,6 +1157,7 @@ let FormConnectionComponent = class FormConnectionComponent {
         userConnected.username = this.formulaireConnexion.get("username").value;
         userConnected.password = this.formulaireConnexion.get("motDePasseConnexion").value;
         userConnected.token;
+        userConnected.type;
         return userConnected;
     }
     emitNewUserConnected() {
@@ -1227,8 +1237,17 @@ let SmartFormConnectionComponent = class SmartFormConnectionComponent {
         const sub = this.userService.postAuth($event.toAuthenticateModelDto()).subscribe(authenticateModelDTO => {
             this._usersAuthenticate.push(new _User_authenticateModel__WEBPACK_IMPORTED_MODULE_3__["authenticateModel"]().fromAuthenticateModelDto(authenticateModelDTO));
             this._usersAuthenticate.forEach(use => localStorage.setItem("id_token", use.token));
+            this.isAdmin(this._usersAuthenticate);
         });
         this.subscriptions.push(sub);
+    }
+    //Méthode qui récup le type de l'utilisateur qui se connecte et check si admin ! A partir de la tu fais ce que tu veux ;)
+    isAdmin(auth) {
+        var typeAuth;
+        auth.forEach(use => typeAuth = use.type);
+        if (typeAuth == 1) {
+            alert("Bienvenue administrateur");
+        }
     }
 };
 SmartFormConnectionComponent.ctorParameters = () => [

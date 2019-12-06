@@ -34,6 +34,7 @@ export class FormConnectionComponent implements OnInit {
     userConnected.username = this.formulaireConnexion.get("username").value;
     userConnected.password = this.formulaireConnexion.get("motDePasseConnexion").value;
     userConnected.token;
+    userConnected.type;
     return userConnected;
   }
   emitNewUserConnected() {

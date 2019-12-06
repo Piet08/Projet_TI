@@ -13,15 +13,15 @@
   background-color: dimgray;
   font-size: 35px;
 }
+.textFooter{
+  font-size: 15px;
+  color : white;
+}
 #displayComp{
   background-color: lavender;
-  height : 80%;
-}
-#footer {
-  height : 20px;
-  background-color: dimgray;
-  text-align: center;
-  vertical-align: middle;
+  height: 100%;
+  margin: 0em;
+  overflow-y: auto;
 }
 
 #LogOut{
