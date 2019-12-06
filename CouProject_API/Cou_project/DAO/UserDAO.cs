@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using Cou_project.Helpers;
 using Cou_project.Models;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cou_project.DAO
@@ -18,13 +19,13 @@ namespace Cou_project.DAO
         public static readonly string FIELD_EMAIL = "email";
         public static readonly string FIELD_HASHPWD = "hashpwd";
         public static readonly string FIELD_IDADR = "idadr";
-        
+
         //Field concernant les favoris -> Requête ici car favoris très lié à un utilisateur
         public static readonly string TABLE_FAVORIS = "Favoris";
         public static readonly string FIELD_IDUSER = "idutil";
         public static readonly string FIELD_IDPLACE = "idlieu";
-        
-        //J'ai fais toutes les requêtes, quitte à en supp quelques une qui ne nous seront pas utiles, à voir plus tard ! 
+
+        //J'ai fais toutes les requêtes, quitte à en supp quelques une qui ne nous seront pas utiles, à voir plus tard !
         //UTILISATEUR
         private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME}";
         private static readonly string RED_POST = String.Format(
@@ -39,14 +40,14 @@ namespace Cou_project.DAO
         //AUTHENTIFICATION
         private static readonly string REQ_POST_AUTH =
             $"SELECT * FROM {TABLE_NAME} WHERE {FIELD_PSEUDO} = @{FIELD_PSEUDO} AND {FIELD_HASHPWD} = @{FIELD_HASHPWD}";
-        
+
         //FAVORIS
         private static readonly string REQ_QUERY_FAVORIS = $"SELECT * FROM {TABLE_FAVORIS}";
         //Pas de String.format() sinon Exception vue qu'il n'y a que du int a insérer
         private static readonly string RED_POST_FAVORIS = $"INSERT INTO {TABLE_FAVORIS}({FIELD_IDUSER}, {FIELD_IDPLACE}) VALUES (@{FIELD_IDUSER}, @{FIELD_IDPLACE})";
         private static readonly string REQ_DELETE_FAVORIS = $"DELETE FROM {TABLE_FAVORIS} WHERE {FIELD_IDUSER} = @{FIELD_IDUSER} AND {FIELD_IDPLACE} = @{FIELD_IDPLACE}";
 
-        
+
         public static User QueryAuth(AuthenticateModel model)
         {
             using (var connection = DataBase.GetConnection())
@@ -60,7 +61,7 @@ namespace Cou_project.DAO
 
                 command.Parameters.AddWithValue($"@{FIELD_PSEUDO}", model.Username);
                 command.Parameters.AddWithValue($"@{FIELD_HASHPWD}", password);
-                
+
                 SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.Read())
@@ -69,8 +70,8 @@ namespace Cou_project.DAO
                     return null;
             }
         }
-        
-        
+
+
         public static IEnumerable<User> Query()
         {
             List<User> users = new List<User>();
@@ -87,12 +88,12 @@ namespace Cou_project.DAO
             }
             return users;
         }
-        
+
         //Attention l'IDADR doit se trouver dans la table pour que ca fonctionne ! a gérer au moment des connexions ;)
         [HttpPost]
         public static User Create(User util)
         {
-            
+
             //string password = hasher.HashPassword(util.Hashpwd);
             string password = Crypto.Encrypt(util.Hashpwd);
             using (var connection = DataBase.GetConnection())
@@ -113,7 +114,7 @@ namespace Cou_project.DAO
             }
             return util;
         }
-        
+
         public static User Get(int id)
         {
             using (var connection = DataBase.GetConnection())
@@ -129,7 +130,7 @@ namespace Cou_project.DAO
                 return reader.Read() ? new User(reader) : null;
             }
         }
-        
+
         public static bool Delete(int id)
         {
             using (var connection = DataBase.GetConnection())
@@ -158,9 +159,9 @@ namespace Cou_project.DAO
                 return command.ExecuteNonQuery() == 1;
             }
         }
-        
+
         //FAVORIS
-        
+
         public static IEnumerable<Favorites> QueryFavoris()
         {
             List<Favorites> listFavoris= new List<Favorites>();
@@ -177,7 +178,7 @@ namespace Cou_project.DAO
             }
             return listFavoris;
         }
-        
+
         //Attention l'IDUTIL + IDLIEU doit se trouver dans la table pour que ca fonctionne ! a gérer au moment des connexions ;)
         [HttpPost]
         public static Favorites CreateFavoris(Favorites favorites)

@@ -1,5 +1,6 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
+using Cou_project.Helpers;
 
 namespace Cou_project.Models
 {
@@ -11,15 +12,7 @@ namespace Cou_project.Models
         [Required]
         public string Password { get; set; }
 
-
-        //private PasswordHasher hasher = new PasswordHasher();
-        
-        public string getHashPassword()
-        {
-             
-            //return hasher.HashPassword(Password);
-            return "";
-        }
+        public string Token { get; set; }
     }
-    
+
 }

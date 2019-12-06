@@ -26,7 +26,7 @@ namespace Cou_project.Controllers
             return Ok(_placeService.GetPlacesAndAddresses());
         }
         
-        [HttpPost]
+        [HttpPost("forms")]
         public ActionResult<Place> Post([FromBody] PlaceAndAddress place)
         {
             return Ok(_placeService.CreatePlaceAndAddress(place));

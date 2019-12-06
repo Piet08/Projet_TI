@@ -8,13 +8,13 @@
         <a routerLink="home" class="nav-link">Accueil</a>
       </li>
       <li class="nav-item text-center">
-        <a routerLink="User/authenticate" class="nav-link">Connexion</a>
+        <a id="LogIn" routerLink="User/authenticate" class="nav-link" [ngStyle]="isLogIn()">Connexion</a>
       </li>
       <li class="nav-item text-center">
         <a routerLink="User" class="nav-link">Inscription</a>
       </li>
       <li class="nav-item text-center">
-        <a routerLink="" class="nav-link">Cartes</a>
+        <a routerLink="Address" class="nav-link">Cartes</a>
       </li>
       <li class="nav-item text-center">
         <a routerLink="forms/place" class="nav-link">Ajout lieu</a>
@@ -22,15 +22,16 @@
       <li class="nav-item text-center">
         <a routerLink="lieux" class="nav-link">Lieux</a>
       </li>
+      <li class="nav-item text-center">
+        <a id="LogOut" (click)="logOut()" class="nav-link">Déconnexion</a>
+      </li>
     </ul>
   </div>
 </nav>
 
-
-
-
 <!--Permet l'affichage des component-->
 <div class="container-fluid" id="displayComp">
-      <router-outlet></router-outlet>
-</div>
+      <router-outlet id="component">
 
+      </router-outlet>
+</div>

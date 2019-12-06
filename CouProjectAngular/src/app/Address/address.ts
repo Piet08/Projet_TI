@@ -6,10 +6,10 @@ export class Address {
   private _id: number;
   private _city: string;
   private _straat: string;
-  private _num: number;
+  private _num: string;
   private _postalCode: number;
 
-  constructor(id: number = -1, ville: string = '', rue: string = '', num: number = -1, cp: number = -1) {
+  constructor(id: number = -1, ville: string = '', rue: string = '', num: string = "-1", cp: number = -1) {
     this._id = id;
     this._city = ville;
     this._straat = rue;
@@ -22,10 +22,10 @@ export class Address {
   set postalCode(value: number) {
     this._postalCode = value;
   }
-  get num(): number {
+  get num(): string {
     return this._num;
   }
-  set num(value: number) {
+  set num(value: string) {
     this._num = value;
   }
   get id(): number {

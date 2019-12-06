@@ -27,19 +27,12 @@ namespace Cou_project.Controllers
         public IActionResult Authenticate([FromBody]AuthenticateModel model)
         {
             return Ok(_userService.Authenticate(UserDAO.QueryAuth(model)));
-            /*var user = _userService.Authenticate(model.Username, model.Password);
-
-            if (user == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
-
-            return Ok(user);*/
         }
-        
         /*[HttpGet("authenticate")]
-        public IActionResult GetAll()
+        public IActionResult Get([FromBody] AuthenticateModel model)
         {
-            var users = _userService.GetAll();
-            return Ok(users);
+            User userConnected = _userService.Get(UserDAO.QueryAuth(model));
+            return Ok(userConnected);
         }*/
         //UTILISATEUR
         [AllowAnonymous]
