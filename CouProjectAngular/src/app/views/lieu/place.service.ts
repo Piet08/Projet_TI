@@ -25,12 +25,13 @@ export class PlaceService {
   getPlacesAndAddressees():Observable<PlaceAndAddressDto[]>{
     return this.http.get<PlaceAndAddressDto[]>(URL_API+"/addresses");
   }
-  // post(lieu : LieuDto): Observable<LieuDto>{
-  //   return this.http.post<LieuDto>(URL_API, lieu);
-  // }
 
-  post(place : PlaceAndAddressDto): Observable<PlaceAndAddressDto>{
-    return this.http.post<PlaceAndAddressDto>(URL_API, place);
+  post(lieu : PlaceDto): Observable<PlaceDto>{
+    return this.http.post<PlaceDto>(URL_API, lieu);
+  }
+
+  postPlaceAndAddress(place : PlaceAndAddressDto): Observable<PlaceAndAddressDto>{
+    return this.http.post<PlaceAndAddressDto>(URL_API+"/forms", place);
   }
 
   delete(id: number): Observable<PlaceDto> {

@@ -25,6 +25,7 @@ export class SmartFormPlaceComponent implements OnInit,OnDestroy{
   }
 
   createPlace($event: PlaceAndAddressDto) {
-    this.subscriptions.push(this.lieuService.post($event).subscribe());
+    console.log(JSON.stringify($event));
+    this.subscriptions.push(this.lieuService.postPlaceAndAddress($event).subscribe());
   }
 }

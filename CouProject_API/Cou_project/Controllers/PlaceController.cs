@@ -35,7 +35,6 @@ namespace Cou_project.Controllers
         [HttpGet("address/{id}")]
         public ActionResult<PlaceAndAddress> GetPlaceAndAddress(int id)
         {
-            Console.WriteLine("test");
             PlaceAndAddress placeAndAddress = _placeService.GetPlaceAndAddress(id);  
             return placeAndAddress != null ? (ActionResult<PlaceAndAddress>) Ok(placeAndAddress) : NotFound("This place does not exists !");
         }

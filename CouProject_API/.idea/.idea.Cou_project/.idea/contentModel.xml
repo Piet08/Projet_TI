@@ -43,7 +43,6 @@
           <e p="Address.cs" t="Include" />
           <e p="AuthenticateModel.cs" t="Include" />
           <e p="Database.cs" t="Include" />
-          <e p="Database.cs___jb_old___" t="Include" />
           <e p="Favorites.cs" t="Include" />
           <e p="Place.cs" t="Include" />
           <e p="PlaceAndAddress.cs" t="Include" />
