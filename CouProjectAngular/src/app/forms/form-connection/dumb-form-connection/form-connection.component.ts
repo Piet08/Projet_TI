@@ -18,6 +18,7 @@ export class FormConnectionComponent implements OnInit {
   @Output()
   userConnected:EventEmitter<authenticateModel> = new EventEmitter<authenticateModel>();
 
+  imageSignIn : string = "iconfinder_sign-in_298868.png";
 
   constructor(public fb: FormBuilder) { }
 

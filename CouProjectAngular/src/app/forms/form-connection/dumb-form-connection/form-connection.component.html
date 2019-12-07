@@ -1,16 +1,18 @@
 <div align="center">
-  <h1><b>Formulaire Connexion</b></h1>
   <form class="form-horizontal" [formGroup]="formulaireConnexion" (ngSubmit)="emitNewUserConnected()" role="form">
-    <div class="form-group form-inline raw">
-      <label for="username" class="col-4">Login</label>
-      <input class=" form-control col-6" type="text" formControlName="username" id="username"/>
-    </div>
+    <fieldset>
+      <legend>Formulaire de connexion</legend>
+      <div class="form-group col-6">
+        <label for="username">Login</label>
+        <input type="text" class="form-control" id="exampleInputEmail1"  formControlName="username" id="username" placeholder="Entrez un login">
 
-      <div class="form-group form-inline raw">
-        <label for="motDePasseConnexion" class="col-4">Mot de passe</label>
-        <input class=" form-control col-6" type = "password" formControlName="motDePasseConnexion" id="motDePasseConnexion"/>
       </div>
-
-    <input type="submit" value="Se connecter" class="btn btn-primary col-sm-offset-3" [disabled]="verificationFormulaire()"/>
+      <div class="form-group col-6">
+        <label for="motDePasseConnexion">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Entrez un mot de passe" formControlName="motDePasseConnexion" id="motDePasseConnexion">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
+      </div>
+      <input type="submit" value="Se connecter" class="btn btn-primary col-sm-offset-3" [disabled]="verificationFormulaire()"/>
+    </fieldset>
   </form>
 </div>
