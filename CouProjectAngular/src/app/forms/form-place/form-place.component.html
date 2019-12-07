@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="text-center" size="50px">
-      <input type="submit" class="btn btn-primary btn-success" >
+      <input type="submit" [disabled]="!formLieu.valid" class="btn btn-primary btn-success" >
     </div>
   </form>
 </div>

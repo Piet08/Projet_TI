@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cou_project.DAO;
 using Cou_project.Models;
 using Cou_project.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cou_project.Controllers
@@ -43,6 +44,7 @@ namespace Cou_project.Controllers
                 : NotFound("This lieu does not exists !");
         }
         
+        [Authorize]
         [HttpPost]
         public ActionResult<Review> Post([FromBody] Review review)
         {

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { FormConnectionComponent } from './forms/form-connection/dumb-form-connection/form-connection.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FormInscriptionComponent } from './forms/form-inscription/dumb-form-inscription/form-inscription.component';
@@ -28,17 +28,19 @@ import { HomeComponent } from './views/home/home.component';
 import { TypePipe } from './views/lieu/filter-place/pipe/type.pipe';
 import { FilterPlaceComponent } from './views/lieu/filter-place/filter-place.component';
 import { RatingPipe } from './views/lieu/filter-place/pipe/rating.pipe';
+import {JwtInterceptor} from './JwtInterceptor';
+import {AuthGard} from './AuthGard';
 
 
 // path = le nom du controller de l'api en fonction de ce que l'on veut faire
 // component : celui que l'on souhaite afficher
 // Les imports sont déja fait
 const routes: Routes = [
-  {path: 'User/authenticate', component:SmartFormConnectionComponent},
-  {path: 'User', component:SmartFormInscriptionComponent},
+  {path: 'login', component:SmartFormConnectionComponent},
+  {path: 'register', component:SmartFormInscriptionComponent},
   {path: 'lieux', component:ListPlaceComponent},
   {path: 'lieux/:id', component:DetailPlaceComponent},
-  {path: 'forms/place', component:SmartFormPlaceComponent},
+  {path: 'forms/place', canActivate : [AuthGard],component:SmartFormPlaceComponent},
   {path: 'Address', component:SmartMapComponent},
   {path: 'home', component:HomeComponent}
 
@@ -80,7 +82,9 @@ const routes: Routes = [
     AgmCoreModule.forRoot({apiKey: 'AIzaSyD6dHdCHR8CbbpkMiCkYAcJxzXgvV1E64k'}),
     AgmJsMarkerClustererModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

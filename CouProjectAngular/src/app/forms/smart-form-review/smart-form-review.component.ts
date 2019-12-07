@@ -35,6 +35,7 @@ export class SmartFormReviewComponent implements OnInit,OnDestroy{
   }
 
   createReview($event: Review) {
-    this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe(review => this._reviewCreated.next(new Review().fromAvisDto(review))));
+    // this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe(review => this._reviewCreated.next(new Review().fromAvisDto(review))));
+    this._reviewCreated.next($event);
   }
 }

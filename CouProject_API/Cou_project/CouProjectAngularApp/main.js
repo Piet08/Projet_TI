@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/place\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a id=\"LogIn\" routerLink=\"User/authenticate\" class=\"nav-link\" [ngStyle]=\"isLogIn()\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"User\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a id=\"LogOut\" (click)=\"logOut()\" class=\"nav-link\">Déconnexion</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n      <router-outlet id=\"component\">\r\n\r\n      </router-outlet>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header>\r\n  <div class=\"text-center bg-dark\">\r\n    <h1 class=\"\">COU</h1>\r\n    <span *ngIf=\"currentUser\" class=\"text-right\">Bonjour {{currentUser.surname}}</span>\r\n  </div>\r\n</header>\r\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <div class=\"navbar-header\">\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"lieux\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/place\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a id=\"LogIn\" routerLink=\"login\" class=\"nav-link\" [ngStyle]=\"isLogIn()\">Connexion</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"register\" class=\"nav-link\">Inscription</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"Address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a id=\"LogOut\" (click)=\"logOut()\" class=\"nav-link\">Déconnexion</a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n        <router-outlet id=\"component\">\r\n\r\n        </router-outlet>\r\n</div>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-form-connection (userConnected)=\"createUserConnected($event)\"></app-form-connection>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-form-connection (userConnected)=\"onSubmit($event)\"></app-form-connection>\r\n");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1><b>Formulaire inscription</b></h1>\r\n  <form class=\"form-horizontal\" [formGroup] = \"formulaireInscription\" (ngSubmit)=\"emitNewUser()\" role=\"form\">\r\n    <div class=\"form-group  form-inline raw\">\r\n      <label for=\"emailInscription\" class=\"col-4\">Email</label>\r\n      <input type=\"text\" class=\" form-control col-6\"  formControlName=\"emailInscription\" id=\"emailInscription\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"nom\" class=\"col-4\">Nom</label>\r\n      <input class=\"form-control\" type =\"text\" class=\"form-control col-6\" formControlName=\"nom\" id=\"nom\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"prenom\" class=\"col-4\">Prenom</label>\r\n      <input class=\"form-control\" type =\"text\"  class=\"form-control col-6\" formControlName=\"prenom\" id=\"prenom\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"pseudo\" class=\"col-4\">Pseudo</label>\r\n      <input class=\"form-control\" type =\"text\" class=\"form-control col-6\"  formControlName=\"pseudo\" id=\"pseudo\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"motDePasseInscription\" class=\"col-4\">Mot de passe</label>\r\n      <input class=\"form-control\" type =\"password\" class=\"form-control col-6\"  formControlName=\"motDePasseInscription\" id=\"motDePasseInscription\"/>\r\n    </div>\r\n    <div class=\"form-group  form-inline raw\">\r\n      <label for=\"verifMotDePasse\" class=\"col-4\">Vérification mot de passe</label>\r\n      <input class=\"form-control\" type =\"password\"  class=\"form-control col-6\"  formControlName=\"verifMotDePasse\" id=\"verifMotDePasse\"/>\r\n       <!-- <span *ngIf=\"!verificationMotDePasse()\">Erreur, mauvais mot de passe</span> -->\r\n    </div>\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"straat\" class=\"col-4 \">Rue </label>\r\n        <input type=\"text\" class=\"form-control col-6\"  id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-4\">Numéro </label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"postalCode\" class=\"col-4 \">Code Postal </label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"city\" class=\"col-4 \">Ville </label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <input class=\"btn btn-primary col-sm-offset-3\" type=\"submit\" value=\"S'inscrire\" id=\"btnInscription\"/>  <!--[disabled]=\"verificationFormulaire()\"-->\r\n  </form>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1><b>Formulaire inscription</b></h1>\r\n  <form class=\"form-horizontal\" [formGroup] = \"formulaireInscription\" (ngSubmit)=\"emitNewUser()\" role=\"form\">\r\n    <div class=\"form-group  form-inline raw\">\r\n      <label for=\"emailInscription\" class=\"col-4\">Email</label>\r\n      <input type=\"text\" class=\" form-control col-6\"  formControlName=\"emailInscription\" id=\"emailInscription\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"nom\" class=\"col-4\">Nom</label>\r\n      <input class=\"form-control\" type =\"text\" class=\"form-control col-6\" formControlName=\"nom\" id=\"nom\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"prenom\" class=\"col-4\">Prenom</label>\r\n      <input class=\"form-control\" type =\"text\"  class=\"form-control col-6\" formControlName=\"prenom\" id=\"prenom\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"pseudo\" class=\"col-4\">Pseudo</label>\r\n      <input class=\"form-control\" type =\"text\" class=\"form-control col-6\"  formControlName=\"pseudo\" id=\"pseudo\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"motDePasseInscription\" class=\"col-4\">Mot de passe</label>\r\n      <input class=\"form-control\" type =\"password\" class=\"form-control col-6\"  formControlName=\"motDePasseInscription\" id=\"motDePasseInscription\"/>\r\n    </div>\r\n    <div class=\"form-group  form-inline raw\">\r\n      <label for=\"verifMotDePasse\" class=\"col-4\">Vérification mot de passe</label>\r\n      <input class=\"form-control\" type =\"password\"  class=\"form-control col-6\"  formControlName=\"verifMotDePasse\" id=\"verifMotDePasse\"/>\r\n       <!-- <span *ngIf=\"!verificationMotDePasse()\">Erreur, mauvais mot de passe</span> -->\r\n    </div>\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"straat\" class=\"col-4 \">Rue </label>\r\n        <input type=\"text\" class=\"form-control col-6\"  id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-4\">Numéro </label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"postalCode\" class=\"col-4 \">Code Postal </label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"city\" class=\"col-4 \">Ville </label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <input class=\"btn btn-primary col-sm-offset-3\" type=\"submit\" value=\"S'inscrire\" id=\"btnInscription\"/>  <!--[disabled]=\"verificationFormulaire()\"-->\r\n  </form>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<div class=\"col-12\" algin=\"center\">\r\n  <h1 align=\"center\"><b>Formulaire d'ajout de lieu</b></h1>\r\n  <form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"name\" class=\"col-4\">Nom :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"name\" name=\"name\" formControlName=\"name\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"type\" class=\"col-4 \">Type :</label>\r\n      <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control col-6\">\r\n        <option class=\"form-control\" *ngFor=\"let type of TYPE_LIEUX\" value=\"{{type}}\">{{type}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"description\" class=\"col-4 \">Description :</label>\r\n      <textarea rows=\"5\" cols=\"30\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n\r\n      </textarea>\r\n    </div>\r\n\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"straat\" class=\"col-4 \">Rue :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-4 \">Numéro :</label>\r\n        <input class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"postalCode\" class=\"col-4 \">Code Postal :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"city\" class=\"col-4 \">Ville :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <div class=\"text-center\" size=\"50px\">\r\n      <input type=\"submit\" class=\"btn btn-primary btn-success\" >\r\n    </div>\r\n  </form>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<div class=\"col-12\" algin=\"center\">\r\n  <h1 align=\"center\"><b>Formulaire d'ajout de lieu</b></h1>\r\n  <form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"name\" class=\"col-4\">Nom :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"name\" name=\"name\" formControlName=\"name\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"type\" class=\"col-4 \">Type :</label>\r\n      <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control col-6\">\r\n        <option class=\"form-control\" *ngFor=\"let type of TYPE_LIEUX\" value=\"{{type}}\">{{type}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"description\" class=\"col-4 \">Description :</label>\r\n      <textarea rows=\"5\" cols=\"30\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n\r\n      </textarea>\r\n    </div>\r\n\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"straat\" class=\"col-4 \">Rue :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-4 \">Numéro :</label>\r\n        <input class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"postalCode\" class=\"col-4 \">Code Postal :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"city\" class=\"col-4 \">Ville :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <div class=\"text-center\" size=\"50px\">\r\n      <input type=\"submit\" [disabled]=\"!formLieu.valid\" class=\"btn btn-primary btn-success\" >\r\n    </div>\r\n  </form>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -612,6 +612,50 @@ class Address {
 
 /***/ }),
 
+/***/ "./src/app/AuthGard.ts":
+/*!*****************************!*\
+  !*** ./src/app/AuthGard.ts ***!
+  \*****************************/
+/*! exports provided: AuthGard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGard", function() { return AuthGard; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _User_authenticate_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./User/authenticate.service */ "./src/app/User/authenticate.service.ts");
+
+
+
+
+let AuthGard = class AuthGard {
+    constructor(router, authService) {
+        this.router = router;
+        this.authService = authService;
+    }
+    canActivate(route, state) {
+        const currentUser = this.authService.getCurrentUserValue();
+        if (currentUser) {
+            return true;
+        }
+        this.router.navigate(['/login']);
+        return false;
+    }
+};
+AuthGard.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _User_authenticate_service__WEBPACK_IMPORTED_MODULE_3__["AuthenticateService"] }
+];
+AuthGard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({ providedIn: 'root' })
+], AuthGard);
+
+
+
+/***/ }),
+
 /***/ "./src/app/EnumTypeLieu.ts":
 /*!*********************************!*\
   !*** ./src/app/EnumTypeLieu.ts ***!
@@ -638,6 +682,105 @@ var EnumTypeLieu;
 })(EnumTypeLieu || (EnumTypeLieu = {}));
 const TYPE_LIEUX = [EnumTypeLieu.RESTAURANT, EnumTypeLieu.BAR, EnumTypeLieu.MAGASIN, EnumTypeLieu.MUSEE, EnumTypeLieu.FAST_FOOD,
     EnumTypeLieu.BRASSERIE, EnumTypeLieu.DIVERTISSEMENT];
+
+
+/***/ }),
+
+/***/ "./src/app/JwtInterceptor.ts":
+/*!***********************************!*\
+  !*** ./src/app/JwtInterceptor.ts ***!
+  \***********************************/
+/*! exports provided: JwtInterceptor */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JwtInterceptor", function() { return JwtInterceptor; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _User_authenticate_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./User/authenticate.service */ "./src/app/User/authenticate.service.ts");
+
+
+
+let JwtInterceptor = class JwtInterceptor {
+    constructor(authenticationService) {
+        this.authenticationService = authenticationService;
+    }
+    intercept(req, next) {
+        let currentUser = this.authenticationService.getCurrentUserValue();
+        if (currentUser && currentUser.token) {
+            req = req.clone({
+                setHeaders: {
+                    Authorization: `Bearer ${currentUser.token}`
+                }
+            });
+        }
+        return next.handle(req);
+    }
+};
+JwtInterceptor.ctorParameters = () => [
+    { type: _User_authenticate_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticateService"] }
+];
+JwtInterceptor = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], JwtInterceptor);
+
+
+
+/***/ }),
+
+/***/ "./src/app/User/authenticate.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/User/authenticate.service.ts ***!
+  \**********************************************/
+/*! exports provided: AuthenticateService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthenticateService", function() { return AuthenticateService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+
+const URL_API_AUTH = "/api/User/authenticate";
+let AuthenticateService = class AuthenticateService {
+    constructor(http) {
+        this.http = http;
+        this.currentUserSubject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](JSON.parse(localStorage.getItem('currentUser')));
+        this.currentUser = this.currentUserSubject.asObservable();
+    }
+    getCurrentUserValue() {
+        return this.currentUserSubject.value;
+    }
+    login(username, password) {
+        return this.http.post(URL_API_AUTH, { username, password }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(user => {
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            console.log(user);
+            this.currentUserSubject.next(user);
+            return user;
+        }));
+    }
+    logout() {
+        localStorage.removeItem('currentUser');
+        this.currentUserSubject.next(null);
+    }
+};
+AuthenticateService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+];
+AuthenticateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], AuthenticateService);
+
 
 
 /***/ }),
@@ -939,18 +1082,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _User_authenticate_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./User/authenticate.service */ "./src/app/User/authenticate.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
 
 
 let AppComponent = class AppComponent {
-    constructor() {
+    constructor(authService, router) {
+        this.authService = authService;
+        this.router = router;
         this.title = 'Cou_Project';
-        this.currentJustify = 'justified';
         this.isCollapsed = true;
     }
     ngOnInit() {
+        this.authService.currentUser.subscribe(centralUserFromService => {
+            this.currentUser = centralUserFromService;
+        });
     }
     logOut() {
-        localStorage.removeItem("id_token");
+        this.authService.logout();
+        this.router.navigate(['login']);
         this.style = {
             'background-color': ''
         };
@@ -960,10 +1112,17 @@ let AppComponent = class AppComponent {
             this.style = {
                 'background-color': 'green'
             };
+            //console.log(localStorage.getItem("id_token"));
+            //console.log(localStorage.getItem("id_token"));
+            // this.userService.http.get()
         }
         return this.style;
     }
 };
+AppComponent.ctorParameters = () => [
+    { type: _User_authenticate_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticateService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
@@ -1016,6 +1175,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_lieu_filter_place_pipe_type_pipe__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./views/lieu/filter-place/pipe/type.pipe */ "./src/app/views/lieu/filter-place/pipe/type.pipe.ts");
 /* harmony import */ var _views_lieu_filter_place_filter_place_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./views/lieu/filter-place/filter-place.component */ "./src/app/views/lieu/filter-place/filter-place.component.ts");
 /* harmony import */ var _views_lieu_filter_place_pipe_rating_pipe__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./views/lieu/filter-place/pipe/rating.pipe */ "./src/app/views/lieu/filter-place/pipe/rating.pipe.ts");
+/* harmony import */ var _JwtInterceptor__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./JwtInterceptor */ "./src/app/JwtInterceptor.ts");
+/* harmony import */ var _AuthGard__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./AuthGard */ "./src/app/AuthGard.ts");
+
+
 
 
 
@@ -1050,11 +1213,11 @@ __webpack_require__.r(__webpack_exports__);
 // component : celui que l'on souhaite afficher
 // Les imports sont déja fait
 const routes = [
-    { path: 'User/authenticate', component: _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_14__["SmartFormConnectionComponent"] },
-    { path: 'User', component: _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_13__["SmartFormInscriptionComponent"] },
+    { path: 'login', component: _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_14__["SmartFormConnectionComponent"] },
+    { path: 'register', component: _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_13__["SmartFormInscriptionComponent"] },
     { path: 'lieux', component: _views_lieu_list_place_list_place_component__WEBPACK_IMPORTED_MODULE_15__["ListPlaceComponent"] },
     { path: 'lieux/:id', component: _views_lieu_detail_place_detail_place_component__WEBPACK_IMPORTED_MODULE_17__["DetailPlaceComponent"] },
-    { path: 'forms/place', component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_21__["SmartFormPlaceComponent"] },
+    { path: 'forms/place', canActivate: [_AuthGard__WEBPACK_IMPORTED_MODULE_31__["AuthGard"]], component: _forms_smart_form_place_smart_form_place_component__WEBPACK_IMPORTED_MODULE_21__["SmartFormPlaceComponent"] },
     { path: 'Address', component: _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_25__["SmartMapComponent"] },
     { path: 'home', component: _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"] }
 ];
@@ -1096,7 +1259,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _agm_core__WEBPACK_IMPORTED_MODULE_11__["AgmCoreModule"].forRoot({ apiKey: 'AIzaSyD6dHdCHR8CbbpkMiCkYAcJxzXgvV1E64k' }),
             _agm_js_marker_clusterer__WEBPACK_IMPORTED_MODULE_12__["AgmJsMarkerClustererModule"]
         ],
-        providers: [],
+        providers: [
+            { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HTTP_INTERCEPTORS"], useClass: _JwtInterceptor__WEBPACK_IMPORTED_MODULE_30__["JwtInterceptor"], multi: true }
+        ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
     })
 ], AppModule);
@@ -1208,20 +1373,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SmartFormConnectionComponent", function() { return SmartFormConnectionComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _User_authenticateModel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../User/authenticateModel */ "./src/app/User/authenticateModel.ts");
-/* harmony import */ var _User_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../User/user.service */ "./src/app/User/user.service.ts");
+/* harmony import */ var _User_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../User/user.service */ "./src/app/User/user.service.ts");
+/* harmony import */ var _User_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../User/user */ "./src/app/User/user.ts");
+/* harmony import */ var _User_authenticate_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../User/authenticate.service */ "./src/app/User/authenticate.service.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
 
 
 
 
 
 let SmartFormConnectionComponent = class SmartFormConnectionComponent {
-    constructor(userService, http) {
+    constructor(userService, authService) {
         this.userService = userService;
-        this.http = http;
+        this.authService = authService;
         this.subscriptions = [];
-        this._usersAuthenticate = [];
     }
     ngOnInit() {
     }
@@ -1233,26 +1399,37 @@ let SmartFormConnectionComponent = class SmartFormConnectionComponent {
             this.subscriptions.pop();
         }
     }
+    get currentUser() {
+        return this._currentUser;
+    }
+    set currentUser(value) {
+        this._currentUser = value;
+    }
+    onSubmit($event) {
+        this.authService.login($event.username, $event.password)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["first"])())
+            .subscribe();
+    }
     createUserConnected($event) {
+        console.log(JSON.stringify($event));
         const sub = this.userService.postAuth($event.toAuthenticateModelDto()).subscribe(authenticateModelDTO => {
-            this._usersAuthenticate.push(new _User_authenticateModel__WEBPACK_IMPORTED_MODULE_3__["authenticateModel"]().fromAuthenticateModelDto(authenticateModelDTO));
-            this._usersAuthenticate.forEach(use => localStorage.setItem("id_token", use.token));
-            this.isAdmin(this._usersAuthenticate);
+            this._currentUser = new _User_user__WEBPACK_IMPORTED_MODULE_3__["User"]().fromUtilisateurDto(authenticateModelDTO);
+            localStorage.setItem("id_token", authenticateModelDTO.token);
+            localStorage.setItem("name", this._currentUser.name);
+            console.log(JSON.stringify(this._currentUser));
+            this.isAdmin(this._currentUser);
         });
         this.subscriptions.push(sub);
     }
-    //Méthode qui récup le type de l'utilisateur qui se connecte et check si admin ! A partir de la tu fais ce que tu veux ;)
-    isAdmin(auth) {
-        var typeAuth;
-        auth.forEach(use => typeAuth = use.type);
-        if (typeAuth == 1) {
+    isAdmin(user) {
+        if (user.type === "1") {
             alert("Bienvenue administrateur");
         }
     }
 };
 SmartFormConnectionComponent.ctorParameters = () => [
-    { type: _User_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"] },
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+    { type: _User_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"] },
+    { type: _User_authenticate_service__WEBPACK_IMPORTED_MODULE_4__["AuthenticateService"] }
 ];
 SmartFormConnectionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1541,6 +1718,7 @@ let FormPlaceComponent = class FormPlaceComponent {
     }
     emitNewLieu() {
         this.placeCreated.next(this.buildPlaceAndAddressDto());
+        this.formLieu.reset();
     }
 };
 FormPlaceComponent.ctorParameters = () => [
@@ -1621,12 +1799,11 @@ let FormReviewComponent = class FormReviewComponent {
         const review = new _views_comment_review__WEBPACK_IMPORTED_MODULE_3__["Review"]();
         review.star = this._rate;
         review.comment = this.formReview.get("comment").value;
-        review.idPlace = 5;
-        review.idUser = 2;
         return review;
     }
     emitNewReview() {
         this.reviewCreated.next(this.buildReview());
+        this.formReview.reset();
     }
 };
 FormReviewComponent.ctorParameters = () => [
@@ -1673,12 +1850,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../views/lieu/place.service */ "./src/app/views/lieu/place.service.ts");
+/* harmony import */ var _User_authenticate_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../User/authenticate.service */ "./src/app/User/authenticate.service.ts");
+
 
 
 
 let SmartFormPlaceComponent = class SmartFormPlaceComponent {
-    constructor(lieuService) {
+    constructor(lieuService, authService) {
         this.lieuService = lieuService;
+        this.authService = authService;
         this.subscriptions = [];
     }
     ngOnInit() {
@@ -1696,7 +1876,8 @@ let SmartFormPlaceComponent = class SmartFormPlaceComponent {
     }
 };
 SmartFormPlaceComponent.ctorParameters = () => [
-    { type: _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_2__["PlaceService"] }
+    { type: _views_lieu_place_service__WEBPACK_IMPORTED_MODULE_2__["PlaceService"] },
+    { type: _User_authenticate_service__WEBPACK_IMPORTED_MODULE_3__["AuthenticateService"] }
 ];
 SmartFormPlaceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1736,8 +1917,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _views_comment_review_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../views/comment/review.service */ "./src/app/views/comment/review.service.ts");
-/* harmony import */ var _views_comment_review__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../views/comment/review */ "./src/app/views/comment/review.ts");
-
 
 
 
@@ -1763,7 +1942,8 @@ let SmartFormReviewComponent = class SmartFormReviewComponent {
         this._reviewCreated = value;
     }
     createReview($event) {
-        this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe(review => this._reviewCreated.next(new _views_comment_review__WEBPACK_IMPORTED_MODULE_3__["Review"]().fromAvisDto(review))));
+        // this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe(review => this._reviewCreated.next(new Review().fromAvisDto(review))));
+        this._reviewCreated.next($event);
     }
 };
 SmartFormReviewComponent.ctorParameters = () => [
@@ -2612,22 +2792,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _place_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../place.service */ "./src/app/views/lieu/place.service.ts");
 /* harmony import */ var _comment_review_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../comment/review.service */ "./src/app/views/comment/review.service.ts");
+/* harmony import */ var _User_authenticate_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../User/authenticate.service */ "./src/app/User/authenticate.service.ts");
+
 
 
 
 
 
 let DetailPlaceComponent = class DetailPlaceComponent {
-    constructor(route, lieuService, reviewService) {
+    constructor(route, lieuService, reviewService, authService) {
         this.route = route;
         this.lieuService = lieuService;
         this.reviewService = reviewService;
+        this.authService = authService;
         this.subscriptions = [];
     }
     ngOnInit() {
         this._id = parseInt(this.route.snapshot.params['id'], 10);
         this.loadPlace(this._id);
         this.loadReviewOfPlace(this._id);
+        this.authService.currentUser.subscribe(x => this.currentUser = x);
     }
     ngOnDestroy() {
         for (let i = this.subscriptions.length - 1; i >= 0; i--) {
@@ -2666,12 +2850,11 @@ let DetailPlaceComponent = class DetailPlaceComponent {
     }
     createReview($event) {
         $event.idPlace = this._id;
-        this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe(
-        // review => this.listReviewAndUser.push({
-        //   review : review,
-        //   user : null
-        // })
-        ));
+        $event.idUser = this.currentUser.id;
+        this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe(review => this.listReviewAndUser.push({
+            review: review,
+            user: this.currentUser
+        })));
     }
     loadReviewOfPlace(id) {
         const sub = this.reviewService.getReviewsAndUserFromAPlace(id).subscribe(listReviewAndUser => this._listReviewAndUser = listReviewAndUser);
@@ -2681,7 +2864,8 @@ let DetailPlaceComponent = class DetailPlaceComponent {
 DetailPlaceComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
     { type: _place_service__WEBPACK_IMPORTED_MODULE_3__["PlaceService"] },
-    { type: _comment_review_service__WEBPACK_IMPORTED_MODULE_4__["ReviewService"] }
+    { type: _comment_review_service__WEBPACK_IMPORTED_MODULE_4__["ReviewService"] },
+    { type: _User_authenticate_service__WEBPACK_IMPORTED_MODULE_5__["AuthenticateService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
@@ -2941,7 +3125,7 @@ let ListPlaceComponent = class ListPlaceComponent {
         this._placesAndAddresses = value;
     }
     loadPlace() {
-        const sub = this.lieuService.getPlacesAndAddressees().subscribe(places => { this._placesAndAddresses = places; console.log(JSON.stringify(places)); });
+        const sub = this.lieuService.getPlacesAndAddressees().subscribe(places => { this._placesAndAddresses = places; });
         this.subscriptions.push(sub);
     }
     navigateToFormAddLieu() {

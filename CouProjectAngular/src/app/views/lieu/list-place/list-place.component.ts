@@ -40,7 +40,7 @@ export class ListPlaceComponent implements OnInit,OnDestroy{
 
   private loadPlace() {
     const sub = this.lieuService.getPlacesAndAddressees().subscribe(
-      places => {this._placesAndAddresses = places;console.log(JSON.stringify(places))}
+      places => {this._placesAndAddresses = places}
     );
 
     this.subscriptions.push(sub);

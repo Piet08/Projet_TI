@@ -42,13 +42,12 @@ export class FormReviewComponent implements OnInit {
     const review = new Review();
     review.star = this._rate;
     review.comment = this.formReview.get("comment").value;
-    review.idPlace = 5;
-    review.idUser = 2;
     return review;
   }
 
   emitNewReview() {
     this.reviewCreated.next(this.buildReview());
+    this.formReview.reset();
   }
 
 }

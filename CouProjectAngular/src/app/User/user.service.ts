@@ -20,8 +20,8 @@ export class UserService {
 
 
   //AUTHENTICATE
-  postAuth(model: authenticateModelDto): Observable<authenticateModelDto>{
-    return this.http.post<authenticateModelDto>(URL_API_AUTH, model);
+  postAuth(model: authenticateModelDto): Observable<UserDto>{
+    return this.http.post<UserDto>(URL_API_AUTH, model);
   }
   /*getAuth(model : authenticateModelDto): Observable<authenticateModelDto>{
     return this.http.get<authenticateModelDto>(URL_API_AUTH);

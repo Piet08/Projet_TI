@@ -26,8 +26,13 @@ namespace Cou_project.Controllers
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody]AuthenticateModel model)
         {
-            return Ok(_userService.Authenticate(UserDAO.QueryAuth(model)));
+            var user = _userService.Authenticate(UserDAO.QueryAuth(model));
+            if (user == null)
+                return BadRequest(new {message = "Username or password is incorect"});
+            
+            return Ok(user);
         }
+        
         /*[HttpGet("authenticate")]
         public IActionResult Get([FromBody] AuthenticateModel model)
         {
@@ -37,7 +42,7 @@ namespace Cou_project.Controllers
         //UTILISATEUR
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult<IEnumerable<User>> query()
+        public ActionResult<IEnumerable<User>> Query()
         {
             
             return Ok(UserDAO.Query());

@@ -3,29 +3,37 @@ using System.Collections.Generic;
 using Cou_project.DAO;
 using Cou_project.Models;
 using Cou_project.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cou_project.Controllers
 {
-
     [ApiController]
     [Route("/api/[controller]")]
     public class PlaceController : ControllerBase
     {
         private PlaceService _placeService = new PlaceService();
-
+        
         [HttpGet]
         public ActionResult<IEnumerable<Place>> Query()
         {
             return Ok(PlaceDAO.Query());
         }
-
+        
         [HttpGet("addresses")]
         public ActionResult<IEnumerable<PlaceAndAddress>> GetPlaceAndAddresses()
         {
             return Ok(_placeService.GetPlacesAndAddresses());
         }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult<Place> Post([FromBody] Place place)
+        {
+            return Ok(PlaceDAO.Create(place));
+        }
         
+        [Authorize]
         [HttpPost("forms")]
         public ActionResult<Place> Post([FromBody] PlaceAndAddress place)
         {

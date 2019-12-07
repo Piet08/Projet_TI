@@ -1,3 +1,9 @@
+<header>
+  <div class="text-center bg-dark">
+    <h1 class="">COU</h1>
+    <span *ngIf="currentUser" class="text-right">Bonjour {{currentUser.surname}}</span>
+  </div>
+</header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="navbar-header">
   </div>
@@ -13,10 +19,10 @@
         <a routerLink="forms/place" class="nav-link">Ajout lieu</a>
       </li>
       <li class="nav-item text-center">
-        <a id="LogIn" routerLink="User/authenticate" class="nav-link" [ngStyle]="isLogIn()">Connexion</a>
+        <a id="LogIn" routerLink="login" class="nav-link" [ngStyle]="isLogIn()">Connexion</a>
       </li>
       <li class="nav-item text-center">
-        <a routerLink="User" class="nav-link">Inscription</a>
+        <a routerLink="register" class="nav-link">Inscription</a>
       </li>
       <li class="nav-item text-center">
         <a routerLink="Address" class="nav-link">Cartes</a>
