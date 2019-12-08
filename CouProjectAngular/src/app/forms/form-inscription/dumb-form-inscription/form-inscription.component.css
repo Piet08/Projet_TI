@@ -1,1 +1,26 @@
+.form-signin {
+  width: 100%;
+  max-width: 800px;
+  padding: 15px;
+  margin: 0 auto;
+}
 
+.input-group-prepend{
+  width: 145px;
+  height: 40px;
+}
+.input-group-text{
+  width: 145px;
+  height : 40px;
+  display: block;
+  text-align: center;
+}
+
+.form-control{
+  height : 40px;
+}
+
+.address{
+  border : 1px solid dimgray;
+  border-radius: 5px;
+}

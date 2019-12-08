@@ -1,4 +1,21 @@
-<div class="row" >
+<div class="jumbotron">
+  <h1 class="display-3">{{placeAndAddress.place.name}}</h1>
+  <div class="float-right">
+    <span class="fa fa-star mr-2" style="color: #ffd106"></span>
+    <span class="" >{{placeAndAddress.avgRate}}/10</span>
+    <span class="fa fa-star pl-2" style="color: #ffd106"></span>
+  </div>
+  <p class="lead"></p><h6 class="card-subtitle d-inline mb-2 text-muted">{{placeAndAddress.place.id}} : {{placeAndAddress.place.type}}</h6>
+  <hr class="my-4">
+  <h6>{{placeAndAddress.place.description}}</h6>
+  <div class="card-footer">
+    <h5>{{placeAndAddress.address.postalCode}} {{placeAndAddress.address.city}}
+    <br>
+      {{placeAndAddress.address.straat}}, {{placeAndAddress.address.num}}</h5>
+  </div>
+</div>
+
+<!--<div class="row" >
   <div class="col-12">
     <div class="card m-3" >
       <div class="card-header bg-secondary text-center text-light">
@@ -30,4 +47,5 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
+

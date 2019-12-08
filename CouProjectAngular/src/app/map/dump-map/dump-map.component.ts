@@ -279,6 +279,6 @@ export class DumpMapComponent implements OnInit {
   }
 
   navigateToFormAddLieu() {
-    this.router.navigate(['place']);
+    this.router.navigate(['forms/place']);
   }
 }
