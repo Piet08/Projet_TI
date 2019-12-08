@@ -36,8 +36,8 @@ namespace Cou_project.DAO
         private static readonly string REQ_DELETE_BY_PLACE = $"DELETE FROM {TABLE_NAME} WHERE {FIELD_IDPLACE} = @{FIELD_IDPLACE}";
     
         private static readonly string REQ_UPDATE = String.Format(
-            "UPDATE {0} SET {1} = @{1}, {2} = @{2}, {3} = @{3}, {4} = @{4} WHERE {5} = @{5}",
-            TABLE_NAME, FIELD_STAR, FIELD_COMMENT, FIELD_IDUSER, FIELD_IDPLACE, FIELD_ID);
+            "UPDATE {0} SET {1} = @{1}, {2} = @{2}, {3} = @{3}, {4} = @{4}, {5} = GETDATE() WHERE {6} = @{6}",
+            TABLE_NAME, FIELD_STAR, FIELD_COMMENT, FIELD_IDUSER, FIELD_IDPLACE,FIELD_DATE, FIELD_ID);
 
 
         public static IEnumerable<Review> Query()

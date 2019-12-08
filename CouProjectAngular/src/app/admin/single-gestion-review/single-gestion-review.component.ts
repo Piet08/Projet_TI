@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ReviewAndUserDto, ReviewInsertDto} from '../../views/comment/review-insert-dto';
+import {Review} from '../../views/comment/review';
 
 @Component({
   selector: 'app-single-gestion-review',
@@ -11,6 +12,7 @@ export class SingleGestionReviewComponent implements OnInit {
   validation: boolean = false;
 
   @Output() reviewDeleted:EventEmitter<ReviewInsertDto> = new EventEmitter<ReviewInsertDto>();
+
   constructor() { }
 
   ngOnInit() {
@@ -28,4 +30,5 @@ export class SingleGestionReviewComponent implements OnInit {
   emitDeleteReview() {
     this.reviewDeleted.next(this._reviewAndUser.review);
   }
+
 }

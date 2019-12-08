@@ -3,6 +3,7 @@
 </div>
 
 <div class="container container-fluid">
+  <div *ngIf="loading" class="spinner-border text-center"></div>
   <ul style="list-style: none;">
     <li *ngFor="let placeAndAddress of placesAndAddresses|search:searchFilter|type:categoryFilter|rating:sortFilter">
       <app-single-place [placeAndAddress]="placeAndAddress" (click)="navigateToDetailLieu(placeAndAddress)"></app-single-place>

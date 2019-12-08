@@ -1,7 +1,7 @@
 <div class="container">
   <ul style="list-style: none;">
     <li *ngFor="let review of listReviewAndUser">
-      <app-single-review [reviewAndUser]="review"></app-single-review>
+      <app-single-review [reviewAndUser]="review" (reviewUpdated)="emitReviewUpdated($event)" (reviewDeleted)="emitReviewDeleted($event)"></app-single-review>
     </li>
   </ul>
 </div>

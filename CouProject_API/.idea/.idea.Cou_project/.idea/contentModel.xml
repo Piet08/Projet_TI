@@ -49,6 +49,7 @@
           <e p="Review.cs" t="Include" />
           <e p="ReviewAndUser.cs" t="Include" />
           <e p="ReviewWithPlaceAndAddress.cs" t="Include" />
+          <e p="TokenModel.cs" t="Include" />
           <e p="User.cs" t="Include" />
           <e p="UserAndAddress.cs" t="Include" />
         </e>

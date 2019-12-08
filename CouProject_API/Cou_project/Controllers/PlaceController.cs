@@ -62,17 +62,23 @@ namespace Cou_project.Controllers
             return place != null ? (ActionResult<Place>) Ok(place) : NotFound("This user does not exists!");
         }
 
+        [Authorize]
         [HttpDelete("address/reviews/{id}")]
         public ActionResult DeleteWithCascade(int id)
         {
-            return Ok( _placeService.DeleteWithCascade(id));
+            string type = TokenModel.ReadClaimFromRequest(Request, "type");
+            return type == "1" ? (ActionResult) Ok( _placeService.DeleteWithCascade(id)) : BadRequest("Vous n'êtes pas administrateur ! ");
         }
         
+        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
-            return PlaceDAO.Delete(id) ? (ActionResult) Ok() : NotFound();
+            string type = TokenModel.ReadClaimFromRequest(Request, "type");
+            return  type == "1" && PlaceDAO.Delete(id) ? (ActionResult) Ok() : BadRequest();
         }
+        
+        [Authorize]
         [HttpPut]
         public ActionResult<Place> Update([FromBody] Place place)
         {

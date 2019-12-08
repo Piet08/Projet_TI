@@ -16,10 +16,12 @@ export class ListPlaceComponent implements OnInit,OnDestroy{
   categoryFilter: EnumTypeLieu = EnumTypeLieu.ALL;
   sortFilter: number = 0;
   searchFilter: string = '';
+  loading: boolean = false;
 
   constructor(public lieuService:PlaceService, private router:Router) { }
 
   ngOnInit() {
+    this.loading = true;
     this.loadPlace();
     // this.lieuService.placeAndAddresses.subscribe(places => this._placesAndAddresses = places);
   }
@@ -41,9 +43,10 @@ export class ListPlaceComponent implements OnInit,OnDestroy{
   }
 
   private loadPlace() {
-    const sub = this.lieuService.getPlacesAndAddressees().subscribe(
-      places => {this._placesAndAddresses = places}
-    );
+    const sub = this.lieuService.getPlacesAndAddressees().subscribe(places => {
+      this._placesAndAddresses = places;
+      this.loading = false;
+    });
 
     this.subscriptions.push(sub);
   }

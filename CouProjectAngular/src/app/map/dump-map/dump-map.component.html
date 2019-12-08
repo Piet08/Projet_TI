@@ -1,26 +1,37 @@
-<div align="center" id="displayComp">
-  <agm-map mapTypeId="roadmap" id="map" [styles]="style" [latitude]="50.4535039" [longitude]="3.9516516" [zoom]="10">
-    <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
-      <agm-marker *ngFor="let m of markers|typeMap:categoryFilter|rangeMap:rangeFilter:userLocation; let i= index;"
-                  [latitude]="m.lat"
-                  [longitude]="m.lng"
-                  (markerClick)="seePlaceChosenToDisplay(m)">
+<div align="center" class="" id="displayComp">
+  <div>
+    <app-filter-markers (category)="categoryFilter = $event" (range)="rangeFilter = $event"></app-filter-markers>
+  </div>
+  <div class="align-items-start row">
+    <div class="col-6">
+      <agm-map mapTypeId="roadmap" id="map" [styles]="style" [latitude]="50.4535039" [longitude]="3.9516516"
+               [zoom]="13">
+        <agm-marker-cluster
+          imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+          <agm-marker *ngFor="let m of markers|typeMap:categoryFilter|rangeMap:rangeFilter:userLocation; let i= index;"
+                      [latitude]="m.lat"
+                      [longitude]="m.lng"
+                      (markerClick)="seePlaceChosenToDisplay(m)">
 
-        <agm-info-window>
-          <b>{{m.label_address}}</b>
-          <br>
-          {{m.name + " : " + m.description}}
-        </agm-info-window>
-      </agm-marker>
-    </agm-marker-cluster>
+            <agm-info-window>
+              <b>{{m.label_address}}</b>
+              <br>
+              {{m.name + " : " + m.description}}
+            </agm-info-window>
+          </agm-marker>
+        </agm-marker-cluster>
 
-  </agm-map>
-  <app-filter-markers (category)="categoryFilter = $event" (range)="rangeFilter = $event"></app-filter-markers>
-  <app-single-place *ngIf="placeChosenToInspect != null" [placeAndAddress]="placeChosenToInspect"></app-single-place>
+      </agm-map>
+    </div>
+    <div class="col-6">
+      <app-single-place *ngIf="placeChosenToInspect != null"
+                        [placeAndAddress]="placeChosenToInspect"
+                        (click)="navigateToDetailLieu(placeChosenToInspect.place.id)"
+      ></app-single-place>
+    </div>
+  </div>
 
-
-
-  <div class="container" align="center">
+  <div class="container mt-4" align="center">
     <button class="btn btn-info" (click)="navigateToFormAddLieu()">Ajouter lieu</button>
   </div>
 </div>

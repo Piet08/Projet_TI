@@ -86,20 +86,17 @@ namespace Cou_project.Controllers
             return user != null ? (ActionResult<UserAndAddress>) Ok(user) : NotFound("This user does not exists !");
         }
         
-        [AllowAnonymous]
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
             return UserDAO.Delete(id) ? (ActionResult) Ok() : NotFound();
         }
-        [AllowAnonymous]
+
         [HttpPut]
         public ActionResult<User> Update([FromBody] User util)
         {
             return UserDAO.Update(util) ? (ActionResult<User>) Ok() : NotFound();
         }
-        
-        
 
         [AllowAnonymous]
         [HttpGet("favoris")]

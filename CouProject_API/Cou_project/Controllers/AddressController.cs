@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Cou_project.DAO;
 using Cou_project.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cou_project.Controllers
@@ -27,11 +28,15 @@ namespace Cou_project.Controllers
             Address util = AddressDAO.Get(id);
             return util != null ? (ActionResult<Address>) Ok(util) : NotFound("This user does not exists!");
         }
+        
+        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
             return AddressDAO.Delete(id) ? (ActionResult) Ok() : NotFound();
         }
+        
+        [Authorize]
         [HttpPut]
         public ActionResult<Address> Update([FromBody] Address util)
         {

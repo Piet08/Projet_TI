@@ -7,6 +7,7 @@ import {PlaceAndAddressDto} from '../../views/lieu/place-dto';
 import {Address} from '../../Address/address';
 import {Place} from '../../views/lieu/place';
 import {PlaceService} from '../../views/lieu/place.service';
+import {Review} from '../../views/comment/review';
 
 @Component({
   selector: 'app-smart-gestion-review',
@@ -84,4 +85,5 @@ export class SmartGestionReviewComponent implements OnInit,OnDestroy{
       this.listReviewAndUser.splice(indexArticleFound, 1);
     }
   }
+
 }

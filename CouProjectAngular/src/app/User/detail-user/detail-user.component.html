@@ -7,7 +7,7 @@
 
   <ul class="list-unstyled">
     <li *ngFor="let review of reviews" class="mb-3">
-      <app-detail-review [review]="review"></app-detail-review>
+      <app-detail-review [review]="review" (reviewUpdated)="updateReview($event)" (reviewDeleted)="deleteReview($event)"></app-detail-review>
     </li>
   </ul>
 </div>

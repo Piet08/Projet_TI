@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Review} from '../../views/comment/review';
+import {AuthenticateService} from '../../User/authenticate.service';
 
 @Component({
   selector: 'app-form-review',
@@ -10,13 +11,12 @@ import {Review} from '../../views/comment/review';
 export class FormReviewComponent implements OnInit {
   private _rate:number = 0;
   private _hovered:number = 0;
-
   @Output()
   reviewCreated: EventEmitter<Review> = new EventEmitter<Review>();
 
   formReview:FormGroup = this.fb.group({
     comment : this.fb.control('',Validators.required),
-    star : this.fb.control(null)
+    star : this.fb.control(null,Validators.required)
   });
 
   constructor(public fb:FormBuilder) { }

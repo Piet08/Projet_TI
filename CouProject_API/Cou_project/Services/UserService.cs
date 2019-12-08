@@ -41,7 +41,7 @@ namespace Cou_project.Services
             // return null if user not found
             if (user == null)
                 return null;
-
+            
             // authentication successful so generate jwt token
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
@@ -49,7 +49,8 @@ namespace Cou_project.Services
             {
                 Subject = new ClaimsIdentity(new Claim[] 
                 {
-                    new Claim(ClaimTypes.Name, user.Id.ToString())
+                    new Claim("id", user.Id.ToString()),
+                    new Claim("type", user.Type.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

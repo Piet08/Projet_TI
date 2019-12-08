@@ -1,12 +1,17 @@
-<div>
-  <br>
-  <app-single-place [placeAndAddress]="placeAndAddress"></app-single-place>
-</div>
+<br>
+<div class="" align="center">
+  <div class="col-8" >
+    <app-single-place [placeAndAddress]="placeAndAddress"></app-single-place>
+  </div>
 
-<div>
-  <app-list-review [listReviewAndUser]="listReviewAndUser"></app-list-review>
-</div>
+  <div class="col-6 pb-3">
+    <app-list-review [listReviewAndUser]="listReviewAndUser"
+                     (reviewUpdated)="updateReview($event)"
+                     (reviewDeleted)="deleteReview($event)"
+    ></app-list-review>
+  </div>
 
-<div>
-  <app-form-review (reviewCreated)="createReview($event)"></app-form-review>
+  <div align="left" class="col-6 mt-4" *ngIf="currentUser">
+    <app-form-review (reviewCreated)="createReview($event)"></app-form-review>
+  </div>
 </div>

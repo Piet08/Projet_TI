@@ -1,21 +1,49 @@
-<div class="card">
-  <div class="card-header ">
-    <div class="text-center">
-      <div class="float-left px-auto">
+<form [formGroup]="formUpdate" >
+  <div class="card">
+    <div class="card-header ">
+      <div class="text-center">
+        <div class="float-left px-auto">
           <h3>
             <span>Lieu :
               <a (click)="navigateToPlace()" class="text-info">{{review.placeAndAddress.place.name}}</a>
             </span>
           </h3>
+        </div>
+        <div *ngIf="modification" class="float-right form-group">
+          <label for="star">Votre note : {{rate}}/10</label>
+          <br>
+          <ngb-rating class="" id="star" formControlName="star" [(rate)]="rate"></ngb-rating>
+        </div>
+        <div *ngIf="!modification">
+          <span class="float-right">{{review.review.star}}/10 <span class="pl-2 fa fa-star"
+                                                                    style="color: #ffd106"></span></span>
+        </div>
       </div>
-      <span class="float-right">{{review.review.star}}/10 <span class="pl-2 fa fa-star" style="color: #ffd106"></span></span>
+    </div>
+
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <div *ngIf="!modification">
+          <p class="text-wrap">{{review.review.comment}}</p>
+        </div>
+        <div *ngIf="modification" class="form-group">
+          <label for="comment" class="">Commentaire : </label>
+          <textarea row="4" id="comment" class="form-control" formControlName="comment"
+                    placeholder="Votre commentaire...">{{review.review.comment}}</textarea>
+        </div>
+        <footer class="blockquote-footer"> {{review.review.date}} </footer>
+      </blockquote>
+    </div>
+
+    <div class="card-footer" *ngIf="currentUser && (currentUser.id == review.review.idUser || currentUser.type==1)">
+      <div class="form-group">
+        <button class="btn btn-primary" *ngIf="!modification" (click)="setModification(true)">Modifier</button>
+        <div *ngIf="modification">
+          <button class="btn btn-danger" (click)="setModification(false)">Annuler</button>
+          <button type="submit" class="btn btn-success ml-3" (click)="emitReviewUpdated()">Valider</button>
+        </div>
+        <button class="btn btn-danger ml-3" *ngIf="!modification" (click)="emitReviewDeleted()">Supprimer</button>
+      </div>
     </div>
   </div>
-
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p class="text-wrap">{{review.review.comment}}</p>
-      <footer class="blockquote-footer"> {{review.review.date}} </footer>
-    </blockquote>
-  </div>
-</div>
+</form>

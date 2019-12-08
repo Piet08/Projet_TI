@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="align-items-start row">
-    <app-single-review [reviewAndUser]="reviewAndUser" class="col-8"></app-single-review>
+    <app-single-review [reviewAndUser]="reviewAndUser" (reviewUpdated)="emitUpdatedReview($event)" class="col-8"></app-single-review>
     <div *ngIf="!validation" class="col-2 align-self-center">
       <button class="btn btn-danger" value="supprimer" (click)="validation = true">Supprimer</button>
     </div>

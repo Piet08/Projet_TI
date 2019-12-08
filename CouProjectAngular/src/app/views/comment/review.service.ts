@@ -49,7 +49,7 @@ export class ReviewService {
     return this.http.delete<ReviewInsertDto>(URL_API+'/'+id);
   }
 
-  put(avis: ReviewInsertDto): Observable<any>{
-    return this.http.put(URL_API, avis);
+  put(avis: ReviewInsertDto): Observable<ReviewInsertDto>{
+    return this.http.put<ReviewInsertDto>(URL_API, avis);
   }
 }

@@ -222,7 +222,7 @@ export class DumpMapComponent implements OnInit {
   }
 
   navigateToDetailLieu(id:number) {
-    this.router.navigate(['lieux/'+id]);
+    this.router.navigate(['place/'+id]);
   }
 
   seePlaceChosenToDisplay(m: marker) {

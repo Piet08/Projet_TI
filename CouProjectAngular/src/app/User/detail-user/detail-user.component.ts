@@ -7,6 +7,7 @@ import {ReviewService} from '../../views/comment/review.service';
 import {ReviewInsertDto, ReviewWithPlaceAndAddressDto} from '../../views/comment/review-insert-dto';
 import {User} from '../user';
 import {Address} from '../../Address/address';
+import {Review} from '../../views/comment/review';
 
 @Component({
   selector: 'app-detail-user',
@@ -51,7 +52,40 @@ export class DetailUserComponent implements OnInit {
 
   private loadReviewsFromUser(id: number) {
     this.subscriptions.push(
-      this.reviewService.getReviewsWithPlaceAndAddressFromAnUser(id).subscribe(reviews => {this._reviews = reviews;console.log(reviews)})
+      this.reviewService.getReviewsWithPlaceAndAddressFromAnUser(id).subscribe(reviews => {this._reviews = reviews})
     );
+  }
+
+  updateReview($event: Review) {
+    this.subscriptions.push(
+      this.reviewService.put($event.toAvisDto()).subscribe( () => this.updateRefOfReview($event))
+    );
+  }
+
+  private updateRefOfReview(review: Review) {
+    if(!review) return;
+
+    var indiceOfReview = this.reviews.map(reviews => reviews.review.id).indexOf(review.id);
+
+    if(indiceOfReview != -1){
+      this.reviews[indiceOfReview].review.comment = review.comment;
+      this.reviews[indiceOfReview].review.star = review.star;
+      this.reviews[indiceOfReview].review.date = review.date;
+    }
+
+  }
+
+  deleteReview($event: number) {
+    this.subscriptions.push(
+      this.reviewService.delete($event).subscribe(() => this.deleteRefOfReview($event))
+    )
+  }
+
+  private deleteRefOfReview(id: number) {
+    if(!id) return;
+
+    var indiceOfReview = this.reviews.map(review => review.review.id).indexOf(id);
+
+    this.reviews.splice(indiceOfReview,1);
   }
 }

@@ -5,10 +5,11 @@ import {PlaceService} from '../place.service';
 import {Subscription} from 'rxjs';
 import {Review} from '../../comment/review';
 import {ReviewService} from '../../comment/review.service';
-import {ReviewAndUserDto} from '../../comment/review-insert-dto';
+import {ReviewAndUserDto, ReviewInsertDto} from '../../comment/review-insert-dto';
 import {User} from '../../../User/user';
 import {PlaceAndAddressDto} from '../place-dto';
 import {AuthenticateService} from '../../../User/authenticate.service';
+import {DatePipe, formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-detai-lieu',
@@ -81,11 +82,13 @@ export class DetailPlaceComponent implements OnInit,OnDestroy{
     $event.idPlace = this._id;
     $event.idUser = this.currentUser.id;
     this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe(
-      review => this.listReviewAndUser.push({
-        review : review,
-        user : this.currentUser
-      })
-    ));
+      review => {
+        review.date = new DatePipe('en-US').transform(new Date(),'dd-MM-yy HH:mm:ss');
+        this.listReviewAndUser.push({
+          review : review,
+          user : this.currentUser,
+        });
+    }));
   }
 
   private loadReviewOfPlace(id: number) {
@@ -93,5 +96,37 @@ export class DetailPlaceComponent implements OnInit,OnDestroy{
       listReviewAndUser => this._listReviewAndUser = listReviewAndUser
     );
     this.subscriptions.push(sub);
+  }
+
+  updateRefOfReview(review : ReviewInsertDto){
+    if(!review) return;
+
+    var indiceOfReview = this.listReviewAndUser.map(reviewAndUser => reviewAndUser.review.id).indexOf(review.id);
+
+    if(indiceOfReview != -1){
+      this.listReviewAndUser[indiceOfReview].review.comment = review.comment;
+      this.listReviewAndUser[indiceOfReview].review.star = review.star;
+      this.listReviewAndUser[indiceOfReview].review.date = review.date;
+    }
+  }
+
+  updateReview($event: Review) {
+    this.subscriptions.push(
+      this.reviewService.put($event.toAvisDto()).subscribe(() => {this.updateRefOfReview($event)})
+    )
+  }
+
+  deleteReview($event: number) {
+    this.subscriptions.push(
+      this.reviewService.delete($event).subscribe(() => this.deleteRefOfReview($event))
+    )
+  }
+
+  private deleteRefOfReview(id: number) {
+    if(!id) return;
+
+    var indiceOfReview = this.listReviewAndUser.map(review => review.review.id).indexOf(id);
+
+    this.listReviewAndUser.splice(indiceOfReview,1);
   }
 }

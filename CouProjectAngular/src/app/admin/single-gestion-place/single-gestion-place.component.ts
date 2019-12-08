@@ -32,7 +32,7 @@ export class SingleGestionPlaceComponent implements OnInit {
   }
 
   navigateToDetailLieu() {
-    this.router.navigate(['admin/place/reviews/'+this.placeAndAddress.place.id]);
+    this.router.navigate(['place/'+this.placeAndAddress.place.id]);
   }
 
   emitDeletePlace() {

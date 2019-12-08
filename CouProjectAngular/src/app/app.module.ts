@@ -64,7 +64,7 @@ const routes: Routes = [
   {path: 'home', component:HomeComponent},
   {path: 'admin/places',canActivate : [AuthAdminGard],component:SmartGestionPlaceComponent},
   {path: 'admin/place/reviews/:id',canActivate : [AuthAdminGard],component:SmartGestionReviewComponent},
-  {path: 'users',canActivate:[AuthGard],component:ListUserComponent},
+  {path: 'users',canActivate:[AuthAdminGard],component:ListUserComponent},
   {path: 'user/:id',canActivate:[AuthGard],component:DetailUserComponent},
 ];
 

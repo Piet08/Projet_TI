@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"text-center container\">\n  <div class=\"pt-5\">\n    <h1>Détail {{user.user.pseudo}}</h1>\n    <app-single-user [user]=\"user\"></app-single-user>\n    <hr/>\n  </div>\n\n  <ul class=\"list-unstyled\">\n    <li *ngFor=\"let review of reviews\" class=\"mb-3\">\n      <app-detail-review [review]=\"review\"></app-detail-review>\n    </li>\n  </ul>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"text-center container\">\n  <div class=\"pt-5\">\n    <h1>Détail {{user.user.pseudo}}</h1>\n    <app-single-user [user]=\"user\"></app-single-user>\n    <hr/>\n  </div>\n\n  <ul class=\"list-unstyled\">\n    <li *ngFor=\"let review of reviews\" class=\"mb-3\">\n      <app-detail-review [review]=\"review\" (reviewUpdated)=\"updateReview($event)\" (reviewDeleted)=\"deleteReview($event)\"></app-detail-review>\n    </li>\n  </ul>\n</div>\n");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\r\n  <div class=\"align-items-start row\">\r\n    <app-single-review [reviewAndUser]=\"reviewAndUser\" class=\"col-8\"></app-single-review>\r\n    <div *ngIf=\"!validation\" class=\"col-2 align-self-center\">\r\n      <button class=\"btn btn-danger\" value=\"supprimer\" (click)=\"validation = true\">Supprimer</button>\r\n    </div>\r\n    <div *ngIf=\"validation\" class=\"text-center border border-danger rounded px-3 py-3 align-self-center\">\r\n      <span class=\"text-center text-danger text-wrap\">Etes-vous sûr de vouloir <br/> supprimer la review de {{reviewAndUser.user.surname}} ?</span>\r\n      <hr/>\r\n      <div class=\"text-center\">\r\n        <button class=\"btn btn-success mx-3 px-4\" value=\"oui\" (click)=\"emitDeleteReview();validation=true\">Oui</button>\r\n        <button class=\"btn btn-danger mx-3 px-4\" value=\"non\" (click)=\"validation = false\">Non</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\r\n  <div class=\"align-items-start row\">\r\n    <app-single-review [reviewAndUser]=\"reviewAndUser\" (reviewUpdated)=\"emitUpdatedReview($event)\" class=\"col-8\"></app-single-review>\r\n    <div *ngIf=\"!validation\" class=\"col-2 align-self-center\">\r\n      <button class=\"btn btn-danger\" value=\"supprimer\" (click)=\"validation = true\">Supprimer</button>\r\n    </div>\r\n    <div *ngIf=\"validation\" class=\"text-center border border-danger rounded px-3 py-3 align-self-center\">\r\n      <span class=\"text-center text-danger text-wrap\">Etes-vous sûr de vouloir <br/> supprimer la review de {{reviewAndUser.user.surname}} ?</span>\r\n      <hr/>\r\n      <div class=\"text-center\">\r\n        <button class=\"btn btn-success mx-3 px-4\" value=\"oui\" (click)=\"emitDeleteReview();validation=true\">Oui</button>\r\n        <button class=\"btn btn-danger mx-3 px-4\" value=\"non\" (click)=\"validation = false\">Non</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <app-single-place [placeAndAddress]=\"placeAndAddress\" class=\"col-8\"></app-single-place>\n\n  <ul style=\"list-style: none;\" *ngFor=\"let review of listReviewAndUser\" class=\"col-12\">\n    <li>\n      <app-single-gestion-review [reviewAndUser]=\"review\" (reviewDeleted)=\"deleteReview($event)\"></app-single-gestion-review>\n    </li>\n  </ul>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <app-single-place [placeAndAddress]=\"placeAndAddress\" class=\"col-8\"></app-single-place>\n\n  <ul style=\"list-style: none;\" *ngFor=\"let review of listReviewAndUser\" class=\"col-12\">\n    <li>\n      <app-single-gestion-review [reviewAndUser]=\"review\"\n                                 (reviewDeleted)=\"deleteReview($event)\">\n      </app-single-gestion-review>\n    </li>\n  </ul>\n</div>\n");
 
 /***/ }),
 
@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header>\r\n  <div class=\"jumbotron\" id=\"head\">\r\n    <h1 class=\"title  text-center\">COU WEBSITE</h1>\r\n    <span *ngIf=\"currentUser\" ><h4 class=\"text-center\" id=\"user\">Bonjour {{currentUser.surname}}<hr/></h4></span>\r\n\r\n  </div>\r\n</header>\r\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\r\n  <div class=\"navbar-header\">\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"places\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/place\" class=\"nav-link\">Ajout lieu</a>\r\n      </li>\r\n      <!--<li class=\"nav-item text-center\" *ngIf=\"!currentUser\" >\r\n        <a routerLink=\"login\" class=\"nav-link\" [ngStyle]=\"isLogIn()\">Connexion</a>\r\n      </li>-->\r\n      <li class=\"nav-item text-center\" *ngIf=\"!currentUser\">\r\n        <a routerLink=\"register\"  class=\"nav-link\">Inscription</a>\r\n\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item dropdown\">\r\n        <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Connecte toi</a>\r\n        <div class=\"dropdown-menu\">\r\n          <a id=\"LogIn\" routerLink=\"login\" class=\"dropdown-item\">Connexion</a>\r\n          <a id=\"LogOut\" (click)=\"logOut()\" class=\"dropdown-item\">Déconnexion</a>\r\n        </div>\r\n      </li>\r\n      <div *ngIf=\"currentUser && currentUser.type == 1\" class=\"btn-group\" ngbDropdown role=\"group\" aria-label=\"Button group with nested dropdown\">\r\n        <button class=\"btn btn-primary\" ngbDropdownToggle>Administration</button>\r\n        <div class=\"dropdown-menu \" ngbDropdownMenu>\r\n          <button ngbDropdownItem routerLink=\"admin/places\">Gestion des lieux</button>\r\n          <button ngbDropdownItem routerLink=\"users\">Gestion des utilisateurs</button>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n        <router-outlet id=\"currentComp\">\r\n\r\n        </router-outlet>\r\n</div>\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header>\r\n  <div class=\"jumbotron\" id=\"head\">\r\n    <h1 class=\"title  text-center\">COU WEBSITE</h1>\r\n  </div>\r\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\r\n  <div class=\"navbar-header\">\r\n  </div>\r\n  <div class=\"container-fluid navbar-collapse\" id=\"AngularNav\" [ngbCollapse]=\"isCollapsed\">\r\n    <ul class=\"navbar-nav container-fluid\" >\r\n      <li class=\"nav-item active text-center\">\r\n        <a routerLink=\"home\" class=\"nav-link\">Accueil</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"places\" class=\"nav-link\">Lieux</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"forms/place\" class=\"nav-link\">Ajouter un lieu</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\">\r\n        <a routerLink=\"address\" class=\"nav-link\">Cartes</a>\r\n      </li>\r\n      <li class=\"nav-item text-center\" *ngIf=\"!currentUser\">\r\n        <a routerLink=\"register\"  class=\"nav-link\">Inscription</a>\r\n      </li>\r\n\r\n      <div class=\"btn-group col-2\" ngbDropdown role=\"group\" aria-label=\"Button group with nested dropdown\">\r\n        <button class=\"btn btn-info\" ngbDropdownToggle>\r\n          <span class=\"fa fa-user\"></span> {{currentUser ? currentUser.pseudo : \"Invité\"}}\r\n        </button>\r\n        <div class=\"dropdown-menu \" ngbDropdownMenu>\r\n          <div *ngIf=\"currentUser\">\r\n            <div *ngIf=\"currentUser.type == 1\">\r\n              <button ngbDropdownItem routerLink=\"admin/places\">Gestion des lieux</button>\r\n              <button ngbDropdownItem routerLink=\"users\">Liste des utilisateurs</button>\r\n            </div>\r\n            <button ngbDropdownItem routerLink=\"user/{{currentUser.id}}\">Mes avis</button>\r\n            <button ngbDropdownItem (click)=\"logOut()\" >Déconnexion</button>\r\n          </div>\r\n          <div *ngIf=\"!currentUser\">\r\n            <button ngbDropdownItem routerLink=\"login\" >Connexion</button>\r\n            <button ngbDropdownItem routerLink=\"register\" >Inscription</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n</header>\r\n\r\n<!--Permet l'affichage des component-->\r\n<div class=\"container-fluid\" id=\"displayComp\">\r\n        <router-outlet id=\"currentComp\">\r\n\r\n        </router-outlet>\r\n</div>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -214,7 +214,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"text-center  pt-5\">\r\n  <form class=\"form-signin\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\r\n    <!--    <img class=\"mb-4\" src=\"https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg\" alt=\"\" width=\"72\"-->\r\n    <!--         height=\"72\">-->\r\n\r\n    <h1 class=\"h3 mb-3 font-weight-normal \"><b>Ajout d'un lieu</b></h1>\r\n    <hr/>\r\n    <div class=\"\">\r\n      <div class=\"form-group \">\r\n        <label for=\"name\" class=\"sr-only\">Nom</label>\r\n        <div class=\"form-group\">\r\n          <div class=\"input-group\">\r\n            <div class=\"input-group-prepend\">\r\n              <span class=\"input-group-text\"><b>Nom</b></span>\r\n            </div>\r\n            <input type=\"text\" id=\"name\" class=\"form-control\" aria-label=\"name\" formControlName=\"name\"\r\n                   placeholder=\"Entrez le nom du lieu\" required\r\n                   autofocus>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"type\" class=\"sr-only\">Type</label>\r\n        <div class=\"form-group\">\r\n          <div class=\"input-group\">\r\n            <div class=\"input-group-prepend\">\r\n              <span class=\"input-group-text\"><b>Type</b></span>\r\n            </div>\r\n            <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control\">\r\n              <option class=\"form-control\" *ngFor=\"let type of TYPE_LIEUX\" value=\"{{type}}\">{{type}}</option>\r\n            </select>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"description\" class=\"sr-only\">Description</label>\r\n        <div class=\"form-group\">\r\n          <div class=\"input-group\">\r\n            <div class=\"input-group-prepend\">\r\n              <span class=\"input-group-text\"><b>Description</b></span>\r\n            </div>\r\n            <textarea rows=\"5\" cols=\"30\" class=\"form-control\" id=\"description\" name=\"description\"\r\n                      formControlName=\"description\">\r\n\r\n          </textarea>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <br>\r\n\r\n    <div formGroupName=\"address\" class=\"text-center\">\r\n      <b><h1 class=\"h4 mb-3 font-weight-normal \">Adresse</h1></b>\r\n      <hr/>\r\n      <div class=\"address\">\r\n        <div class=\"form-group-address\">\r\n          <label for=\"straat\" class=\"sr-only\">Rue</label>\r\n          <div class=\"form-group\">\r\n            <div class=\"input-group\">\r\n              <div class=\"input-group-prepend\">\r\n                <span class=\"input-group-text\"><b>Rue</b></span>\r\n              </div>\r\n              <input type=\"straat\" id=\"straat\" class=\"form-control\" formControlName=\"straat\" placeholder=\"Entrez la rue du lieu\" required>\r\n\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n\r\n        <div class=\"form-group-address\">\r\n          <label for=\"num\" class=\"sr-only\">Number</label>\r\n          <div class=\"form-group\">\r\n            <div class=\"input-group\">\r\n\r\n              <div class=\"input-group-prepend\">\r\n                <span class=\"input-group-text\"><b>Numéro</b></span>\r\n              </div>\r\n              <input type=\"num\" id=\"num\" class=\"form-control\" formControlName=\"num\" placeholder=\"Numéro de l'adresse du lieu\" required>\r\n\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-group-address\">\r\n          <label for=\"postalCode\" class=\"sr-only\">Postal Code</label>\r\n          <div class=\"form-group\">\r\n            <div class=\"input-group\">\r\n\r\n              <div class=\"input-group-prepend\">\r\n                <span class=\"input-group-text\"><b>Code postal</b></span>\r\n              </div>\r\n              <input type=\"number\"  id=\"postalCode\" class=\"form-control\" formControlName=\"postalCode\" placeholder=\"Entrez le code postal\" required>\r\n\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-group-address\">\r\n          <label for=\"city\" class=\"sr-only\">City</label>\r\n          <div class=\"form-group\">\r\n            <div class=\"input-group\">\r\n\r\n              <div class=\"input-group-prepend\">\r\n                <span class=\"input-group-text\"><b>Ville</b></span>\r\n              </div>\r\n              <input type=\"city\" id=\"city\" class=\"form-control\" formControlName=\"city\" placeholder=\"Entrez la ville\" required>\r\n\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <br>\r\n    <div>\r\n      <button class=\"btn btn-lg btn-info btn-block\" type=\"submit\" [disabled]=\"!formLieu.valid\">Ajouter le lieu</button>\r\n    </div>\r\n\r\n\r\n  </form>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!--<div class=\"col-12\" algin=\"center\">\r\n  <h1 align=\"center\"><b>Formulaire d'ajout de lieu</b></h1>\r\n  <form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"name\" class=\"col-4\">Nom :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"name\" name=\"name\" formControlName=\"name\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"type\" class=\"col-4 \">Type :</label>\r\n      <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control col-6\">\r\n        <option class=\"form-control\" *ngFor=\"let type of TYPE_LIEUX\" value=\"{{type}}\">{{type}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"description\" class=\"col-4 \">Description :</label>\r\n      <textarea rows=\"5\" cols=\"30\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n\r\n      </textarea>\r\n    </div>\r\n\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"straat\" class=\"col-4 \">Rue :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-4 \">Numéro :</label>\r\n        <input class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"postalCode\" class=\"col-4 \">Code Postal :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"city\" class=\"col-4 \">Ville :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <div class=\"text-center\" size=\"50px\">\r\n      <input type=\"submit\" [disabled]=\"!formLieu.valid\" class=\"btn btn-primary btn-success\" >\r\n    </div>\r\n  </form>\r\n</div>-->\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"text-center  pt-5\">\r\n  <form class=\"form-signin\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\r\n    <!--    <img class=\"mb-4\" src=\"https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg\" alt=\"\" width=\"72\"-->\r\n    <!--         height=\"72\">-->\r\n\r\n    <h1 class=\"h3 mb-3 font-weight-normal \"><b>Ajout d'un lieu</b></h1>\r\n    <hr/>\r\n    <div class=\"\">\r\n      <div class=\"form-group \">\r\n        <label for=\"name\" class=\"sr-only\">Nom</label>\r\n        <div class=\"form-group\">\r\n          <div class=\"input-group\">\r\n            <div class=\"input-group-prepend\">\r\n              <span class=\"input-group-text\"><b>Nom</b></span>\r\n            </div>\r\n            <input type=\"text\" id=\"name\" class=\"form-control\" aria-label=\"name\" formControlName=\"name\"\r\n                   placeholder=\"Entrez le nom du lieu\" required\r\n                   autofocus>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"type\" class=\"sr-only\">Type</label>\r\n        <div class=\"form-group\">\r\n          <div class=\"input-group\">\r\n            <div class=\"input-group-prepend\">\r\n              <span class=\"input-group-text\"><b>Type</b></span>\r\n            </div>\r\n            <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control\">\r\n              <option class=\"form-control\" *ngFor=\"let type of TYPE_LIEUX\" value=\"{{type}}\">{{type}}</option>\r\n            </select>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"description\" class=\"sr-only\">Description</label>\r\n        <div class=\"form-group\">\r\n          <div class=\"input-group\">\r\n            <div class=\"input-group-prepend\">\r\n              <span class=\"input-group-text\"><b>Description</b></span>\r\n            </div>\r\n            <textarea rows=\"5\" cols=\"30\" class=\"form-control\" id=\"description\" name=\"description\"\r\n                      formControlName=\"description\">\r\n\r\n          </textarea>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <br>\r\n\r\n    <div formGroupName=\"address\" class=\"text-center\">\r\n      <b><h1 class=\"h4 mb-3 font-weight-normal \">Adresse</h1></b>\r\n      <hr/>\r\n      <div class=\"address\">\r\n        <div class=\"form-group-address\">\r\n          <label for=\"straat\" class=\"sr-only\">Rue</label>\r\n          <div class=\"form-group\">\r\n            <div class=\"input-group\">\r\n              <div class=\"input-group-prepend\">\r\n                <span class=\"input-group-text\"><b>Rue</b></span>\r\n              </div>\r\n              <input type=\"straat\" id=\"straat\" class=\"form-control\" formControlName=\"straat\" placeholder=\"Entrez la rue du lieu\" required>\r\n\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n\r\n        <div class=\"form-group-address\">\r\n          <label for=\"num\" class=\"sr-only\">Number</label>\r\n          <div class=\"form-group\">\r\n            <div class=\"input-group\">\r\n\r\n              <div class=\"input-group-prepend\">\r\n                <span class=\"input-group-text\"><b>Numéro</b></span>\r\n              </div>\r\n              <input type=\"num\" id=\"num\" class=\"form-control\" formControlName=\"num\" placeholder=\"Numéro de l'adresse du lieu\" required>\r\n\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-group-address\">\r\n          <label for=\"postalCode\" class=\"sr-only\">Postal Code</label>\r\n          <div class=\"form-group\">\r\n            <div class=\"input-group\">\r\n\r\n              <div class=\"input-group-prepend\">\r\n                <span class=\"input-group-text\"><b>Code postal</b></span>\r\n              </div>\r\n              <input type=\"number\"  id=\"postalCode\" class=\"form-control\" formControlName=\"postalCode\" placeholder=\"Entrez le code postal\" required>\r\n\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-group-address\">\r\n          <label for=\"city\" class=\"sr-only\">City</label>\r\n          <div class=\"form-group\">\r\n            <div class=\"input-group\">\r\n\r\n              <div class=\"input-group-prepend\">\r\n                <span class=\"input-group-text\"><b>Ville</b></span>\r\n              </div>\r\n              <input type=\"city\" id=\"city\" class=\"form-control\" formControlName=\"city\" placeholder=\"Entrez la ville\" required>\r\n\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <br>\r\n    <div>\r\n      <button class=\"btn btn-lg btn-info btn-block\" type=\"submit\" [disabled]=\"!formLieu.valid\">Ajouter le lieu</button>\r\n    </div>\r\n\r\n\r\n  </form>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<!--<div class=\"col-12\" algin=\"center\">\r\n  <h1 align=\"center\"><b>Formulaire d'ajout de lieu</b></h1>\r\n  <form class=\"\" [formGroup]=\"formLieu\" (ngSubmit)=\"emitNewLieu()\">\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"name\" class=\"col-4\">Nom :</label>\r\n      <input type=\"text\" class=\"form-control col-6\" id=\"name\" name=\"name\" formControlName=\"name\">\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"type\" class=\"col-4 \">Type :</label>\r\n      <select id=\"type\" name=\"type\" formControlName=\"type\" class=\"form-control col-6\">\r\n        <option class=\"form-control\" *ngFor=\"let type of TYPE_LIEUX\" value=\"{{type}}\">{{type}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"description\" class=\"col-4 \">Description :</label>\r\n      <textarea rows=\"5\" cols=\"30\" class=\"form-control col-6\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n\r\n      </textarea>\r\n    </div>\r\n\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"straat\" class=\"col-4 \">Rue :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-4 \">Numéro :</label>\r\n\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n\r\n        <input class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"postalCode\" class=\"col-4 \">Code Postal :</label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"city\" class=\"col-4 \">Ville :</label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <div class=\"text-center\" size=\"50px\">\r\n      <input type=\"submit\" [disabled]=\"!formLieu.valid\" class=\"btn btn-primary btn-success\" >\r\n    </div>\r\n  </form>\r\n</div>-->\r\n");
 
 /***/ }),
 
@@ -227,7 +227,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <form [formGroup]=\"formReview\" (ngSubmit)=\"emitNewReview()\">\n    <h3>Laisser une review !</h3>\n    <div class=\"form-group border pl-2 py-2\" style=\"border-radius: 10px;\">\n      <ngb-rating class=\"\" (hover)=\"hovered = $event\" (leave)=\"hovered = 0\" [(rate)]=\"rate\"></ngb-rating>\n      <hr>\n      <div class=\"form-text small\">\n        <div *ngIf=\"rate == 0\" class=\"text-danger\">Laisser une note !</div>\n        <div *ngIf=\"rate != 0\" class=\"text-success\">Note : {{rate}}/10</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n      <textarea rows=\"5\" cols=\"30\" placeholder=\"Laisser un commentaire\" id=\"comment\" class=\"form-control\" name=\"comment\" formControlName=\"comment\">\n      </textarea>\n    </div>\n    <input type=\"submit\" class=\"btn btn-success\" [disabled]=\"!formReview.valid\">\n  </form>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <form [formGroup]=\"formReview\" (ngSubmit)=\"emitNewReview()\">\n    <h3>Laisser une review !</h3>\n    <div class=\"form-group border pl-2 py-2\" style=\"border-radius: 10px;\">\n      <ngb-rating class=\"\" formControlName=\"star\" (hover)=\"hovered = $event\" (leave)=\"hovered = 0\" [(rate)]=\"rate\"></ngb-rating>\n      <hr>\n      <div class=\"form-text small\">\n        <div *ngIf=\"rate == 0\" class=\"text-danger\">Laisser une note !</div>\n        <div *ngIf=\"rate != 0\" class=\"text-success\">Note : {{rate}}/10</div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n      <textarea rows=\"5\" cols=\"30\" placeholder=\"Laisser un commentaire\" id=\"comment\" class=\"form-control\" name=\"comment\" formControlName=\"comment\">\n      </textarea>\n    </div>\n    <input type=\"submit\" class=\"btn btn-success\" [disabled]=\"!formReview.valid\">\n  </form>\n</div>\n");
 
 /***/ }),
 
@@ -266,7 +266,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\" id=\"displayComp\">\r\n  <agm-map mapTypeId=\"roadmap\" id=\"map\" [styles]=\"style\" [latitude]=\"50.4535039\" [longitude]=\"3.9516516\" [zoom]=\"10\">\r\n    <agm-marker-cluster imagePath=\"https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m\">\r\n      <agm-marker *ngFor=\"let m of markers|typeMap:categoryFilter|rangeMap:rangeFilter:userLocation; let i= index;\"\r\n                  [latitude]=\"m.lat\"\r\n                  [longitude]=\"m.lng\"\r\n                  (markerClick)=\"seePlaceChosenToDisplay(m)\">\r\n\r\n        <agm-info-window>\r\n          <b>{{m.label_address}}</b>\r\n          <br>\r\n          {{m.name + \" : \" + m.description}}\r\n        </agm-info-window>\r\n      </agm-marker>\r\n    </agm-marker-cluster>\r\n\r\n  </agm-map>\r\n  <app-filter-markers (category)=\"categoryFilter = $event\" (range)=\"rangeFilter = $event\"></app-filter-markers>\r\n  <app-single-place *ngIf=\"placeChosenToInspect != null\" [placeAndAddress]=\"placeChosenToInspect\"></app-single-place>\r\n\r\n\r\n\r\n  <div class=\"container\" align=\"center\">\r\n    <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\r\n  </div>\r\n</div>\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\" class=\"\" id=\"displayComp\">\r\n  <div>\r\n    <app-filter-markers (category)=\"categoryFilter = $event\" (range)=\"rangeFilter = $event\"></app-filter-markers>\r\n  </div>\r\n  <div class=\"align-items-start row\">\r\n    <div class=\"col-6\">\r\n      <agm-map mapTypeId=\"roadmap\" id=\"map\" [styles]=\"style\" [latitude]=\"50.4535039\" [longitude]=\"3.9516516\"\r\n               [zoom]=\"13\">\r\n        <agm-marker-cluster\r\n          imagePath=\"https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m\">\r\n          <agm-marker *ngFor=\"let m of markers|typeMap:categoryFilter|rangeMap:rangeFilter:userLocation; let i= index;\"\r\n                      [latitude]=\"m.lat\"\r\n                      [longitude]=\"m.lng\"\r\n                      (markerClick)=\"seePlaceChosenToDisplay(m)\">\r\n\r\n            <agm-info-window>\r\n              <b>{{m.label_address}}</b>\r\n              <br>\r\n              {{m.name + \" : \" + m.description}}\r\n            </agm-info-window>\r\n          </agm-marker>\r\n        </agm-marker-cluster>\r\n\r\n      </agm-map>\r\n    </div>\r\n    <div class=\"col-6\">\r\n      <app-single-place *ngIf=\"placeChosenToInspect != null\"\r\n                        [placeAndAddress]=\"placeChosenToInspect\"\r\n                        (click)=\"navigateToDetailLieu(placeChosenToInspect.place.id)\"\r\n      ></app-single-place>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"container mt-4\" align=\"center\">\r\n    <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\r\n  </div>\r\n</div>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -279,7 +279,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"formFilter\" class=\"offset-1\">\n  <div class=\"d-inline-block\">\n    <div class=\"form-group form-inline float-right\">\n      <label for=\"category\">Catégorie :</label>\n      <select name=\"category\" id=\"category\" class=\"form-control ml-3\" [value]=\"'ALL'\" formControlName=\"category\"\n              (change)=\"emitFilterCategory()\">\n        <option class=\"form-control\" *ngFor=\"let cat of TYPE_LIEUX\" value=\"{{cat}}\">{{cat}}</option>\n      </select>\n    </div>\n    <div class=\"form-group form-inline float-left\">\n      <label for=\"range\">Distance :</label>\n      <select name=\"range\" id=\"range\" class=\"form-control ml-3\" [value]=\"'ALL'\" formControlName=\"range\"\n              (change)=\"emitFilterRange()\">\n        <option class=\"form-control\" *ngFor=\"let r of RANGE\" value=\"{{r}}\">{{r}}</option>\n      </select>\n    </div>\n  </div>\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"formFilter\" class=\"offset-1\">\r\n  <div class=\"d-inline-block\">\r\n    <div class=\"form-group form-inline float-right\">\r\n      <label for=\"category\">Catégorie :</label>\r\n      <select name=\"category\" id=\"category\" class=\"form-control ml-3\" [value]=\"'ALL'\" formControlName=\"category\"\r\n              (change)=\"emitFilterCategory()\">\r\n        <option class=\"form-control\" *ngFor=\"let cat of TYPE_LIEUX\" value=\"{{cat}}\">{{cat}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline float-left\">\r\n      <label for=\"range\">Distance :</label>\r\n      <select name=\"range\" id=\"range\" class=\"form-control ml-3\" [value]=\"'ALL'\" formControlName=\"range\"\r\n              (change)=\"emitFilterRange()\">\r\n        <option class=\"form-control\" *ngFor=\"let r of RANGE\" value=\"{{r}}\">{{r}}</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n</form>\r\n");
 
 /***/ }),
 
@@ -292,7 +292,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-dump-map [markers]=\"markers\" [places]=\"places\" [userLocation]=\"userLocation\"></app-dump-map>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-dump-map [markers]=\"markers\" [places]=\"places\" [userLocation]=\"userLocation\"></app-dump-map>\r\n");
 
 /***/ }),
 
@@ -305,7 +305,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\r\n  <div class=\"card-header \">\r\n    <div class=\"text-center\">\r\n      <div class=\"float-left px-auto\">\r\n          <h3>\r\n            <span>Lieu :\r\n              <a (click)=\"navigateToPlace()\" class=\"text-info\">{{review.placeAndAddress.place.name}}</a>\r\n            </span>\r\n          </h3>\r\n      </div>\r\n      <span class=\"float-right\">{{review.review.star}}/10 <span class=\"pl-2 fa fa-star\" style=\"color: #ffd106\"></span></span>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"card-body\">\r\n    <blockquote class=\"blockquote mb-0\">\r\n      <p class=\"text-wrap\">{{review.review.comment}}</p>\r\n      <footer class=\"blockquote-footer\"> {{review.review.date}} </footer>\r\n    </blockquote>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"formUpdate\" >\r\n  <div class=\"card\">\r\n    <div class=\"card-header \">\r\n      <div class=\"text-center\">\r\n        <div class=\"float-left px-auto\">\r\n          <h3>\r\n            <span>Lieu :\r\n              <a (click)=\"navigateToPlace()\" class=\"text-info\">{{review.placeAndAddress.place.name}}</a>\r\n            </span>\r\n          </h3>\r\n        </div>\r\n        <div *ngIf=\"modification\" class=\"float-right form-group\">\r\n          <label for=\"star\">Votre note : {{rate}}/10</label>\r\n          <br>\r\n          <ngb-rating class=\"\" id=\"star\" formControlName=\"star\" [(rate)]=\"rate\"></ngb-rating>\r\n        </div>\r\n        <div *ngIf=\"!modification\">\r\n          <span class=\"float-right\">{{review.review.star}}/10 <span class=\"pl-2 fa fa-star\"\r\n                                                                    style=\"color: #ffd106\"></span></span>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"card-body\">\r\n      <blockquote class=\"blockquote mb-0\">\r\n        <div *ngIf=\"!modification\">\r\n          <p class=\"text-wrap\">{{review.review.comment}}</p>\r\n        </div>\r\n        <div *ngIf=\"modification\" class=\"form-group\">\r\n          <label for=\"comment\" class=\"\">Commentaire : </label>\r\n          <textarea row=\"4\" id=\"comment\" class=\"form-control\" formControlName=\"comment\"\r\n                    placeholder=\"Votre commentaire...\">{{review.review.comment}}</textarea>\r\n        </div>\r\n        <footer class=\"blockquote-footer\"> {{review.review.date}} </footer>\r\n      </blockquote>\r\n    </div>\r\n\r\n    <div class=\"card-footer\" *ngIf=\"currentUser && (currentUser.id == review.review.idUser || currentUser.type==1)\">\r\n      <div class=\"form-group\">\r\n        <button class=\"btn btn-primary\" *ngIf=\"!modification\" (click)=\"setModification(true)\">Modifier</button>\r\n        <div *ngIf=\"modification\">\r\n          <button class=\"btn btn-danger\" (click)=\"setModification(false)\">Annuler</button>\r\n          <button type=\"submit\" class=\"btn btn-success ml-3\" (click)=\"emitReviewUpdated()\">Valider</button>\r\n        </div>\r\n        <button class=\"btn btn-danger ml-3\" *ngIf=\"!modification\" (click)=\"emitReviewDeleted()\">Supprimer</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</form>\r\n");
 
 /***/ }),
 
@@ -318,7 +318,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <ul style=\"list-style: none;\">\n    <li *ngFor=\"let review of listReviewAndUser\">\n      <app-single-review [reviewAndUser]=\"review\"></app-single-review>\n    </li>\n  </ul>\n</div>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <ul style=\"list-style: none;\">\n    <li *ngFor=\"let review of listReviewAndUser\">\n      <app-single-review [reviewAndUser]=\"review\" (reviewUpdated)=\"emitReviewUpdated($event)\" (reviewDeleted)=\"emitReviewDeleted($event)\"></app-single-review>\n    </li>\n  </ul>\n</div>\n\n\n");
 
 /***/ }),
 
@@ -331,7 +331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card mb-3\">\n  <div class=\"card-header\">\n    <div class=\"text-left\">\n      <b><span>\n        Pseudo : <a (click)=\"navigateToDetailUser()\" class=\"text-info\">{{reviewAndUser.user.pseudo}}</a>\n      </span></b>\n      <br/>\n      <span>\n        {{reviewAndUser.user.name}} {{reviewAndUser.user.surname}}\n      </span>\n      <span class=\"float-right\">{{reviewAndUser.review.star}}/10</span>\n    </div>\n  </div>\n\n  <div class=\"card-body\">\n    <blockquote class=\"blockquote mb-0\">\n      <p class=\"text-wrap\">{{reviewAndUser.review.comment}}</p>\n      <footer class=\"blockquote-footer\"> {{reviewAndUser.review.date}} </footer>\n    </blockquote>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"formUpdate\">\n<div class=\"card mb-3\">\n    <div class=\"card-header\">\n      <div class=\"text-left\">\n        <div class=\"float-left\">\n          <b>\n          <span>\n            Pseudo : <a (click)=\"navigateToDetailUser()\" class=\"text-info\">{{reviewAndUser.user.pseudo}}</a>\n          </span>\n          </b>\n          <br/>\n          <span>\n          {{reviewAndUser.user.name}} {{reviewAndUser.user.surname}}\n        </span>\n        </div>\n        <div *ngIf=\"modification\" class=\"float-right form-group\">\n          <label for=\"star\">Votre note : {{rate}}/10</label>\n          <br>\n          <ngb-rating class=\"\" id=\"star\" formControlName=\"star\" [(rate)]=\"rate\"></ngb-rating>\n        </div>\n        <div *ngIf=\"!modification\">\n          <span class=\"float-right\">{{reviewAndUser.review.star}}/10<span class=\"pl-2 fa fa-star\" style=\"color: #ffd106\"></span></span>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"card-body\">\n      <blockquote class=\"blockquote mb-0\">\n        <div *ngIf=\"!modification\">\n          <p class=\"text-wrap\">{{reviewAndUser.review.comment}}</p>\n        </div>\n        <div *ngIf=\"modification\" class=\"form-group\">\n          <label for=\"comment\" class=\"\">Commentaire : </label>\n          <textarea row=\"4\" id=\"comment\" class=\"form-control\" formControlName=\"comment\" placeholder=\"Votre commentaire...\">{{reviewAndUser.review.comment}}</textarea>\n        </div>\n        <footer class=\"blockquote-footer\"> {{reviewAndUser.review.date}} </footer>\n      </blockquote>\n    </div>\n\n    <div class=\"card-footer\" *ngIf=\"currentUser && (currentUser.id == reviewAndUser.user.id || currentUser.type == 1)\">\n      <div class=\"form-group\">\n        <button class=\"btn btn-primary\" *ngIf=\"!modification\" (click)=\"setModification(true)\">Modifier</button>\n        <div *ngIf=\"modification\">\n          <button class=\"btn btn-danger\" (click)=\"setModification(false)\">Annuler</button>\n          <button type=\"submit\" class=\"btn btn-success ml-3\" (click)=\"emitReviewUpdated()\">Valider</button>\n        </div>\n        <button class=\"btn btn-danger ml-3\" *ngIf=\"!modification\" (click)=\"emitReviewDeleted()\">Supprimer</button>\n      </div>\n    </div>\n</div>\n</form>\n");
 
 /***/ }),
 
@@ -357,7 +357,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n  <br>\r\n  <app-single-place [placeAndAddress]=\"placeAndAddress\"></app-single-place>\r\n</div>\r\n\r\n<div>\r\n  <app-list-review [listReviewAndUser]=\"listReviewAndUser\"></app-list-review>\r\n</div>\r\n\r\n<div>\r\n  <app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<br>\r\n<div class=\"\" align=\"center\">\r\n  <div class=\"col-8\" >\r\n    <app-single-place [placeAndAddress]=\"placeAndAddress\"></app-single-place>\r\n  </div>\r\n\r\n  <div class=\"col-6 pb-3\">\r\n    <app-list-review [listReviewAndUser]=\"listReviewAndUser\"\r\n                     (reviewUpdated)=\"updateReview($event)\"\r\n                     (reviewDeleted)=\"deleteReview($event)\"\r\n    ></app-list-review>\r\n  </div>\r\n\r\n  <div align=\"left\" class=\"col-6 mt-4\" *ngIf=\"currentUser\">\r\n    <app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -383,7 +383,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n  <app-filter-place (category)=\"categoryFilter = $event\" (sort)=\"sortFilter = $event\" (search)=\"searchFilter = $event\"></app-filter-place>\r\n</div>\r\n\r\n<div class=\"container container-fluid\">\r\n  <ul style=\"list-style: none;\">\r\n    <li *ngFor=\"let placeAndAddress of placesAndAddresses|search:searchFilter|type:categoryFilter|rating:sortFilter\">\r\n      <app-single-place [placeAndAddress]=\"placeAndAddress\" (click)=\"navigateToDetailLieu(placeAndAddress)\"></app-single-place>\r\n    </li>\r\n  </ul>\r\n\r\n  <div class=\"container\" align=\"center\">\r\n    <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n  <app-filter-place (category)=\"categoryFilter = $event\" (sort)=\"sortFilter = $event\" (search)=\"searchFilter = $event\"></app-filter-place>\r\n</div>\r\n\r\n<div class=\"container container-fluid\">\r\n  <div *ngIf=\"loading\" class=\"spinner-border text-center\"></div>\r\n  <ul style=\"list-style: none;\">\r\n    <li *ngFor=\"let placeAndAddress of placesAndAddresses|search:searchFilter|type:categoryFilter|rating:sortFilter\">\r\n      <app-single-place [placeAndAddress]=\"placeAndAddress\" (click)=\"navigateToDetailLieu(placeAndAddress)\"></app-single-place>\r\n    </li>\r\n  </ul>\r\n\r\n  <div class=\"container\" align=\"center\">\r\n    <button class=\"btn btn-info\" (click)=\"navigateToFormAddLieu()\">Ajouter lieu</button>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -396,7 +396,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\">\r\n  <h1 class=\"display-4\">{{placeAndAddress.place.name}}</h1>\r\n  <div class=\"float-right\">\r\n    <span class=\"fa fa-star mr-2\" style=\"color: #ffd106\"></span>\r\n    <span class=\"\" >{{placeAndAddress.avgRate}}/10</span>\r\n    <span class=\"fa fa-star pl-2\" style=\"color: #ffd106\"></span>\r\n  </div>\r\n  <p class=\"lead\"></p><h6 class=\"card-subtitle d-inline mb-2 \"><i>Type : {{placeAndAddress.place.type}}</i></h6>\r\n  <hr class=\"my-4\">\r\n  <h6>Description : <br><br>{{placeAndAddress.place.description}}</h6>\r\n  <br>\r\n  <div class=\"card-footer\">\r\n    <h5>\r\n      <span>Adresse : </span><br><br>\r\n      {{placeAndAddress.address.postalCode}} {{placeAndAddress.address.city}}\r\n    <br>\r\n      {{placeAndAddress.address.straat}}, {{placeAndAddress.address.num}}</h5>\r\n  </div>\r\n</div>\r\n\r\n<!--<div class=\"row\" >\r\n  <div class=\"col-12\">\r\n    <div class=\"card m-3\" >\r\n      <div class=\"card-header bg-secondary text-center text-light\">\r\n        <h5>{{placeAndAddress.place.name}}</h5>\r\n      </div>\r\n\r\n      <div class=\"py-2 px-3\">\r\n        <div class=\"d-block\">\r\n          <div class=\"text-left pt-3\">\r\n            <span class=\"d-inline\">{{placeAndAddress.place.id}} : </span>\r\n            <h6 class=\"card-subtitle d-inline mb-2 text-muted\">{{placeAndAddress.place.type}}</h6>\r\n            <div class=\"float-right\">\r\n              <span class=\"fa fa-star mr-2\" style=\"color: #ffd106\"></span>\r\n              <span class=\"\" >{{placeAndAddress.avgRate}}/10</span>\r\n              <span class=\"fa fa-star pl-2\" style=\"color: #ffd106\"></span>\r\n            </div>\r\n          </div>\r\n          <hr>\r\n        </div>\r\n        <p class=\"card-text\"a>{{placeAndAddress.place.description}}</p>\r\n      </div>\r\n\r\n      <div class=\"card-footer\">\r\n        <div>\r\n          {{placeAndAddress.address.postalCode}} {{placeAndAddress.address.city}}\r\n          <br>\r\n          {{placeAndAddress.address.straat}}, {{placeAndAddress.address.num}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>-->\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron text-left py-4\">\r\n  <h1 class=\"\">{{placeAndAddress.place.name}}</h1>\r\n  <div class=\"float-right\">\r\n    <span class=\"fa fa-star mr-2\" style=\"color: #ffd106\"></span>\r\n    <span class=\"\" >{{placeAndAddress.avgRate}}/10</span>\r\n    <span class=\"fa fa-star pl-2\" style=\"color: #ffd106\"></span>\r\n  </div>\r\n  <p class=\"lead\"></p><h6 class=\"card-subtitle d-inline mb-2 \"><i>Type : {{placeAndAddress.place.type}}</i></h6>\r\n  <hr class=\"my-4\">\r\n  <h6>Description : <br><br>{{placeAndAddress.place.description}}</h6>\r\n  <br>\r\n  <div class=\"card-footer\">\r\n    <h5>\r\n      <span>Adresse : </span><br><br>\r\n      {{placeAndAddress.address.postalCode}} {{placeAndAddress.address.city}}\r\n    <br>\r\n      {{placeAndAddress.address.straat}}, {{placeAndAddress.address.num}}</h5>\r\n  </div>\r\n</div>\r\n\r\n");
 
 /***/ }),
 
@@ -1074,7 +1074,29 @@ let DetailUserComponent = class DetailUserComponent {
         this.subscriptions.push(this.userService.getUserWithAddress(id).subscribe(user => this.user = user));
     }
     loadReviewsFromUser(id) {
-        this.subscriptions.push(this.reviewService.getReviewsWithPlaceAndAddressFromAnUser(id).subscribe(reviews => { this._reviews = reviews; console.log(reviews); }));
+        this.subscriptions.push(this.reviewService.getReviewsWithPlaceAndAddressFromAnUser(id).subscribe(reviews => { this._reviews = reviews; }));
+    }
+    updateReview($event) {
+        this.subscriptions.push(this.reviewService.put($event.toAvisDto()).subscribe(() => this.updateRefOfReview($event)));
+    }
+    updateRefOfReview(review) {
+        if (!review)
+            return;
+        var indiceOfReview = this.reviews.map(reviews => reviews.review.id).indexOf(review.id);
+        if (indiceOfReview != -1) {
+            this.reviews[indiceOfReview].review.comment = review.comment;
+            this.reviews[indiceOfReview].review.star = review.star;
+            this.reviews[indiceOfReview].review.date = review.date;
+        }
+    }
+    deleteReview($event) {
+        this.subscriptions.push(this.reviewService.delete($event).subscribe(() => this.deleteRefOfReview($event)));
+    }
+    deleteRefOfReview(id) {
+        if (!id)
+            return;
+        var indiceOfReview = this.reviews.map(review => review.review.id).indexOf(id);
+        this.reviews.splice(indiceOfReview, 1);
     }
 };
 DetailUserComponent.ctorParameters = () => [
@@ -1543,7 +1565,7 @@ let SingleGestionPlaceComponent = class SingleGestionPlaceComponent {
             this._placeAndAddress = value;
     }
     navigateToDetailLieu() {
-        this.router.navigate(['admin/place/reviews/' + this.placeAndAddress.place.id]);
+        this.router.navigate(['place/' + this.placeAndAddress.place.id]);
     }
     emitDeletePlace() {
         this.placeDeleted.next(this._placeAndAddress);
@@ -1864,7 +1886,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.nav-link{\r\n  font-size: 18px;\r\n  font-family: Malgun Gothic;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n.textFooter{\r\n  font-size: 15px;\r\n  color : white;\r\n}\r\n#displayComp{\r\n  background-color: whitesmoke;\r\n  height: 100%;\r\n  margin: 0em;\r\n  /*overflow-y: auto;*/\r\n}\r\n.title{\r\n  font-family: Malgun Gothic;\r\n  font-size: 50px;\r\n}\r\n#user{\r\n  font-style: italic;\r\n  font-family: Malgun Gothic;\r\n}\r\n#head{\r\n  height : 90px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtFQUNFLGVBQWU7RUFDZiwwQkFBMEI7QUFDNUI7QUFDQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsZUFBZTtFQUNmLGFBQWE7QUFDZjtBQUNBO0VBQ0UsNEJBQTRCO0VBQzVCLFlBQVk7RUFDWixXQUFXO0VBQ1gsb0JBQW9CO0FBQ3RCO0FBRUE7RUFDRSwwQkFBMEI7RUFDMUIsZUFBZTtBQUNqQjtBQUNBO0VBQ0Usa0JBQWtCO0VBQ2xCLDBCQUEwQjtBQUM1QjtBQUVBO0VBQ0UsYUFBYTtBQUNmIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubmF2YmFye1xyXG4gIGhlaWdodDogNjBweDtcclxuICBmb250LXNpemUgOiAxOHB4O1xyXG59XHJcbi5uYWJhci1uYXZ7XHJcbiAgd2lkdGggOiAzMDBweDtcclxufVxyXG4ubmF2LWxpbmt7XHJcbiAgZm9udC1zaXplOiAxOHB4O1xyXG4gIGZvbnQtZmFtaWx5OiBNYWxndW4gR290aGljO1xyXG59XHJcbi5jb250YWN0e1xyXG4gIGhlaWdodDogMTAwcHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogZGltZ3JheTtcclxuICBmb250LXNpemU6IDM1cHg7XHJcbn1cclxuLnRleHRGb290ZXJ7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG4gIGNvbG9yIDogd2hpdGU7XHJcbn1cclxuI2Rpc3BsYXlDb21we1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlc21va2U7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIG1hcmdpbjogMGVtO1xyXG4gIC8qb3ZlcmZsb3cteTogYXV0bzsqL1xyXG59XHJcblxyXG4udGl0bGV7XHJcbiAgZm9udC1mYW1pbHk6IE1hbGd1biBHb3RoaWM7XHJcbiAgZm9udC1zaXplOiA1MHB4O1xyXG59XHJcbiN1c2Vye1xyXG4gIGZvbnQtc3R5bGU6IGl0YWxpYztcclxuICBmb250LWZhbWlseTogTWFsZ3VuIEdvdGhpYztcclxufVxyXG5cclxuI2hlYWR7XHJcbiAgaGVpZ2h0IDogOTBweDtcclxufVxyXG4iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".navbar{\r\n  height: 60px;\r\n  font-size : 18px;\r\n  margin-top: -30px;\r\n}\r\n.nabar-nav{\r\n  width : 300px;\r\n}\r\n.nav-link{\r\n  font-size: 18px;\r\n  font-family: Malgun Gothic;\r\n}\r\n.contact{\r\n  height: 100px;\r\n  background-color: dimgray;\r\n  font-size: 35px;\r\n}\r\n.textFooter{\r\n  font-size: 15px;\r\n  color : white;\r\n}\r\n#displayComp{\r\n  background-color: whitesmoke;\r\n  height: 100%;\r\n  margin: 0em;\r\n  /*overflow-y: auto;*/\r\n}\r\n.title{\r\n  font-family: Malgun Gothic;\r\n  font-size: 50px;\r\n}\r\n#user{\r\n  font-style: italic;\r\n  font-family: Malgun Gothic;\r\n}\r\n#head{\r\n  height : 90px;\r\n  margin-top: -50px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGlCQUFpQjtBQUNuQjtBQUNBO0VBQ0UsYUFBYTtBQUNmO0FBQ0E7RUFDRSxlQUFlO0VBQ2YsMEJBQTBCO0FBQzVCO0FBQ0E7RUFDRSxhQUFhO0VBQ2IseUJBQXlCO0VBQ3pCLGVBQWU7QUFDakI7QUFDQTtFQUNFLGVBQWU7RUFDZixhQUFhO0FBQ2Y7QUFDQTtFQUNFLDRCQUE0QjtFQUM1QixZQUFZO0VBQ1osV0FBVztFQUNYLG9CQUFvQjtBQUN0QjtBQUVBO0VBQ0UsMEJBQTBCO0VBQzFCLGVBQWU7QUFDakI7QUFDQTtFQUNFLGtCQUFrQjtFQUNsQiwwQkFBMEI7QUFDNUI7QUFFQTtFQUNFLGFBQWE7RUFDYixpQkFBaUI7QUFDbkIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZiYXJ7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG4gIGZvbnQtc2l6ZSA6IDE4cHg7XHJcbiAgbWFyZ2luLXRvcDogLTMwcHg7XHJcbn1cclxuLm5hYmFyLW5hdntcclxuICB3aWR0aCA6IDMwMHB4O1xyXG59XHJcbi5uYXYtbGlua3tcclxuICBmb250LXNpemU6IDE4cHg7XHJcbiAgZm9udC1mYW1pbHk6IE1hbGd1biBHb3RoaWM7XHJcbn1cclxuLmNvbnRhY3R7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkaW1ncmF5O1xyXG4gIGZvbnQtc2l6ZTogMzVweDtcclxufVxyXG4udGV4dEZvb3RlcntcclxuICBmb250LXNpemU6IDE1cHg7XHJcbiAgY29sb3IgOiB3aGl0ZTtcclxufVxyXG4jZGlzcGxheUNvbXB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGVzbW9rZTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgbWFyZ2luOiAwZW07XHJcbiAgLypvdmVyZmxvdy15OiBhdXRvOyovXHJcbn1cclxuXHJcbi50aXRsZXtcclxuICBmb250LWZhbWlseTogTWFsZ3VuIEdvdGhpYztcclxuICBmb250LXNpemU6IDUwcHg7XHJcbn1cclxuI3VzZXJ7XHJcbiAgZm9udC1zdHlsZTogaXRhbGljO1xyXG4gIGZvbnQtZmFtaWx5OiBNYWxndW4gR290aGljO1xyXG59XHJcblxyXG4jaGVhZHtcclxuICBoZWlnaHQgOiA5MHB4O1xyXG4gIG1hcmdpbi10b3A6IC01MHB4O1xyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -1958,7 +1980,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _forms_form_inscription_dumb_form_inscription_form_inscription_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./forms/form-inscription/dumb-form-inscription/form-inscription.component */ "./src/app/forms/form-inscription/dumb-form-inscription/form-inscription.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/fesm2015/agm-core.js");
 /* harmony import */ var _agm_js_marker_clusterer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @agm/js-marker-clusterer */ "./node_modules/@agm/js-marker-clusterer/fesm2015/agm-js-marker-clusterer.js");
 /* harmony import */ var _forms_form_inscription_smart_form_inscription_smart_form_inscription_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./forms/form-inscription/smart-form-inscription/smart-form-inscription.component */ "./src/app/forms/form-inscription/smart-form-inscription/smart-form-inscription.component.ts");
 /* harmony import */ var _forms_form_connection_smart_form_connection_smart_form_connection_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./forms/form-connection/smart-form-connection/smart-form-connection.component */ "./src/app/forms/form-connection/smart-form-connection/smart-form-connection.component.ts");
@@ -1977,7 +1999,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_lieu_filter_place_pipe_type_pipe__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./views/lieu/filter-place/pipe/type.pipe */ "./src/app/views/lieu/filter-place/pipe/type.pipe.ts");
 /* harmony import */ var _views_lieu_filter_place_filter_place_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./views/lieu/filter-place/filter-place.component */ "./src/app/views/lieu/filter-place/filter-place.component.ts");
 /* harmony import */ var _views_lieu_filter_place_pipe_rating_pipe__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./views/lieu/filter-place/pipe/rating.pipe */ "./src/app/views/lieu/filter-place/pipe/rating.pipe.ts");
-/* harmony import */ var _views_lieu_filter_place_pipe_search_pipe__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./views/lieu/filter-place/pipe/search.pipe */ "./src/app/views/lieu/filter-place/pipe/search.pipe.ts");
 /* harmony import */ var _map_filter_markers_filter_markers_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./map/filter-markers/filter-markers.component */ "./src/app/map/filter-markers/filter-markers.component.ts");
 /* harmony import */ var _map_filter_markers_pipe_rating_map_pipe__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./map/filter-markers/pipe/rating-map.pipe */ "./src/app/map/filter-markers/pipe/rating-map.pipe.ts");
 /* harmony import */ var _map_filter_markers_pipe_type_map_pipe__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./map/filter-markers/pipe/type-map.pipe */ "./src/app/map/filter-markers/pipe/type-map.pipe.ts");
@@ -1995,6 +2016,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _User_single_user_single_user_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./User/single-user/single-user.component */ "./src/app/User/single-user/single-user.component.ts");
 /* harmony import */ var _User_list_user_list_user_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./User/list-user/list-user.component */ "./src/app/User/list-user/list-user.component.ts");
 /* harmony import */ var _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./views/comment/detail-review/detail-review.component */ "./src/app/views/comment/detail-review/detail-review.component.ts");
+/* harmony import */ var _views_lieu_filter_place_pipe_search_pipe__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./views/lieu/filter-place/pipe/search.pipe */ "./src/app/views/lieu/filter-place/pipe/search.pipe.ts");
+
 
 
 
@@ -2055,7 +2078,7 @@ const routes = [
     { path: 'home', component: _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"] },
     { path: 'admin/places', canActivate: [_AuthAdminGard__WEBPACK_IMPORTED_MODULE_37__["AuthAdminGard"]], component: _admin_smart_gestion_place_smart_gestion_place_component__WEBPACK_IMPORTED_MODULE_39__["SmartGestionPlaceComponent"] },
     { path: 'admin/place/reviews/:id', canActivate: [_AuthAdminGard__WEBPACK_IMPORTED_MODULE_37__["AuthAdminGard"]], component: _admin_smart_gestion_review_smart_gestion_review_component__WEBPACK_IMPORTED_MODULE_41__["SmartGestionReviewComponent"] },
-    { path: 'users', canActivate: [_AuthGard__WEBPACK_IMPORTED_MODULE_35__["AuthGard"]], component: _User_list_user_list_user_component__WEBPACK_IMPORTED_MODULE_45__["ListUserComponent"] },
+    { path: 'users', canActivate: [_AuthAdminGard__WEBPACK_IMPORTED_MODULE_37__["AuthAdminGard"]], component: _User_list_user_list_user_component__WEBPACK_IMPORTED_MODULE_45__["ListUserComponent"] },
     { path: 'user/:id', canActivate: [_AuthGard__WEBPACK_IMPORTED_MODULE_35__["AuthGard"]], component: _User_detail_user_detail_user_component__WEBPACK_IMPORTED_MODULE_43__["DetailUserComponent"] },
 ];
 let AppModule = class AppModule {
@@ -2084,7 +2107,6 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _map_dump_map_dump_map_component__WEBPACK_IMPORTED_MODULE_24__["DumpMapComponent"],
             _map_smart_map_smart_map_component__WEBPACK_IMPORTED_MODULE_25__["SmartMapComponent"],
             _views_home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"],
-            _views_lieu_filter_place_pipe_search_pipe__WEBPACK_IMPORTED_MODULE_47__["SearchPipe"]
             _map_filter_markers_filter_markers_component__WEBPACK_IMPORTED_MODULE_30__["FilterMarkersComponent"],
             _map_filter_markers_pipe_rating_map_pipe__WEBPACK_IMPORTED_MODULE_31__["RatingMapPipe"],
             _map_filter_markers_pipe_type_map_pipe__WEBPACK_IMPORTED_MODULE_32__["TypeMapPipe"],
@@ -2098,7 +2120,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _User_detail_user_detail_user_component__WEBPACK_IMPORTED_MODULE_43__["DetailUserComponent"],
             _User_single_user_single_user_component__WEBPACK_IMPORTED_MODULE_44__["SingleUserComponent"],
             _User_list_user_list_user_component__WEBPACK_IMPORTED_MODULE_45__["ListUserComponent"],
-            _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_46__["DetailReviewComponent"]
+            _views_comment_detail_review_detail_review_component__WEBPACK_IMPORTED_MODULE_46__["DetailReviewComponent"],
+            _views_lieu_filter_place_pipe_search_pipe__WEBPACK_IMPORTED_MODULE_47__["SearchPipe"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -2640,7 +2663,7 @@ let FormReviewComponent = class FormReviewComponent {
         this.reviewCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.formReview = this.fb.group({
             comment: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            star: this.fb.control(null)
+            star: this.fb.control(null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
         });
     }
     ngOnInit() {
@@ -2835,7 +2858,7 @@ SmartFormReviewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("agm-map {\r\n  height: 450px;\r\n  width: 1200px;\r\n}\r\n\r\n#displayComp{\r\n  padding-top: 50px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFwL2R1bXAtbWFwL2R1bXAtbWFwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhO0VBQ2IsYUFBYTtBQUNmOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25CIiwiZmlsZSI6InNyYy9hcHAvbWFwL2R1bXAtbWFwL2R1bXAtbWFwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJhZ20tbWFwIHtcclxuICBoZWlnaHQ6IDQ1MHB4O1xyXG4gIHdpZHRoOiAxMjAwcHg7XHJcbn1cclxuXHJcbiNkaXNwbGF5Q29tcHtcclxuICBwYWRkaW5nLXRvcDogNTBweDtcclxufVxyXG4iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("agm-map {\r\n  /*height: 450px;*/\r\n  height: 450px;\r\n  width: 100%;\r\n}\r\n\r\n#displayComp{\r\n  padding-top: 50px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFwL2R1bXAtbWFwL2R1bXAtbWFwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpQkFBaUI7RUFDakIsYUFBYTtFQUNiLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGlCQUFpQjtBQUNuQiIsImZpbGUiOiJzcmMvYXBwL21hcC9kdW1wLW1hcC9kdW1wLW1hcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYWdtLW1hcCB7XHJcbiAgLypoZWlnaHQ6IDQ1MHB4OyovXHJcbiAgaGVpZ2h0OiA0NTBweDtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuI2Rpc3BsYXlDb21we1xyXG4gIHBhZGRpbmctdG9wOiA1MHB4O1xyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -3069,7 +3092,7 @@ let DumpMapComponent = class DumpMapComponent {
     ngOnInit() {
     }
     navigateToDetailLieu(id) {
-        this.router.navigate(['lieux/' + id]);
+        this.router.navigate(['place/' + id]);
     }
     seePlaceChosenToDisplay(m) {
         let tmpPlaceAndAddress = { place: new _views_lieu_place__WEBPACK_IMPORTED_MODULE_2__["Place"](m.idPlace, m.name, m.type, m.description, m.idAdr).toLieuDto(), address: new _Address_address__WEBPACK_IMPORTED_MODULE_4__["Address"](m.idAdr, m.city, m.straat, m.num, m.postalCode).toAdresseDto(), avgRate: m.rating };
@@ -3230,7 +3253,7 @@ let RangeMapPipe = class RangeMapPipe {
     transform(markers, filter, positionUser) {
         if (!filter)
             return markers;
-        //positionUser = this.defaultLocal;
+        positionUser = this.defaultLocal;
         for (let i = 0; i < markers.length; i++) {
             markers[i].distanceUser = this.rayon * Math.acos(Math.sin((markers[i].lat * this.pi) / 180) * Math.sin((positionUser.lat * this.pi) / 180) + Math.cos((markers[i].lat * this.pi) / 180) * Math.cos((positionUser.lat * this.pi) / 180) * Math.cos((markers[i].lng * this.pi / 180) - (positionUser.lng * this.pi / 180)));
         }
@@ -3367,7 +3390,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GeocodeService", function() { return GeocodeService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/fesm2015/agm-core.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_internal_compatibility__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/internal-compatibility */ "./node_modules/rxjs/_esm2015/internal-compatibility/index.js");
@@ -3674,14 +3697,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _User_authenticate_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../User/authenticate.service */ "./src/app/User/authenticate.service.ts");
+/* harmony import */ var _review__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../review */ "./src/app/views/comment/review.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+
+
+
+
 
 
 
 let DetailReviewComponent = class DetailReviewComponent {
-    constructor(router) {
+    constructor(router, authService, fb) {
         this.router = router;
+        this.authService = authService;
+        this.fb = fb;
+        this.modification = false;
+        this.rate = 0;
+        this.reviewUpdated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.reviewDeleted = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.formUpdate = this.fb.group({
+            comment: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+            star: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required)
+        });
     }
     ngOnInit() {
+        this.authService.currentUser.subscribe(user => this.currentUser = user);
     }
     get review() {
         return this._review;
@@ -3689,13 +3731,42 @@ let DetailReviewComponent = class DetailReviewComponent {
     set review(value) {
         this._review = value;
     }
+    setModification(value) {
+        if (value) {
+            this.formUpdate.get('star').setValue(this.review.review.star);
+            this.formUpdate.get('comment').setValue(this.review.review.comment);
+        }
+        this.modification = value;
+    }
+    buildReview() {
+        var review = new _review__WEBPACK_IMPORTED_MODULE_4__["Review"]().fromAvisDto(this.review.review);
+        review.comment = this.formUpdate.get("comment").value;
+        review.star = this.formUpdate.get("star").value;
+        review.date = new _angular_common__WEBPACK_IMPORTED_MODULE_6__["DatePipe"]('en-US').transform(new Date(), 'dd-MM-yy HH:mm:ss');
+        return review;
+    }
+    emitReviewUpdated() {
+        this.reviewUpdated.next(this.buildReview());
+        this.modification = false;
+    }
     navigateToPlace() {
         this.router.navigate(['place/' + this.review.placeAndAddress.place.id]);
     }
+    emitReviewDeleted() {
+        this.reviewDeleted.next(this.review.review.id);
+    }
 };
 DetailReviewComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _User_authenticate_service__WEBPACK_IMPORTED_MODULE_3__["AuthenticateService"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], DetailReviewComponent.prototype, "reviewUpdated", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], DetailReviewComponent.prototype, "reviewDeleted", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], DetailReviewComponent.prototype, "review", null);
@@ -3741,6 +3812,8 @@ __webpack_require__.r(__webpack_exports__);
 let ListReviewComponent = class ListReviewComponent {
     constructor() {
         this._listReviewAndUser = [];
+        this.reviewUpdated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.reviewDeleted = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     ngOnInit() {
     }
@@ -3752,7 +3825,19 @@ let ListReviewComponent = class ListReviewComponent {
     set listReviewAndUser(value) {
         this._listReviewAndUser = value;
     }
+    emitReviewUpdated($event) {
+        this.reviewUpdated.next($event);
+    }
+    emitReviewDeleted($event) {
+        this.reviewDeleted.next($event);
+    }
 };
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], ListReviewComponent.prototype, "reviewUpdated", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], ListReviewComponent.prototype, "reviewDeleted", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], ListReviewComponent.prototype, "listReviewAndUser", null);
@@ -3953,17 +4038,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _review__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../review */ "./src/app/views/comment/review.ts");
 /* harmony import */ var _User_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../User/user */ "./src/app/User/user.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _User_authenticate_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../User/authenticate.service */ "./src/app/User/authenticate.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+
+
+
 
 
 
 
 
 let SingleReviewComponent = class SingleReviewComponent {
-    constructor(router) {
+    constructor(router, authService, fb) {
         this.router = router;
+        this.authService = authService;
+        this.fb = fb;
         this._reviewAndUser = { review: new _review__WEBPACK_IMPORTED_MODULE_2__["Review"]().toAvisDto(), user: new _User_user__WEBPACK_IMPORTED_MODULE_3__["User"]().toUtilisateurDto() };
+        this.modification = false;
+        this.rate = 0;
+        this.reviewUpdated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.reviewDeleted = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.formUpdate = this.fb.group({
+            comment: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            star: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required)
+        });
     }
     ngOnInit() {
+        this.authService.currentUser.subscribe(user => this.currentUser = user);
     }
     ngOnDestroy() { }
     get reviewAndUser() {
@@ -3971,14 +4073,44 @@ let SingleReviewComponent = class SingleReviewComponent {
     }
     set reviewAndUser(value) {
         this._reviewAndUser = value;
+        this.rate = this._reviewAndUser.review.star;
+    }
+    setModification(value) {
+        if (value) {
+            this.formUpdate.get('star').setValue(this.reviewAndUser.review.star);
+            this.formUpdate.get('comment').setValue(this.reviewAndUser.review.comment);
+        }
+        this.modification = value;
     }
     navigateToDetailUser() {
         this.router.navigate(['user/' + this._reviewAndUser.user.id]);
     }
+    buildReview() {
+        var review = new _review__WEBPACK_IMPORTED_MODULE_2__["Review"]().fromAvisDto(this._reviewAndUser.review);
+        review.comment = this.formUpdate.get("comment").value;
+        review.star = this.formUpdate.get("star").value;
+        review.date = new _angular_common__WEBPACK_IMPORTED_MODULE_7__["DatePipe"]('en-US').transform(new Date(), 'dd-MM-yy HH:mm:ss');
+        return review;
+    }
+    emitReviewUpdated() {
+        this.reviewUpdated.next(this.buildReview());
+        this.modification = false;
+    }
+    emitReviewDeleted() {
+        this.reviewDeleted.next(this._reviewAndUser.review.id);
+    }
 };
 SingleReviewComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+    { type: _User_authenticate_service__WEBPACK_IMPORTED_MODULE_5__["AuthenticateService"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], SingleReviewComponent.prototype, "reviewUpdated", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], SingleReviewComponent.prototype, "reviewDeleted", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], SingleReviewComponent.prototype, "reviewAndUser", null);
@@ -4067,6 +4199,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _place_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../place.service */ "./src/app/views/lieu/place.service.ts");
 /* harmony import */ var _comment_review_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../comment/review.service */ "./src/app/views/comment/review.service.ts");
 /* harmony import */ var _User_authenticate_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../User/authenticate.service */ "./src/app/User/authenticate.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+
 
 
 
@@ -4125,14 +4259,39 @@ let DetailPlaceComponent = class DetailPlaceComponent {
     createReview($event) {
         $event.idPlace = this._id;
         $event.idUser = this.currentUser.id;
-        this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe(review => this.listReviewAndUser.push({
-            review: review,
-            user: this.currentUser
-        })));
+        this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe(review => {
+            review.date = new _angular_common__WEBPACK_IMPORTED_MODULE_6__["DatePipe"]('en-US').transform(new Date(), 'dd-MM-yy HH:mm:ss');
+            this.listReviewAndUser.push({
+                review: review,
+                user: this.currentUser,
+            });
+        }));
     }
     loadReviewOfPlace(id) {
         const sub = this.reviewService.getReviewsAndUserFromAPlace(id).subscribe(listReviewAndUser => this._listReviewAndUser = listReviewAndUser);
         this.subscriptions.push(sub);
+    }
+    updateRefOfReview(review) {
+        if (!review)
+            return;
+        var indiceOfReview = this.listReviewAndUser.map(reviewAndUser => reviewAndUser.review.id).indexOf(review.id);
+        if (indiceOfReview != -1) {
+            this.listReviewAndUser[indiceOfReview].review.comment = review.comment;
+            this.listReviewAndUser[indiceOfReview].review.star = review.star;
+            this.listReviewAndUser[indiceOfReview].review.date = review.date;
+        }
+    }
+    updateReview($event) {
+        this.subscriptions.push(this.reviewService.put($event.toAvisDto()).subscribe(() => { this.updateRefOfReview($event); }));
+    }
+    deleteReview($event) {
+        this.subscriptions.push(this.reviewService.delete($event).subscribe(() => this.deleteRefOfReview($event)));
+    }
+    deleteRefOfReview(id) {
+        if (!id)
+            return;
+        var indiceOfReview = this.listReviewAndUser.map(review => review.review.id).indexOf(id);
+        this.listReviewAndUser.splice(indiceOfReview, 1);
     }
 };
 DetailPlaceComponent.ctorParameters = () => [
@@ -4420,8 +4579,10 @@ let ListPlaceComponent = class ListPlaceComponent {
         this.categoryFilter = _EnumTypeLieu__WEBPACK_IMPORTED_MODULE_4__["EnumTypeLieu"].ALL;
         this.sortFilter = 0;
         this.searchFilter = '';
+        this.loading = false;
     }
     ngOnInit() {
+        this.loading = true;
         this.loadPlace();
         // this.lieuService.placeAndAddresses.subscribe(places => this._placesAndAddresses = places);
     }
@@ -4439,7 +4600,10 @@ let ListPlaceComponent = class ListPlaceComponent {
         this._placesAndAddresses = value;
     }
     loadPlace() {
-        const sub = this.lieuService.getPlacesAndAddressees().subscribe(places => { this._placesAndAddresses = places; });
+        const sub = this.lieuService.getPlacesAndAddressees().subscribe(places => {
+            this._placesAndAddresses = places;
+            this.loading = false;
+        });
         this.subscriptions.push(sub);
     }
     navigateToDetailLieu(placeAndAddress) {

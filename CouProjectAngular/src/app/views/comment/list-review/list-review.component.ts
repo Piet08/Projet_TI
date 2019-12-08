@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Review, ReviewList} from '../review';
 import {Subscription} from 'rxjs';
 import {ReviewService} from '../review.service';
@@ -14,6 +14,10 @@ import {ReviewAndUserDto} from '../review-insert-dto';
 })
 export class ListReviewComponent implements OnInit,OnDestroy{
   private _listReviewAndUser:ReviewAndUserDto[] = [];
+
+  @Output() reviewUpdated:EventEmitter<Review> = new EventEmitter<Review>();
+  @Output() reviewDeleted:EventEmitter<number> = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
@@ -30,5 +34,12 @@ export class ListReviewComponent implements OnInit,OnDestroy{
     this._listReviewAndUser = value;
   }
 
+  emitReviewUpdated($event : Review){
+    this.reviewUpdated.next($event);
+  }
 
+
+  emitReviewDeleted($event: number) {
+    this.reviewDeleted.next($event);
+  }
 }

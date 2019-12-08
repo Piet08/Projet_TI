@@ -1,21 +1,51 @@
+<form [formGroup]="formUpdate">
 <div class="card mb-3">
-  <div class="card-header">
-    <div class="text-left">
-      <b><span>
-        Pseudo : <a (click)="navigateToDetailUser()" class="text-info">{{reviewAndUser.user.pseudo}}</a>
-      </span></b>
-      <br/>
-      <span>
-        {{reviewAndUser.user.name}} {{reviewAndUser.user.surname}}
-      </span>
-      <span class="float-right">{{reviewAndUser.review.star}}/10</span>
+    <div class="card-header">
+      <div class="text-left">
+        <div class="float-left">
+          <b>
+          <span>
+            Pseudo : <a (click)="navigateToDetailUser()" class="text-info">{{reviewAndUser.user.pseudo}}</a>
+          </span>
+          </b>
+          <br/>
+          <span>
+          {{reviewAndUser.user.name}} {{reviewAndUser.user.surname}}
+        </span>
+        </div>
+        <div *ngIf="modification" class="float-right form-group">
+          <label for="star">Votre note : {{rate}}/10</label>
+          <br>
+          <ngb-rating class="" id="star" formControlName="star" [(rate)]="rate"></ngb-rating>
+        </div>
+        <div *ngIf="!modification">
+          <span class="float-right">{{reviewAndUser.review.star}}/10<span class="pl-2 fa fa-star" style="color: #ffd106"></span></span>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p class="text-wrap">{{reviewAndUser.review.comment}}</p>
-      <footer class="blockquote-footer"> {{reviewAndUser.review.date}} </footer>
-    </blockquote>
-  </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <div *ngIf="!modification">
+          <p class="text-wrap">{{reviewAndUser.review.comment}}</p>
+        </div>
+        <div *ngIf="modification" class="form-group">
+          <label for="comment" class="">Commentaire : </label>
+          <textarea row="4" id="comment" class="form-control" formControlName="comment" placeholder="Votre commentaire...">{{reviewAndUser.review.comment}}</textarea>
+        </div>
+        <footer class="blockquote-footer"> {{reviewAndUser.review.date}} </footer>
+      </blockquote>
+    </div>
+
+    <div class="card-footer" *ngIf="currentUser && (currentUser.id == reviewAndUser.user.id || currentUser.type == 1)">
+      <div class="form-group">
+        <button class="btn btn-primary" *ngIf="!modification" (click)="setModification(true)">Modifier</button>
+        <div *ngIf="modification">
+          <button class="btn btn-danger" (click)="setModification(false)">Annuler</button>
+          <button type="submit" class="btn btn-success ml-3" (click)="emitReviewUpdated()">Valider</button>
+        </div>
+        <button class="btn btn-danger ml-3" *ngIf="!modification" (click)="emitReviewDeleted()">Supprimer</button>
+      </div>
+    </div>
 </div>
+</form>

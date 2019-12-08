@@ -68,6 +68,8 @@ namespace Cou_project.Controllers
         [HttpPost]
         public ActionResult<Review> Post([FromBody] Review review)
         {
+            int id = Convert.ToInt32(TokenModel.ReadClaimFromRequest(Request, "id"));
+            review.IdUser = id;
             return Ok(ReviewDAO.Create(review));
         }
         
@@ -78,11 +80,14 @@ namespace Cou_project.Controllers
 //            return avis != null ? (ActionResult<Avis>) Ok(avis) : NotFound("This comment does not exists!");
 //        }
         
+        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
             return ReviewDAO.Delete(id) ? (ActionResult) Ok() : NotFound();
         }
+        
+        [Authorize]
         [HttpPut]
         public ActionResult<Review> Update([FromBody] Review review)
         {
