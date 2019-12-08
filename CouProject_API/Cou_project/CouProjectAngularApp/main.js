@@ -188,7 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <h1><b>Formulaire inscription</b></h1>\r\n  <form class=\"form-horizontal\" [formGroup] = \"formulaireInscription\" (ngSubmit)=\"emitNewUser()\" role=\"form\">\r\n    <div class=\"form-group  form-inline raw\">\r\n      <label for=\"emailInscription\" class=\"col-4\">Email</label>\r\n      <input type=\"text\" class=\" form-control col-6\"  formControlName=\"emailInscription\" id=\"emailInscription\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"nom\" class=\"col-4\">Nom</label>\r\n      <input class=\"form-control\" type =\"text\" class=\"form-control col-6\" formControlName=\"nom\" id=\"nom\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"prenom\" class=\"col-4\">Prenom</label>\r\n      <input class=\"form-control\" type =\"text\"  class=\"form-control col-6\" formControlName=\"prenom\" id=\"prenom\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"pseudo\" class=\"col-4\">Pseudo</label>\r\n      <input class=\"form-control\" type =\"text\" class=\"form-control col-6\"  formControlName=\"pseudo\" id=\"pseudo\"/>\r\n    </div>\r\n    <div class=\"form-group form-inline raw\">\r\n      <label for=\"motDePasseInscription\" class=\"col-4\">Mot de passe</label>\r\n      <input class=\"form-control\" type =\"password\" class=\"form-control col-6\"  formControlName=\"motDePasseInscription\" id=\"motDePasseInscription\"/>\r\n    </div>\r\n    <div class=\"form-group  form-inline raw\">\r\n      <label for=\"verifMotDePasse\" class=\"col-4\">Vérification mot de passe</label>\r\n      <input class=\"form-control\" type =\"password\"  class=\"form-control col-6\"  formControlName=\"verifMotDePasse\" id=\"verifMotDePasse\"/>\r\n       <!-- <span *ngIf=\"!verificationMotDePasse()\">Erreur, mauvais mot de passe</span> -->\r\n    </div>\r\n    <div formGroupName=\"address\">\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"straat\" class=\"col-4 \">Rue </label>\r\n        <input type=\"text\" class=\"form-control col-6\"  id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"num\" class=\"col-4\">Numéro </label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"postalCode\" class=\"col-4 \">Code Postal </label>\r\n        <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"city\" class=\"col-4 \">Ville </label>\r\n        <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n      </div>\r\n    </div>\r\n    <input class=\"btn btn-primary col-sm-offset-3\" type=\"submit\" value=\"S'inscrire\" id=\"btnInscription\"/>  <!--[disabled]=\"verificationFormulaire()\"-->\r\n  </form>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div align=\"center\">\r\n  <legend>Formulaire d'inscription</legend>\r\n  <form class=\"form-horizontal \"  [formGroup] = \"formulaireInscription\" (ngSubmit)=\"emitNewUser()\" role=\"form\">\r\n    <fieldset class=\"align-middle\">\r\n      <div class=\"form-group form-inline raw\" >\r\n          <label for=\"emailInscription\" class=\"col-md-auto\">Email </label>\r\n          <input type=\"text\" class=\" form-control col-6\"  formControlName=\"emailInscription\" id=\"emailInscription\" aria-describedby=\"emailHelp\" />\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"nom\" class=\"col-md-auto\">Nom</label>\r\n        <input class=\"form-control\" type =\"text\" class=\"form-control col-6\" formControlName=\"nom\" id=\"nom\"/>\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"prenom\" class=\"col-md-auto\">Prenom</label>\r\n        <input class=\"form-control\" type =\"text\"  class=\"form-control col-6\" formControlName=\"prenom\" id=\"prenom\"/>\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"pseudo\" class=\"col-md-auto\">Pseudo</label>\r\n        <input class=\"form-control\" type =\"text\" class=\"form-control col-6\"  formControlName=\"pseudo\" id=\"pseudo\"/>\r\n      </div>\r\n      <div class=\"form-group form-inline raw\">\r\n        <label for=\"motDePasseInscription\" class=\"col-md-auto\">Mot de passe</label>\r\n        <input class=\"form-control\" type =\"password\" class=\"form-control col-6\"  formControlName=\"motDePasseInscription\" id=\"motDePasseInscription\"/>\r\n      </div>\r\n      <div class=\"form-group  form-inline raw\">\r\n        <label for=\"verifMotDePasse\" class=\"col-md-auto\">Vérification mot de passe</label>\r\n        <input class=\"form-control\" type =\"password\"  class=\"form-control col-6\"  formControlName=\"verifMotDePasse\" id=\"verifMotDePasse\"/>\r\n         <!-- <span *ngIf=\"!verificationMotDePasse()\">Erreur, mauvais mot de passe</span> -->\r\n      </div>\r\n      <div formGroupName=\"address\">\r\n        <div class=\"form-group form-inline raw\">\r\n          <label for=\"straat\" class=\"col-md-auto\">Rue </label>\r\n          <input type=\"text\" class=\"form-control col-6\"  id=\"straat\" name=\"straat\" formControlName=\"straat\">\r\n        </div>\r\n        <div class=\"form-group form-inline raw\">\r\n          <label for=\"num\" class=\"col-md-auto\">Numéro </label>\r\n          <input type=\"text\" class=\"form-control col-6\" id=\"num\" name=\"num\" formControlName=\"num\">\r\n        </div>\r\n        <div class=\"form-group form-inline raw\">\r\n          <label for=\"postalCode\" class=\"col-md-auto\">Code Postal </label>\r\n          <input type=\"number\" class=\"form-control col-6\" id=\"postalCode\" name=\"postalCode\" formControlName=\"postalCode\">\r\n        </div>\r\n        <div class=\"form-group form-inline raw\">\r\n          <label for=\"city\" class=\"col-md-auto\">Ville </label>\r\n          <input type=\"text\" class=\"form-control col-6\" id=\"city\" name=\"city\" formControlName=\"city\">\r\n        </div>\r\n      </div>\r\n      <input class=\"btn btn-primary col-sm-offset-3\" type=\"submit\" value=\"S'inscrire\" id=\"btnInscription\"/>\r\n    </fieldset><!--[disabled]=\"verificationFormulaire()\"-->\r\n  </form>\r\n</div>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -201,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-form-inscription (userCreated)=\"createUser($event)\"></app-form-inscription>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-form-inscription (userCreated)=\"createUser($event)\"></app-form-inscription>\n");
 
 /***/ }),
 
@@ -240,7 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-from-lieu (placeCreated)=\"createPlace($event)\"></app-from-lieu>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-from-lieu (placeCreated)=\"createPlace($event)\"></app-from-lieu>\r\n");
 
 /***/ }),
 
@@ -253,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\r\n");
 
 /***/ }),
 
@@ -331,7 +331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\" id=\"header\">\r\n  <h2 class=\"display-3\">Cou ? </h2>\r\n  <p class=\"lead\">New student in Mons ? Find all you need here ! </p>\r\n  <hr class=\"my-4\">\r\n  <p>With an account, you can find all place you need and create a favorite's list place !<br>\r\n  You can make the difference with a rating/comments system ! Don't wait, join our community !</p>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\" id=\"header\">\n  <h2 class=\"display-3\">Cou ? </h2>\n  <p class=\"lead\">New student in Mons ? Find all you need here ! </p>\n  <hr class=\"my-4\">\n  <p>With an account, you can find all place you need and create a favorite's list place !<br>\n  You can make the difference with a rating/comments system ! Don't wait, join our community !</p>\n</div>\n");
 
 /***/ }),
 
@@ -344,7 +344,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n  <app-single-place [placeAndAddress]=\"placeAndAddress\"></app-single-place>\n</div>\n\n<div>\n  <app-list-review [listReviewAndUser]=\"listReviewAndUser\"></app-list-review>\n</div>\n\n<div>\n  <app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n  <app-single-place [placeAndAddress]=\"placeAndAddress\"></app-single-place>\r\n</div>\r\n\r\n<div>\r\n  <app-list-review [listReviewAndUser]=\"listReviewAndUser\"></app-list-review>\r\n</div>\r\n\r\n<div>\r\n  <app-form-review (reviewCreated)=\"createReview($event)\"></app-form-review>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -357,7 +357,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"formFilter\" class=\"offset-1\">\n  <div class=\"d-inline-block\">\n    <div class=\"form-group form-inline float-left\">\n      <label for=\"category\">Catégorie :</label>\n      <select name=\"category\" id=\"category\" class=\"form-control ml-3\" [value]=\"'ALL'\" formControlName=\"category\"\n              (change)=\"emitFilterCategory()\">\n        <option class=\"form-control\" *ngFor=\"let cat of TYPE_LIEUX\" value=\"{{cat}}\">{{cat}}</option>\n      </select>\n    </div>\n    <div class=\"form-group form-inline pl-5 float-right\">\n      <label>Trier :</label>\n      <select name=\"sort\" id=\"sort\" class=\"form-control ml-3\" [value]=\"TYPE_SORT[0].key\" formControlName=\"sort\" (change)=\"emitTypeSort()\">\n        <option class=\"form-control\" *ngFor=\"let sort of TYPE_SORT\" value=\"{{sort.key}}\">{{sort.name}}</option>\n      </select>\n    </div>\n  </div>\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup]=\"formFilter\" class=\"offset-1\">\r\n  <div class=\"d-inline-block\">\r\n    <div class=\"form-group form-inline float-left\">\r\n      <label for=\"category\">Catégorie :</label>\r\n      <select name=\"category\" id=\"category\" class=\"form-control ml-3\" [value]=\"'ALL'\" formControlName=\"category\"\r\n              (change)=\"emitFilterCategory()\">\r\n        <option class=\"form-control\" *ngFor=\"let cat of TYPE_LIEUX\" value=\"{{cat}}\">{{cat}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group form-inline pl-5 float-right\">\r\n      <label>Trier :</label>\r\n      <select name=\"sort\" id=\"sort\" class=\"form-control ml-3\" [value]=\"TYPE_SORT[0].key\" formControlName=\"sort\" (change)=\"emitTypeSort()\">\r\n        <option class=\"form-control\" *ngFor=\"let sort of TYPE_SORT\" value=\"{{sort.key}}\">{{sort.name}}</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n</form>\r\n");
 
 /***/ }),
 
@@ -2159,6 +2159,7 @@ let FormConnectionComponent = class FormConnectionComponent {
             remember: this.fb.control("")
         });
         this.userConnected = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.imageSignIn = "iconfinder_sign-in_298868.png";
     }
     ngOnInit() {
     }
@@ -2308,7 +2309,7 @@ SmartFormConnectionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"](
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".col-4{\r\n  font-size: 25px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9ybXMvZm9ybS1pbnNjcmlwdGlvbi9kdW1iLWZvcm0taW5zY3JpcHRpb24vZm9ybS1pbnNjcmlwdGlvbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0taW5zY3JpcHRpb24vZHVtYi1mb3JtLWluc2NyaXB0aW9uL2Zvcm0taW5zY3JpcHRpb24uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb2wtNHtcclxuICBmb250LXNpemU6IDI1cHg7XHJcbn1cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvcm1zL2Zvcm0taW5zY3JpcHRpb24vZHVtYi1mb3JtLWluc2NyaXB0aW9uL2Zvcm0taW5zY3JpcHRpb24uY29tcG9uZW50LmNzcyJ9 */");
 
 /***/ }),
 

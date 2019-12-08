@@ -1,49 +1,53 @@
 <div align="center">
-  <h1><b>Formulaire inscription</b></h1>
-  <form class="form-horizontal" [formGroup] = "formulaireInscription" (ngSubmit)="emitNewUser()" role="form">
-    <div class="form-group  form-inline raw">
-      <label for="emailInscription" class="col-4">Email</label>
-      <input type="text" class=" form-control col-6"  formControlName="emailInscription" id="emailInscription"/>
-    </div>
-    <div class="form-group form-inline raw">
-      <label for="nom" class="col-4">Nom</label>
-      <input class="form-control" type ="text" class="form-control col-6" formControlName="nom" id="nom"/>
-    </div>
-    <div class="form-group form-inline raw">
-      <label for="prenom" class="col-4">Prenom</label>
-      <input class="form-control" type ="text"  class="form-control col-6" formControlName="prenom" id="prenom"/>
-    </div>
-    <div class="form-group form-inline raw">
-      <label for="pseudo" class="col-4">Pseudo</label>
-      <input class="form-control" type ="text" class="form-control col-6"  formControlName="pseudo" id="pseudo"/>
-    </div>
-    <div class="form-group form-inline raw">
-      <label for="motDePasseInscription" class="col-4">Mot de passe</label>
-      <input class="form-control" type ="password" class="form-control col-6"  formControlName="motDePasseInscription" id="motDePasseInscription"/>
-    </div>
-    <div class="form-group  form-inline raw">
-      <label for="verifMotDePasse" class="col-4">Vérification mot de passe</label>
-      <input class="form-control" type ="password"  class="form-control col-6"  formControlName="verifMotDePasse" id="verifMotDePasse"/>
-       <!-- <span *ngIf="!verificationMotDePasse()">Erreur, mauvais mot de passe</span> -->
-    </div>
-    <div formGroupName="address">
-      <div class="form-group form-inline raw">
-        <label for="straat" class="col-4 ">Rue </label>
-        <input type="text" class="form-control col-6"  id="straat" name="straat" formControlName="straat">
+  <legend>Formulaire d'inscription</legend>
+  <form class="form-horizontal "  [formGroup] = "formulaireInscription" (ngSubmit)="emitNewUser()" role="form">
+    <fieldset class="align-middle">
+      <div class="form-group form-inline raw" >
+          <label for="emailInscription" class="col-md-auto">Email </label>
+          <input type="text" class=" form-control col-6"  formControlName="emailInscription" id="emailInscription" aria-describedby="emailHelp" />
       </div>
       <div class="form-group form-inline raw">
-        <label for="num" class="col-4">Numéro </label>
-        <input type="text" class="form-control col-6" id="num" name="num" formControlName="num">
+        <label for="nom" class="col-md-auto">Nom</label>
+        <input class="form-control" type ="text" class="form-control col-6" formControlName="nom" id="nom"/>
       </div>
       <div class="form-group form-inline raw">
-        <label for="postalCode" class="col-4 ">Code Postal </label>
-        <input type="number" class="form-control col-6" id="postalCode" name="postalCode" formControlName="postalCode">
+        <label for="prenom" class="col-md-auto">Prenom</label>
+        <input class="form-control" type ="text"  class="form-control col-6" formControlName="prenom" id="prenom"/>
       </div>
       <div class="form-group form-inline raw">
-        <label for="city" class="col-4 ">Ville </label>
-        <input type="text" class="form-control col-6" id="city" name="city" formControlName="city">
+        <label for="pseudo" class="col-md-auto">Pseudo</label>
+        <input class="form-control" type ="text" class="form-control col-6"  formControlName="pseudo" id="pseudo"/>
       </div>
-    </div>
-    <input class="btn btn-primary col-sm-offset-3" type="submit" value="S'inscrire" id="btnInscription"/>  <!--[disabled]="verificationFormulaire()"-->
+      <div class="form-group form-inline raw">
+        <label for="motDePasseInscription" class="col-md-auto">Mot de passe</label>
+        <input class="form-control" type ="password" class="form-control col-6"  formControlName="motDePasseInscription" id="motDePasseInscription"/>
+      </div>
+      <div class="form-group  form-inline raw">
+        <label for="verifMotDePasse" class="col-md-auto">Vérification mot de passe</label>
+        <input class="form-control" type ="password"  class="form-control col-6"  formControlName="verifMotDePasse" id="verifMotDePasse"/>
+         <!-- <span *ngIf="!verificationMotDePasse()">Erreur, mauvais mot de passe</span> -->
+      </div>
+      <div formGroupName="address">
+        <div class="form-group form-inline raw">
+          <label for="straat" class="col-md-auto">Rue </label>
+          <input type="text" class="form-control col-6"  id="straat" name="straat" formControlName="straat">
+        </div>
+        <div class="form-group form-inline raw">
+          <label for="num" class="col-md-auto">Numéro </label>
+          <input type="text" class="form-control col-6" id="num" name="num" formControlName="num">
+        </div>
+        <div class="form-group form-inline raw">
+          <label for="postalCode" class="col-md-auto">Code Postal </label>
+          <input type="number" class="form-control col-6" id="postalCode" name="postalCode" formControlName="postalCode">
+        </div>
+        <div class="form-group form-inline raw">
+          <label for="city" class="col-md-auto">Ville </label>
+          <input type="text" class="form-control col-6" id="city" name="city" formControlName="city">
+        </div>
+      </div>
+      <input class="btn btn-primary col-sm-offset-3" type="submit" value="S'inscrire" id="btnInscription"/>
+    </fieldset><!--[disabled]="verificationFormulaire()"-->
   </form>
 </div>
+
+

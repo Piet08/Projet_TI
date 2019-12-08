@@ -10,6 +10,7 @@
     </div>
 
   </div>
+
 </header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="navbar-header">
@@ -30,14 +31,19 @@
       </li>
       <li class="nav-item text-center" *ngIf="!currentUser">
         <a routerLink="register"  class="nav-link">Inscription</a>
-      </li>
 
       <li class="nav-item text-center">
         <a routerLink="address" class="nav-link">Cartes</a>
       </li>
       <li class="nav-item text-center" *ngIf="currentUser" >
         <a id="LogOut" (click)="logOut()" class="nav-link">Déconnexion</a>
-      </li>
+      <!--<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" [ngStyle]="isLogIn()">Connecte toi</a>
+        <div class="dropdown-menu">
+          <a id="LogIn" routerLink="login" class="dropdown-item">Connexion</a>
+          <a id="LogOut" (click)="logOut()" class="dropdown-item">Déconnexion</a>
+        </div>
+      </li>!-->
       <div *ngIf="currentUser && currentUser.type == 1" class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
         <button class="btn btn-primary" ngbDropdownToggle>Administration</button>
         <div class="dropdown-menu " ngbDropdownMenu>
@@ -48,6 +54,7 @@
     </ul>
   </div>
 </nav>
+
 
 <!--Permet l'affichage des component-->
 <div class="container-fluid" id="displayComp">
