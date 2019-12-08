@@ -15,6 +15,7 @@ export class ListPlaceComponent implements OnInit,OnDestroy{
   private subscriptions:Subscription[] = [];
   categoryFilter: EnumTypeLieu = EnumTypeLieu.ALL;
   sortFilter: number = 0;
+  searchFilter: string = '';
 
   constructor(public lieuService:PlaceService, private router:Router) { }
 

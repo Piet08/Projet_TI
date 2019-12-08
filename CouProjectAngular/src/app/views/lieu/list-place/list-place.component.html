@@ -1,10 +1,10 @@
-<div class="container pt-4">
-  <app-filter-place (category)="categoryFilter = $event" (sort)="sortFilter = $event"></app-filter-place>
+<div class="container">
+  <app-filter-place (category)="categoryFilter = $event" (sort)="sortFilter = $event" (search)="searchFilter = $event"></app-filter-place>
 </div>
 
 <div class="container container-fluid">
   <ul style="list-style: none;">
-    <li *ngFor="let placeAndAddress of placesAndAddresses|type:categoryFilter|rating:sortFilter">
+    <li *ngFor="let placeAndAddress of placesAndAddresses|search:searchFilter|type:categoryFilter|rating:sortFilter">
       <app-single-place [placeAndAddress]="placeAndAddress" (click)="navigateToDetailLieu(placeAndAddress)"></app-single-place>
     </li>
   </ul>

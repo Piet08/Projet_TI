@@ -41,6 +41,7 @@ import { DetailUserComponent } from './User/detail-user/detail-user.component';
 import { SingleUserComponent } from './User/single-user/single-user.component';
 import { ListUserComponent } from './User/list-user/list-user.component';
 import { DetailReviewComponent } from './views/comment/detail-review/detail-review.component';
+import { SearchPipe } from './views/lieu/filter-place/pipe/search.pipe';
 
 
 // path = le nom du controller de l'api en fonction de ce que l'on veut faire
@@ -93,7 +94,8 @@ const routes: Routes = [
     DetailUserComponent,
     SingleUserComponent,
     ListUserComponent,
-    DetailReviewComponent
+    DetailReviewComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

@@ -40,9 +40,13 @@ export class FilterPlaceComponent implements OnInit {
   @Output()
   sort:EventEmitter<number> = new EventEmitter<number>();
 
+  @Output()
+  search:EventEmitter<string> = new EventEmitter<string>();
+
   formFilter:FormGroup = this.fb.group({
     category : this.fb.control(''),
-    sort : this.fb.control('')
+    sort : this.fb.control(''),
+    search:this.fb.control(''),
   });
 
 
@@ -58,5 +62,9 @@ export class FilterPlaceComponent implements OnInit {
 
   emitTypeSort() {
     this.sort.next(this.formFilter.get('sort').value);
+  }
+
+  emitSearch() {
+    this.search.next(this.formFilter.get('search').value);
   }
 }
