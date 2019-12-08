@@ -95,7 +95,7 @@ const routes: Routes = [
     FilterMarkersComponent,
     RatingMapPipe,
     TypeMapPipe,
-    RangeMapPipe
+    RangeMapPipe,
 
     AdminHomeComponent,
     GestionPlaceComponent,

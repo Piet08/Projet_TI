@@ -13,7 +13,6 @@ export class RangeMapPipe implements PipeTransform {
   transform(markers: marker[], filter: EnumRange, positionUser: Location): marker[] {
     if (!filter) return markers;
     //positionUser = this.defaultLocal;
-    console.log(positionUser)
 
     for (let i = 0; i < markers.length; i++) {
       markers[i].distanceUser = this.rayon * Math.acos(Math.sin((markers[i].lat * this.pi) / 180) * Math.sin((positionUser.lat * this.pi) / 180) + Math.cos((markers[i].lat * this.pi) / 180) * Math.cos((positionUser.lat * this.pi) / 180) * Math.cos((markers[i].lng* this.pi/180) - (positionUser.lng* this.pi/180)));

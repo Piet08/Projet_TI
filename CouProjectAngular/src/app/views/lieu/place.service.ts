@@ -42,10 +42,6 @@ export class PlaceService implements OnDestroy{
     return this.http.get<PlaceAndAddressDto[]>(URL_API+"/addresses");
   }
 
-
-  postPlaceAndAddress(place : PlaceAndAddressDto): Observable<PlaceAndAddressDto>{
-    return this.http.post<PlaceAndAddressDto>(URL_API + "/forms",place);
-
   post(lieu : PlaceDto): Observable<PlaceDto>{
     return this.http.post<PlaceDto>(URL_API, lieu);
   }
