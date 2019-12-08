@@ -1,7 +1,9 @@
-<ul style="list-style: none;" *ngFor="let review of listReviewAndUser">
-  <li>
-    <app-detail-comment [reviewAndUser]="review" ></app-detail-comment>
-  </li>
-</ul>
+<div class="container">
+  <ul style="list-style: none;">
+    <li *ngFor="let review of listReviewAndUser">
+      <app-single-review [reviewAndUser]="review"></app-single-review>
+    </li>
+  </ul>
+</div>
 
 

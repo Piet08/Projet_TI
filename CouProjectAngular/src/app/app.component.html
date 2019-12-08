@@ -1,6 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<header>
+  <div class="jumbotron" id="head">
+    <h1 class="title  text-center">COU WEBSITE</h1>
+    <span *ngIf="currentUser" ><h4 class="text-center" id="user">Bonjour {{currentUser.surname}}<hr/></h4></span>
+
+  </div>
+</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="navbar-header">
-    <a class="navbar-brand">Menu</a>
   </div>
   <div class="container-fluid navbar-collapse" id="AngularNav" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav container-fluid" >
@@ -8,30 +14,44 @@
         <a routerLink="home" class="nav-link">Accueil</a>
       </li>
       <li class="nav-item text-center">
-        <a id="LogIn" routerLink="User/authenticate" class="nav-link" [ngStyle]="isLogIn()">Connexion</a>
-      </li>
-      <li class="nav-item text-center">
-        <a routerLink="User" class="nav-link">Inscription</a>
-      </li>
-      <li class="nav-item text-center">
-        <a routerLink="Address" class="nav-link">Cartes</a>
+        <a routerLink="places" class="nav-link">Lieux</a>
       </li>
       <li class="nav-item text-center">
         <a routerLink="forms/place" class="nav-link">Ajout lieu</a>
       </li>
+      <!--<li class="nav-item text-center" *ngIf="!currentUser" >
+        <a routerLink="login" class="nav-link" [ngStyle]="isLogIn()">Connexion</a>
+      </li>-->
+      <li class="nav-item text-center" *ngIf="!currentUser">
+        <a routerLink="register"  class="nav-link">Inscription</a>
+
       <li class="nav-item text-center">
-        <a routerLink="lieux" class="nav-link">Lieux</a>
+        <a routerLink="address" class="nav-link">Cartes</a>
       </li>
-      <li class="nav-item text-center">
-        <a id="LogOut" (click)="logOut()" class="nav-link">Déconnexion</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Connecte toi</a>
+        <div class="dropdown-menu">
+          <a id="LogIn" routerLink="login" class="dropdown-item">Connexion</a>
+          <a id="LogOut" (click)="logOut()" class="dropdown-item">Déconnexion</a>
+        </div>
       </li>
+      <div *ngIf="currentUser && currentUser.type == 1" class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+        <button class="btn btn-primary" ngbDropdownToggle>Administration</button>
+        <div class="dropdown-menu " ngbDropdownMenu>
+          <button ngbDropdownItem routerLink="admin/places">Gestion des lieux</button>
+          <button ngbDropdownItem routerLink="users">Gestion des utilisateurs</button>
+        </div>
+      </div>
     </ul>
   </div>
 </nav>
 
+
 <!--Permet l'affichage des component-->
 <div class="container-fluid" id="displayComp">
-      <router-outlet id="component">
+        <router-outlet id="currentComp">
 
-      </router-outlet>
+        </router-outlet>
 </div>
+
+

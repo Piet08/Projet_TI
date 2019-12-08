@@ -15,7 +15,6 @@ namespace Cou_project.Models
         public string Email { get; set; }
         public string Hashpwd { get; set; }
         public int Idadr { get; set; }
-        
         public string Token { get; set; }
 
         public User()

@@ -16,7 +16,7 @@ export interface ReviewAndUserDto {
   user : UserDto;
 }
 
-export interface ReviewWithPlaceAndAddress{
+export interface ReviewWithPlaceAndAddressDto{
   review : ReviewInsertDto;
   placeAndAddress : PlaceAndAddressDto;
 }

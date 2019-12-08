@@ -3,24 +3,16 @@ import {authenticateModelDto} from "./authenticateModel-dto";
 export declare type authenticateModelList = authenticateModel[];
 
 export class authenticateModel {
-  get token(): string {
-    return this._token;
-  }
-
-  set token(value: string) {
-    this._token = value;
-  }
 
   private _username : string;
   private _password : string;
-  private _token: string;
+  private _remember :boolean;
 
-  constructor(username : string='', password: string='', token: string='') {
+  constructor(username : string='', password: string='',remember:boolean = false) {
     this._username = username;
     this._password = password;
-    this._token = token;
+    this._remember = remember;
   }
-
 
   get password(): string {
     return this._password;
@@ -36,11 +28,19 @@ export class authenticateModel {
   set username(value: string) {
     this._username = value;
   }
-  //Object provenant de la db donc type Object !! -> Function to set Type (Utilisateur)
+
+  get remember(): boolean {
+    return this._remember;
+  }
+
+  set remember(value: boolean) {
+    this._remember = value;
+  }
+
+//Object provenant de la db donc type Object !! -> Function to set Type (Utilisateur)
   fromAuthenticateModelDto(dto : authenticateModelDto): authenticateModel{
     Object.assign(this._password, dto);
     Object.assign(this._username, dto);
-    this._token = dto.token;
     return this;
   }
 
@@ -50,7 +50,7 @@ export class authenticateModel {
     return {
       username : this._username,
       password : this._password,
-      token : this._token
+      remember : this._remember,
     }
   }
 

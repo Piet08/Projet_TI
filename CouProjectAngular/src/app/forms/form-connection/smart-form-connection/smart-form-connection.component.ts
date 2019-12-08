@@ -5,6 +5,9 @@ import {authenticateModel, authenticateModelList} from "../../../User/authentica
 import {UserService} from "../../../User/user.service";
 import {User} from "../../../User/user";
 import {authenticateModelDto} from "../../../User/authenticateModel-dto";
+import {UserDto} from '../../../User/user-dto';
+import {AuthenticateService} from '../../../User/authenticate.service';
+import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-smart-form-connection',
@@ -14,10 +17,9 @@ import {authenticateModelDto} from "../../../User/authenticateModel-dto";
 export class SmartFormConnectionComponent implements OnInit, OnDestroy {
 
   private subscriptions: Subscription[] = [];
-  private _usersAuthenticate: authenticateModelList = [];
+  private _currentUser:UserDto;
 
-
-  constructor(public userService : UserService, private http: HttpClient) { }
+  constructor(public userService : UserService, public authService:AuthenticateService) { }
 
   ngOnInit() {
   }
@@ -31,18 +33,37 @@ export class SmartFormConnectionComponent implements OnInit, OnDestroy {
     }
   }
 
-
-
-  createUserConnected($event: authenticateModel) {
-    const sub = this.userService.postAuth($event.toAuthenticateModelDto()).subscribe(
-      authenticateModelDTO =>{
-        this._usersAuthenticate.push(new authenticateModel().fromAuthenticateModelDto(authenticateModelDTO));
-        this._usersAuthenticate.forEach(use => localStorage.setItem("id_token", use.token));
-      });
-    this.subscriptions.push(sub);
-
+  get currentUser(): UserDto {
+    return this._currentUser;
   }
 
+  set currentUser(value: UserDto) {
+    this._currentUser = value;
+  }
+  onSubmit($event:authenticateModel){
+    this.authService.login($event.username,$event.password,$event.remember)
+      .pipe(first())
+      .subscribe();
+  }
+
+  createUserConnected($event: authenticateModel) {
+    console.log(JSON.stringify($event));
+    const sub = this.userService.postAuth($event.toAuthenticateModelDto()).subscribe(
+      authenticateModelDTO =>{
+        this._currentUser = new User().fromUtilisateurDto(authenticateModelDTO);
+        localStorage.setItem("id_token",authenticateModelDTO.token);
+        localStorage.setItem("name",this._currentUser.name);
+        console.log(JSON.stringify(this._currentUser));
+        this.isAdmin(this._currentUser);
+      });
+    this.subscriptions.push(sub);
+  }
+
+  isAdmin(user : UserDto){
+    if(user.type === "1"){
+      alert("Bienvenue administrateur");
+    }
+  }
 
 
 

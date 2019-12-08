@@ -3,35 +3,45 @@ using System.Collections.Generic;
 using Cou_project.DAO;
 using Cou_project.Models;
 using Cou_project.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cou_project.Controllers
 {
-
     [ApiController]
     [Route("/api/[controller]")]
     public class PlaceController : ControllerBase
     {
         private PlaceService _placeService = new PlaceService();
-
+        
         [HttpGet]
         public ActionResult<IEnumerable<Place>> Query()
         {
             return Ok(PlaceDAO.Query());
         }
-
+        
         [HttpGet("addresses")]
         public ActionResult<IEnumerable<PlaceAndAddress>> GetPlaceAndAddresses()
         {
             return Ok(_placeService.GetPlacesAndAddresses());
         }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult<Place> Post([FromBody] Place place)
+        {
+            return Ok(PlaceDAO.Create(place));
+        }
         
+
         [HttpGet("map")]
         public ActionResult<IEnumerable<Place>> QueryMap()
         {
             return Ok(_placeService.GetPlacesAndAddresses());
         }
         
+
+        [Authorize]
         [HttpPost("forms")]
         public ActionResult<Place> Post([FromBody] PlaceAndAddress place)
         {
@@ -41,7 +51,6 @@ namespace Cou_project.Controllers
         [HttpGet("address/{id}")]
         public ActionResult<PlaceAndAddress> GetPlaceAndAddress(int id)
         {
-            Console.WriteLine("test");
             PlaceAndAddress placeAndAddress = _placeService.GetPlaceAndAddress(id);  
             return placeAndAddress != null ? (ActionResult<PlaceAndAddress>) Ok(placeAndAddress) : NotFound("This place does not exists !");
         }
@@ -51,6 +60,12 @@ namespace Cou_project.Controllers
         {
             Place place = PlaceDAO.Get(id);
             return place != null ? (ActionResult<Place>) Ok(place) : NotFound("This user does not exists!");
+        }
+
+        [HttpDelete("address/reviews/{id}")]
+        public ActionResult DeleteWithCascade(int id)
+        {
+            return Ok( _placeService.DeleteWithCascade(id));
         }
         
         [HttpDelete("{id}")]

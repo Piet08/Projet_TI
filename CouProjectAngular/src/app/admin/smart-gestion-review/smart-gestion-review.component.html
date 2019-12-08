@@ -1,0 +1,9 @@
+<div class="container">
+  <app-single-place [placeAndAddress]="placeAndAddress" class="col-8"></app-single-place>
+
+  <ul style="list-style: none;" *ngFor="let review of listReviewAndUser" class="col-12">
+    <li>
+      <app-single-gestion-review [reviewAndUser]="review" (reviewDeleted)="deleteReview($event)"></app-single-gestion-review>
+    </li>
+  </ul>
+</div>

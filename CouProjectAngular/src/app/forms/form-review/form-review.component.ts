@@ -15,8 +15,8 @@ export class FormReviewComponent implements OnInit {
   reviewCreated: EventEmitter<Review> = new EventEmitter<Review>();
 
   formReview:FormGroup = this.fb.group({
-    comment : this.fb.control(''),
-    star : this.fb.control(null,Validators.required)
+    comment : this.fb.control('',Validators.required),
+    star : this.fb.control(null)
   });
 
   constructor(public fb:FormBuilder) { }
@@ -42,13 +42,12 @@ export class FormReviewComponent implements OnInit {
     const review = new Review();
     review.star = this._rate;
     review.comment = this.formReview.get("comment").value;
-    review.idPlace = 5;
-    review.idUser = 2;
     return review;
   }
 
   emitNewReview() {
     this.reviewCreated.next(this.buildReview());
+    this.formReview.reset();
   }
 
 }

@@ -2,6 +2,7 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {PlaceService} from '../../views/lieu/place.service';
 import {Subscription} from 'rxjs';
 import {PlaceAndAddressDto} from '../../views/lieu/place-dto';
+import {AuthenticateService} from '../../User/authenticate.service';
 
 @Component({
   selector: 'app-smart-form-lieu',
@@ -10,7 +11,7 @@ import {PlaceAndAddressDto} from '../../views/lieu/place-dto';
 })
 export class SmartFormPlaceComponent implements OnInit,OnDestroy{
 
-  constructor(public lieuService:PlaceService) { }
+  constructor(public lieuService:PlaceService,public authService:AuthenticateService) { }
   private subscriptions:Subscription[] = [];
 
   ngOnInit() {
@@ -25,6 +26,10 @@ export class SmartFormPlaceComponent implements OnInit,OnDestroy{
   }
 
   createPlace($event: PlaceAndAddressDto) {
+
+
+    console.log(JSON.stringify($event));
+
     this.subscriptions.push(this.lieuService.postPlaceAndAddress($event).subscribe());
   }
 }

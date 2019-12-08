@@ -8,6 +8,7 @@ import {ReviewService} from '../../comment/review.service';
 import {ReviewAndUserDto} from '../../comment/review-insert-dto';
 import {User} from '../../../User/user';
 import {PlaceAndAddressDto} from '../place-dto';
+import {AuthenticateService} from '../../../User/authenticate.service';
 
 @Component({
   selector: 'app-detai-lieu',
@@ -20,13 +21,14 @@ export class DetailPlaceComponent implements OnInit,OnDestroy{
   private _id:number;
   private subscriptions:Subscription[] = [];
   private _listReviewAndUser: ReviewAndUserDto[];
-
-  constructor(private route:ActivatedRoute, public lieuService:PlaceService,public reviewService:ReviewService) { }
+  currentUser:User;
+  constructor(private route:ActivatedRoute, public lieuService:PlaceService,public reviewService:ReviewService,public authService:AuthenticateService) { }
 
   ngOnInit() {
     this._id = parseInt(this.route.snapshot.params['id'],10);
     this.loadPlace(this._id);
     this.loadReviewOfPlace(this._id);
+    this.authService.currentUser.subscribe(x => this.currentUser = x);
   }
 
   ngOnDestroy(): void {
@@ -77,11 +79,12 @@ export class DetailPlaceComponent implements OnInit,OnDestroy{
 
   createReview($event: Review) {
     $event.idPlace = this._id;
+    $event.idUser = this.currentUser.id;
     this.subscriptions.push(this.reviewService.post($event.toAvisDto()).subscribe(
-      // review => this.listReviewAndUser.push({
-      //   review : review,
-      //   user : null
-      // })
+      review => this.listReviewAndUser.push({
+        review : review,
+        user : this.currentUser
+      })
     ));
   }
 

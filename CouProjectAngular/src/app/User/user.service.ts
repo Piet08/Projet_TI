@@ -7,9 +7,9 @@ import {FavoritesDto} from '../Favorites/favorites-dto';
 import {authenticateModelDto} from "./authenticateModel-dto";
 import {PlaceAndAddressDto} from "../views/lieu/place-dto";
 
-const URL_API_UTIL:string = "/api/User";
-const URL_API_AUTH:string = "/api/User/authenticate";
-const URL_API_FAV:string = "/api/Favorites";
+const URL_API_UTIL:string = "/api/user";
+const URL_API_AUTH:string = "/api/user/authenticate";
+const URL_API_FAV:string = "/api/favorites";
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,8 @@ export class UserService {
 
 
   //AUTHENTICATE
-  postAuth(model: authenticateModelDto): Observable<authenticateModelDto>{
-    return this.http.post<authenticateModelDto>(URL_API_AUTH, model);
+  postAuth(model: authenticateModelDto): Observable<UserDto>{
+    return this.http.post<UserDto>(URL_API_AUTH, model);
   }
   /*getAuth(model : authenticateModelDto): Observable<authenticateModelDto>{
     return this.http.get<authenticateModelDto>(URL_API_AUTH);
@@ -35,6 +35,14 @@ export class UserService {
 
   get(id:number): Observable<UserDto>{
     return this.http.get<UserDto>(URL_API_UTIL+'/'+id);
+  }
+
+  getUserWithAddress(id:number):Observable<UserAndAddressDto>{
+    return this.http.get<UserAndAddressDto>(URL_API_UTIL+'/address/'+id);
+  }
+
+  getUsersWithAddress():Observable<UserAndAddressDto[]>{
+    return this.http.get<UserAndAddressDto[]>(URL_API_UTIL+'/address/all');
   }
 
   post(user : UserAndAddressDto): Observable<UserAndAddressDto>{

@@ -1,5 +1,129 @@
+<div class="text-center pt-5">
+  <form class="form-signin" [formGroup]="formLieu" (ngSubmit)="emitNewLieu()">
+    <!--    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72"-->
+    <!--         height="72">-->
 
-<div class="col-12" algin="center">
+    <b><h1 class="h3 mb-3 font-weight-normal ">Ajout d'un lieu</h1></b>
+    <hr/>
+    <div class="form-group">
+      <label for="name" class="sr-only">Nom</label>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><b>Nom</b></span>
+          </div>
+          <input type="text" id="name" class="form-control" aria-label="name" formControlName="name" placeholder="Entrez le nom du lieu" required
+                 autofocus>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="type" class="sr-only">Type</label>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><b>Type</b></span>
+          </div>
+          <select id="type" name="type" formControlName="type" class="form-control">
+            <option class="form-control" *ngFor="let type of TYPE_LIEUX" value="{{type}}">{{type}}</option>
+          </select>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description" class="sr-only">Description</label>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><b>Description</b></span>
+          </div>
+          <textarea rows="5" cols="30" class="form-control" id="description" name="description" formControlName="description">
+
+          </textarea>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div formGroupName="address" >
+      <b><h1 class="h4 mb-3 font-weight-normal text-left">Adresse du lieu</h1></b>
+      <hr/>
+      <div class="address">
+        <div class="form-group-address">
+          <label for="straat" class="sr-only">Rue</label>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><b>Rue</b></span>
+              </div>
+              <input type="straat" id="straat" class="form-control" formControlName="straat" placeholder="Entrez la rue du lieu" required>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group-address">
+          <label for="num" class="sr-only">Number</label>
+          <div class="form-group">
+            <div class="input-group">
+
+              <div class="input-group-prepend">
+                <span class="input-group-text"><b>Numéro</b></span>
+              </div>
+              <input type="num" id="num" class="form-control" formControlName="num" placeholder="Numéro de l'adresse du lieu" required>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group-address">
+          <label for="postalCode" class="sr-only">Postal Code</label>
+          <div class="form-group">
+            <div class="input-group">
+
+              <div class="input-group-prepend">
+                <span class="input-group-text"><b>Code postal</b></span>
+              </div>
+              <input type="number"  id="postalCode" class="form-control" formControlName="postalCode" placeholder="Entrez le code postal" required>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group-address">
+          <label for="city" class="sr-only">City</label>
+          <div class="form-group">
+            <div class="input-group">
+
+              <div class="input-group-prepend">
+                <span class="input-group-text"><b>Ville</b></span>
+              </div>
+              <input type="city" id="city" class="form-control" formControlName="city" placeholder="Entrez la ville" required>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div>
+      <button class="btn btn-lg btn-info btn-block" type="submit">Ajouter le lieu</button>
+    </div>
+
+
+  </form>
+</div>
+
+
+
+
+
+
+<!--<div class="col-12" algin="center">
   <h1 align="center"><b>Formulaire d'ajout de lieu</b></h1>
   <form class="" [formGroup]="formLieu" (ngSubmit)="emitNewLieu()">
     <div class="form-group form-inline raw">
@@ -26,7 +150,10 @@
       </div>
       <div class="form-group form-inline raw">
         <label for="num" class="col-4 ">Numéro :</label>
+
         <input type="text" class="form-control col-6" id="num" name="num" formControlName="num">
+
+        <input class="form-control col-6" id="num" name="num" formControlName="num">
       </div>
       <div class="form-group form-inline raw">
         <label for="postalCode" class="col-4 ">Code Postal :</label>
@@ -38,7 +165,7 @@
       </div>
     </div>
     <div class="text-center" size="50px">
-      <input type="submit" class="btn btn-primary btn-success" >
+      <input type="submit" [disabled]="!formLieu.valid" class="btn btn-primary btn-success" >
     </div>
   </form>
-</div>
+</div>-->

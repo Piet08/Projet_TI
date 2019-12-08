@@ -5,7 +5,7 @@
 <div class="container container-fluid">
   <ul style="list-style: none;">
     <li *ngFor="let placeAndAddress of placesAndAddresses|type:categoryFilter|rating:sortFilter">
-      <app-single-place [placeAndAddress]="placeAndAddress"></app-single-place>
+      <app-single-place [placeAndAddress]="placeAndAddress" (click)="navigateToDetailLieu(placeAndAddress)"></app-single-place>
     </li>
   </ul>
 

@@ -7,26 +7,33 @@
 }
 .nav-link{
   font-size: 18px;
+  font-family: Malgun Gothic;
 }
 .contact{
   height: 100px;
   background-color: dimgray;
   font-size: 35px;
 }
-#displayComp{
-  background-color: lavender;
-  height : 80%;
+.textFooter{
+  font-size: 15px;
+  color : white;
 }
-#footer {
-  height : 20px;
-  background-color: dimgray;
-  text-align: center;
-  vertical-align: middle;
+#displayComp{
+  background-color: whitesmoke;
+  height: 100%;
+  margin: 0em;
+  /*overflow-y: auto;*/
 }
 
-#LogOut{
-  border-style: solid;
-  border-radius: 20px;
-  border-right-width: 10px;
-  border-left-width: 10px;
+.title{
+  font-family: Malgun Gothic;
+  font-size: 50px;
+}
+#user{
+  font-style: italic;
+  font-family: Malgun Gothic;
+}
+
+#head{
+  height : 90px;
 }

@@ -1,0 +1,13 @@
+<div class="text-center container">
+  <div class="pt-5">
+    <h1>Détail {{user.user.pseudo}}</h1>
+    <app-single-user [user]="user"></app-single-user>
+    <hr/>
+  </div>
+
+  <ul class="list-unstyled">
+    <li *ngFor="let review of reviews" class="mb-3">
+      <app-detail-review [review]="review"></app-detail-review>
+    </li>
+  </ul>
+</div>

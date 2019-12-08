@@ -1,0 +1,21 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <div class="text-left">
+      <b><span>
+        Pseudo : <a (click)="navigateToDetailUser()" class="text-info">{{reviewAndUser.user.pseudo}}</a>
+      </span></b>
+      <br/>
+      <span>
+        {{reviewAndUser.user.name}} {{reviewAndUser.user.surname}}
+      </span>
+      <span class="float-right">{{reviewAndUser.review.star}}/10</span>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p class="text-wrap">{{reviewAndUser.review.comment}}</p>
+      <footer class="blockquote-footer"> {{reviewAndUser.review.date}} </footer>
+    </blockquote>
+  </div>
+</div>

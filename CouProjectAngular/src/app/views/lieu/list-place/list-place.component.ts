@@ -20,6 +20,7 @@ export class ListPlaceComponent implements OnInit,OnDestroy{
 
   ngOnInit() {
     this.loadPlace();
+    // this.lieuService.placeAndAddresses.subscribe(places => this._placesAndAddresses = places);
   }
 
   ngOnDestroy(): void {
@@ -40,10 +41,14 @@ export class ListPlaceComponent implements OnInit,OnDestroy{
 
   private loadPlace() {
     const sub = this.lieuService.getPlacesAndAddressees().subscribe(
-      places => {this._placesAndAddresses = places;console.log(JSON.stringify(places))}
+      places => {this._placesAndAddresses = places}
     );
 
     this.subscriptions.push(sub);
+  }
+
+  navigateToDetailLieu(placeAndAddress:PlaceAndAddressDto) {
+    this.router.navigate(['place/'+placeAndAddress.place.id]);
   }
 
   navigateToFormAddLieu() {

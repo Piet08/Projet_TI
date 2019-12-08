@@ -1,16 +1,45 @@
-<div align="center">
-  <h1><b>Formulaire Connexion</b></h1>
-  <form class="form-horizontal" [formGroup]="formulaireConnexion" (ngSubmit)="emitNewUserConnected()" role="form">
-    <div class="form-group form-inline raw">
-      <label for="username" class="col-4">Login</label>
-      <input class=" form-control col-6" type="text" formControlName="username" id="username"/>
+<div class="text-center pt-5">
+  <form class="form-signin" [formGroup]="formulaireConnexion" (ngSubmit)="emitNewUserConnected()">
+<!--    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72"-->
+<!--         height="72">-->
+
+    <h1 class="h3 mb-3 font-weight-normal "><b>Connexion</b></h1>
+    <hr/>
+
+    <div class="form-group">
+      <label for="username" class="sr-only">Pseudo</label>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="fa fa-user input-group-text pt-3"></span>
+          </div>
+          <input type="text" id="username" class="form-control" aria-label="username" formControlName="username" placeholder="Login" required
+                 autofocus>
+        </div>
+      </div>
     </div>
 
-      <div class="form-group form-inline raw">
-        <label for="motDePasseConnexion" class="col-4">Mot de passe</label>
-        <input class=" form-control col-6" type = "password" formControlName="motDePasseConnexion" id="motDePasseConnexion"/>
-      </div>
+    <div class="form-group">
+     <label for="password" class="sr-only">Mot de passe</label>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="fa fa-lock input-group-text pt-3"></span>
+          </div>
+          <input type="password" id="password" class="form-control" formControlName="password" placeholder="Password" required>
 
-    <input type="submit" value="Se connecter" class="btn btn-primary col-sm-offset-3" [disabled]="verificationFormulaire()"/>
-  </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3 form-inline">
+      <label for="remember">Se souvenir de moi</label>
+      <input type="checkbox" id="remember" formControlName="remember" value="false" class="checkbox form-control ml-2" >
+    </div>
+    <button class="btn btn-lg btn-info btn-block" type="submit">Connexion</button>
+    <div>
+      <span class="mt-2">Vous n'êtes pas encore inscrit ? <a class="text-info" (click)="navigateToRegister()">Inscrivez-vous !</a></span>
+    </div>
+
+	</form>
 </div>

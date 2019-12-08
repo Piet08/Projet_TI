@@ -13,7 +13,7 @@ export class SinglePlaceComponent implements OnInit {
   //Initialisation a null
   private _placeAndAddress:PlaceAndAddressDto={place:new Place().toLieuDto(),address:new Address().toAdresseDto(),avgRate:0};
 
-  constructor( private router:Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -27,7 +27,5 @@ export class SinglePlaceComponent implements OnInit {
       this._placeAndAddress = value;
   }
 
-  navigateToDetailLieu() {
-    this.router.navigate(['lieux/'+this.placeAndAddress.place.id]);
-  }
+
 }

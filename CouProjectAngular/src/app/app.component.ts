@@ -1,6 +1,12 @@
 import {ChangeDetectorRef, Component, Input, OnInit, ViewChild} from '@angular/core';
 import {} from 'googlemaps';
 import {style} from "@angular/animations";
+import {UserAndAddressDto} from './User/user-dto';
+import {UserService} from './User/user.service';
+import {AuthenticateService} from './User/authenticate.service';
+import {Router} from '@angular/router';
+import {User} from './User/user';
+import {PlaceService} from './views/lieu/place.service';
 
 @Component({
   selector: 'app-root',
@@ -9,27 +15,34 @@ import {style} from "@angular/animations";
 })
 export class AppComponent {
   title = 'Cou_Project';
-  currentJustify = 'justified';
+  currentUser : User;
   isCollapsed: boolean = true;
   style;
 
-  constructor() { }
+  constructor(public authService:AuthenticateService,public placeService:PlaceService, private router:Router) { }
 
   ngOnInit() {
+    this.authService.currentUser.subscribe(centralUserFromService=>{
+      this.currentUser = centralUserFromService;
+    });
   }
 
   logOut() {
-    localStorage.removeItem("id_token");
+    this.authService.logout();
+    this.router.navigate(['login']);
     this.style = {
       'background-color': ''
     }
   }
 
   isLogIn(): any {
-    if (localStorage.length >= 1) {
+    if (this.currentUser) {
       this.style = {
         'background-color': 'green'
       }
+      //console.log(localStorage.getItem("id_token"));
+      //console.log(localStorage.getItem("id_token"));
+      // this.userService.http.get()
     }
     return this.style;
   }

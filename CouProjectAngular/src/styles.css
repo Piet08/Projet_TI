@@ -1,10 +1,30 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+@import url("https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css");
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 agm-map {
   height: 150px;
   width: 200px;
 }
+html, body{
+  height: 100%;
+  margin: 0em;
+}
+body{
+}
 
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
-@import url("https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css");
-@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+#main{
+  min-height: 100%;
+  margin:0 auto;
+  position: relative;
+}
+
+#page-footer{
+  position:relative;
+  bottom:0;
+  width:100%;
+  /*padding-top:150px;*/
+  height:150px;
+
+}
 

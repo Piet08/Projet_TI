@@ -68,7 +68,7 @@ namespace Cou_project.DAO
                 avgRate = Convert.ToDouble(reader[FIELD_AVGRATE].ToString());
             }
             
-            return avgRate == null ? 0 : avgRate;
+            return avgRate;
         }
         //Attention l'IDADR doit se trouver dans la BD pour que ca fonctionne ! a gérer au moment des connexions ;)
         [HttpPost]

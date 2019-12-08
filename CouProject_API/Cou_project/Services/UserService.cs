@@ -19,7 +19,9 @@ namespace Cou_project.Services
     {
         User Authenticate(User user);
         User CreateUserAndAddress(UserAndAddress user); 
-        //User Get(User user);
+        User Get(int id);
+        UserAndAddress GetUserWithAddress(int id);
+        IEnumerable<UserAndAddress> GetUsersWithAddress();
     }
 
     public class UserService : IUserService
@@ -67,9 +69,28 @@ namespace Cou_project.Services
             
         }
         
-       /* public User Get(User user)
+        public User Get(int id)
         {
-            return user.WithoutPassword();
-        }*/
+            return UserDAO.Get(id).WithoutPassword();
+        }
+
+        public UserAndAddress GetUserWithAddress(int id)
+        {
+            User user = Get(id);
+            return new UserAndAddress(user,AddressDAO.Get(user.Idadr));
+        }
+
+        public IEnumerable<UserAndAddress> GetUsersWithAddress()
+        {
+            IEnumerable<User> users = UserDAO.Query();
+            UserAndAddress[]usersWithAddress = new UserAndAddress[users.Count()];
+            int i = 0;
+            foreach (var user in users)
+            {
+                usersWithAddress[i] = GetUserWithAddress(user.Id);
+                i++;
+            }
+            return usersWithAddress;
+        }
     }
 }

@@ -61,6 +61,7 @@ export class FormPlaceComponent implements OnInit {
 
   emitNewLieu(){
     this.placeCreated.next(this.buildPlaceAndAddressDto());
+    this.formLieu.reset();
   }
 
 }
