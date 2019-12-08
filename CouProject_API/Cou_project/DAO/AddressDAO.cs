@@ -52,6 +52,17 @@ namespace Cou_project.DAO
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = RED_POST;
+                
+                //
+
+                IEnumerable<Address> listAddressFound = Query();
+                foreach (var address in listAddressFound)
+                {
+                    if (adr.Straat == address.Straat && adr.City == address.City &&
+                        adr.PostalCode == address.PostalCode && adr.Num == address.Num) return null;
+                }
+                
+                //
 
                 command.Parameters.AddWithValue($"@{FIELD_CITY}", adr.City);
                 command.Parameters.AddWithValue($"@{FIELD_STRAAT}", adr.Straat);

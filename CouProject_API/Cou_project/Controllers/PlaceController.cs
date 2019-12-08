@@ -33,6 +33,14 @@ namespace Cou_project.Controllers
             return Ok(PlaceDAO.Create(place));
         }
         
+
+        [HttpGet("map")]
+        public ActionResult<IEnumerable<Place>> QueryMap()
+        {
+            return Ok(_placeService.GetPlacesAndAddresses());
+        }
+        
+
         [Authorize]
         [HttpPost("forms")]
         public ActionResult<Place> Post([FromBody] PlaceAndAddress place)

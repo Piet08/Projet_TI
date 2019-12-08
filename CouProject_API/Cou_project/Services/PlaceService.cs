@@ -13,16 +13,16 @@ namespace Cou_project.Services
         Place CreatePlaceAndAddress(PlaceAndAddress place);
         PlaceAndAddress GetPlaceAndAddress(int id);
     }
-    
+
     public class PlaceService : ILieuService
     {
         public Place CreatePlaceAndAddress(PlaceAndAddress place)
         {
             Address adr = AddressDAO.Create(place.Address);
-               
+
             place.Place.IdAdr = adr.Id;
             return PlaceDAO.Create(place.Place);
-            
+
         }
         public PlaceAndAddress GetPlaceAndAddress(int id)
         {

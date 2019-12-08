@@ -1,5 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {Place} from '../../views/lieu/place';
+import {Router} from '@angular/router';
+import {Address} from '../../Address/address';
+import {PlaceAndAddressDto} from '../../views/lieu/place-dto';
+import {EnumTypeLieu} from '../../EnumTypeLieu';
+import {EnumRange} from '../../EnumRange';
+import {Location} from '../location-model';
 
 @Component({
   selector: 'app-dump-map',
@@ -9,259 +15,219 @@ import {Router} from "@angular/router";
 export class DumpMapComponent implements OnInit {
 
   private _markers: marker[] = [];
+  private _places: Place[] = [];
+  private _placeChosenToInspect: PlaceAndAddressDto;
+  private _userLocation: Location;
+  categoryFilter: EnumTypeLieu = EnumTypeLieu.ALL;
+  rangeFilter: EnumRange = EnumRange.ALL;
   style: any = [
     {
-      'elementType': 'geometry',
-      'stylers': [
+      "elementType": "geometry",
+      "stylers": [
         {
-          'color': '#ebe3cd'
+          "color": "#242f3e"
         }
       ]
     },
     {
-      'elementType': 'labels.text.fill',
-      'stylers': [
+      "elementType": "labels.text.fill",
+      "stylers": [
         {
-          'color': '#523735'
+          "color": "#746855"
         }
       ]
     },
     {
-      'elementType': 'labels.text.stroke',
-      'stylers': [
+      "elementType": "labels.text.stroke",
+      "stylers": [
         {
-          'color': '#f5f1e6'
+          "color": "#242f3e"
         }
       ]
     },
     {
-      'featureType': 'administrative',
-      'elementType': 'geometry',
-      'stylers': [
+      "featureType": "administrative",
+      "elementType": "geometry",
+      "stylers": [
         {
-          'visibility': 'off'
+          "visibility": "off"
         }
       ]
     },
     {
-      'featureType': 'administrative',
-      'elementType': 'geometry.stroke',
-      'stylers': [
+      "featureType": "administrative.locality",
+      "elementType": "labels.text.fill",
+      "stylers": [
         {
-          'color': '#c9b2a6'
+          "color": "#d59563"
         }
       ]
     },
     {
-      'featureType': 'administrative.land_parcel',
-      'elementType': 'geometry.stroke',
-      'stylers': [
+      "featureType": "poi",
+      "stylers": [
         {
-          'color': '#dcd2be'
+          "visibility": "off"
         }
       ]
     },
     {
-      'featureType': 'administrative.land_parcel',
-      'elementType': 'labels.text.fill',
-      'stylers': [
+      "featureType": "poi",
+      "elementType": "labels.text.fill",
+      "stylers": [
         {
-          'color': '#ae9e90'
+          "color": "#d59563"
         }
       ]
     },
     {
-      'featureType': 'landscape.natural',
-      'elementType': 'geometry',
-      'stylers': [
+      "featureType": "poi.park",
+      "elementType": "geometry",
+      "stylers": [
         {
-          'color': '#dfd2ae'
+          "color": "#263c3f"
         }
       ]
     },
     {
-      'featureType': 'poi',
-      'stylers': [
+      "featureType": "poi.park",
+      "elementType": "labels.text.fill",
+      "stylers": [
         {
-          'visibility': 'off'
+          "color": "#6b9a76"
         }
       ]
     },
     {
-      'featureType': 'poi',
-      'elementType': 'geometry',
-      'stylers': [
+      "featureType": "road",
+      "elementType": "geometry",
+      "stylers": [
         {
-          'color': '#dfd2ae'
+          "color": "#38414e"
         }
       ]
     },
     {
-      'featureType': 'poi',
-      'elementType': 'labels.text.fill',
-      'stylers': [
+      "featureType": "road",
+      "elementType": "geometry.stroke",
+      "stylers": [
         {
-          'color': '#93817c'
+          "color": "#212a37"
         }
       ]
     },
     {
-      'featureType': 'poi.park',
-      'elementType': 'geometry.fill',
-      'stylers': [
+      "featureType": "road",
+      "elementType": "labels.icon",
+      "stylers": [
         {
-          'color': '#a5b076'
+          "visibility": "off"
         }
       ]
     },
     {
-      'featureType': 'poi.park',
-      'elementType': 'labels.text.fill',
-      'stylers': [
+      "featureType": "road",
+      "elementType": "labels.text.fill",
+      "stylers": [
         {
-          'color': '#447530'
+          "color": "#9ca5b3"
         }
       ]
     },
     {
-      'featureType': 'road',
-      'elementType': 'geometry',
-      'stylers': [
+      "featureType": "road.highway",
+      "elementType": "geometry",
+      "stylers": [
         {
-          'color': '#f5f1e6'
+          "color": "#746855"
         }
       ]
     },
     {
-      'featureType': 'road',
-      'elementType': 'labels.icon',
-      'stylers': [
+      "featureType": "road.highway",
+      "elementType": "geometry.stroke",
+      "stylers": [
         {
-          'visibility': 'off'
+          "color": "#1f2835"
         }
       ]
     },
     {
-      'featureType': 'road.arterial',
-      'elementType': 'geometry',
-      'stylers': [
+      "featureType": "road.highway",
+      "elementType": "labels.text.fill",
+      "stylers": [
         {
-          'color': '#fdfcf8'
+          "color": "#f3d19c"
         }
       ]
     },
     {
-      'featureType': 'road.highway',
-      'elementType': 'geometry',
-      'stylers': [
+      "featureType": "transit",
+      "stylers": [
         {
-          'color': '#f8c967'
+          "visibility": "off"
         }
       ]
     },
     {
-      'featureType': 'road.highway',
-      'elementType': 'geometry.stroke',
-      'stylers': [
+      "featureType": "transit",
+      "elementType": "geometry",
+      "stylers": [
         {
-          'color': '#e9bc62'
+          "color": "#2f3948"
         }
       ]
     },
     {
-      'featureType': 'road.highway.controlled_access',
-      'elementType': 'geometry',
-      'stylers': [
+      "featureType": "transit.station",
+      "elementType": "labels.text.fill",
+      "stylers": [
         {
-          'color': '#e98d58'
+          "color": "#d59563"
         }
       ]
     },
     {
-      'featureType': 'road.highway.controlled_access',
-      'elementType': 'geometry.stroke',
-      'stylers': [
+      "featureType": "water",
+      "elementType": "geometry",
+      "stylers": [
         {
-          'color': '#db8555'
+          "color": "#17263c"
         }
       ]
     },
     {
-      'featureType': 'road.local',
-      'elementType': 'labels.text.fill',
-      'stylers': [
+      "featureType": "water",
+      "elementType": "labels.text.fill",
+      "stylers": [
         {
-          'color': '#806b63'
+          "color": "#515c6d"
         }
       ]
     },
     {
-      'featureType': 'transit',
-      'stylers': [
+      "featureType": "water",
+      "elementType": "labels.text.stroke",
+      "stylers": [
         {
-          'visibility': 'off'
-        }
-      ]
-    },
-    {
-      'featureType': 'transit.line',
-      'elementType': 'geometry',
-      'stylers': [
-        {
-          'color': '#dfd2ae'
-        }
-      ]
-    },
-    {
-      'featureType': 'transit.line',
-      'elementType': 'labels.text.fill',
-      'stylers': [
-        {
-          'color': '#8f7d77'
-        }
-      ]
-    },
-    {
-      'featureType': 'transit.line',
-      'elementType': 'labels.text.stroke',
-      'stylers': [
-        {
-          'color': '#ebe3cd'
-        }
-      ]
-    },
-    {
-      'featureType': 'transit.station',
-      'elementType': 'geometry',
-      'stylers': [
-        {
-          'color': '#dfd2ae'
-        }
-      ]
-    },
-    {
-      'featureType': 'water',
-      'elementType': 'geometry.fill',
-      'stylers': [
-        {
-          'color': '#b9d3c2'
-        }
-      ]
-    },
-    {
-      'featureType': 'water',
-      'elementType': 'labels.text.fill',
-      'stylers': [
-        {
-          'color': '#92998d'
+          "color": "#17263c"
         }
       ]
     }
   ];
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  navigateToDetailLieu(id:number) {
+    this.router.navigate(['lieux/'+id]);
+  }
+
+  seePlaceChosenToDisplay(m: marker) {
+    let tmpPlaceAndAddress:PlaceAndAddressDto={place:new Place(m.idPlace,m.name,m.type,m.description,m.idAdr).toLieuDto(),address:new Address(m.idAdr,m.city,m.straat,m.num,m.postalCode).toAdresseDto(),avgRate:m.rating};
+    this.placeChosenToInspect = tmpPlaceAndAddress;
   }
 
 
@@ -274,11 +240,37 @@ export class DumpMapComponent implements OnInit {
     this._markers = value;
   }
 
-  sayCoucouFromMarker(label: string, id: number, lat:number, lng:number) {
-    console.log("Coucou de " + label + " " + id + " LAT : " + lat + " LONG : " + lng );
+
+  get places(): Place[] {
+    return this._places;
+  }
+
+  @Input()
+  set places(value: Place[]) {
+    this._places = value;
+  }
+
+
+  get placeChosenToInspect(): PlaceAndAddressDto {
+    return this._placeChosenToInspect;
+  }
+
+  @Input()
+  set placeChosenToInspect(value: PlaceAndAddressDto) {
+    this._placeChosenToInspect = value;
   }
 
   navigateToFormAddLieu() {
     this.router.navigate(['forms/place']);
+  }
+
+
+  get userLocation(): Location {
+    return this._userLocation;
+  }
+
+  @Input()
+  set userLocation(value: Location) {
+    this._userLocation = value;
   }
 }

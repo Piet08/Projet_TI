@@ -64,7 +64,6 @@ export class FormInscriptionComponent implements OnInit {
   }*/
 
   chargerVillesJSON(){
-      console.log(this._villesJSON);
   }
 
   emitNewUser() {

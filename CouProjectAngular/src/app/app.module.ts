@@ -28,6 +28,12 @@ import { HomeComponent } from './views/home/home.component';
 import { TypePipe } from './views/lieu/filter-place/pipe/type.pipe';
 import { FilterPlaceComponent } from './views/lieu/filter-place/filter-place.component';
 import { RatingPipe } from './views/lieu/filter-place/pipe/rating.pipe';
+
+import { FilterMarkersComponent } from './map/filter-markers/filter-markers.component';
+import { RatingMapPipe } from './map/filter-markers/pipe/rating-map.pipe';
+import { TypeMapPipe } from './map/filter-markers/pipe/type-map.pipe';
+import { RangeMapPipe } from './map/filter-markers/pipe/range-map.pipe';
+
 import {JwtInterceptor} from './JwtInterceptor';
 import {AuthGard} from './AuthGard';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
@@ -42,6 +48,7 @@ import { SingleUserComponent } from './User/single-user/single-user.component';
 import { ListUserComponent } from './User/list-user/list-user.component';
 import { DetailReviewComponent } from './views/comment/detail-review/detail-review.component';
 import { SearchPipe } from './views/lieu/filter-place/pipe/search.pipe';
+
 
 
 // path = le nom du controller de l'api en fonction de ce que l'on veut faire
@@ -85,6 +92,12 @@ const routes: Routes = [
     DumpMapComponent,
     SmartMapComponent,
     HomeComponent,
+
+    FilterMarkersComponent,
+    RatingMapPipe,
+    TypeMapPipe,
+    RangeMapPipe,
+
     AdminHomeComponent,
     GestionPlaceComponent,
     SmartGestionPlaceComponent,
