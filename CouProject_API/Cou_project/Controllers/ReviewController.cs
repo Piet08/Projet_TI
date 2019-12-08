@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Cou_project.DAO;
 using Cou_project.Models;
@@ -20,14 +21,33 @@ namespace Cou_project.Controllers
             return Ok(ReviewDAO.Query());
         }
 
+        [HttpGet("place/address/{id}")]
+        public ActionResult<ReviewWithPlaceAndAddress> GetReviewWithPlaceAndAddress(int id)
+        {
+            return Ok(_reviewService.GetReviewWithPlaceAndAddress(id));
+        }
+        
+        [HttpGet("place/address/user/all/{idUser}")]
+        public ActionResult<ReviewWithPlaceAndAddress> GetReviewsWithPlaceAndAddressFromAnUser(int idUser)
+        {
+            return Ok(_reviewService.GetReviewsWithPlaceAndAddresses(idUser));
+        }
+        
         [HttpGet("user/{id}")]
         public ActionResult<ReviewAndUser> GetReviewAndUser(int id)
         {
             ReviewAndUser reviewAndUser = _reviewService.GetReviewAndUser(id);
             return reviewAndUser != null ? (ActionResult<ReviewAndUser>) Ok(reviewAndUser) : NotFound("Review not found");
         }
-        
-        // api/places/8/reviews
+
+        [HttpGet("user/all/{id}")]
+        public ActionResult<IEnumerable<Review>> GetReviewsFromUser(int id)
+        {
+            IEnumerable<Review> reviewsByUser = ReviewDAO.GetReviewsByUser(id);
+            return reviewsByUser != null
+                ? (ActionResult<IEnumerable<Review>>) Ok(reviewsByUser)
+                : NotFound("User not found");
+        }
 
         [HttpGet("users/place/{id}")]
         public ActionResult<IEnumerable<ReviewAndUser>> GetReviewAndUserByPlace(int id)

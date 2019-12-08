@@ -26,11 +26,15 @@ namespace Cou_project.DAO
             TABLE_NAME, FIELD_STAR, FIELD_COMMENT, FIELD_ISVALID, FIELD_IDUSER, FIELD_IDPLACE, FIELD_ID);
 
         private static readonly string REQ_GET = REQ_QUERY + $" Where {FIELD_ID} = @{FIELD_ID}";
-
+        
+        private static readonly string REQ_GET_BY_USER = REQ_QUERY + $" Where {FIELD_IDUSER} = @{FIELD_IDUSER}";
+        
         private static readonly string REQ_GET_BY_LIEU = REQ_QUERY + $" where {FIELD_IDPLACE} = @{FIELD_IDPLACE}";
             
         private static readonly string REQ_DELETE = $"DELETE FROM {TABLE_NAME} WHERE {FIELD_ID} = @{FIELD_ID}";
-
+    
+        private static readonly string REQ_DELETE_BY_PLACE = $"DELETE FROM {TABLE_NAME} WHERE {FIELD_IDPLACE} = @{FIELD_IDPLACE}";
+    
         private static readonly string REQ_UPDATE = String.Format(
             "UPDATE {0} SET {1} = @{1}, {2} = @{2}, {3} = @{3}, {4} = @{4} WHERE {5} = @{5}",
             TABLE_NAME, FIELD_STAR, FIELD_COMMENT, FIELD_IDUSER, FIELD_IDPLACE, FIELD_ID);
@@ -72,6 +76,24 @@ namespace Cou_project.DAO
             return listReview;
         }
 
+        public static IEnumerable<Review> GetReviewsByUser(int id)
+        {
+            List<Review> listReview = new List<Review>();
+            using (var connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_GET_BY_USER;
+                command.Parameters.AddWithValue($"@{FIELD_IDUSER}", id);
+                
+                SqlDataReader reader = command.ExecuteReader(); 
+                while (reader.Read())
+                {
+                    listReview.Add(new Review(reader));
+                }
+            }
+            return listReview;
+        }
 
         //Attention l'IDUTIL + IDLIEU doit se trouver dans la BD pour que ca fonctionne ! a gérer au moment des connexions ;)
         [HttpPost]
@@ -118,6 +140,20 @@ namespace Cou_project.DAO
                 command.CommandText = REQ_DELETE;
 
                 command.Parameters.AddWithValue($"@{FIELD_ID}", id);
+
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
+
+        public static bool DeleteByPlace(int id)
+        {
+            using (var connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_DELETE_BY_PLACE;
+
+                command.Parameters.AddWithValue($"@{FIELD_IDPLACE}", id);
 
                 return command.ExecuteNonQuery() == 1;
             }

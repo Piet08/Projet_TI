@@ -53,6 +53,12 @@ namespace Cou_project.Controllers
             Place place = PlaceDAO.Get(id);
             return place != null ? (ActionResult<Place>) Ok(place) : NotFound("This user does not exists!");
         }
+
+        [HttpDelete("address/reviews/{id}")]
+        public ActionResult DeleteWithCascade(int id)
+        {
+            return Ok( _placeService.DeleteWithCascade(id));
+        }
         
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)

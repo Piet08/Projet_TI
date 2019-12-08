@@ -1,31 +1,28 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {Review} from '../review';
-import {User} from '../../../User/user';
-import {UserService} from '../../../User/user.service';
-import {Subscription} from 'rxjs';
-import {ReviewAndUserDto} from '../review-insert-dto';
+import {Component, Input, OnInit} from '@angular/core';
+import {ReviewWithPlaceAndAddressDto} from '../review-insert-dto';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-detail-comment',
+  selector: 'app-detail-review',
   templateUrl: './detail-review.component.html',
   styleUrls: ['./detail-review.component.css']
 })
-export class DetailReviewComponent implements OnInit,OnDestroy{
-  private _reviewAndUser:ReviewAndUserDto;
-
-  constructor() { }
+export class DetailReviewComponent implements OnInit {
+  private _review:ReviewWithPlaceAndAddressDto;
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
-  ngOnDestroy(): void {}
-
-  get reviewAndUser(): ReviewAndUserDto {
-    return this._reviewAndUser;
+  get review(): ReviewWithPlaceAndAddressDto {
+    return this._review;
   }
   @Input()
-  set reviewAndUser(value: ReviewAndUserDto) {
-    this._reviewAndUser = value;
+  set review(value: ReviewWithPlaceAndAddressDto) {
+    this._review = value;
   }
 
+  navigateToPlace() {
+    this.router.navigate(['place/'+this.review.placeAndAddress.place.id]);
+  }
 }

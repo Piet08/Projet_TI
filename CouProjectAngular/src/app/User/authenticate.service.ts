@@ -22,10 +22,12 @@ export class AuthenticateService {
     return this.currentUserSubject.value;
   }
 
-  login(username:string,password:string) {
+  login(username: string, password: string, remember: boolean) {
     return this.http.post(URL_API_AUTH, {username, password}).pipe(
       map(user => {
-        localStorage.setItem('currentUser', JSON.stringify(user));
+        if(remember)
+          localStorage.setItem('currentUser', JSON.stringify(user));
+
         console.log(<User> user);
         this.currentUserSubject.next(<User> user);
         return user;

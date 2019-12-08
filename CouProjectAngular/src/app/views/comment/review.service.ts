@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {ReviewAndUserDto, ReviewInsertDto} from './review-insert-dto';
+import {ReviewAndUserDto, ReviewInsertDto, ReviewWithPlaceAndAddressDto} from './review-insert-dto';
 
 const URL_API:string = "/api/Review";
 
@@ -19,6 +19,19 @@ export class ReviewService {
   // get(id:number): Observable<ReviewDto>{
   //   return this.http.get<ReviewDto>(URL_API+'/'+id);
   // }
+
+
+  getReviewWithPlaceAndAddress(id:number):Observable<ReviewWithPlaceAndAddressDto>{
+    return this.http.get<ReviewWithPlaceAndAddressDto>(URL_API+'/place/address/'+id);
+  }
+
+  getReviewsWithPlaceAndAddressFromAnUser(idUser:number):Observable<ReviewWithPlaceAndAddressDto[]>{
+    return this.http.get<ReviewWithPlaceAndAddressDto[]>(URL_API+'/place/address/user/all/'+idUser);
+  }
+
+  getReviewsFromAUser(idUser:number):Observable<ReviewInsertDto[]>{
+    return this.http.get<ReviewInsertDto[]>(URL_API+'/user/all/'+idUser);
+  }
 
   getReviewsAndUserFromAPlace(idLieu:number):Observable<ReviewAndUserDto[]>{
     return this.http.get<ReviewAndUserDto[]>(URL_API+'/users/place/'+idLieu);

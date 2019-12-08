@@ -6,30 +6,13 @@ export class authenticateModel {
 
   private _username : string;
   private _password : string;
-  private _token: string;
-  private _type : number;
+  private _remember :boolean;
 
-  constructor(username : string='', password: string='', token: string='', type:number=0) {
+  constructor(username : string='', password: string='',remember:boolean = false) {
     this._username = username;
     this._password = password;
-    this._token = token;
-    this._type = type;
+    this._remember = remember;
   }
-  get type(): number {
-    return this._type;
-  }
-
-  set type(value: number) {
-    this._type = value;
-  }
-  get token(): string {
-    return this._token;
-  }
-
-  set token(value: string) {
-    this._token = value;
-  }
-
 
   get password(): string {
     return this._password;
@@ -45,12 +28,19 @@ export class authenticateModel {
   set username(value: string) {
     this._username = value;
   }
-  //Object provenant de la db donc type Object !! -> Function to set Type (Utilisateur)
+
+  get remember(): boolean {
+    return this._remember;
+  }
+
+  set remember(value: boolean) {
+    this._remember = value;
+  }
+
+//Object provenant de la db donc type Object !! -> Function to set Type (Utilisateur)
   fromAuthenticateModelDto(dto : authenticateModelDto): authenticateModel{
     Object.assign(this._password, dto);
     Object.assign(this._username, dto);
-    this._type = dto.type;
-    this._token = dto.token;
     return this;
   }
 
@@ -60,8 +50,7 @@ export class authenticateModel {
     return {
       username : this._username,
       password : this._password,
-      token : this._token,
-      type : this._type
+      remember : this._remember,
     }
   }
 

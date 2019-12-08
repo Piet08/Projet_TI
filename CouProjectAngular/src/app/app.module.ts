@@ -16,7 +16,7 @@ import { ListPlaceComponent } from './views/lieu/list-place/list-place.component
 import { SinglePlaceComponent } from './views/lieu/single-place/single-place.component';
 import { DetailPlaceComponent } from './views/lieu/detail-place/detail-place.component';
 import { ListReviewComponent } from './views/comment/list-review/list-review.component';
-import { DetailReviewComponent } from './views/comment/detail-review/detail-review.component';
+import { SingleReviewComponent } from './views/comment/single-review/single-review.component';
 import { FormPlaceComponent } from './forms/form-place/form-place.component';
 import { SmartFormPlaceComponent } from './forms/smart-form-place/smart-form-place.component';
 import { FormReviewComponent } from './forms/form-review/form-review.component';
@@ -30,6 +30,17 @@ import { FilterPlaceComponent } from './views/lieu/filter-place/filter-place.com
 import { RatingPipe } from './views/lieu/filter-place/pipe/rating.pipe';
 import {JwtInterceptor} from './JwtInterceptor';
 import {AuthGard} from './AuthGard';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import {AuthAdminGard} from './AuthAdminGard';
+import { GestionPlaceComponent } from './admin/gestion-place/gestion-place.component';
+import { SmartGestionPlaceComponent } from './admin/smart-gestion-place/smart-gestion-place.component';
+import { SingleGestionPlaceComponent } from './admin/single-gestion-place/single-gestion-place.component';
+import { SmartGestionReviewComponent } from './admin/smart-gestion-review/smart-gestion-review.component';
+import { SingleGestionReviewComponent } from './admin/single-gestion-review/single-gestion-review.component';
+import { DetailUserComponent } from './User/detail-user/detail-user.component';
+import { SingleUserComponent } from './User/single-user/single-user.component';
+import { ListUserComponent } from './User/list-user/list-user.component';
+import { DetailReviewComponent } from './views/comment/detail-review/detail-review.component';
 
 
 // path = le nom du controller de l'api en fonction de ce que l'on veut faire
@@ -38,12 +49,15 @@ import {AuthGard} from './AuthGard';
 const routes: Routes = [
   {path: 'login', component:SmartFormConnectionComponent},
   {path: 'register', component:SmartFormInscriptionComponent},
-  {path: 'lieux', component:ListPlaceComponent},
-  {path: 'lieux/:id', component:DetailPlaceComponent},
+  {path: 'places', component:ListPlaceComponent},
+  {path: 'place/:id', component:DetailPlaceComponent},
   {path: 'forms/place', canActivate : [AuthGard],component:SmartFormPlaceComponent},
-  {path: 'Address', component:SmartMapComponent},
-  {path: 'home', component:HomeComponent}
-
+  {path: 'address', component:SmartMapComponent},
+  {path: 'home', component:HomeComponent},
+  {path: 'admin/places',canActivate : [AuthAdminGard],component:SmartGestionPlaceComponent},
+  {path: 'admin/place/reviews/:id',canActivate : [AuthAdminGard],component:SmartGestionReviewComponent},
+  {path: 'users',canActivate:[AuthGard],component:ListUserComponent},
+  {path: 'user/:id',canActivate:[AuthGard],component:DetailUserComponent},
 ];
 
 
@@ -58,7 +72,7 @@ const routes: Routes = [
     SinglePlaceComponent,
     DetailPlaceComponent,
     ListReviewComponent,
-    DetailReviewComponent,
+    SingleReviewComponent,
     FormPlaceComponent,
     SmartFormPlaceComponent,
     FormReviewComponent,
@@ -69,7 +83,17 @@ const routes: Routes = [
     RatingPipe,
     DumpMapComponent,
     SmartMapComponent,
-    HomeComponent
+    HomeComponent,
+    AdminHomeComponent,
+    GestionPlaceComponent,
+    SmartGestionPlaceComponent,
+    SingleGestionPlaceComponent,
+    SmartGestionReviewComponent,
+    SingleGestionReviewComponent,
+    DetailUserComponent,
+    SingleUserComponent,
+    ListUserComponent,
+    DetailReviewComponent
   ],
   imports: [
     BrowserModule,

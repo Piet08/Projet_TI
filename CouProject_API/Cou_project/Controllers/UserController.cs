@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cou_project.DAO;
 using Cou_project.Models;
 using Cou_project.Services;
@@ -28,7 +29,7 @@ namespace Cou_project.Controllers
         {
             var user = _userService.Authenticate(UserDAO.QueryAuth(model));
             if (user == null)
-                return BadRequest(new {message = "Username or password is incorect"});
+                return BadRequest(new {message = "Username or password is incorrect"});
             
             return Ok(user);
         }
@@ -47,20 +48,44 @@ namespace Cou_project.Controllers
             
             return Ok(UserDAO.Query());
         }
+        
+        [AllowAnonymous]
+        [HttpPost("simple")]
+        public ActionResult<User> Post([FromBody] User user)
+        {
+            return Ok(UserDAO.Create(user));
+        }
+
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult<User> Post([FromBody] UserAndAddress user)
+        public ActionResult<User> PostUserAndAddress([FromBody] UserAndAddress user)
         {
             return Ok(_userService.CreateUserAndAddress(user));
-            //return Ok(UserDAO.Create(util));
         }
+        
+        [AllowAnonymous]
+        [HttpGet("address/all")]
+        public ActionResult<IEnumerable<UserAndAddress>> GetAllUsersWithAddress()
+        {
+            return Ok(_userService.GetUsersWithAddress());
+        }
+        
         [AllowAnonymous]
         [HttpGet("{id}")]
         public ActionResult<User> Get(int id)
         {
-            User util = UserDAO.Get(id);
+            User util = _userService.Get(id);
             return util != null ? (ActionResult<User>) Ok(util) : NotFound("This user does not exists!");
         }
+
+        [AllowAnonymous]
+        [HttpGet("address/{id}")]
+        public ActionResult<UserAndAddress> GetWithAddress(int id)
+        {
+            UserAndAddress user = _userService.GetUserWithAddress(id);
+            return user != null ? (ActionResult<UserAndAddress>) Ok(user) : NotFound("This user does not exists !");
+        }
+        
         [AllowAnonymous]
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
@@ -75,24 +100,21 @@ namespace Cou_project.Controllers
         }
         
         
-        //Favoris se trouve dans Utilisateur car les favoris sont plus lié à l'utilisateur que l'inverse --> Plus opti
-        //FAVORIS
-        
-        //Le template est à ajouter dans l'url pour distinguer les requêtes'
+
         [AllowAnonymous]
-        [HttpGet("Favoris")]
+        [HttpGet("favoris")]
         public ActionResult<IEnumerable<Favorites>> queryFavoris()
         {
             return Ok(UserDAO.QueryFavoris());
         }
         [AllowAnonymous]
-        [HttpPost("Favoris")]
+        [HttpPost("favoris")]
         public ActionResult<Favorites> PostFavoris([FromBody] Favorites favorites)
         {
             return Ok(UserDAO.CreateFavoris(favorites));
         }
         [AllowAnonymous]
-        [HttpDelete("Favoris")]
+        [HttpDelete("favoris")]
         public ActionResult DeleteFavoris([FromBody] Favorites favorites)
         {
             return UserDAO.DeleteFavoris(favorites) ? (ActionResult) Ok() : NotFound("This favorite item doesn't exists");

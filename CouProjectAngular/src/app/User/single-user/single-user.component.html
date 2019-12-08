@@ -1,0 +1,28 @@
+<div class="card text-center mb-4">
+  <div class="card-header">
+    <span class="d-inline-block">
+      <span class="fa fa-user"></span>
+      Pseudo : {{user.user.pseudo}}
+    </span>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
+      <span *ngIf="user.user.type == 0" class="text-info">Utilisateur :</span>
+      <span *ngIf="user.user.type == 1" class="text-danger">Admin :</span>
+      {{user.user.name}} {{user.user.surname}}
+    </h5>
+    <p class="card-text" *ngIf="user.address">
+      <b>Adresse :</b>
+      <br/>
+      Ville : {{user.address.postalCode}}, {{user.address.city}}
+      <br/>
+      Rue : {{user.address.straat}}, {{user.address.num}}
+    </p>
+    <a (click)="navigateToReviewsOfUser()" class="btn btn-primary text-white">Voir ses avis</a>
+  </div>
+  <div class="card-footer text-muted">
+    <span>
+      <span class="fa fa-envelope"></span> {{user.user.email}}
+    </span>
+  </div>
+</div>

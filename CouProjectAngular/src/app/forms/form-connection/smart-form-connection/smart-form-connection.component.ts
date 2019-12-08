@@ -41,7 +41,7 @@ export class SmartFormConnectionComponent implements OnInit, OnDestroy {
     this._currentUser = value;
   }
   onSubmit($event:authenticateModel){
-    this.authService.login($event.username,$event.password)
+    this.authService.login($event.username,$event.password,$event.remember)
       .pipe(first())
       .subscribe();
   }

@@ -15,8 +15,8 @@ export class FormReviewComponent implements OnInit {
   reviewCreated: EventEmitter<Review> = new EventEmitter<Review>();
 
   formReview:FormGroup = this.fb.group({
-    comment : this.fb.control(''),
-    star : this.fb.control(null,Validators.required)
+    comment : this.fb.control('',Validators.required),
+    star : this.fb.control(null)
   });
 
   constructor(public fb:FormBuilder) { }

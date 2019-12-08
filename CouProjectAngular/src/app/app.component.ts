@@ -6,6 +6,7 @@ import {UserService} from './User/user.service';
 import {AuthenticateService} from './User/authenticate.service';
 import {Router} from '@angular/router';
 import {User} from './User/user';
+import {PlaceService} from './views/lieu/place.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ export class AppComponent {
   isCollapsed: boolean = true;
   style;
 
-  constructor(public authService:AuthenticateService, private router:Router) { }
+  constructor(public authService:AuthenticateService,public placeService:PlaceService, private router:Router) { }
 
   ngOnInit() {
     this.authService.currentUser.subscribe(centralUserFromService=>{
@@ -35,7 +36,7 @@ export class AppComponent {
   }
 
   isLogIn(): any {
-    if (localStorage.length >= 1) {
+    if (this.currentUser) {
       this.style = {
         'background-color': 'green'
       }

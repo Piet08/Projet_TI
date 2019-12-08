@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cou_project.DAO;
 using Cou_project.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Cou_project.Services
 {
@@ -41,6 +42,18 @@ namespace Cou_project.Services
             }
 
             return placeAndAddresses;
+        }
+        
+        //En attendant de la résolution de la contrainte on delete cascade en bdd
+        public bool DeleteWithCascade(int id)
+        {
+            if (!AddressDAO.Delete(PlaceDAO.Get(id).IdAdr))
+                return false;
+            
+            if (!ReviewDAO.DeleteByPlace(id))
+                return false;
+            
+            return PlaceDAO.Delete(id);
         }
     }
 }

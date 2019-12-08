@@ -1,6 +1,6 @@
 export interface authenticateModelDto {
-  username : string;
-  password : string;
-  token: string;
-  type: number;
+  username : string,
+  password : string,
+  remember:boolean
 }
+

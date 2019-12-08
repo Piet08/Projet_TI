@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="align-items-start row">
+    <app-single-review [reviewAndUser]="reviewAndUser" class="col-8"></app-single-review>
+    <div *ngIf="!validation" class="col-2 align-self-center">
+      <button class="btn btn-danger" value="supprimer" (click)="validation = true">Supprimer</button>
+    </div>
+    <div *ngIf="validation" class="text-center border border-danger rounded px-3 py-3 align-self-center">
+      <span class="text-center text-danger text-wrap">Etes-vous sûr de vouloir <br/> supprimer la review de {{reviewAndUser.user.surname}} ?</span>
+      <hr/>
+      <div class="text-center">
+        <button class="btn btn-success mx-3 px-4" value="oui" (click)="emitDeleteReview();validation=true">Oui</button>
+        <button class="btn btn-danger mx-3 px-4" value="non" (click)="validation = false">Non</button>
+      </div>
+    </div>
+  </div>
+</div>

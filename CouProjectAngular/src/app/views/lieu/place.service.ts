@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnDestroy, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {PlaceDto, PlaceAndAddressDto} from './place-dto';
 
 const URL_API:string = "/api/place";
@@ -8,9 +8,20 @@ const URL_API:string = "/api/place";
 @Injectable({
   providedIn: 'root'
 })
-export class PlaceService {
+export class PlaceService implements OnDestroy{
 
-  constructor(public http:HttpClient) {}
+  // private _placeAndAddressesSubject:BehaviorSubject<PlaceAndAddressDto[]> ;
+  // public placeAndAddresses:Observable<PlaceAndAddressDto[]> = new Observable<PlaceAndAddressDto[]>();
+
+  constructor(public http:HttpClient) {
+    // this.getPlacesAndAddressees().subscribe(places => {
+    //   this._placeAndAddressesSubject = new BehaviorSubject<PlaceAndAddressDto[]>(places);
+    //   this.placeAndAddresses = this._placeAndAddressesSubject.asObservable();
+    // });
+  }
+
+  ngOnDestroy(): void {
+  }
 
   query():Observable<PlaceDto[]>{
     return this.http.get<PlaceDto[]>(URL_API);
@@ -34,9 +45,13 @@ export class PlaceService {
     return this.http.post<PlaceAndAddressDto>(URL_API+"/forms", place);
   }
 
-  delete(id: number): Observable<PlaceDto> {
-    return this.http.delete<PlaceDto>(URL_API+'/'+id);
+  deleteWithCascade(id:number):Observable<PlaceAndAddressDto>{
+    return this.http.delete<PlaceAndAddressDto>(URL_API+"/address/reviews/"+id);
   }
+
+  // delete(id: number): Observable<PlaceDto> {
+  //   return this.http.delete<PlaceDto>(URL_API+'/'+id);
+  // }
 
   put(lieu: PlaceDto): Observable<any>{
     return this.http.put(URL_API, lieu);
