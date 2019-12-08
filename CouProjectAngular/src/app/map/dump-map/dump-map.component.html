@@ -1,22 +1,28 @@
-<agm-map mapTypeId="roadmap" id="map" [latitude]="50.4535039" [longitude]="3.9516516">
-  <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
-    <agm-marker *ngFor="let m of markers ; let i= index"
-                [latitude]="m.lat"
-                [longitude]="m.lng"
-                (markerClick)="sayCoucouFromMarker(m.description,m.id,m.lat,m.lng)">
+<div align="center" id="displayComp">
+  <agm-map mapTypeId="roadmap" id="map" [styles]="style" [latitude]="50.4535039" [longitude]="3.9516516" [zoom]="10">
+    <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+      <agm-marker *ngFor="let m of markers|typeMap:categoryFilter|rangeMap:rangeFilter:userLocation; let i= index;"
+                  [latitude]="m.lat"
+                  [longitude]="m.lng"
+                  (markerClick)="seePlaceChosenToDisplay(m)">
 
-      <agm-info-window>
-        <b>{{m.label_address}}</b>
-        <br>
-        {{m.name + " : " + m.description}}
-        <br>
-        <input type="button" (click)="navigateToDetailLieu(places[i].id)" value=">>See Place<<">
-      </agm-info-window>
-    </agm-marker>
-  </agm-marker-cluster>
+        <agm-info-window>
+          <b>{{m.label_address}}</b>
+          <br>
+          {{m.name + " : " + m.description}}
+        </agm-info-window>
+      </agm-marker>
+    </agm-marker-cluster>
 
-</agm-map>
+  </agm-map>
+  <app-filter-markers (category)="categoryFilter = $event" (range)="rangeFilter = $event"></app-filter-markers>
+  <app-single-place *ngIf="placeChosenToInspect != null" [placeAndAddress]="placeChosenToInspect"></app-single-place>
 
-<div class="container" align="center">
-  <button class="btn btn-info" (click)="navigateToFormAddLieu()">Ajouter lieu</button>
+
+
+  <div class="container" align="center">
+    <button class="btn btn-info" (click)="navigateToFormAddLieu()">Ajouter lieu</button>
+  </div>
 </div>
+
+

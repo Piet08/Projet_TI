@@ -17,7 +17,9 @@ namespace Cou_project.Controllers
         [HttpPost]
         public ActionResult<Address> Post([FromBody] Address adr)
         {
-            return Ok(AddressDAO.Create(adr));
+            //return Ok(AddressDAO.Create(adr));
+            Address found = AddressDAO.Create(adr);
+            return found != null ?  (ActionResult<Address>) Ok(found) : NotFound("This address is already exist");
         }
         [HttpGet("{id}")]
         public ActionResult<Address> Get(int id)

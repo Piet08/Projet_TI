@@ -1,4 +1,8 @@
 agm-map {
-  height: 700px;
-  width: auto;
+  height: 450px;
+  width: 1200px;
+}
+
+#displayComp{
+  padding-top: 50px;
 }

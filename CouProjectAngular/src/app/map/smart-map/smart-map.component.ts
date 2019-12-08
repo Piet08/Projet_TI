@@ -7,6 +7,7 @@ import {Subscription} from 'rxjs';
 import {Place} from '../../views/lieu/place';
 import {PlaceService} from '../../views/lieu/place.service';
 import {PlaceAndAddressDto} from '../../views/lieu/place-dto';
+import {LocationUserServiceService} from '../location-user-service.service';
 
 @Component({
   selector: 'app-smart-map',
@@ -20,16 +21,30 @@ export class SmartMapComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
   private _location: Location;
   private _places: Place [] = [];
+  private _tmpUserLocation: Location;
+  private _userLocation: Location;
 
 
-  constructor(public geocodeService: GeocodeService, /*public addressService: AddressService, */public placeService : PlaceService) { }
+  constructor(private geocodeService: GeocodeService, private placeService : PlaceService, private locationUserService : LocationUserServiceService) { }
 
    ngOnInit() {
+    this.loadLocationUser(() => {
+      this.locationUserService.getCurrentPosition().subscribe((position: Position) => {
+          localStorage.setItem("lat",position.coords.latitude.toString());
+          localStorage.setItem("lng",position.coords.longitude.toString());
+        }
+      );
+    });
+    this.userLocation = {lat:parseFloat(localStorage.getItem("lat")),lng:parseFloat(localStorage.getItem("lng"))}
     this.loadPlaceAndAddress((places) => this.loadAllAdressToMarkers(places)); // callback
   }
 
   ngOnDestroy(): void {
-
+    for (let i = this.subscriptions.length - 1; i >= 0; i--) {
+      const subscription = this.subscriptions[i];
+      subscription && subscription.unsubscribe();
+      this.subscriptions.pop();
+    }
   }
 
   //Convertit la liste d'adresses en markers pour les envoyer au dump-map qui les afficheras
@@ -41,17 +56,25 @@ export class SmartMapComponent implements OnInit, OnDestroy {
       this.geocodeService.geocodeAddress(placeAndAddress[i].address.city + ", " + placeAndAddress[i].address.straat + " N° " + placeAndAddress[i].address.num + ", " + placeAndAddress[i].address.postalCode)
         .subscribe((location: Location) => {
           this.location = location;
+          if(location.lat != 0 && location.lng != 0) {
           this.markers.push(
             {
+              idAdr: placeAndAddress[i].address.id,
               lat: this.location.lat,
               lng: this.location.lng,
-              label_address: this.placeAndAddress[i].address.city + ", " + placeAndAddress[i].address.straat + " N° " + placeAndAddress[i].address.num + ", " + placeAndAddress[i].address.postalCode,
-              id: this.placeAndAddress[i].place.id,
+              num: placeAndAddress[i].address.num,
+              postalCode: placeAndAddress[i].address.postalCode,
+              straat: placeAndAddress[i].address.straat,
+              city: placeAndAddress[i].address.city,
+              label_address: placeAndAddress[i].address.city + ", " + placeAndAddress[i].address.straat + " N° " + placeAndAddress[i].address.num + ", " + placeAndAddress[i].address.postalCode,
+              idPlace: this._placeAndAddress[i].place.id,
               name: tmpPlace.name,
               type: tmpPlace.type,
-              description: tmpPlace.description
+              description: tmpPlace.description,
+              rating: placeAndAddress[i].avgRate,
+              distanceUser: 0
             }
-          );
+          );}
         }
 
     );
@@ -66,6 +89,10 @@ export class SmartMapComponent implements OnInit, OnDestroy {
         fn(placeAndAddress);
       });
     this.subscriptions.push(sub);
+  }
+
+  loadLocationUser(fn){
+    this.tmpUserLocation = fn();
   }
 
 
@@ -104,5 +131,25 @@ export class SmartMapComponent implements OnInit, OnDestroy {
   @Input()
   set places(value: Place[]) {
     this._places = value;
+  }
+
+
+  get tmpUserLocation(): Location {
+    return this._tmpUserLocation;
+  }
+
+  @Input()
+  set tmpUserLocation(value: Location) {
+    this._tmpUserLocation = value;
+  }
+
+
+  get userLocation(): Location {
+    return this._userLocation;
+  }
+
+  @Input()
+  set userLocation(value: Location) {
+    this._userLocation = value;
   }
 }

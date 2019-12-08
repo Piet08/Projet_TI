@@ -43,7 +43,6 @@ export class GeocodeService {
                 lng: results[0].geometry.location.lng()
               });
             } else {
-              console.log('Error - ', results, ' & Status - ', status);
               observer.next({ lat: 0, lng: 0 });
             }
             observer.complete();

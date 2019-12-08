@@ -28,6 +28,10 @@ import { HomeComponent } from './views/home/home.component';
 import { TypePipe } from './views/lieu/filter-place/pipe/type.pipe';
 import { FilterPlaceComponent } from './views/lieu/filter-place/filter-place.component';
 import { RatingPipe } from './views/lieu/filter-place/pipe/rating.pipe';
+import { FilterMarkersComponent } from './map/filter-markers/filter-markers.component';
+import { RatingMapPipe } from './map/filter-markers/pipe/rating-map.pipe';
+import { TypeMapPipe } from './map/filter-markers/pipe/type-map.pipe';
+import { RangeMapPipe } from './map/filter-markers/pipe/range-map.pipe';
 
 
 // path = le nom du controller de l'api en fonction de ce que l'on veut faire
@@ -67,7 +71,11 @@ const routes: Routes = [
     RatingPipe,
     DumpMapComponent,
     SmartMapComponent,
-    HomeComponent
+    HomeComponent,
+    FilterMarkersComponent,
+    RatingMapPipe,
+    TypeMapPipe,
+    RangeMapPipe
   ],
   imports: [
     BrowserModule,
