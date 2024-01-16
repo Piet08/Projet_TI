@@ -8,7 +8,7 @@
       <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.2.0" />
       <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="3.1.0-preview3.19555.2" />
       <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.2.0" />
-      <PackageReference Include="System.Data.SqlClient" Version="4.8.0-preview2.19523.17" />
+      <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     </ItemGroup>
 
 </Project>
